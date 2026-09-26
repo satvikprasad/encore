@@ -1,0 +1,527 @@
+{
+  "user": {
+    "id": "maya",
+    "name": "Maya Chen",
+    "avatar": "🎧",
+    "budget_max": 120.0,
+    "accessibility_needs": [
+      "sensory"
+    ],
+    "verified": true,
+    "weights": [
+      0.12,
+      0.08,
+      0.12,
+      0.12,
+      0.31,
+      0.1,
+      0.15
+    ]
+  },
+  "following": false,
+  "follows_you": false,
+  "followers": 1,
+  "following_count": 1,
+  "match_pct": 92,
+  "shows": [
+    {
+      "event": {
+        "id": "v_roxy_47e1706f77",
+        "artist": {
+          "id": "thee_sacred_souls_la_lom_the_womack_sisters",
+          "name": "Thee Sacred Souls, LA LOM, & The Womack Sisters",
+          "genres": []
+        },
+        "venue": {
+          "id": "roxy",
+          "name": "Coca-Cola Roxy",
+          "lat": 33.8898,
+          "lng": -84.4686,
+          "multi_room": false,
+          "access_profile": {
+            "step_free": true,
+            "ada_seating": true,
+            "quiet_room": false,
+            "strobe_policy": "warned",
+            "interpreter": "never"
+          }
+        },
+        "start_at": "2026-09-15T18:30:00-04:00",
+        "doors_at": null,
+        "price_min": null,
+        "price_max": null,
+        "tm_url": "https://www.ticketmaster.com/thee-sacred-souls-la-lom-the-atlanta-georgia-09-15-2026/event/0E00644BDDFBA5AB",
+        "image_url": "https://s1.ticketm.net/dam/a/a17/414bf0b5-8d65-4637-a157-b11d82250a17_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+        "support": null,
+        "room": null,
+        "is_past": true
+      },
+      "theta": [
+        4.0,
+        3.0,
+        4.0,
+        5.0,
+        4.0,
+        4.0,
+        5.0
+      ],
+      "score": 4.145,
+      "tier": "S",
+      "rank": 1
+    },
+    {
+      "event": {
+        "id": "v_masquerade_6fa5a6b02f",
+        "artist": {
+          "id": "the_hails",
+          "name": "The Hails",
+          "genres": [
+            "alternative"
+          ]
+        },
+        "venue": {
+          "id": "masquerade",
+          "name": "The Masquerade",
+          "lat": 33.7522,
+          "lng": -84.3915,
+          "multi_room": true,
+          "access_profile": {
+            "step_free": false,
+            "ada_seating": false,
+            "quiet_room": false,
+            "strobe_policy": "unrestricted",
+            "interpreter": "never"
+          }
+        },
+        "start_at": "2025-09-18T20:00:00-04:00",
+        "doors_at": "2025-09-18T19:00:00-04:00",
+        "price_min": null,
+        "price_max": null,
+        "tm_url": "https://www.eventbrite.com/e/1450251905489?aff=oddtdtcreator?camefrom=cfc_masquerade_website",
+        "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2023/01/091825_thehails_ForSite-409x230.jpg",
+        "support": "Oceanic",
+        "room": null,
+        "is_past": true
+      },
+      "theta": [
+        4.0,
+        3.0,
+        3.0,
+        3.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "score": 3.992,
+      "tier": "A",
+      "rank": 2
+    },
+    {
+      "event": {
+        "id": "d07",
+        "artist": {
+          "id": "neon_cathedral",
+          "name": "Neon Cathedral",
+          "genres": [
+            "electronic"
+          ]
+        },
+        "venue": {
+          "id": "eastern",
+          "name": "The Eastern",
+          "lat": 33.7524,
+          "lng": -84.3648,
+          "multi_room": false,
+          "access_profile": {
+            "step_free": true,
+            "ada_seating": true,
+            "quiet_room": true,
+            "strobe_policy": "warned",
+            "interpreter": "never"
+          }
+        },
+        "start_at": "2025-02-15T20:00:00-05:00",
+        "doors_at": "2025-02-15T19:00:00-05:00",
+        "price_min": 40.0,
+        "price_max": 70.0,
+        "tm_url": null,
+        "image_url": null,
+        "support": null,
+        "room": null,
+        "is_past": true
+      },
+      "theta": [
+        2.0,
+        3.0,
+        4.0,
+        4.0,
+        5.0,
+        3.0,
+        5.0
+      ],
+      "score": 3.721,
+      "tier": "A",
+      "rank": 3
+    },
+    {
+      "event": {
+        "id": "d02",
+        "artist": {
+          "id": "velvet_static",
+          "name": "Velvet Static",
+          "genres": [
+            "synth-pop"
+          ]
+        },
+        "venue": {
+          "id": "eastern",
+          "name": "The Eastern",
+          "lat": 33.7524,
+          "lng": -84.3648,
+          "multi_room": false,
+          "access_profile": {
+            "step_free": true,
+            "ada_seating": true,
+            "quiet_room": true,
+            "strobe_policy": "warned",
+            "interpreter": "never"
+          }
+        },
+        "start_at": "2025-11-22T20:00:00-05:00",
+        "doors_at": "2025-11-22T19:00:00-05:00",
+        "price_min": 40.0,
+        "price_max": 65.0,
+        "tm_url": null,
+        "image_url": null,
+        "support": null,
+        "room": null,
+        "is_past": true
+      },
+      "theta": [
+        2.0,
+        3.0,
+        3.0,
+        5.0,
+        5.0,
+        3.0,
+        5.0
+      ],
+      "score": 3.719,
+      "tier": "A",
+      "rank": 4
+    },
+    {
+      "event": {
+        "id": "v_masquerade_0ed2f2fa6f",
+        "artist": {
+          "id": "we_came_as_romans",
+          "name": "We Came As Romans",
+          "genres": []
+        },
+        "venue": {
+          "id": "masquerade",
+          "name": "The Masquerade",
+          "lat": 33.7522,
+          "lng": -84.3915,
+          "multi_room": true,
+          "access_profile": {
+            "step_free": false,
+            "ada_seating": false,
+            "quiet_room": false,
+            "strobe_policy": "unrestricted",
+            "interpreter": "never"
+          }
+        },
+        "start_at": "2025-08-01T19:00:00-04:00",
+        "doors_at": "2025-08-01T18:00:00-04:00",
+        "price_min": null,
+        "price_max": null,
+        "tm_url": "https://www.axs.com/events/936642/we-came-as-romans-tickets?camefrom=cfc_masquerade_website",
+        "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2025/04/DSC02769-Enhanced-NR-344x230.jpg",
+        "support": "After The Burial, Currents, & Johnny Booth",
+        "room": null,
+        "is_past": true
+      },
+      "theta": [
+        4.0,
+        2.0,
+        3.0,
+        4.0,
+        4.0,
+        4.0,
+        5.0
+      ],
+      "score": 3.712,
+      "tier": "B",
+      "rank": 5
+    },
+    {
+      "event": {
+        "id": "v_tabernacle_a062415442",
+        "artist": {
+          "id": "lecrae",
+          "name": "Lecrae",
+          "genres": []
+        },
+        "venue": {
+          "id": "tabernacle",
+          "name": "Tabernacle",
+          "lat": 33.7586,
+          "lng": -84.3913,
+          "multi_room": false,
+          "access_profile": {
+            "step_free": true,
+            "ada_seating": true,
+            "quiet_room": false,
+            "strobe_policy": "warned",
+            "interpreter": "never"
+          }
+        },
+        "start_at": "2025-11-23T19:30:00-05:00",
+        "doors_at": null,
+        "price_min": null,
+        "price_max": null,
+        "tm_url": "https://www.ticketmaster.com/lecrae-reconstruction-world-tour-atlanta-georgia-11-23-2025/event/0E0062F59FA317DB",
+        "image_url": "https://s1.ticketm.net/dam/a/ebc/e5cbc136-0e98-4e15-a74d-700667f29ebc_TABLET_LANDSCAPE_3_2.jpg",
+        "support": null,
+        "room": null,
+        "is_past": true
+      },
+      "theta": [
+        4.0,
+        2.0,
+        3.0,
+        3.0,
+        5.0,
+        3.0,
+        5.0
+      ],
+      "score": 3.572,
+      "tier": "B",
+      "rank": 6
+    },
+    {
+      "event": {
+        "id": "v_tabernacle_66ecae55ff",
+        "artist": {
+          "id": "ralph_barbosa",
+          "name": "Ralph Barbosa",
+          "genres": []
+        },
+        "venue": {
+          "id": "tabernacle",
+          "name": "Tabernacle",
+          "lat": 33.7586,
+          "lng": -84.3913,
+          "multi_room": false,
+          "access_profile": {
+            "step_free": true,
+            "ada_seating": true,
+            "quiet_room": false,
+            "strobe_policy": "warned",
+            "interpreter": "never"
+          }
+        },
+        "start_at": "2026-03-26T19:30:00-04:00",
+        "doors_at": null,
+        "price_min": null,
+        "price_max": null,
+        "tm_url": "https://www.ticketmaster.com/ralph-barbosa-the-red-40-tour-atlanta-georgia-03-26-2026/event/0E00642DAF8D764E",
+        "image_url": "https://s1.ticketm.net/dam/a/cbe/d45a6e3e-b85a-4a7e-bbc1-adf74ae41cbe_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+        "support": null,
+        "room": null,
+        "is_past": true
+      },
+      "theta": [
+        3.0,
+        2.0,
+        3.0,
+        3.0,
+        5.0,
+        3.0,
+        5.0
+      ],
+      "score": 3.43,
+      "tier": "B",
+      "rank": 7
+    },
+    {
+      "event": {
+        "id": "d09",
+        "artist": {
+          "id": "solar_choir",
+          "name": "Solar Choir",
+          "genres": [
+            "pop"
+          ]
+        },
+        "venue": {
+          "id": "state_farm",
+          "name": "State Farm Arena",
+          "lat": 33.7573,
+          "lng": -84.3963,
+          "multi_room": false,
+          "access_profile": {
+            "step_free": true,
+            "ada_seating": true,
+            "quiet_room": true,
+            "strobe_policy": "warned",
+            "interpreter": "on_request"
+          }
+        },
+        "start_at": "2025-05-10T19:30:00-04:00",
+        "doors_at": "2025-05-10T18:30:00-04:00",
+        "price_min": 70.0,
+        "price_max": 210.0,
+        "tm_url": null,
+        "image_url": null,
+        "support": null,
+        "room": null,
+        "is_past": true
+      },
+      "theta": [
+        4.0,
+        3.0,
+        1.0,
+        3.0,
+        4.0,
+        2.0,
+        5.0
+      ],
+      "score": 3.143,
+      "tier": "C",
+      "rank": 8
+    },
+    {
+      "event": {
+        "id": "d04",
+        "artist": {
+          "id": "aurora_fields",
+          "name": "Aurora Fields",
+          "genres": [
+            "electronic",
+            "pop"
+          ]
+        },
+        "venue": {
+          "id": "state_farm",
+          "name": "State Farm Arena",
+          "lat": 33.7573,
+          "lng": -84.3963,
+          "multi_room": false,
+          "access_profile": {
+            "step_free": true,
+            "ada_seating": true,
+            "quiet_room": true,
+            "strobe_policy": "warned",
+            "interpreter": "on_request"
+          }
+        },
+        "start_at": "2026-02-28T19:30:00-05:00",
+        "doors_at": "2026-02-28T18:30:00-05:00",
+        "price_min": 65.0,
+        "price_max": 180.0,
+        "tm_url": null,
+        "image_url": null,
+        "support": null,
+        "room": null,
+        "is_past": true
+      },
+      "theta": [
+        2.0,
+        2.0,
+        4.0,
+        1.0,
+        4.0,
+        4.0,
+        5.0
+      ],
+      "score": 3.142,
+      "tier": "C",
+      "rank": 9
+    },
+    {
+      "event": {
+        "id": "v_masquerade_57e0d0d930",
+        "artist": {
+          "id": "the_tubs",
+          "name": "The Tubs",
+          "genres": []
+        },
+        "venue": {
+          "id": "masquerade",
+          "name": "The Masquerade",
+          "lat": 33.7522,
+          "lng": -84.3915,
+          "multi_room": true,
+          "access_profile": {
+            "step_free": false,
+            "ada_seating": false,
+            "quiet_room": false,
+            "strobe_policy": "unrestricted",
+            "interpreter": "never"
+          }
+        },
+        "start_at": "2025-10-04T20:00:00-04:00",
+        "doors_at": "2025-10-04T19:00:00-04:00",
+        "price_min": null,
+        "price_max": null,
+        "tm_url": "https://www.ticketmaster.com/the-tubs-atlanta-georgia-10-04-2025/event/0E0062D4E0815769?camefrom=cfc_masquerade_website",
+        "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2025/06/100425_THETUBS_ForSite-409x230.jpg",
+        "support": null,
+        "room": "Purgatory",
+        "is_past": true
+      },
+      "theta": [
+        3.0,
+        4.0,
+        3.0,
+        2.0,
+        5.0,
+        3.0,
+        1.0
+      ],
+      "score": 2.997,
+      "tier": "C",
+      "rank": 10
+    }
+  ],
+  "upcoming": [
+    {
+      "event": {
+        "id": "t01",
+        "artist": {
+          "id": "kylie_cantrall",
+          "name": "Kylie Cantrall",
+          "genres": [
+            "pop"
+          ]
+        },
+        "venue": {
+          "id": "eastern",
+          "name": "The Eastern",
+          "lat": 33.7524,
+          "lng": -84.3648,
+          "multi_room": false,
+          "access_profile": {
+            "step_free": true,
+            "ada_seating": true,
+            "quiet_room": true,
+            "strobe_policy": "warned",
+            "interpreter": "never"
+          }
+        },
+        "start_at": "2026-10-10T19:00:00-04:00",
+        "doors_at": "2026-10-10T18:00:00-04:00",
+        "price_min": null,
+        "price_max": null,
+        "tm_url": "https://www.axs.com/events/1541673/kylie-cantrall-tickets",
+        "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a68d3bd3a7d8.jpg",
+        "support": null,
+        "room": null,
+        "is_past": false
+      },
+      "status": "interested"
+    }
+  ]
+}

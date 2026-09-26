@@ -85,7 +85,9 @@ def test_run_through(api):
 def test_group_options_for_demo_crew(api):
     from app.ml.group import score_options
     options = score_options(["sam", "maya", "jordan"], "t01")
-    assert len(options) == 3 and options[0]["feasible"] and options[0]["price"] <= 75
+    # Three price tiers when the show has a published price range; a single GA option until a
+    # ticket-site key fills prices in (scraped shows carry none).
+    assert 1 <= len(options) <= 3 and options[0]["feasible"] and options[0]["price"] <= 75
     assert all(len(o["per_member"]) == 3 for o in options)
 
 

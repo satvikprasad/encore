@@ -26,6 +26,22 @@ export function fmtPriceRange(e: Pick<Event, "price_min" | "price_max">): string
   return fmtMoney((lo ?? hi) as number);
 }
 
+const SELLERS: [string, string][] = [
+  ["ticketmaster.", "Ticketmaster"], ["livenation.", "Live Nation"], ["axs.com", "AXS"], ["eventbrite.", "Eventbrite"],
+  ["etix.", "Etix"], ["dice.fm", "DICE"], ["seetickets.", "See Tickets"], ["tixr.", "Tixr"], ["statefarmarena.", "State Farm Arena"],
+];
+
+/** "AXS", "Ticketmaster", … from the primary seller's URL (mirrors api/app/tickets.py). */
+export function sellerName(url: string | null | undefined): string | null {
+  if (!url) return null;
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    return SELLERS.find(([needle]) => host.includes(needle))?.[1] ?? host.replace(/^www\./, "");
+  } catch {
+    return null;
+  }
+}
+
 export function firstName(name: string): string {
   return name.split(" ")[0];
 }

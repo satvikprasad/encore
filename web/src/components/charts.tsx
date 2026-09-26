@@ -7,14 +7,18 @@ import { DIMS } from "@/constants";
 import { DIM_LABELS, radarData } from "@/lib/dims";
 import type { Vec7 } from "@/types";
 
+const ACCENT = "#5B45F5";
+const INK_MUTED = "#6B6675";
+const LINE = "#E8E4DC";
+
 export function ReviewRadar({ theta, height = 240 }: { theta: Vec7; height?: number }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
       <RadarChart data={radarData(theta)} outerRadius="72%">
-        <PolarGrid stroke="#2a2a3a" />
-        <PolarAngleAxis dataKey="dim" tick={{ fill: "#9a9aab", fontSize: 11 }} />
+        <PolarGrid stroke={LINE} />
+        <PolarAngleAxis dataKey="dim" tick={{ fill: INK_MUTED, fontSize: 11, fontWeight: 500 }} />
         <PolarRadiusAxis domain={[0, 5]} tickCount={6} tick={false} axisLine={false} />
-        <Radar dataKey="value" stroke="#8b5cf6" fill="#8b5cf6" fillOpacity={0.35} isAnimationActive={false} />
+        <Radar dataKey="value" stroke={ACCENT} strokeWidth={2} fill={ACCENT} fillOpacity={0.18} dot={{ r: 3, fill: ACCENT, strokeWidth: 0 }} isAnimationActive={false} />
       </RadarChart>
     </ResponsiveContainer>
   );
@@ -67,14 +71,14 @@ export function PreferenceBars({ weights, height = 196 }: { weights: Vec7; heigh
   const data = DIMS.map((d, i) => ({ dim: DIM_LABELS[d], value: shown[i], pct: `${Math.round(shown[i] * 100)}%` }));
   return (
     <ResponsiveContainer width="100%" height={height}>
-      <BarChart data={data} layout="vertical" margin={{ top: 0, right: 36, bottom: 0, left: 0 }} barCategoryGap={5}>
+      <BarChart data={data} layout="vertical" margin={{ top: 0, right: 40, bottom: 0, left: 0 }} barCategoryGap={6}>
         <XAxis type="number" hide domain={[0, 0.4]} allowDataOverflow />
-        <YAxis type="category" dataKey="dim" width={78} tickLine={false} axisLine={false} tick={{ fill: "#9a9aab", fontSize: 12 }} />
-        <Bar dataKey="value" radius={[0, 6, 6, 0]} isAnimationActive={false}>
+        <YAxis type="category" dataKey="dim" width={80} tickLine={false} axisLine={false} tick={{ fill: INK_MUTED, fontSize: 12, fontWeight: 500 }} />
+        <Bar dataKey="value" radius={[0, 8, 8, 0]} isAnimationActive={false} background={{ fill: "#F1EEE8", radius: 8 }}>
           {data.map((d, i) => (
-            <Cell key={d.dim} fill={i === top ? "#8b5cf6" : "#3b3b52"} />
+            <Cell key={d.dim} fill={i === top ? ACCENT : "#C9C1FF"} />
           ))}
-          <LabelList dataKey="pct" position="right" fill="#9a9aab" fontSize={11} />
+          <LabelList dataKey="pct" position="right" fill={INK_MUTED} fontSize={11} fontWeight={600} />
         </Bar>
       </BarChart>
     </ResponsiveContainer>

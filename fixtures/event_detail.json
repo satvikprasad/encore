@@ -2,11 +2,10 @@
   "event": {
     "id": "t01",
     "artist": {
-      "id": "lumen_drift",
-      "name": "Lumen Drift",
+      "id": "kylie_cantrall",
+      "name": "Kylie Cantrall",
       "genres": [
-        "electronic",
-        "indie"
+        "pop"
       ]
     },
     "venue": {
@@ -23,11 +22,14 @@
         "interpreter": "never"
       }
     },
-    "start_at": "2026-10-24T20:00:00-04:00",
-    "doors_at": "2026-10-24T19:00:00-04:00",
-    "price_min": 45,
-    "price_max": 120,
-    "tm_url": "https://www.ticketmaster.com/event/t01-placeholder",
+    "start_at": "2026-10-10T19:00:00-04:00",
+    "doors_at": "2026-10-10T18:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1541673/kylie-cantrall-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a68d3bd3a7d8.jpg",
+    "support": null,
+    "room": null,
     "is_past": false
   },
   "friends_interested": [
@@ -35,16 +37,16 @@
       "id": "priya",
       "name": "Priya Nair",
       "avatar": "🎹",
-      "budget_max": 100,
+      "budget_max": 100.0,
       "accessibility_needs": [],
       "verified": true,
       "weights": [
-        0.2,
-        0.18,
         0.14,
+        0.34,
         0.1,
-        0.14,
-        0.1,
+        0.08,
+        0.12,
+        0.08,
         0.14
       ]
     }

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { PreferenceBars } from "@/components/charts";
+import { IconCheck } from "@/components/icons";
 import { ArtistArt, ErrorNote, Page, Spinner, TopBar } from "@/components/ui";
 import { api } from "@/lib/api";
 import { fmtShortDate } from "@/lib/format";
@@ -58,39 +59,66 @@ export default function ComparePage() {
 
   return (
     <>
-      <TopBar title="Compare" back="/" right={<span className="text-xs text-muted">{Math.min(asked + 1, QUESTIONS)}/{QUESTIONS}</span>} />
+      <TopBar
+        title="Compare"
+        back="/"
+        right={
+          <span className="flex items-center gap-1.5">
+            {Array.from({ length: QUESTIONS }, (_, i) => (
+              <span key={i} className={clsx("h-2 rounded-full transition-all duration-300", i < asked ? "w-2 bg-accent" : i === asked ? "w-5 bg-fg" : "w-2 bg-line")} />
+            ))}
+          </span>
+        }
+      />
       <Page>
         {error ? <ErrorNote error={error} /> : null}
         {!pair && !error ? <Spinner /> : null}
         {pair ? (
           <>
-            <h2 className="pt-2 text-center text-xl font-bold leading-snug">
-              {finished ? "Got it. Building your ranking…" : pair.question}
-            </h2>
-            <p className="-mt-2 text-center text-xs text-muted">Tap the better night</p>
-            <div className={clsx("grid grid-cols-2 gap-3 transition", finished && "opacity-40")}>
-              {[pair.event_a, pair.event_b].map((e) => (
-                <button
-                  key={`${asked}-${e.id}`}
-                  onClick={() => choose(e)}
-                  disabled={!!picked}
-                  className={clsx(
-                    "animate-pop flex flex-col items-center gap-2 rounded-2xl border-2 bg-card p-3 text-center transition active:scale-[0.98]",
-                    picked === e.id ? "border-accent bg-accent/15" : picked ? "border-transparent opacity-50" : "border-transparent hover:border-line",
-                  )}
-                >
-                  <ArtistArt name={e.artist.name} className="h-24 w-full text-3xl" />
-                  <div className="w-full truncate font-semibold">{e.artist.name}</div>
-                  <div className="w-full truncate text-xs text-muted">{e.venue.name}</div>
-                  <div className="text-[11px] text-dim">{fmtShortDate(e.start_at)}</div>
-                </button>
-              ))}
+            <div className="px-1 pt-1 text-center">
+              <div className="label">{finished ? "All done" : `Question ${Math.min(asked + 1, QUESTIONS)} of ${QUESTIONS}`}</div>
+              <h2 className="display mt-1.5 text-[30px] leading-[1.05]">{finished ? "Got it. Building your ranking…" : pair.question}</h2>
+              {!finished ? <p className="mt-2 text-xs text-muted">Tap the better night</p> : null}
+            </div>
+            <div className={clsx("relative grid grid-cols-2 gap-3 transition", finished && "opacity-40")}>
+              {[pair.event_a, pair.event_b].map((e) => {
+                const on = picked === e.id;
+                return (
+                  <button
+                    key={`${asked}-${e.id}`}
+                    onClick={() => choose(e)}
+                    disabled={!!picked}
+                    className={clsx(
+                      "animate-pop relative flex flex-col gap-3 overflow-hidden rounded-3xl border bg-surface p-2.5 text-left shadow-card transition duration-200 active:scale-[0.98]",
+                      on ? "border-accent ring-2 ring-accent/40 shadow-lift" : picked ? "border-line opacity-50" : "border-line hover:-translate-y-0.5 hover:shadow-lift",
+                    )}
+                  >
+                    <ArtistArt name={e.artist.name} image={e.image_url} className="aspect-[4/5] w-full rounded-2xl text-5xl" big />
+                    <div className="px-1 pb-1">
+                      <div className="truncate text-[15px] font-semibold tracking-tight">{e.artist.name}</div>
+                      <div className="truncate text-xs text-muted">{e.venue.name}</div>
+                      <div className="mt-0.5 text-[11px] text-dim">{fmtShortDate(e.start_at)}</div>
+                    </div>
+                    {on ? (
+                      <span className="animate-pop absolute right-4 top-4 grid h-8 w-8 place-items-center rounded-full bg-fg text-white shadow-lift">
+                        <IconCheck size={16} strokeWidth={2.6} />
+                      </span>
+                    ) : null}
+                  </button>
+                );
+              })}
+              <span className="pointer-events-none absolute left-1/2 top-[38%] grid h-9 w-9 -translate-x-1/2 place-items-center rounded-full border border-line bg-canvas text-[11px] font-bold text-muted shadow-card">
+                vs
+              </span>
             </div>
           </>
         ) : null}
 
         <section className="card">
-          <div className="label mb-1">What you care about</div>
+          <div className="mb-1 flex items-center justify-between">
+            <span className="label">What you care about</span>
+            <span className="text-[11px] text-dim">updates as you answer</span>
+          </div>
           <PreferenceBars weights={weights} />
         </section>
       </Page>

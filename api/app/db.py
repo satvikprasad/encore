@@ -97,6 +97,9 @@ def event_from_row(row: sqlite3.Row) -> dict:
         "price_min": row["price_min"],
         "price_max": row["price_max"],
         "tm_url": row["tm_url"],
+        "image_url": row["image_url"] if "image_url" in row.keys() else None,
+        "support": row["support"] if "support" in row.keys() else None,
+        "room": row["room"] if "room" in row.keys() else None,
         "is_past": bool(row["is_past"]),
     }
 

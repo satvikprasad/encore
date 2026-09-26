@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html,
 body {
-  background: #050508;
-  color: #f2f2f5;
+  background: #ece8e0;
+  color: #1a1722;
   overflow-x: hidden;
 }
 
@@ -23,25 +23,31 @@ body {
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold transition duration-200 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40;
   }
   .btn-primary {
-    @apply btn bg-accent text-white hover:bg-violet-500;
+    @apply btn bg-fg text-white shadow-lift hover:bg-black;
+  }
+  .btn-accent {
+    @apply btn bg-accent text-white shadow-glow hover:bg-accent-deep;
   }
   .btn-ghost {
-    @apply btn border border-line bg-card text-white hover:bg-raised;
+    @apply btn border border-line bg-surface text-fg hover:border-fg/20 hover:bg-sunken/60;
   }
   .chip {
-    @apply rounded-full border border-line px-3 py-1.5 text-xs text-muted transition;
+    @apply rounded-full border border-line bg-surface px-3.5 py-1.5 text-xs font-medium text-muted transition hover:border-fg/20;
   }
   .chip-on {
-    @apply border-accent bg-accent/20 text-white;
+    @apply border-accent bg-accent text-white hover:border-accent;
   }
   .card {
-    @apply rounded-2xl bg-card p-4;
+    @apply rounded-3xl border border-line/70 bg-surface p-4 shadow-card;
   }
   .label {
-    @apply text-[11px] font-semibold uppercase tracking-wider text-dim;
+    @apply text-[11px] font-semibold uppercase tracking-[0.12em] text-dim;
+  }
+  .display {
+    @apply font-display font-normal tracking-[-0.01em];
   }
 }
 
@@ -63,14 +69,52 @@ body {
 
 @keyframes pop {
   0% {
-    transform: scale(0.9);
+    transform: translateY(6px) scale(0.97);
     opacity: 0;
   }
   100% {
-    transform: scale(1);
+    transform: none;
     opacity: 1;
   }
 }
 .animate-pop {
-  animation: pop 0.25s ease-out both;
+  animation: pop 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-rise {
+  animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+.animate-slide-up {
+  animation: slide-up 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade {
+  animation: fade 0.3s ease-out both;
 }

@@ -4,9 +4,11 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useRef, useState, type DragEvent } from "react";
 
-import { ErrorNote, EventRow, Page, Spinner, TopBar } from "@/components/ui";
+import { IconCamera, IconCheck, IconLock, IconPin } from "@/components/icons";
+import { ArtistArt, ErrorNote, EventRow, Page, Spinner, TopBar } from "@/components/ui";
 import { api } from "@/lib/api";
 import { readPhoto } from "@/lib/exif";
+import { saveMedia } from "@/lib/media";
 import { fmtDate } from "@/lib/format";
 import { useUser } from "@/lib/user";
 import type { MediaItem, MediaMatch } from "@/types";
@@ -25,6 +27,7 @@ export default function ImportPage() {
   const [files, setFiles] = useState<FileRow[]>([]);
   const [itemCount, setItemCount] = useState(0);
   const [matches, setMatches] = useState<MediaMatch[]>([]);
+  const itemFiles = useRef<File[]>([]); // files that produced each posted item, in order
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [added, setAdded] = useState<MediaMatch[]>([]);
   const [dragging, setDragging] = useState(false);
@@ -38,10 +41,14 @@ export default function ImportPage() {
     setFiles(images.map((f) => ({ name: f.name, status: "queued" })));
 
     const items: MediaItem[] = [];
+    itemFiles.current = [];
     for (let i = 0; i < images.length; i++) {
       setFiles((rows) => rows.map((r, j) => (j === i ? { ...r, status: "reading" } : r)));
       const item = await readPhoto(images[i]);
-      if (item) items.push(item);
+      if (item) {
+        items.push(item);
+        itemFiles.current.push(images[i]);
+      }
       setFiles((rows) => rows.map((r, j) => (j === i ? { ...r, status: item ? "found" : "none" } : r)));
     }
     setItemCount(items.length);
@@ -66,6 +73,13 @@ export default function ImportPage() {
         evidence: "photo",
         confidences: chosen.map((m) => m.confidence),
       });
+      // Keep the photos with the show (in this browser only) so they're there when you look back.
+      await Promise.all(
+        chosen.map((m) => {
+          const files = (m.item_indices ?? []).map((i) => itemFiles.current[i]).filter((f): f is File => !!f);
+          return files.length ? saveMedia(userId, m.event.id, files) : Promise.resolve([]);
+        }),
+      );
       setAdded(chosen);
       setPhase("done");
     } catch (e) {
@@ -85,7 +99,7 @@ export default function ImportPage() {
 
   return (
     <>
-      <TopBar title="Import from camera roll" back="/" />
+      <TopBar title="Import from camera roll" back="/log" />
       <Page>
         {error ? <ErrorNote error={error} /> : null}
 
@@ -100,13 +114,18 @@ export default function ImportPage() {
               onDrop={onDrop}
               onClick={() => input.current?.click()}
               className={clsx(
-                "flex cursor-pointer flex-col items-center gap-3 rounded-3xl border-2 border-dashed px-6 py-14 text-center transition",
-                dragging ? "border-accent bg-accent/10" : "border-line bg-card hover:border-accent/60",
+                "relative flex cursor-pointer flex-col items-center gap-4 overflow-hidden rounded-[32px] border-2 border-dashed px-6 py-14 text-center transition",
+                dragging ? "border-accent bg-accent-soft" : "border-line bg-surface hover:border-accent/50",
               )}
             >
-              <span className="text-4xl">📸</span>
-              <span className="text-lg font-semibold">Choose photos</span>
-              <span className="text-sm text-muted">or drop them here. We&apos;ll find the shows you were at from when and where each photo was taken.</span>
+              <PhotoFan />
+              <span className="display text-[28px] leading-none">Choose photos</span>
+              <span className="max-w-[260px] text-sm leading-relaxed text-muted">
+                or drop them here. We match each photo&apos;s time and place to a show.
+              </span>
+              <span className="btn-primary pointer-events-none mt-1 px-6 py-3">
+                <IconCamera size={18} /> Pick from camera roll
+              </span>
               <input
                 ref={input}
                 type="file"
@@ -122,29 +141,36 @@ export default function ImportPage() {
 
         {phase === "reading" || phase === "matching" ? (
           <>
-            <div className="card space-y-3">
-              <div className="flex items-center justify-between text-sm">
-                <span className="font-medium">{phase === "reading" ? "Reading photos on your device…" : "Matching to shows…"}</span>
-                <span className="text-muted">
+            <div className="card space-y-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-[15px] font-semibold tracking-tight">{phase === "reading" ? "Reading photos on your device" : "Matching to shows"}</div>
+                  <div className="text-xs text-muted">{phase === "reading" ? "Only time and location are read" : "Checking venues and show times"}</div>
+                </div>
+                <span className="rounded-full bg-sunken px-2.5 py-1 text-xs font-semibold tabular-nums text-muted">
                   {read}/{files.length}
                 </span>
               </div>
-              <div className="h-1.5 rounded-full bg-line">
-                <div className="h-1.5 rounded-full bg-accent transition-all" style={{ width: `${files.length ? (read / files.length) * 100 : 0}%` }} />
+              <div className="h-2 overflow-hidden rounded-full bg-sunken">
+                <div
+                  className={clsx("h-full rounded-full bg-accent transition-all duration-300", phase === "matching" && "animate-pulse")}
+                  style={{ width: `${files.length ? (read / files.length) * 100 : 0}%` }}
+                />
               </div>
-              <ul className="max-h-[380px] space-y-1 overflow-y-auto text-xs">
+              <ul className="max-h-[360px] space-y-1.5 overflow-y-auto text-xs">
                 {files.map((f, i) => (
-                  <li key={i} className="flex items-center justify-between gap-2">
+                  <li key={i} className="flex items-center justify-between gap-3">
                     <span className="truncate text-muted">{f.name}</span>
                     <span
-                      className={clsx("shrink-0", {
+                      className={clsx("flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 font-medium", {
                         "text-dim": f.status === "queued",
-                        "text-accent": f.status === "reading",
-                        "text-good": f.status === "found",
-                        "text-warn": f.status === "none",
+                        "bg-accent-soft text-accent": f.status === "reading",
+                        "bg-good-soft text-good": f.status === "found",
+                        "bg-warn-soft text-warn": f.status === "none",
                       })}
                     >
-                      {f.status === "queued" ? "waiting" : f.status === "reading" ? "reading…" : f.status === "found" ? "📍 time + place" : "no location"}
+                      {f.status === "found" ? <IconPin size={11} /> : null}
+                      {f.status === "queued" ? "waiting" : f.status === "reading" ? "reading…" : f.status === "found" ? "time + place" : "no location"}
                     </span>
                   </li>
                 ))}
@@ -157,48 +183,60 @@ export default function ImportPage() {
 
         {phase === "results" ? (
           <>
-            <div>
-              <h2 className="text-2xl font-bold">
+            <div className="px-1">
+              <h2 className="display text-[32px] leading-none">
                 We found {matches.length} show{matches.length === 1 ? "" : "s"}
               </h2>
-              <p className="text-sm text-muted">
+              <p className="mt-2 text-sm text-muted">
                 From {files.length} photos
                 {itemCount - matchedPhotos > 0 ? ` · ${itemCount - matchedPhotos} didn't match a show` : ""}
                 {files.length - itemCount > 0 ? ` · ${files.length - itemCount} had no location` : ""}
               </p>
             </div>
             <ul className="space-y-3">
-              {matches.map((m) => (
-                <li key={m.cluster_id}>
-                  <label
-                    className={clsx(
-                      "card flex cursor-pointer items-center gap-3 border transition",
-                      checked[m.cluster_id] ? "border-accent/60" : "border-transparent",
-                    )}
-                  >
-                    <input
-                      type="checkbox"
-                      className="h-5 w-5 shrink-0 accent-violet-500"
-                      checked={!!checked[m.cluster_id]}
-                      onChange={(e) => setChecked((c) => ({ ...c, [m.cluster_id]: e.target.checked }))}
-                    />
-                    <div className="min-w-0 flex-1">
-                      {m.suggested === "ask" ? <div className="text-xs text-warn">Were you at…?</div> : null}
-                      <div className="truncate font-semibold">{m.event.artist.name}</div>
-                      <div className="truncate text-xs text-muted">
-                        {m.event.venue.name} · {fmtDate(m.event.start_at)}
+              {matches.map((m, i) => {
+                const on = !!checked[m.cluster_id];
+                return (
+                  <li key={m.cluster_id} className="animate-rise" style={{ animationDelay: `${i * 50}ms` }}>
+                    <label
+                      className={clsx(
+                        "card flex cursor-pointer items-center gap-3 p-3 transition",
+                        on ? "border-accent/60 ring-1 ring-accent/40" : "hover:border-fg/15",
+                      )}
+                    >
+                      <input
+                        type="checkbox"
+                        className="sr-only"
+                        checked={on}
+                        onChange={(e) => setChecked((c) => ({ ...c, [m.cluster_id]: e.target.checked }))}
+                      />
+                      <span
+                        className={clsx(
+                          "grid h-6 w-6 shrink-0 place-items-center rounded-full border transition",
+                          on ? "border-accent bg-accent text-white" : "border-line bg-surface text-transparent",
+                        )}
+                      >
+                        <IconCheck size={14} strokeWidth={2.6} />
+                      </span>
+                      <ArtistArt name={m.event.artist.name} image={m.event.image_url} className="h-14 w-14 text-2xl" />
+                      <div className="min-w-0 flex-1">
+                        {m.suggested === "ask" ? <div className="text-[11px] font-semibold text-warn">Were you at…?</div> : null}
+                        <div className="truncate text-[15px] font-semibold tracking-tight">{m.event.artist.name}</div>
+                        <div className="truncate text-xs text-muted">
+                          {m.event.venue.name} · {fmtDate(m.event.start_at)}
+                        </div>
+                        <div className="mt-1 text-[11px] text-dim">
+                          {m.photo_count} photo{m.photo_count === 1 ? "" : "s"}
+                        </div>
                       </div>
-                      <div className="mt-1 text-[11px] text-dim">
-                        {m.photo_count} photo{m.photo_count === 1 ? "" : "s"}
-                      </div>
-                    </div>
-                    <ConfidenceChip value={m.confidence} />
-                  </label>
-                </li>
-              ))}
+                      <ConfidenceChip value={m.confidence} />
+                    </label>
+                  </li>
+                );
+              })}
             </ul>
             {matches.length ? (
-              <button className="btn-primary sticky bottom-4 w-full shadow-lg" disabled={!selected} onClick={confirm}>
+              <button className="btn-primary sticky bottom-6 w-full" disabled={!selected} onClick={confirm}>
                 Confirm {selected} show{selected === 1 ? "" : "s"}
               </button>
             ) : (
@@ -211,20 +249,26 @@ export default function ImportPage() {
 
         {phase === "done" ? (
           <>
-            <div className="card animate-pop text-center">
-              <div className="text-4xl">🎉</div>
-              <div className="mt-2 text-xl font-bold">
-                Added {added.length} show{added.length === 1 ? "" : "s"}
+            <div className="animate-pop relative overflow-hidden rounded-3xl bg-fg p-6 text-center text-white shadow-lift">
+              <div className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-accent opacity-70 blur-2xl" />
+              <div className="pointer-events-none absolute -bottom-12 -right-8 h-40 w-40 rounded-full bg-coral opacity-60 blur-2xl" />
+              <div className="relative">
+                <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-white/15">
+                  <IconCheck size={24} strokeWidth={2.4} />
+                </span>
+                <div className="display mt-3 text-[30px] leading-none">
+                  Added {added.length} show{added.length === 1 ? "" : "s"}
+                </div>
+                <p className="mt-2 text-sm text-white/70">Your photos are attached to each show. Review one to start your ranking.</p>
               </div>
-              <p className="text-sm text-muted">Review one to start your ranking.</p>
             </div>
             <ul className="space-y-3">
-              {added.map((m) => (
-                <li key={m.cluster_id}>
+              {added.map((m, i) => (
+                <li key={m.cluster_id} className="animate-rise" style={{ animationDelay: `${100 + i * 50}ms` }}>
                   <EventRow
                     event={m.event}
                     href={`/review/${m.event.id}`}
-                    right={<span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold">Review</span>}
+                    right={<span className="rounded-full bg-accent px-3 py-1.5 text-xs font-semibold text-white">Review</span>}
                   />
                 </li>
               ))}
@@ -239,20 +283,43 @@ export default function ImportPage() {
   );
 }
 
+/** Three tilted "polaroids" for the empty state. */
+function PhotoFan() {
+  const tiles = [
+    { rot: -12, x: -34, hue: 262 },
+    { rot: 0, x: 0, hue: 14 },
+    { rot: 12, x: 34, hue: 156 },
+  ];
+  return (
+    <div className="relative h-24 w-40">
+      {tiles.map((t, i) => (
+        <div
+          key={i}
+          className="absolute left-1/2 top-1/2 h-24 w-20 rounded-xl border-4 border-white shadow-lift"
+          style={{
+            transform: `translate(calc(-50% + ${t.x}px), -50%) rotate(${t.rot}deg)`,
+            background: `linear-gradient(160deg, hsl(${t.hue} 80% 70%), hsl(${t.hue + 40} 70% 45%))`,
+            zIndex: i === 1 ? 2 : 1,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function ConfidenceChip({ value }: { value: number }) {
   const pct = Math.round(value * 100);
   return (
-    <span
-      className={clsx(
-        "shrink-0 rounded-full px-2 py-1 text-xs font-semibold",
-        value >= 0.8 ? "bg-good/15 text-good" : "bg-warn/15 text-warn",
-      )}
-    >
+    <span className={clsx("shrink-0 rounded-full px-2 py-1 text-xs font-semibold tabular-nums", value >= 0.8 ? "bg-good-soft text-good" : "bg-warn-soft text-warn")}>
       {pct}%
     </span>
   );
 }
 
 function PrivacyNote() {
-  return <p className="text-center text-xs text-dim">🔒 Photos never leave your device. Only time and location are sent.</p>;
+  return (
+    <p className="flex items-center justify-center gap-1.5 text-center text-xs text-dim">
+      <IconLock size={13} /> Photos never leave your device. Only time and location are sent.
+    </p>
+  );
 }

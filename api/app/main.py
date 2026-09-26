@@ -7,7 +7,7 @@ from . import schemas
 from .db import connect, db_path, user_from_row
 from .fixtures import fixture
 from .gate import VerificationGate
-from .routers import compare, crews, events, matches, media, rank, reviews, verify
+from .routers import compare, crews, events, matches, media, people, rank, reviews, verify
 
 app = FastAPI(title="Encore API")
 
@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-for r in (media, reviews, compare, rank, events, matches, verify, crews):
+for r in (media, reviews, compare, rank, events, matches, verify, crews, people):
     app.include_router(r.router)
 
 

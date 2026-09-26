@@ -77,6 +77,8 @@ def make_db(path: Path) -> sqlite3.Connection:
         events[m["event"]["id"]] = m["event"]
     for s in json.loads((FIXTURES / "rank.json").read_text())["shows"]:
         events[s["event"]["id"]] = s["event"]
+    detail = json.loads((FIXTURES / "event_detail.json").read_text())["event"]  # t01, whatever the slice holds
+    events.setdefault(detail["id"], detail)
     for e in events.values():
         a, v = e["artist"], e["venue"]
         conn.execute("INSERT OR IGNORE INTO artists (id, name, genres) VALUES (?,?,?)",

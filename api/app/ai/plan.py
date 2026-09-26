@@ -44,9 +44,14 @@ def _money(x: float) -> str:
     return f"${x:,.0f}" if float(x).is_integer() else f"${x:,.2f}"
 
 
+def _priced(event: dict) -> bool:
+    return event.get("price_min") is not None or event.get("price_max") is not None
+
+
 def fallback_plan(event: dict, members: list[dict], option: dict) -> dict:
     venue, access = event["venue"]["name"], event["venue"]["access_profile"]
     scores = {s["user_id"]: s["score"] for s in option["per_member"]}
+    priced = _priced(event)  # scraped shows have no published price until a ticket-site key fills it in
     per_member = []
     for m in members:
         if m["accessibility_needs"]:
@@ -55,7 +60,8 @@ def fallback_plan(event: dict, members: list[dict], option: dict) -> dict:
                     if need_met(need, access) else
                     f"Heads up: {venue} doesn't have {NEED_FEATURES[need]} for your {need} needs.")
         elif m["budget_max"] is not None:
-            note = f"{_money(option['price'])} fits your {_money(m['budget_max'])} budget."
+            note = (f"{_money(option['price'])} fits your {_money(m['budget_max'])} budget." if priced else
+                    f"Price isn't published yet; we'll keep it under your {_money(m['budget_max'])} budget.")
         else:
             note = "Top-scored option for what you care about."
         per_member.append({"user_id": m["id"], "score": round(scores.get(m["id"], 0.0), 2), "note": note})
@@ -64,7 +70,8 @@ def fallback_plan(event: dict, members: list[dict], option: dict) -> dict:
     tightest = binding_budget(members)
     if tightest:
         parts.append(f"{_first(tightest['name'])}'s {_money(tightest['budget_max'])} budget is the tightest, "
-                     f"so we went with {option['tier_label']} at {_money(option['price'])}")
+                     f"so we went with {option['tier_label']}"
+                     + (f" at {_money(option['price'])}" if priced else " (price TBA)"))
     for m in members:
         for need in m["accessibility_needs"]:
             parts.append(f"{_first(m['name'])}'s {need} need is covered by {NEED_FEATURES[need]} at {venue}"
@@ -81,7 +88,7 @@ def fallback_plan(event: dict, members: list[dict], option: dict) -> dict:
         "per_member": per_member,
         "compromise_note": compromise[0].upper() + compromise[1:],
         "summary": (f"{event['artist']['name']}, {option['tier_label']} at {venue}, "
-                    f"{_money(option['price'])} each. Meet at the box office at {meet_time}."),
+                    f"{_money(option['price']) + ' each' if priced else 'price TBA'}. Meet at the box office at {meet_time}."),
     }
 
 
