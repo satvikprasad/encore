@@ -1,3 +1,5 @@
+from contextlib import closing
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -26,5 +28,5 @@ for r in (media, reviews, compare, rank, events, matches, verify, crews):
 def list_users():
     if not db_path().exists():  # before M1's first seed
         return fixture("users.json")
-    with connect() as conn:
+    with closing(connect()) as conn:
         return [user_from_row(r) for r in conn.execute("SELECT * FROM users ORDER BY rowid")]
