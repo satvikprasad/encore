@@ -25,6 +25,7 @@ FIXTURE_TYPES = {
     "crew_create.json": S.Crew,
     "crew_message.json": S.Crew,
     "crew_plan.json": S.Crew,
+    "crew_get.json": S.Crew,
 }
 
 
