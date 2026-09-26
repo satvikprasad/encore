@@ -1,25 +1,13 @@
-# Encore — Meta challenge write-up
+# Encore — Meta challenge write-up (paste-ready)
 
-<!-- Draft. Align with the Meta challenge prompt and DESIGN.md §15 (not in repo at time of drafting); adjust to what shipped. -->
+<!-- Source: DESIGN.md §15. -->
 
-## Summary
+**Who it's for.** People who love live music but end up going alone or not at all — because their close friends don't share the taste, and the wider network of people who do is invisible. Also the crews who already go together but lose an hour of every group chat to logistics.
 
-Encore helps people turn the concerts they've already been to into a shared, social taste profile, then safely meet fans with the same taste who are going to the next show, and plan the night together as a group.
+**How it strengthens connection.** Encore surfaces second-degree connections with demonstrable taste compatibility — not "you both like this artist" but "you both ranked the same shows highly and cared about the same things." It gives them a shared, low-stakes reason to talk (a specific show they both saw) and a concrete plan to meet in person. Every match ends at a real venue on a real night.
 
-## Connection, with safety built in
+**Why AI is essential.** The structured data can tell you *that* two people match. Only a language model can turn fourteen preference numbers and a chat thread into a reason to text someone, and into a plan that names who's compromising and why it's still worth it. We ground every generation in the structured record — and reject any output that cites a show the two people didn't share — so the AI explains rather than invents.
 
-- **Taste-based, not proximity-based.** Matches come from how two people rated the same shows, restricted to people within two hops of your friends.
-- **Verification gate.** Seeing matches, or starting or messaging a crew that includes someone you don't follow, requires identity verification. Friend-only crews stay open.
-- **Grounded AI.** Match explanations and icebreakers may cite only shows both people actually attended; outputs that don't are discarded in favour of a template.
+**Trust.** Bringing people closer means putting them in the same room, so safety is part of the product, not a footer. Encore gates every stranger-facing feature — seeing matches, starting or messaging a crew with non-friends — behind ID verification, and photo-evidenced attendance means the person you're matched with demonstrably goes to shows. AI writes the introduction; verification makes it safe to send. Verification is mocked in this prototype behind a real provider interface; production would use Stripe Identity or Persona.
 
-## Privacy
-
-Photos never leave the device. The browser extracts only coordinates and a timestamp from each photo's metadata and sends those to the server; the image itself is never uploaded.
-
-## Accessibility
-
-Accessibility is a first-class rating dimension, and venues carry an access profile (step-free entry, ADA seating, quiet room, strobe policy, interpreter). Crew plans treat members' needs as hard constraints and explain the trade-off in plain language.
-
-## What's mocked
-
-Identity verification is a mock provider with the same interface a production provider would use (Stripe Identity or Persona).
+**Privacy.** Photos never leave the device: the browser extracts only coordinates and a timestamp from each photo and sends those.
