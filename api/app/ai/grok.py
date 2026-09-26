@@ -28,7 +28,7 @@ def _config() -> Optional[tuple[str, str, str]]:
     if not key:
         return None
     base = os.environ.get("GROK_BASE_URL", "https://api.x.ai/v1").rstrip("/")
-    return key, base, os.environ.get("GROK_MODEL", "grok-4")
+    return key, base, os.environ.get("GROK_MODEL", "grok-4.20-0309-non-reasoning")
 
 
 def _post(messages: list[dict], json_mode: bool) -> str:
