@@ -4,9 +4,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from . import schemas
 from .db import connect, db_path, user_from_row
 from .fixtures import fixture
+from .gate import VerificationGate
 from .routers import compare, crews, events, matches, media, rank, reviews, verify
 
 app = FastAPI(title="Encore API")
+
+app.add_middleware(VerificationGate)
 
 app.add_middleware(
     CORSMiddleware,
