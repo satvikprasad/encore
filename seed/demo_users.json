@@ -1,0 +1,581 @@
+{
+ "_note": "Named demo users (AGENTS.md §7.3) and specs for the 27 synthetic users. Reviews are [music, crowd, venue, accessibility, production, value, would_again(1|5)].",
+ "users": [
+  {
+   "id": "sam",
+   "name": "Sam Okafor",
+   "avatar": "🎛️",
+   "budget_max": 90,
+   "needs": [],
+   "verified": false,
+   "persona": "production",
+   "follows": [
+    "priya",
+    "dev",
+    "lena"
+   ],
+   "reviews": {
+    "d07": [
+     3,
+     3,
+     4,
+     4,
+     5,
+     4,
+     5
+    ],
+    "d08": [
+     3,
+     2,
+     4,
+     4,
+     4,
+     4,
+     5
+    ],
+    "d09": [
+     3,
+     2,
+     2,
+     4,
+     5,
+     3,
+     5
+    ],
+    "d10": [
+     3,
+     2,
+     3,
+     3,
+     5,
+     4,
+     1
+    ],
+    "d11": [
+     4,
+     3,
+     4,
+     4,
+     5,
+     4,
+     5
+    ],
+    "d12": [
+     3,
+     3,
+     2,
+     3,
+     5,
+     4,
+     1
+    ]
+   },
+   "tags": {
+    "d07": [
+     "LED wall",
+     "good sightlines"
+    ],
+    "d08": [
+     "chill"
+    ],
+    "d09": [
+     "pyro",
+     "cramped",
+     "lasers"
+    ],
+    "d10": [
+     "minimal"
+    ],
+    "d11": [
+     "lasers",
+     "cramped"
+    ],
+    "d12": [
+     "LED wall",
+     "overpriced"
+    ]
+   },
+   "interested": [],
+   "demo_review": {
+    "d04": [
+     4,
+     3,
+     3,
+     4,
+     4,
+     3,
+     5
+    ]
+   }
+  },
+  {
+   "id": "maya",
+   "name": "Maya Chen",
+   "avatar": "🎧",
+   "budget_max": 120,
+   "needs": [
+    "sensory"
+   ],
+   "verified": true,
+   "persona": "production",
+   "weights": [
+    0.12,
+    0.08,
+    0.12,
+    0.12,
+    0.31,
+    0.1,
+    0.15
+   ],
+   "follows": [
+    "priya"
+   ],
+   "reviews": {
+    "d02": [
+     2,
+     3,
+     3,
+     5,
+     5,
+     3,
+     5
+    ],
+    "d04": [
+     2,
+     2,
+     4,
+     1,
+     4,
+     4,
+     5
+    ],
+    "d07": [
+     2,
+     3,
+     4,
+     4,
+     5,
+     3,
+     5
+    ],
+    "d09": [
+     4,
+     3,
+     1,
+     3,
+     4,
+     2,
+     5
+    ]
+   },
+   "tags": {
+    "d02": [
+     "LED wall"
+    ],
+    "d04": [
+     "LED wall",
+     "lasers"
+    ],
+    "d07": [
+     "good sightlines"
+    ],
+    "d09": [
+     "pyro",
+     "quiet space"
+    ]
+   },
+   "extra_past": 6,
+   "interested": [
+    "t01"
+   ]
+  },
+  {
+   "id": "jordan",
+   "name": "Jordan Reyes",
+   "avatar": "🎸",
+   "budget_max": 75,
+   "needs": [],
+   "verified": true,
+   "persona": "music",
+   "weights": [
+    0.34,
+    0.1,
+    0.1,
+    0.08,
+    0.12,
+    0.11,
+    0.15
+   ],
+   "follows": [
+    "dev"
+   ],
+   "reviews": {
+    "d01": [
+     5,
+     3,
+     4,
+     3,
+     3,
+     4,
+     5
+    ],
+    "d04": [
+     4,
+     2,
+     2,
+     3,
+     5,
+     3,
+     5
+    ],
+    "d11": [
+     5,
+     4,
+     3,
+     3,
+     3,
+     4,
+     5
+    ]
+   },
+   "tags": {
+    "d01": [
+     "tight",
+     "deep cuts"
+    ],
+    "d04": [
+     "played the hits"
+    ],
+    "d11": [
+     "played the hits",
+     "tight"
+    ]
+   },
+   "extra_past": 8,
+   "interested": [
+    "t01"
+   ]
+  },
+  {
+   "id": "priya",
+   "name": "Priya Nair",
+   "avatar": "🎹",
+   "budget_max": 100,
+   "needs": [],
+   "verified": true,
+   "persona": "crowd",
+   "follows": [
+    "sam",
+    "maya",
+    "dev"
+   ],
+   "reviews": {
+    "d07": [
+     4,
+     4,
+     3,
+     3,
+     4,
+     3,
+     5
+    ],
+    "d08": [
+     4,
+     5,
+     4,
+     3,
+     3,
+     4,
+     5
+    ]
+   },
+   "tags": {
+    "d08": [
+     "singalong"
+    ]
+   },
+   "extra_past": 10,
+   "interested": [
+    "t01"
+   ]
+  },
+  {
+   "id": "dev",
+   "name": "Dev Patel",
+   "avatar": "🥁",
+   "budget_max": 60,
+   "needs": [],
+   "verified": true,
+   "persona": "value",
+   "follows": [
+    "sam",
+    "jordan",
+    "lena"
+   ],
+   "reviews": {
+    "d10": [
+     4,
+     3,
+     3,
+     3,
+     3,
+     5,
+     5
+    ],
+    "d11": [
+     3,
+     4,
+     3,
+     3,
+     4,
+     4,
+     5
+    ]
+   },
+   "tags": {
+    "d10": [
+     "worth it"
+    ]
+   },
+   "extra_past": 9,
+   "interested": []
+  },
+  {
+   "id": "lena",
+   "name": "Lena Fischer",
+   "avatar": "🎤",
+   "budget_max": 80,
+   "needs": [
+    "mobility"
+   ],
+   "verified": true,
+   "persona": "access",
+   "follows": [
+    "sam",
+    "priya"
+   ],
+   "reviews": {
+    "d12": [
+     4,
+     3,
+     4,
+     5,
+     4,
+     3,
+     5
+    ],
+    "d09": [
+     4,
+     3,
+     3,
+     5,
+     4,
+     3,
+     5
+    ]
+   },
+   "tags": {
+    "d12": [
+     "ADA honored"
+    ],
+    "d09": [
+     "ADA honored",
+     "re-entry allowed"
+    ]
+   },
+   "extra_past": 8,
+   "interested": []
+  }
+ ],
+ "synthetic": [
+  {
+   "id": "ava",
+   "name": "Ava Brooks",
+   "avatar": "🎶",
+   "persona": "production",
+   "verified": true
+  },
+  {
+   "id": "ben",
+   "name": "Ben Carter",
+   "avatar": "🎺",
+   "persona": "music",
+   "verified": true
+  },
+  {
+   "id": "chloe",
+   "name": "Chloe Diaz",
+   "avatar": "🎻",
+   "persona": "crowd",
+   "verified": true
+  },
+  {
+   "id": "darius",
+   "name": "Darius King",
+   "avatar": "🪩",
+   "persona": "value",
+   "verified": false
+  },
+  {
+   "id": "elena",
+   "name": "Elena Rossi",
+   "avatar": "🎷",
+   "persona": "venue",
+   "verified": true
+  },
+  {
+   "id": "felix",
+   "name": "Felix Wong",
+   "avatar": "🪗",
+   "persona": "access",
+   "verified": true
+  },
+  {
+   "id": "grace",
+   "name": "Grace Kim",
+   "avatar": "🎙️",
+   "persona": "production",
+   "verified": true
+  },
+  {
+   "id": "hector",
+   "name": "Hector Silva",
+   "avatar": "🎶",
+   "persona": "music",
+   "verified": false
+  },
+  {
+   "id": "imani",
+   "name": "Imani Scott",
+   "avatar": "🎺",
+   "persona": "crowd",
+   "verified": true
+  },
+  {
+   "id": "jonah",
+   "name": "Jonah Price",
+   "avatar": "🎻",
+   "persona": "value",
+   "verified": true
+  },
+  {
+   "id": "kira",
+   "name": "Kira Patel",
+   "avatar": "🪩",
+   "persona": "venue",
+   "verified": true
+  },
+  {
+   "id": "leo",
+   "name": "Leo Martins",
+   "avatar": "🎷",
+   "persona": "access",
+   "verified": false
+  },
+  {
+   "id": "mila",
+   "name": "Mila Novak",
+   "avatar": "🪗",
+   "persona": "production",
+   "verified": true
+  },
+  {
+   "id": "nate",
+   "name": "Nate Hughes",
+   "avatar": "🎙️",
+   "persona": "music",
+   "verified": true
+  },
+  {
+   "id": "olivia",
+   "name": "Olivia Grant",
+   "avatar": "🎶",
+   "persona": "crowd",
+   "verified": true
+  },
+  {
+   "id": "pablo",
+   "name": "Pablo Ruiz",
+   "avatar": "🎺",
+   "persona": "value",
+   "verified": false
+  },
+  {
+   "id": "quinn",
+   "name": "Quinn Taylor",
+   "avatar": "🎻",
+   "persona": "venue",
+   "verified": true
+  },
+  {
+   "id": "rosa",
+   "name": "Rosa Alvarez",
+   "avatar": "🪩",
+   "persona": "access",
+   "verified": true
+  },
+  {
+   "id": "sanjay",
+   "name": "Sanjay Rao",
+   "avatar": "🎷",
+   "persona": "production",
+   "verified": true
+  },
+  {
+   "id": "tessa",
+   "name": "Tessa Moore",
+   "avatar": "🪗",
+   "persona": "music",
+   "verified": false
+  },
+  {
+   "id": "uma",
+   "name": "Uma Singh",
+   "avatar": "🎙️",
+   "persona": "crowd",
+   "verified": true
+  },
+  {
+   "id": "victor",
+   "name": "Victor Lee",
+   "avatar": "🎶",
+   "persona": "value",
+   "verified": true
+  },
+  {
+   "id": "willa",
+   "name": "Willa James",
+   "avatar": "🎺",
+   "persona": "venue",
+   "verified": true
+  },
+  {
+   "id": "xander",
+   "name": "Xander Cole",
+   "avatar": "🎻",
+   "persona": "access",
+   "verified": false
+  },
+  {
+   "id": "yara",
+   "name": "Yara Haddad",
+   "avatar": "🪩",
+   "persona": "production",
+   "verified": true
+  },
+  {
+   "id": "zane",
+   "name": "Zane Ellis",
+   "avatar": "🎷",
+   "persona": "music",
+   "verified": true
+  },
+  {
+   "id": "nora",
+   "name": "Nora Blake",
+   "avatar": "🪗",
+   "persona": "crowd",
+   "verified": true
+  }
+ ]
+}
