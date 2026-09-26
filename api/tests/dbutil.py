@@ -62,6 +62,7 @@ def make_db(path: Path) -> sqlite3.Connection:
     """Create a small DB seeded from the fixtures' users/events and Sam's follows."""
     ddl = SCHEMA_FILE.read_text() if SCHEMA_FILE.exists() else AGENTS_SCHEMA
     conn = sqlite3.connect(path)
+    conn.row_factory = sqlite3.Row
     conn.executescript(ddl)
     users = json.loads((FIXTURES / "users.json").read_text())
     for u in users:
