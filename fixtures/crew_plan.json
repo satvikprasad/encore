@@ -106,7 +106,7 @@
   "plan": {
     "option": {
       "event_id": "t01",
-      "tier_label": "GA balcony",
+      "tier_label": "Balcony",
       "price": 45
     },
     "meet_at": "2026-10-24T18:45:00-04:00",
@@ -128,7 +128,7 @@
         "note": "$45 keeps you under your $75 cap with fees."
       }
     ],
-    "compromise_note": "Picked the $45 balcony tier: Jordan's $75 budget rules out the floor, and Maya's sensory need is covered by The Eastern's quiet room.",
-    "summary": "Lumen Drift, GA balcony at The Eastern, $45 each. Meet at the box office at 6:45 PM."
+    "compromise_note": "Picked the $45 Balcony tier: Jordan's $75 budget rules out the floor, and Maya's sensory need is covered by The Eastern's quiet room.",
+    "summary": "Lumen Drift, Balcony at The Eastern, $45 each. Meet at the box office at 6:45 PM."
   }
 }

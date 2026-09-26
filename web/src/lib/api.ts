@@ -1,6 +1,6 @@
 // Fetch wrapper. Every endpoint can be served from <repo>/fixtures or the real API:
-// NEXT_PUBLIC_USE_FIXTURES sets the default, and OVERRIDES flips endpoints one at a time
-// as teammates announce them green.
+// NEXT_PUBLIC_USE_FIXTURES=true serves everything from fixtures (every endpoint is green, so the real
+// API is the default), and OVERRIDES pins individual endpoints either way.
 import type {
   AttendanceConfirmRequest,
   AttendanceConfirmResponse,
@@ -39,7 +39,7 @@ import usersFx from "@fixtures/users.json";
 import verifyStartFx from "@fixtures/verify_start.json";
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-const USE_FIXTURES = process.env.NEXT_PUBLIC_USE_FIXTURES !== "false";
+const USE_FIXTURES = process.env.NEXT_PUBLIC_USE_FIXTURES === "true";
 
 export type Endpoint =
   | "users"

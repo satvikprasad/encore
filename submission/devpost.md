@@ -1,47 +1,39 @@
-# Encore — Devpost draft
+# Encore — Devpost (paste-ready)
 
-<!-- Adjust to what actually shipped before submitting. Source: DESIGN.md §14 (not in repo at time of drafting). -->
+<!-- Source: DESIGN.md §14, adjusted to what shipped. Check the TODOs before submitting. -->
 
 **Track:** Oracle of the Deep
 **Challenges:** Meta · SpaceXAI · Notability
-**Built with:** Python, FastAPI, SQLite, NumPy, SciPy, Next.js, React, Tailwind CSS, Recharts, exifr, Grok (xAI), Ticketmaster Discovery API, Setlist.fm API, Notability
-**Video:** <!-- TODO: unlisted link -->
-**Create-X:** ☐ checked on the submission form
+**Create-X:** check the interest box on the submission form
+**Video:** <!-- TODO: YouTube unlisted link -->
+**Repo:** https://github.com/satvikprasad/encore
 
 ## Inspiration
 
-You remember the great show, but not the fifteen before it. Ticket apps know what you bought; nobody knows what you thought of it. And the people with exactly your taste are standing next to you at the show as strangers.
+Live music is the most social thing we do, and the tools for it are the least social. Discovery lives in Spotify, tickets in Ticketmaster, memories in the Notes app, and "anyone going?" dies in a group chat. We wanted the Beli experience for concerts — where ranking your history is the *means*, and finding people to go with is the *point*.
 
 ## What it does
 
-- **Import your concert history from your camera roll.** Encore reads GPS and time from photo metadata on the device, matches them to venue geofences and event windows, and finds the shows you went to. Only coordinates and timestamps leave the phone.
-- **Rank shows the way you actually feel about them.** Rate a show across music, crowd, venue, accessibility, production and value, then answer a few "better or worse than…?" questions. A multi-dimensional Bradley–Terry model picks the most informative comparison each time and learns what you care about.
-- **Find verified fans with your taste who are going.** For an upcoming show, Encore ranks people within two hops of your friends by taste match and explains why you match, with an icebreaker grounded in shows you both went to. Matches are only visible to identity-verified users.
-- **Plan the night as a crew.** Chat with your crew and get a plan that respects everyone's budget and accessibility needs, scored per member, with the trade-off explained.
+Encore turns your concert history into a way to find your people. Logging is nearly effortless: import your camera roll and Encore reads each photo's location and timestamp on-device, matches it against venue geofences and event schedules, and asks you to confirm the shows it found. Then you review each show on seven structured dimensions — music, crowd, venue, accessibility, production, value, would-attend-again — and rank them through quick pairwise comparisons. A Bayesian model learns both how good each show was *and* what you personally care about. That taste profile powers the social layer: for any upcoming event, Encore finds people within two hops of your network who are interested and scores your compatibility from real overlap in your histories. AI explains each match with reasons grounded in shows you've both seen, drafts an icebreaker, and — once you form a crew — reads your chat and proposes a plan that respects everyone's budget and accessibility needs. Every feature that connects you with someone outside your friends requires ID verification, so the people you match with are real people who were really there.
 
 ## How we built it
 
-- **Backend:** FastAPI + SQLite. Photo matching uses haversine geofences, event time windows, per-night clustering and noisy-OR confidence. Ranking is a Bradley–Terry model over 7-dimensional show vectors with per-user preference weights and information-gain pair selection (NumPy/SciPy).
-- **AI:** Grok writes match explanations and crew plans. Every call is capped at 6 seconds, validated (must cite only shows in its input, must name the binding budget and needs), and falls back to a deterministic template, so the app never hangs.
-- **Trust:** a verification gate on anything that exposes you to non-friends. For the hackathon, verification is a mock provider behind a real interface; production would use Stripe Identity or Persona.
-- **Frontend:** Next.js 14, Tailwind and Recharts in a phone frame; EXIF parsing in the browser with exifr.
-- **Data:** Ticketmaster Discovery for upcoming Atlanta shows, Setlist.fm for past shows, plus a deterministic demo seed.
-- **Planning:** we planned in Notability (screenshots in `submission/notability/`).
+Next.js frontend styled as a phone; FastAPI backend in Python with SQLite. Photo matching runs client-side with `exifr` so raw images never leave the phone; the server receives only coordinates and timestamps and scores them against a geofence-plus-time-window model, aggregating confidence across a night's photos with a noisy-OR. The ranker is a multi-dimensional Bradley–Terry model with a particle posterior over your preference weights and information-gain question selection, so three comparisons carry as much information as ten random ones. Matching blends Spearman rank correlation on shared shows with cosine similarity of learned preference weights. Group planning solves a small welfare-with-fairness optimization under hard budget and accessibility constraints. Grok (via SpaceXAI credits) turns the numbers and the chat transcript into human language; every call is capped at 6 seconds, validated against the input (it must cite only shows both people saw and name the binding budget and needs), and falls back to a deterministic template so the demo never hangs. ID verification is built behind a provider interface — mocked for the demo, designed for Stripe Identity or Persona in production. Event data comes from the Ticketmaster Discovery and Setlist.fm APIs through a cached, deterministic seed <!-- TODO: if the demo DB was seeded without API keys, say "with a synthetic fallback for the demo" -->. We planned and tracked the build in Notability Pro.
 
 ## Challenges we ran into
 
-<!-- TODO: fill in honestly after the build -->
+Making the AI *essential* rather than decorative: every explanation is grounded in structured data the model is handed, and outputs that cite anything else are thrown away in favour of a template. Getting attendance detection confident without being wrong: single photos near multi-room venues are ambiguous, so we aggregate evidence across a night and surface uncertain matches as questions rather than facts. Getting an interpretable ranking from three questions: a single online gradient step barely moved the model, so we switched to a proper posterior over preference weights and pick the question with the highest expected information gain. And seeding a believable social graph, deterministically, in one night.
 
 ## Accomplishments that we're proud of
 
-<!-- TODO -->
+Camera-roll import that recovers a concert history in seconds. A ranking model that visibly learns what you value after three taps. Match explanations that reference specific shows two people saw. A plan-synthesis flow that turns a messy chat into a night out everyone can attend.
 
 ## What we learned
 
-<!-- TODO -->
+Structured input beats stars: seven numbers plus tags let a model separate "great band, bad room" from "great room, band phoned it in," which is exactly what a friend would tell you. And friction, not features, is what kills logging apps — the photo import changed the product.
 
 ## What's next for Encore
 
-- Real identity verification (Stripe Identity / Persona)
-- Ticket-stub evidence alongside photos
-- Venue accessibility data contributed by verified attendees
+Universal event resolution across ticketing sources, including DIY and rave shows with no official listing; opt-in night-of features (live set times, crew locator) with differential privacy; production ID verification and reputation for stranger matching; partner checkout. And a Create-X application.
+
+**Built with:** Next.js, React, Tailwind CSS, Recharts, exifr, FastAPI, Python, NumPy, SciPy, SQLite, Ticketmaster Discovery API, Setlist.fm API, Grok, Cursor, Notability
