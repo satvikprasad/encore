@@ -58,7 +58,7 @@ def load_users(conn: sqlite3.Connection, user_ids: list[str]) -> list[dict]:
     return [u for u in users if u is not None]
 
 
-_EVENT_SQL = """
+EVENT_SQL = """
 SELECT e.*, a.name AS artist_name, a.genres AS artist_genres,
        v.name AS venue_name, v.lat, v.lng, v.multi_room, v.access_profile
 FROM events e
@@ -102,7 +102,7 @@ def event_from_row(row: sqlite3.Row) -> dict:
 
 
 def load_event(conn: sqlite3.Connection, event_id: str) -> Optional[dict]:
-    row = conn.execute(_EVENT_SQL + " WHERE e.id = ?", (event_id,)).fetchone()
+    row = conn.execute(EVENT_SQL + " WHERE e.id = ?", (event_id,)).fetchone()
     return event_from_row(row) if row else None
 
 
