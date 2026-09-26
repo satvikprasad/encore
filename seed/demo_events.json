@@ -1,0 +1,37 @@
+{
+  "_note": "Placeholder artists (AGENTS.md §7.2). t01 is replaced with the highest-priced real Ticketmaster show at eastern/tabernacle in the next 60 days when TM data is available; its id stays t01.",
+  "artists": {
+    "night_harbor": {"name": "Night Harbor", "genres": ["indie rock"]},
+    "velvet_static": {"name": "Velvet Static", "genres": ["synth-pop"]},
+    "copper_moons": {"name": "Copper Moons", "genres": ["folk rock"]},
+    "aurora_fields": {"name": "Aurora Fields", "genres": ["electronic", "pop"]},
+    "glass_parade": {"name": "Glass Parade", "genres": ["post-punk"]},
+    "the_low_tides": {"name": "The Low Tides", "genres": ["alt rock"]},
+    "neon_cathedral": {"name": "Neon Cathedral", "genres": ["electronic"]},
+    "paper_satellites": {"name": "Paper Satellites", "genres": ["indie pop"]},
+    "solar_choir": {"name": "Solar Choir", "genres": ["pop"]},
+    "hollow_pines": {"name": "Hollow Pines", "genres": ["americana"]},
+    "midnight_relay": {"name": "Midnight Relay", "genres": ["hip hop"]},
+    "silver_arcade": {"name": "Silver Arcade", "genres": ["synthwave"]},
+    "lumen_drift": {"name": "Lumen Drift", "genres": ["electronic", "indie"]},
+    "bleach_garden": {"name": "Bleach Garden", "genres": ["punk"]}
+  },
+  "events": [
+    {"id": "d01", "artist": "night_harbor", "venue": "tabernacle", "start": "2025-10-11T20:00", "price": [35, 55]},
+    {"id": "d02", "artist": "velvet_static", "venue": "eastern", "start": "2025-11-22T20:00", "price": [40, 65]},
+    {"id": "d03", "artist": "copper_moons", "venue": "variety", "start": "2026-01-17T20:00", "price": [30, 45]},
+    {"id": "d04", "artist": "aurora_fields", "venue": "state_farm", "start": "2026-02-28T19:30", "price": [65, 180]},
+    {"id": "d05", "artist": "glass_parade", "venue": "terminal_west", "start": "2026-04-04T20:00", "price": [25, 35]},
+    {"id": "d06", "artist": "the_low_tides", "venue": "roxy", "start": "2026-06-13T20:00", "price": [45, 85]},
+    {"id": "d07", "artist": "neon_cathedral", "venue": "eastern", "start": "2025-02-15T20:00", "price": [40, 70]},
+    {"id": "d08", "artist": "paper_satellites", "venue": "tabernacle", "start": "2025-03-22T20:00", "price": [35, 60]},
+    {"id": "d09", "artist": "solar_choir", "venue": "state_farm", "start": "2025-05-10T19:30", "price": [70, 210]},
+    {"id": "d10", "artist": "hollow_pines", "venue": "variety", "start": "2025-06-21T20:00", "price": [28, 40]},
+    {"id": "d11", "artist": "midnight_relay", "venue": "terminal_west", "start": "2025-08-09T20:00", "price": [30, 45]},
+    {"id": "d12", "artist": "silver_arcade", "venue": "roxy", "start": "2025-09-06T20:00", "price": [45, 90]},
+    {"id": "x01", "artist": "bleach_garden", "venue": "masquerade", "start": "2026-03-14T20:00", "price": [20, 25],
+     "_note": "same night as the Masquerade decoy photo (15:00, outside the window)"},
+    {"id": "t01", "artist": "lumen_drift", "venue": "eastern", "start": "2026-10-24T20:00", "price": [45, 120],
+     "tm_url": "https://www.ticketmaster.com/"}
+  ]
+}

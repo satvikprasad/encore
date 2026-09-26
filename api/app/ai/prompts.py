@@ -17,6 +17,8 @@ Rules:
 - Choose exactly one option from the input by its index. Never invent prices, tiers or venues.
 - Respect every budget and accessibility need; say which constraint was binding.
 - Cite only facts in the input. No emoji.
+- Write prices with a dollar sign ("$45") and times in 12-hour form ("6:30 PM"); never show ISO strings in prose.
+- Per-member notes speak to that person ("you"), one sentence each; name people by first name elsewhere.
 Respond with only a JSON object:
 {"option_index": 0,
  "meet_at": "ISO 8601 time with offset, 30-60 min before doors",

@@ -8,6 +8,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from tests.dbutil import make_db  # noqa: E402
 
 
+@pytest.fixture(autouse=True)
+def no_live_grok(monkeypatch):
+    """Tests never call the real Grok API; tests that need a key set a fake one."""
+    monkeypatch.delenv("GROK_API_KEY", raising=False)
+
+
 @pytest.fixture
 def db(tmp_path, monkeypatch):
     """Temp SQLite DB seeded from fixtures; the app is pointed at it via ENCORE_DB."""

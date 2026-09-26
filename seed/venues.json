@@ -1,0 +1,16 @@
+[
+  {"id": "tabernacle", "name": "Tabernacle", "lat": 33.7586, "lng": -84.3913, "geofence_radius_m": 120, "multi_room": false,
+   "access_profile": {"step_free": true, "ada_seating": true, "quiet_room": false, "strobe_policy": "warned", "interpreter": "never"}},
+  {"id": "eastern", "name": "The Eastern", "lat": 33.7524, "lng": -84.3648, "geofence_radius_m": 150, "multi_room": false,
+   "access_profile": {"step_free": true, "ada_seating": true, "quiet_room": true, "strobe_policy": "warned", "interpreter": "never"}},
+  {"id": "variety", "name": "Variety Playhouse", "lat": 33.7649, "lng": -84.3492, "geofence_radius_m": 100, "multi_room": false,
+   "access_profile": {"step_free": true, "ada_seating": true, "quiet_room": false, "strobe_policy": "unrestricted", "interpreter": "never"}},
+  {"id": "terminal_west", "name": "Terminal West", "lat": 33.7830, "lng": -84.4108, "geofence_radius_m": 120, "multi_room": false,
+   "access_profile": {"step_free": false, "ada_seating": false, "quiet_room": false, "strobe_policy": "warned", "interpreter": "never"}},
+  {"id": "state_farm", "name": "State Farm Arena", "lat": 33.7573, "lng": -84.3963, "geofence_radius_m": 300, "multi_room": false,
+   "access_profile": {"step_free": true, "ada_seating": true, "quiet_room": true, "strobe_policy": "warned", "interpreter": "on_request"}},
+  {"id": "roxy", "name": "Coca-Cola Roxy", "lat": 33.8898, "lng": -84.4686, "geofence_radius_m": 200, "multi_room": false,
+   "access_profile": {"step_free": true, "ada_seating": true, "quiet_room": false, "strobe_policy": "warned", "interpreter": "never"}},
+  {"id": "masquerade", "name": "The Masquerade", "lat": 33.7522, "lng": -84.3915, "geofence_radius_m": 120, "multi_room": true,
+   "access_profile": {"step_free": false, "ada_seating": false, "quiet_room": false, "strobe_policy": "unrestricted", "interpreter": "never"}}
+]
