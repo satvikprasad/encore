@@ -1,0 +1,66 @@
+{
+  "ok": true,
+  "next_compare": {
+    "event_a": {
+      "id": "d04",
+      "artist": {
+        "id": "aurora_fields",
+        "name": "Aurora Fields",
+        "genres": [
+          "electronic",
+          "pop"
+        ]
+      },
+      "venue": {
+        "id": "state_farm",
+        "name": "State Farm Arena",
+        "lat": 33.7573,
+        "lng": -84.3963,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": true,
+          "ada_seating": true,
+          "quiet_room": true,
+          "strobe_policy": "warned",
+          "interpreter": "on_request"
+        }
+      },
+      "start_at": "2026-02-28T19:30:00-05:00",
+      "doors_at": null,
+      "price_min": 65,
+      "price_max": 180,
+      "tm_url": null,
+      "is_past": true
+    },
+    "event_b": {
+      "id": "d09",
+      "artist": {
+        "id": "solar_choir",
+        "name": "Solar Choir",
+        "genres": [
+          "pop"
+        ]
+      },
+      "venue": {
+        "id": "state_farm",
+        "name": "State Farm Arena",
+        "lat": 33.7573,
+        "lng": -84.3963,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": true,
+          "ada_seating": true,
+          "quiet_room": true,
+          "strobe_policy": "warned",
+          "interpreter": "on_request"
+        }
+      },
+      "start_at": "2025-05-10T19:30:00-04:00",
+      "doors_at": null,
+      "price_min": 70,
+      "price_max": 210,
+      "tm_url": null,
+      "is_past": true
+    }
+  }
+}

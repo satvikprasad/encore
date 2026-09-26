@@ -1,0 +1,53 @@
+{
+  "event": {
+    "id": "t01",
+    "artist": {
+      "id": "lumen_drift",
+      "name": "Lumen Drift",
+      "genres": [
+        "electronic",
+        "indie"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-24T20:00:00-04:00",
+    "doors_at": "2026-10-24T19:00:00-04:00",
+    "price_min": 45,
+    "price_max": 120,
+    "tm_url": "https://www.ticketmaster.com/event/t01-placeholder",
+    "is_past": false
+  },
+  "friends_interested": [
+    {
+      "id": "priya",
+      "name": "Priya Nair",
+      "avatar": "🎹",
+      "budget_max": 100,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.2,
+        0.18,
+        0.14,
+        0.1,
+        0.14,
+        0.1,
+        0.14
+      ]
+    }
+  ],
+  "attendance": null
+}

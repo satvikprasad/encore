@@ -1,0 +1,59 @@
+[
+  {
+    "user": {
+      "id": "maya",
+      "name": "Maya Chen",
+      "avatar": "🎧",
+      "budget_max": 120,
+      "accessibility_needs": [
+        "sensory"
+      ],
+      "verified": true,
+      "weights": [
+        0.12,
+        0.08,
+        0.12,
+        0.12,
+        0.31,
+        0.1,
+        0.15
+      ]
+    },
+    "match_pct": 84,
+    "shared_event_ids": [
+      "d02",
+      "d04",
+      "d07",
+      "d09"
+    ],
+    "explanation": "You and Maya both put Aurora Fields at State Farm Arena near the top and care most about production. You also both forgave the room at Solar Choir because the show was that good.",
+    "icebreaker": "Ask Maya what she thought of the LED wall at Aurora Fields."
+  },
+  {
+    "user": {
+      "id": "jordan",
+      "name": "Jordan Reyes",
+      "avatar": "🎸",
+      "budget_max": 75,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.34,
+        0.1,
+        0.1,
+        0.08,
+        0.12,
+        0.11,
+        0.15
+      ]
+    },
+    "match_pct": 71,
+    "shared_event_ids": [
+      "d01",
+      "d04",
+      "d11"
+    ],
+    "explanation": "You and Jordan both rated Night Harbor at Tabernacle highly. Jordan leans on the music more than the lights, so expect a good argument about Aurora Fields.",
+    "icebreaker": "Ask Jordan whether Midnight Relay played the hits at Terminal West."
+  }
+]

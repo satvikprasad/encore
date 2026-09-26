@@ -1,0 +1,268 @@
+[
+  {
+    "id": "t01",
+    "artist": {
+      "id": "lumen_drift",
+      "name": "Lumen Drift",
+      "genres": [
+        "electronic",
+        "indie"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-24T20:00:00-04:00",
+    "doors_at": "2026-10-24T19:00:00-04:00",
+    "price_min": 45,
+    "price_max": 120,
+    "tm_url": "https://www.ticketmaster.com/event/t01-placeholder",
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.2,
+          0.18,
+          0.14,
+          0.1,
+          0.14,
+          0.1,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u02",
+    "artist": {
+      "id": "harbor_lights",
+      "name": "Harbor Lights",
+      "genres": [
+        "indie rock"
+      ]
+    },
+    "venue": {
+      "id": "tabernacle",
+      "name": "Tabernacle",
+      "lat": 33.7586,
+      "lng": -84.3913,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-09T20:00:00-04:00",
+    "doors_at": "2026-10-09T19:00:00-04:00",
+    "price_min": 38,
+    "price_max": 62,
+    "tm_url": "https://www.ticketmaster.com/event/u02-placeholder",
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "dev",
+        "name": "Dev Patel",
+        "avatar": "🥁",
+        "budget_max": 60,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.18,
+          0.24,
+          0.12,
+          0.08,
+          0.12,
+          0.12,
+          0.14
+        ]
+      },
+      {
+        "id": "lena",
+        "name": "Lena Fischer",
+        "avatar": "🎤",
+        "budget_max": 80,
+        "accessibility_needs": [
+          "mobility"
+        ],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.1,
+          0.14,
+          0.22,
+          0.12,
+          0.14,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u03",
+    "artist": {
+      "id": "wild_meridian",
+      "name": "Wild Meridian",
+      "genres": [
+        "folk"
+      ]
+    },
+    "venue": {
+      "id": "variety",
+      "name": "Variety Playhouse",
+      "lat": 33.7649,
+      "lng": -84.3492,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-17T20:00:00-04:00",
+    "doors_at": "2026-10-17T19:00:00-04:00",
+    "price_min": 32,
+    "price_max": 48,
+    "tm_url": "https://www.ticketmaster.com/event/u03-placeholder",
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "lena",
+        "name": "Lena Fischer",
+        "avatar": "🎤",
+        "budget_max": 80,
+        "accessibility_needs": [
+          "mobility"
+        ],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.1,
+          0.14,
+          0.22,
+          0.12,
+          0.14,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u04",
+    "artist": {
+      "id": "crystal_motel",
+      "name": "Crystal Motel",
+      "genres": [
+        "pop"
+      ]
+    },
+    "venue": {
+      "id": "state_farm",
+      "name": "State Farm Arena",
+      "lat": 33.7573,
+      "lng": -84.3963,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "on_request"
+      }
+    },
+    "start_at": "2026-11-07T19:30:00-05:00",
+    "doors_at": "2026-11-07T18:30:00-05:00",
+    "price_min": 59,
+    "price_max": 199,
+    "tm_url": "https://www.ticketmaster.com/event/u04-placeholder",
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.2,
+          0.18,
+          0.14,
+          0.1,
+          0.14,
+          0.1,
+          0.14
+        ]
+      },
+      {
+        "id": "dev",
+        "name": "Dev Patel",
+        "avatar": "🥁",
+        "budget_max": 60,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.18,
+          0.24,
+          0.12,
+          0.08,
+          0.12,
+          0.12,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u05",
+    "artist": {
+      "id": "static_bloom",
+      "name": "Static Bloom",
+      "genres": [
+        "electronic"
+      ]
+    },
+    "venue": {
+      "id": "terminal_west",
+      "name": "Terminal West",
+      "lat": 33.783,
+      "lng": -84.4108,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-11-14T21:00:00-05:00",
+    "doors_at": "2026-11-14T20:00:00-05:00",
+    "price_min": 25,
+    "price_max": 30,
+    "tm_url": "https://www.ticketmaster.com/event/u05-placeholder",
+    "is_past": false,
+    "friends_interested": []
+  }
+]

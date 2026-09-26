@@ -1,0 +1,91 @@
+{
+  "id": "crew_demo",
+  "event": {
+    "id": "t01",
+    "artist": {
+      "id": "lumen_drift",
+      "name": "Lumen Drift",
+      "genres": [
+        "electronic",
+        "indie"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-24T20:00:00-04:00",
+    "doors_at": "2026-10-24T19:00:00-04:00",
+    "price_min": 45,
+    "price_max": 120,
+    "tm_url": "https://www.ticketmaster.com/event/t01-placeholder",
+    "is_past": false
+  },
+  "members": [
+    {
+      "id": "sam",
+      "name": "Sam Okafor",
+      "avatar": "🎛️",
+      "budget_max": 90,
+      "accessibility_needs": [],
+      "verified": false,
+      "weights": [
+        0.1429,
+        0.1429,
+        0.1429,
+        0.1429,
+        0.1429,
+        0.1429,
+        0.1426
+      ]
+    },
+    {
+      "id": "maya",
+      "name": "Maya Chen",
+      "avatar": "🎧",
+      "budget_max": 120,
+      "accessibility_needs": [
+        "sensory"
+      ],
+      "verified": true,
+      "weights": [
+        0.12,
+        0.08,
+        0.12,
+        0.12,
+        0.31,
+        0.1,
+        0.15
+      ]
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Reyes",
+      "avatar": "🎸",
+      "budget_max": 75,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.34,
+        0.1,
+        0.1,
+        0.08,
+        0.12,
+        0.11,
+        0.15
+      ]
+    }
+  ],
+  "messages": [],
+  "plan": null
+}
