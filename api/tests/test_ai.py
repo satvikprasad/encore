@@ -26,6 +26,7 @@ def reviewed(db):
         for eid, th in theta.items():
             db.execute("INSERT INTO reviews (user_id, event_id, would_again, tags, theta) VALUES (?,?,?,?,?)",
                        (uid, eid, 1, json.dumps(tags.get(eid, [])), json.dumps(th)))
+            db.execute("INSERT INTO attendance (user_id, event_id, status) VALUES (?, ?, 'attended')", (uid, eid))
     db.execute("UPDATE users SET verified = 1 WHERE id = 'sam'")
     db.commit()
     return db
