@@ -22,7 +22,7 @@ make seed         # only to rebuild data/encore.db + demo photos (committed; byt
 
 - **Frontend data:** the web app talks to the real API by default. To demo on canned `fixtures/`, put `NEXT_PUBLIC_USE_FIXTURES=true` in `web/.env.local` (Next.js only reads env files inside `web/`).
 - **Grok:** set `GROK_API_KEY`. The default model is `grok-4.20-0309-non-reasoning` (~1 s; `grok-4` takes ~5 s against the 6 s cap). With no key, or on any error or timeout, every AI call returns a deterministic template.
-- **Event data:** with `TICKETMASTER_API_KEY` / `SETLISTFM_API_KEY`, `make seed` pulls and caches real events in `data/cache/`. Without them it uses the documented fallback: 150 synthetic upcoming and 400 synthetic past Atlanta events (`source='demo'`). The committed DB was built with the fallback.
+- **Event data:** upcoming shows are real — `seed/fetch_venues.py` scrapes the seven venues' own sites (no keys) into `data/cache/venues/`, with direct Ticketmaster / AXS / Eventbrite links. With `TICKETMASTER_API_KEY` (face-value prices, genres) and `SEATGEEK_CLIENT_ID` (resale prices) the show page compares prices across sellers; without them prices show as "not published". Past shows come from `SETLISTFM_API_KEY` when set, otherwise the documented synthetic fallback (`source='demo'`).
 - **Demo script:** `submission/video_script.md` has the exact taps and answers; `api/tests/test_demo_flow.py` checks the same path.
 
 ## Architecture

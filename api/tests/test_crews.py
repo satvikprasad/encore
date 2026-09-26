@@ -1,6 +1,7 @@
 """Crews, messages and plans (AGENTS.md §9 M4 AI plan)."""
 import json
 import time
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import pytest
@@ -51,7 +52,9 @@ def test_plan_fallback_without_key(crew, client, monkeypatch):
     monkeypatch.delenv("GROK_API_KEY", raising=False)
     out = client.post(f"/crews/{crew['id']}/plan?user=sam").json()
     _assert_names_constraints(out["plan"])
-    assert out["plan"]["meet_at"] == "2026-10-24T18:30-04:00"
+    ev = crew["event"]  # meet 30 min before doors (60 before the show when doors are unknown), whatever t01 is
+    anchor = datetime.fromisoformat(ev["doors_at"] or ev["start_at"])
+    assert out["plan"]["meet_at"] == (anchor - timedelta(minutes=30 if ev["doors_at"] else 60)).isoformat(timespec="minutes")
     assert client.get(f"/crews/{crew['id']}?user=maya").json()["plan"] == out["plan"]
 
 

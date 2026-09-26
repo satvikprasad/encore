@@ -6,7 +6,8 @@ CREATE TABLE users (
   verified INTEGER NOT NULL DEFAULT 0, verified_at TEXT, verification_ref TEXT,
   weights TEXT NOT NULL DEFAULT '[0.1429,0.1429,0.1429,0.1429,0.1429,0.1429,0.1426]' -- JSON w_u
 );
-CREATE TABLE artists (id TEXT PRIMARY KEY, name TEXT NOT NULL, tm_id TEXT, genres TEXT DEFAULT '[]');
+CREATE TABLE artists (id TEXT PRIMARY KEY, name TEXT NOT NULL, tm_id TEXT, genres TEXT DEFAULT '[]',
+  related TEXT NOT NULL DEFAULT '[]');   -- JSON: similar artists' names (Deezer), see seed/fetch_music.py
 CREATE TABLE venues (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, tm_id TEXT, lat REAL NOT NULL, lng REAL NOT NULL,
   geofence_radius_m INTEGER NOT NULL DEFAULT 150, multi_room INTEGER NOT NULL DEFAULT 0,
@@ -15,9 +16,17 @@ CREATE TABLE venues (
 CREATE TABLE events (
   id TEXT PRIMARY KEY, artist_id TEXT NOT NULL REFERENCES artists(id), venue_id TEXT NOT NULL REFERENCES venues(id),
   start_at TEXT NOT NULL, doors_at TEXT, price_min REAL, price_max REAL, tm_url TEXT,
-  is_past INTEGER NOT NULL, source TEXT NOT NULL   -- 'ticketmaster' | 'setlistfm' | 'demo'
+  image_url TEXT, support TEXT, room TEXT,          -- from the venue sites (support acts, Masquerade room)
+  is_past INTEGER NOT NULL, source TEXT NOT NULL   -- 'ticketmaster' | 'setlistfm' | 'venue' | 'demo'
 );
 CREATE INDEX idx_events_venue_time ON events(venue_id, start_at);
+CREATE TABLE ticket_offers (
+  event_id TEXT REFERENCES events(id), seller TEXT NOT NULL,           -- 'Ticketmaster' | 'AXS' | 'SeatGeek' | ...
+  kind TEXT NOT NULL CHECK(kind IN ('primary','resale')), url TEXT NOT NULL,
+  price_min REAL, price_max REAL, status TEXT, fetched_at TEXT NOT NULL,
+  checked_at TEXT,                                                       -- last price lookup (NULL = never)
+  PRIMARY KEY(event_id, seller)
+);
 CREATE TABLE attendance (
   user_id TEXT REFERENCES users(id), event_id TEXT REFERENCES events(id),
   status TEXT NOT NULL CHECK(status IN ('interested','going','attended')),

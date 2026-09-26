@@ -90,3 +90,9 @@ def candidates(user: str, event_id: str, conn: Optional[sqlite3.Connection] = No
                     "explanation": None, "icebreaker": None})
     out.sort(key=lambda c: (-c["match_pct"], c["user"]["id"]))
     return out[:5]
+
+
+def match_many(conn: sqlite3.Connection, user: str, others) -> dict[str, int]:
+    """Taste match from `user` to each of `others`, computing the caller's profile once."""
+    me = _profile(conn, user)
+    return {o: match_score(*me, *_profile(conn, o))[0] for o in others}

@@ -1,0 +1,752 @@
+[
+  {
+    "user": {
+      "id": "maya",
+      "name": "Maya Chen",
+      "avatar": "🎧",
+      "budget_max": 120.0,
+      "accessibility_needs": [
+        "sensory"
+      ],
+      "verified": true,
+      "weights": [
+        0.12,
+        0.08,
+        0.12,
+        0.12,
+        0.31,
+        0.1,
+        0.15
+      ]
+    },
+    "match_pct": 92,
+    "shows_count": 10,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "darius",
+      "name": "Darius King",
+      "avatar": "🪩",
+      "budget_max": 60.0,
+      "accessibility_needs": [
+        "chronic"
+      ],
+      "verified": false,
+      "weights": [
+        0.14,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
+        0.14
+      ]
+    },
+    "match_pct": 89,
+    "shows_count": 19,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "felix",
+      "name": "Felix Wong",
+      "avatar": "🪗",
+      "budget_max": 90.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.08,
+        0.13,
+        0.32,
+        0.1,
+        0.1,
+        0.14
+      ]
+    },
+    "match_pct": 89,
+    "shows_count": 21,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "jonah",
+      "name": "Jonah Price",
+      "avatar": "🎻",
+      "budget_max": 75.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
+        0.14
+      ]
+    },
+    "match_pct": 89,
+    "shows_count": 20,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "leo",
+      "name": "Leo Martins",
+      "avatar": "🎷",
+      "budget_max": 150.0,
+      "accessibility_needs": [],
+      "verified": false,
+      "weights": [
+        0.13,
+        0.08,
+        0.13,
+        0.32,
+        0.1,
+        0.1,
+        0.14
+      ]
+    },
+    "match_pct": 89,
+    "shows_count": 9,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "pablo",
+      "name": "Pablo Ruiz",
+      "avatar": "🎺",
+      "budget_max": 150.0,
+      "accessibility_needs": [
+        "vision"
+      ],
+      "verified": false,
+      "weights": [
+        0.14,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
+        0.14
+      ]
+    },
+    "match_pct": 89,
+    "shows_count": 20,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "rosa",
+      "name": "Rosa Alvarez",
+      "avatar": "🪩",
+      "budget_max": 50.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.08,
+        0.13,
+        0.32,
+        0.1,
+        0.1,
+        0.14
+      ]
+    },
+    "match_pct": 89,
+    "shows_count": 15,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "victor",
+      "name": "Victor Lee",
+      "avatar": "🎶",
+      "budget_max": 150.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
+        0.14
+      ]
+    },
+    "match_pct": 89,
+    "shows_count": 15,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "xander",
+      "name": "Xander Cole",
+      "avatar": "🎻",
+      "budget_max": 50.0,
+      "accessibility_needs": [],
+      "verified": false,
+      "weights": [
+        0.13,
+        0.08,
+        0.13,
+        0.32,
+        0.1,
+        0.1,
+        0.14
+      ]
+    },
+    "match_pct": 89,
+    "shows_count": 18,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "ava",
+      "name": "Ava Brooks",
+      "avatar": "🎶",
+      "budget_max": null,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.07,
+        0.11,
+        0.1,
+        0.32,
+        0.12,
+        0.15
+      ]
+    },
+    "match_pct": 88,
+    "shows_count": 19,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "elena",
+      "name": "Elena Rossi",
+      "avatar": "🎷",
+      "budget_max": 50.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.08,
+        0.32,
+        0.12,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "match_pct": 88,
+    "shows_count": 25,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "grace",
+      "name": "Grace Kim",
+      "avatar": "🎙️",
+      "budget_max": null,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.07,
+        0.11,
+        0.1,
+        0.32,
+        0.12,
+        0.15
+      ]
+    },
+    "match_pct": 88,
+    "shows_count": 16,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "kira",
+      "name": "Kira Patel",
+      "avatar": "🪩",
+      "budget_max": 150.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.08,
+        0.32,
+        0.12,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "match_pct": 88,
+    "shows_count": 17,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "mila",
+      "name": "Mila Novak",
+      "avatar": "🪗",
+      "budget_max": 75.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.07,
+        0.11,
+        0.1,
+        0.32,
+        0.12,
+        0.15
+      ]
+    },
+    "match_pct": 88,
+    "shows_count": 21,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "quinn",
+      "name": "Quinn Taylor",
+      "avatar": "🎻",
+      "budget_max": 60.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.08,
+        0.32,
+        0.12,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "match_pct": 88,
+    "shows_count": 13,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "sanjay",
+      "name": "Sanjay Rao",
+      "avatar": "🎷",
+      "budget_max": 75.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.07,
+        0.11,
+        0.1,
+        0.32,
+        0.12,
+        0.15
+      ]
+    },
+    "match_pct": 88,
+    "shows_count": 21,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "willa",
+      "name": "Willa James",
+      "avatar": "🎺",
+      "budget_max": 90.0,
+      "accessibility_needs": [
+        "sensory"
+      ],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.08,
+        0.32,
+        0.12,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "match_pct": 88,
+    "shows_count": 23,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "yara",
+      "name": "Yara Haddad",
+      "avatar": "🪩",
+      "budget_max": 150.0,
+      "accessibility_needs": [
+        "hearing"
+      ],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.07,
+        0.11,
+        0.1,
+        0.32,
+        0.12,
+        0.15
+      ]
+    },
+    "match_pct": 88,
+    "shows_count": 25,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "ben",
+      "name": "Ben Carter",
+      "avatar": "🎺",
+      "budget_max": 50.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.34,
+        0.1,
+        0.1,
+        0.08,
+        0.12,
+        0.11,
+        0.15
+      ]
+    },
+    "match_pct": 86,
+    "shows_count": 14,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "chloe",
+      "name": "Chloe Diaz",
+      "avatar": "🎻",
+      "budget_max": 120.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "match_pct": 86,
+    "shows_count": 17,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "hector",
+      "name": "Hector Silva",
+      "avatar": "🎶",
+      "budget_max": 150.0,
+      "accessibility_needs": [],
+      "verified": false,
+      "weights": [
+        0.34,
+        0.1,
+        0.1,
+        0.08,
+        0.12,
+        0.11,
+        0.15
+      ]
+    },
+    "match_pct": 86,
+    "shows_count": 18,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "imani",
+      "name": "Imani Scott",
+      "avatar": "🎺",
+      "budget_max": 75.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "match_pct": 86,
+    "shows_count": 25,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "nate",
+      "name": "Nate Hughes",
+      "avatar": "🎙️",
+      "budget_max": 150.0,
+      "accessibility_needs": [
+        "vision"
+      ],
+      "verified": true,
+      "weights": [
+        0.34,
+        0.1,
+        0.1,
+        0.08,
+        0.12,
+        0.11,
+        0.15
+      ]
+    },
+    "match_pct": 86,
+    "shows_count": 16,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "nora",
+      "name": "Nora Blake",
+      "avatar": "🪗",
+      "budget_max": 120.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "match_pct": 86,
+    "shows_count": 12,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "olivia",
+      "name": "Olivia Grant",
+      "avatar": "🎶",
+      "budget_max": 75.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "match_pct": 86,
+    "shows_count": 11,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "tessa",
+      "name": "Tessa Moore",
+      "avatar": "🪗",
+      "budget_max": 60.0,
+      "accessibility_needs": [],
+      "verified": false,
+      "weights": [
+        0.34,
+        0.1,
+        0.1,
+        0.08,
+        0.12,
+        0.11,
+        0.15
+      ]
+    },
+    "match_pct": 86,
+    "shows_count": 25,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "uma",
+      "name": "Uma Singh",
+      "avatar": "🎙️",
+      "budget_max": 60.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "match_pct": 86,
+    "shows_count": 24,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "zane",
+      "name": "Zane Ellis",
+      "avatar": "🎷",
+      "budget_max": 120.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.34,
+        0.1,
+        0.1,
+        0.08,
+        0.12,
+        0.11,
+        0.15
+      ]
+    },
+    "match_pct": 86,
+    "shows_count": 10,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "jordan",
+      "name": "Jordan Reyes",
+      "avatar": "🎸",
+      "budget_max": 75.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.34,
+        0.1,
+        0.1,
+        0.08,
+        0.12,
+        0.11,
+        0.15
+      ]
+    },
+    "match_pct": 76,
+    "shows_count": 11,
+    "following": false,
+    "follows_you": false
+  },
+  {
+    "user": {
+      "id": "dev",
+      "name": "Dev Patel",
+      "avatar": "🥁",
+      "budget_max": 60.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
+        0.14
+      ]
+    },
+    "match_pct": 42,
+    "shows_count": 11,
+    "following": true,
+    "follows_you": true
+  },
+  {
+    "user": {
+      "id": "lena",
+      "name": "Lena Fischer",
+      "avatar": "🎤",
+      "budget_max": 80.0,
+      "accessibility_needs": [
+        "mobility"
+      ],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.08,
+        0.13,
+        0.32,
+        0.1,
+        0.1,
+        0.14
+      ]
+    },
+    "match_pct": 41,
+    "shows_count": 10,
+    "following": true,
+    "follows_you": true
+  },
+  {
+    "user": {
+      "id": "priya",
+      "name": "Priya Nair",
+      "avatar": "🎹",
+      "budget_max": 100.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "match_pct": 40,
+    "shows_count": 12,
+    "following": true,
+    "follows_you": true
+  }
+]

@@ -127,7 +127,8 @@ CREATE TABLE users (
   verified INTEGER NOT NULL DEFAULT 0, verified_at TEXT, verification_ref TEXT,
   weights TEXT NOT NULL DEFAULT '[0.1429,0.1429,0.1429,0.1429,0.1429,0.1429,0.1426]' -- JSON w_u
 );
-CREATE TABLE artists (id TEXT PRIMARY KEY, name TEXT NOT NULL, tm_id TEXT, genres TEXT DEFAULT '[]');
+CREATE TABLE artists (id TEXT PRIMARY KEY, name TEXT NOT NULL, tm_id TEXT, genres TEXT DEFAULT '[]',
+  related TEXT NOT NULL DEFAULT '[]');   -- JSON: similar artists' names (Deezer), see seed/fetch_music.py
 CREATE TABLE venues (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, tm_id TEXT, lat REAL NOT NULL, lng REAL NOT NULL,
   geofence_radius_m INTEGER NOT NULL DEFAULT 150, multi_room INTEGER NOT NULL DEFAULT 0,
@@ -136,9 +137,17 @@ CREATE TABLE venues (
 CREATE TABLE events (
   id TEXT PRIMARY KEY, artist_id TEXT NOT NULL REFERENCES artists(id), venue_id TEXT NOT NULL REFERENCES venues(id),
   start_at TEXT NOT NULL, doors_at TEXT, price_min REAL, price_max REAL, tm_url TEXT,
-  is_past INTEGER NOT NULL, source TEXT NOT NULL   -- 'ticketmaster' | 'setlistfm' | 'demo'
+  image_url TEXT, support TEXT, room TEXT,          -- from the venue sites (support acts, Masquerade room)
+  is_past INTEGER NOT NULL, source TEXT NOT NULL   -- 'ticketmaster' | 'setlistfm' | 'venue' | 'demo'
 );
 CREATE INDEX idx_events_venue_time ON events(venue_id, start_at);
+CREATE TABLE ticket_offers (
+  event_id TEXT REFERENCES events(id), seller TEXT NOT NULL,           -- 'Ticketmaster' | 'AXS' | 'SeatGeek' | ...
+  kind TEXT NOT NULL CHECK(kind IN ('primary','resale')), url TEXT NOT NULL,
+  price_min REAL, price_max REAL, status TEXT, fetched_at TEXT NOT NULL,
+  checked_at TEXT,                                                       -- last price lookup (NULL = never)
+  PRIMARY KEY(event_id, seller)
+);
 CREATE TABLE attendance (
   user_id TEXT REFERENCES users(id), event_id TEXT REFERENCES events(id),
   status TEXT NOT NULL CHECK(status IN ('interested','going','attended')),
@@ -203,14 +212,21 @@ interface User { id:string; name:string; avatar:string; budget_max:number|null; 
 interface Artist { id:string; name:string; genres:string[] }
 interface Venue { id:string; name:string; lat:number; lng:number; multi_room:boolean;
   access_profile:{ step_free:boolean; ada_seating:boolean; quiet_room:boolean; strobe_policy:"none"|"warned"|"unrestricted"; interpreter:"on_request"|"never" } }
-interface Event { id:string; artist:Artist; venue:Venue; start_at:string; doors_at:string|null; price_min:number|null; price_max:number|null; tm_url:string|null; is_past:boolean }
+interface Event { id:string; artist:Artist; venue:Venue; start_at:string; doors_at:string|null; price_min:number|null; price_max:number|null; tm_url:string|null; image_url?:string|null; support?:string|null; room?:string|null; is_past:boolean }   // tm_url = primary seller's page
+interface TicketOffer { seller:string; kind:"primary"|"resale"; url:string; price_min:number|null; price_max:number|null; status:string|null; fetched_at:string }
 interface Review { user_id:string; event_id:string; scores:Vec7; tags:string[]; price_paid:number|null }   // scores[6] = would_again ? 5 : 1
 interface RankedShow { event:Event; theta:Vec7; score:number; tier:"S"|"A"|"B"|"C"; rank:number }
 interface Ranking { user_id:string; weights:Vec7; shows:RankedShow[]; comparisons_done:number }
 interface MatchCandidate { user:User; match_pct:number; shared_event_ids:string[]; explanation:string|null; icebreaker:string|null }
-interface MediaMatch { cluster_id:string; event:Event; confidence:number; photo_count:number; suggested:"auto"|"ask" }
+interface MediaMatch { cluster_id:string; event:Event; confidence:number; photo_count:number; suggested:"auto"|"ask"; item_indices?:number[] }   // which posted items formed the cluster
 interface Crew { id:string; event:Event; members:User[]; messages:{user_id:string; text:string; at:string}[]; plan:Plan|null }
 interface Plan { option:{event_id:string; tier_label:string; price:number}; meet_at:string; meet_where:string; per_member:{user_id:string; score:number; note:string}[]; compromise_note:string; summary:string }
+
+// Discovery (search → event → save/attend/rank; search people → profile → follow)
+type RecommendedEvent = Event & { friends_interested:User[]; reason:string; score:number }
+type AttendanceStatus = "interested"|"going"|"attended"
+interface PersonCard { user:User; match_pct:number; shows_count:number; following:boolean; follows_you:boolean }
+interface UserProfile { user:User; following:boolean; follows_you:boolean; followers:number; following_count:number; match_pct:number|null; shows:RankedShow[]; upcoming:{event:Event; status:"interested"|"going"}[] }
 ```
 
 ## 6. API contracts & fixtures
@@ -235,6 +251,14 @@ Every endpoint below has `fixtures/<name>.json` with a realistic response for **
 | `crew_create.json` | `POST /crews?user=` | `{event_id, member_ids}` | `Crew` |
 | `crew_message.json` | `POST /crews/{id}/messages?user=` | `{text}` | `Crew` |
 | `crew_plan.json` | `POST /crews/{id}/plan?user=` | — | `Crew` with `plan` filled |
+| `events_search.json` | `GET /events?q=&limit=&user=` | — | `(Event & {friends_interested:User[]})[]` — artist/venue/genre search across past + upcoming, upcoming first |
+| `events_recommended.json` | `GET /events/recommended?limit=5&user=` | — | `RecommendedEvent[]` — "For you": friends going × taste match + fans like you + artists/venues you've been to (`ml/recommend.py`) |
+| `attendance_set.json` | `POST /attendance?user=` | `{event_id, status:AttendanceStatus\|null}` | `{event_id, status}` — want to go / going / went (went adds a provisional review); null clears |
+| `unranked.json` | `GET /attendance/unranked?user=` | — | `Event[]` — went but never reviewed (provisional review only); drives the "Rank it now" prompt |
+| `people.json` | `GET /people?q=&user=` | — | `PersonCard[]` — every other member, best taste match first |
+| `user_profile.json` | `GET /users/{id}?user=` | — | `UserProfile` |
+| `follows.json` | `POST /follows?user=` | `{user_id, follow:boolean}` | `{following:string[]}` |
+| `tickets.json` | `GET /events/{id}/tickets?user=` | — | `TicketOffer[]` — official seller(s) from the venue scrape + resale; prices filled by Ticketmaster Discovery / SeatGeek when keys are set (`api/app/tickets.py`, 4 s timeout, cached 6 h) |
 
 **Gate rule (M4, middleware):** `GET /matches/*`, `POST /crews` where any `member_ids` is not a direct follow of the caller, and `POST /crews/{id}/messages` where the crew has a non-follow → 403 `verification_required` unless `users.verified = 1`.
 
@@ -293,6 +317,10 @@ Deletes Sam's `d01–d06` attendances/reviews/media_items and comparisons, sets 
 ## 8. Known-fragile spots
 
 - **Ticketmaster Discovery:** 5 req/s, 5000/day. `fetch_ticketmaster.py` writes every raw response to `data/cache/ticketmaster/` and reads from cache if present. Query: `classificationName=music&city=Atlanta&stateCode=GA&size=200&sort=date,asc`, paginate to ~150 events. Prices from `priceRanges[0]`, may be absent. Venue matching to our 7 by name-contains; everything else gets a venue row auto-created with `geofence_radius_m=150` and empty access profile.
+- **Venue scrapers (`seed/fetch_venues.py`, no keys):** Tabernacle + Coca-Cola Roxy (Live Nation) publish schema.org `MusicEvent` JSON-LD on `/shows`; The Eastern, Terminal West and Variety Playhouse load a public AEG feed (`aegwebprod.blob.core.windows.net/json/events/{127,211,214}/events.json`) with AXS links, doors, support and posters; The Masquerade is WordPress event cards (`itemprop="startDate"` is the *doors* time; four rooms); State Farm Arena is an HTML list (games/community events filtered out). None publish prices or an archive. Raw pages are cached in `data/cache/venues/` (committed) so `make seed` is deterministic; delete the cache to refresh. Browser UA + 0.5 s between requests; a parse failure skips that venue, never breaks seeding.
+- **Past shows (`fetch_venues.load_past`):** the Wayback Machine keeps monthly copies of the Tabernacle, Roxy, Masquerade and State Farm Arena calendars; replaying ~13 months of snapshots through the same parsers yields ~550 real past shows (only the normalized `data/cache/venues/past_shows.json` is cached — the raw snapshots would be 40 MB). The AEG feeds are not archived, so The Eastern / Terminal West / Variety keep synthetic filler until a `SETLISTFM_API_KEY` exists. Sam's placeholder shows (§7.2) are swapped for a real show at that venue on that night (photo shows) or within ±3 days (manual ones) by `seed.swap_placeholders`.
+- **Genres & similar artists (`seed/fetch_music.py`, no keys):** MusicBrainz tags (1 req/s, ~2 s per artist, cached in `data/cache/music/artists.json`) fill `artists.genres`; Deezer's related-artists endpoint fills `artists.related`. `ml/recommend.py` uses both (genre Jaccard, "Similar to X, who you've seen").
+- **Ticket prices (`api/app/tickets.py`):** Eventbrite pages carry face value in JSON-LD; Gametime search results carry resale lowest price + the event page (no keys). Ticketmaster and AXS event pages return 401/403 to servers, and StubHub/SeatGeek/Vivid need partner keys, so official Ticketmaster prices need `TICKETMASTER_API_KEY` and SeatGeek resale needs `SEATGEEK_CLIENT_ID`. Lookups run in parallel at request time with a 5 s cap and are cached 6 h in `ticket_offers`.
 - **Setlist.fm:** requires API key (apply immediately), 2 req/s, header `x-api-key`, `Accept: application/json`. `GET /rest/1.0/search/setlists?venueName=...&p=N`. Backfill ~400 events across 7 venues takes 3–5 min; cache to `data/cache/setlistfm/`. Setlist.fm dates are `dd-MM-yyyy`; assume 20:00 local start.
 - **exifr:** `exifr.parse(file, {gps:true, pick:["DateTimeOriginal","OffsetTimeOriginal","GPSLatitude","GPSLongitude"]})`. Parses HEIC on Safari. If `OffsetTimeOriginal` missing, assume `America/New_York`. Send ISO strings with offset.
 - **Grok:** OpenAI-compatible chat completions; use `httpx` directly, no SDK. `temperature=0.4`, `max_tokens=300`. **Every AI call has a deterministic fallback** template string if the request fails or exceeds 6 s, so the demo never hangs.

@@ -1,0 +1,490 @@
+[
+  {
+    "id": "v_masquerade_627dd18b21",
+    "artist": {
+      "id": "the_browning",
+      "name": "The Browning",
+      "genres": [
+        "deathcore",
+        "electronic",
+        "electronicore",
+        "experimental"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-26T19:00:00-04:00",
+    "doors_at": "2026-09-26T18:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/the-browning-atlanta-georgia-09-26-2026/event/0E0064A7DD39A361?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2018/12/092626_THEBROWNING_ForSite-409x230.jpg",
+    "support": "Deadlands, Extortionist, & Blind Equation",
+    "room": "Hell",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_1c538031ed",
+    "artist": {
+      "id": "castle_rat",
+      "name": "Castle Rat",
+      "genres": [
+        "doom metal",
+        "heavy metal",
+        "metal",
+        "hard rock"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-26T19:30:00-04:00",
+    "doors_at": "2026-09-26T18:30:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/castle-rat-summon-the-beasts-tour-atlanta-georgia-09-26-2026/event/0E0064BDBD1012AE?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/tm_event/castle-rat-summon-the-beasts-tour-2026-409x230.gif",
+    "support": "Unto Others & Wraith Knight",
+    "room": "Heaven",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_7bdda755e0",
+    "artist": {
+      "id": "swavay",
+      "name": "SWAVAY",
+      "genres": [
+        "rap/hip hop"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-26T20:00:00-04:00",
+    "doors_at": "2026-09-26T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/swavay-atlanta-georgia-09-26-2026/event/0E0064D2AEED9CFC?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/tm_event/swavay-409x230.gif",
+    "support": null,
+    "room": "Altar",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_2c8d91d0da",
+    "artist": {
+      "id": "all_shall_perish",
+      "name": "All Shall Perish",
+      "genres": [
+        "deathcore",
+        "metal",
+        "metalcore",
+        "death metal"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-27T19:00:00-04:00",
+    "doors_at": "2026-09-27T18:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/all-shall-perish-atlanta-georgia-09-27-2026/event/0E0064A5E987109F?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/tm_event/all-shall-perish-409x230.gif",
+    "support": "Carnifex, Extermination Dismemberment, & Mauled",
+    "room": "Hell",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_eastern_c9e5c66680",
+    "artist": {
+      "id": "jane_remover",
+      "name": "Jane Remover",
+      "genres": [
+        "digicore",
+        "hyperpop",
+        "queer",
+        "indie rock"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-27T20:00:00-04:00",
+    "doors_at": "2026-09-27T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1415381/jane-remover-live-exhibit-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/04/uploadedimage_69e28162d26c2.jpg",
+    "support": "Dazegxd",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_7b3a8a3e1e",
+    "artist": {
+      "id": "jane_remover",
+      "name": "Jane Remover",
+      "genres": [
+        "digicore",
+        "hyperpop",
+        "queer",
+        "indie rock"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-27T20:00:00-04:00",
+    "doors_at": "2026-09-27T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": null,
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/04/09272026_JaneRemover_soldout-409x230.jpg",
+    "support": "Dazegxd",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_tabernacle_2d45265b9c",
+    "artist": {
+      "id": "loathe",
+      "name": "Loathe",
+      "genres": [
+        "metalcore",
+        "alternative metal",
+        "djent",
+        "shoegaze"
+      ]
+    },
+    "venue": {
+      "id": "tabernacle",
+      "name": "Tabernacle",
+      "lat": 33.7586,
+      "lng": -84.3913,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-28T19:30:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/loathe-a-stranger-to-you-atlanta-georgia-09-28-2026/event/0E006494048645DD",
+    "image_url": "https://s1.ticketm.net/dam/a/773/d673bb12-d407-452f-90c0-5fd3e629a773_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "lena",
+        "name": "Lena Fischer",
+        "avatar": "🎤",
+        "budget_max": 80.0,
+        "accessibility_needs": [
+          "mobility"
+        ],
+        "verified": true,
+        "weights": [
+          0.13,
+          0.08,
+          0.13,
+          0.32,
+          0.1,
+          0.1,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v_eastern_d570fb874b",
+    "artist": {
+      "id": "starbomb",
+      "name": "Starbomb",
+      "genres": [
+        "comedy",
+        "comedy hip hop",
+        "comedy pop",
+        "hip hop"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-28T20:00:00-04:00",
+    "doors_at": "2026-09-28T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1445756/starbomb-featuring-dj-commander-meouch-probably-the-only-tour-ever-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/05/uploadedimage_6a0c677c47fba.jpg",
+    "support": "Scoochie Boochie",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_bdd73c41ef",
+    "artist": {
+      "id": "brat",
+      "name": "BRAT",
+      "genres": [
+        "death metal",
+        "grindcore",
+        "powerviolence",
+        "deathgrind"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-29T19:30:00-04:00",
+    "doors_at": "2026-09-29T18:30:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/brat-atlanta-georgia-09-29-2026/event/0E006518DB5A1691?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/08/092926_brat_Site-409x230.jpg",
+    "support": "U.S. Bastards & Los Ojos Muertos",
+    "room": "Altar",
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "dev",
+        "name": "Dev Patel",
+        "avatar": "🥁",
+        "budget_max": 60.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.32,
+          0.14
+        ]
+      },
+      {
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.34,
+          0.1,
+          0.08,
+          0.12,
+          0.08,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v_masquerade_53dfe35d75",
+    "artist": {
+      "id": "slothrust",
+      "name": "Slothrust",
+      "genres": [
+        "indie rock",
+        "rock",
+        "alternative",
+        "alternative rock"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-29T20:00:00-04:00",
+    "doors_at": "2026-09-29T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/slothrust-the-dystopian-theatre-tour-atlanta-georgia-09-29-2026/event/0E0064D69C266651?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/06/EU2A9224-Horizontal-322x230.png",
+    "support": "The Velveteers",
+    "room": "Hell",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_efe20d8715",
+    "artist": {
+      "id": "arin_ray",
+      "name": "Arin Ray",
+      "genres": [
+        "alternative r&b"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-29T20:00:00-04:00",
+    "doors_at": "2026-09-29T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/arin-ray-the-limbo-tour-atlanta-georgia-09-29-2026/event/0E0064D6C751AB75?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/06/PL-ArinRay-Verse-Portrait-IsmaelQuintanillaIII_IQ31186-365x230.png",
+    "support": "Baby J",
+    "room": "Purgatory",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_fcfd3c627d",
+    "artist": {
+      "id": "angel_du_t_agnostic_front",
+      "name": "Angel Du$t & Agnostic Front",
+      "genres": []
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-01T19:30:00-04:00",
+    "doors_at": "2026-10-01T18:30:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/angel-dut-and-agnostic-front-atlanta-georgia-10-01-2026/event/0E0064E1BC0CA049?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/07/100126_angeldust_Site-409x230.jpg",
+    "support": "Step 2 This & Muelas",
+    "room": "Hell",
+    "is_past": false,
+    "friends_interested": []
+  }
+]

@@ -55,7 +55,10 @@ class Event(BaseModel):
     doors_at: Optional[str]
     price_min: Optional[float]
     price_max: Optional[float]
-    tm_url: Optional[str]
+    tm_url: Optional[str]                 # primary seller's page for this show (Ticketmaster, AXS, ...)
+    image_url: Optional[str] = None       # poster from the venue site
+    support: Optional[str] = None         # opening acts
+    room: Optional[str] = None            # multi-room venues (The Masquerade: Heaven / Hell / Purgatory / Altar)
     is_past: bool
 
 
@@ -96,6 +99,7 @@ class MediaMatch(BaseModel):
     confidence: float
     photo_count: int
     suggested: Literal["auto", "ask"]
+    item_indices: list[int] = []   # positions in the request's items that formed this cluster
 
 
 class Message(BaseModel):
@@ -193,6 +197,75 @@ class EventDetail(BaseModel):
     event: Event
     friends_interested: list[User]
     attendance: Optional[str]
+
+
+# ---- discovery: search, recommendations, status, people ------------------
+
+class RecommendedEvent(EventWithFriends):
+    """GET /events/recommended: an upcoming show plus why it is on the list."""
+    reason: str
+    score: float
+
+
+AttendanceStatus = Literal["interested", "going", "attended"]
+
+
+class AttendanceSetRequest(BaseModel):
+    """POST /attendance: mark one show. status null clears the mark."""
+    event_id: str
+    status: Optional[AttendanceStatus]
+
+
+class AttendanceSetResponse(BaseModel):
+    event_id: str
+    status: Optional[AttendanceStatus]
+
+
+class PersonCard(BaseModel):
+    """GET /people: a member as seen by the caller."""
+    user: User
+    match_pct: int
+    shows_count: int
+    following: bool
+    follows_you: bool
+
+
+class UpcomingPlan(BaseModel):
+    event: Event
+    status: Literal["interested", "going"]
+
+
+class UserProfile(BaseModel):
+    """GET /users/{id}: a member's page. match_pct is null when viewing yourself."""
+    user: User
+    following: bool
+    follows_you: bool
+    followers: int
+    following_count: int
+    match_pct: Optional[int]
+    shows: list[RankedShow]
+    upcoming: list[UpcomingPlan]
+
+
+class TicketOffer(BaseModel):
+    """GET /events/{id}/tickets: one seller's page for the show. Prices are null until a keyed
+    source (Ticketmaster Discovery, SeatGeek) has filled them in."""
+    seller: str
+    kind: Literal["primary", "resale"]
+    url: str
+    price_min: Optional[float]
+    price_max: Optional[float]
+    status: Optional[str]
+    fetched_at: str
+
+
+class FollowRequest(BaseModel):
+    user_id: str
+    follow: bool
+
+
+class FollowResponse(BaseModel):
+    following: list[str]
 
 
 class ErrorResponse(BaseModel):

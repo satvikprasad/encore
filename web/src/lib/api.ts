@@ -4,23 +4,40 @@
 import type {
   AttendanceConfirmRequest,
   AttendanceConfirmResponse,
+  AttendanceSetResponse,
+  AttendanceStatus,
   CompareNext,
   CompareRequest,
   Crew,
   Event,
   EventDetail,
   EventWithFriends,
+  FollowResponse,
   MatchCandidate,
   MediaItem,
   MediaMatch,
+  PersonCard,
   Ranking,
+  RecommendedEvent,
   ReviewIn,
   ReviewPostResponse,
+  TicketOffer,
   User,
+  UserProfile,
   Vec7,
   VerifyStartResponse,
 } from "@/types";
-import { isFixtureVerified } from "@/lib/session";
+import {
+  fxFollows,
+  fxImported,
+  fxMarkImported,
+  fxMarkReviewed,
+  fxReviewed,
+  fxSetFollows,
+  fxSetStatus,
+  fxStatuses,
+  isFixtureVerified,
+} from "@/lib/session";
 
 import attendanceConfirmFx from "@fixtures/attendance_confirm.json";
 import compareNextFx from "@fixtures/compare_next.json";
@@ -29,12 +46,19 @@ import crewCreateFx from "@fixtures/crew_create.json";
 import crewGetFx from "@fixtures/crew_get.json";
 import crewPlanFx from "@fixtures/crew_plan.json";
 import eventDetailFx from "@fixtures/event_detail.json";
+import eventsRecommendedFx from "@fixtures/events_recommended.json";
+import eventsSearchFx from "@fixtures/events_search.json";
 import eventsUpcomingFx from "@fixtures/events_upcoming.json";
+import followsFx from "@fixtures/follows.json";
 import matchesFx from "@fixtures/matches.json";
 import matchesLockedFx from "@fixtures/matches_locked.json";
 import mediaMatchFx from "@fixtures/media_match.json";
+import peopleFx from "@fixtures/people.json";
 import rankFx from "@fixtures/rank.json";
 import reviewPostFx from "@fixtures/review_post.json";
+import ticketsFx from "@fixtures/tickets.json";
+import unrankedFx from "@fixtures/unranked.json";
+import userProfileFx from "@fixtures/user_profile.json";
 import usersFx from "@fixtures/users.json";
 import verifyStartFx from "@fixtures/verify_start.json";
 
@@ -50,13 +74,21 @@ export type Endpoint =
   | "postCompare"
   | "rank"
   | "eventsUpcoming"
+  | "eventsSearch"
+  | "eventsRecommended"
   | "eventDetail"
+  | "setAttendance"
+  | "unranked"
+  | "tickets"
   | "matches"
   | "verifyStart"
   | "createCrew"
   | "getCrew"
   | "postMessage"
-  | "makePlan";
+  | "makePlan"
+  | "people"
+  | "userProfile"
+  | "setFollow";
 
 // true = fixture, false = real API. Anything not listed follows NEXT_PUBLIC_USE_FIXTURES.
 const OVERRIDES: Partial<Record<Endpoint, boolean>> = {
@@ -103,21 +135,55 @@ async function request<T>(method: "GET" | "POST", path: string, user: string | n
 
 // ---- fixture-mode helpers ---------------------------------------------------------
 
+const stripFriends = (e: Event | EventWithFriends): Event => {
+  const { friends_interested: _f, ...event } = e as EventWithFriends;
+  return event as Event;
+};
+
 /** Every event mentioned anywhere in the fixtures, so any page can resolve an id. */
 function fixtureEvents(): Map<string, Event> {
+  const profile = userProfileFx as unknown as UserProfile;
   const all: Event[] = [
     ...(eventsUpcomingFx as unknown as Event[]),
+    ...(eventsRecommendedFx as unknown as Event[]),
+    ...(eventsSearchFx as unknown as Event[]),
+    ...(unrankedFx as unknown as Event[]),
     ...(mediaMatchFx as unknown as MediaMatch[]).map((m) => m.event),
     ...(rankFx as unknown as Ranking).shows.map((s) => s.event),
+    ...profile.shows.map((s) => s.event),
+    ...profile.upcoming.map((u) => u.event),
     (eventDetailFx as unknown as EventDetail).event,
   ];
   const map = new Map<string, Event>();
   for (const e of all) {
-    // Strip friends_interested from EventWithFriends entries.
-    const { friends_interested: _f, ...event } = e as EventWithFriends;
-    if (!map.has(event.id)) map.set(event.id, event as Event);
+    const event = stripFriends(e);
+    if (!map.has(event.id)) map.set(event.id, event);
   }
   return map;
+}
+
+/** friends_interested for an event id, from whichever fixture lists it. */
+function fixtureFriends(id: string): User[] {
+  const lists = [eventsUpcomingFx, eventsRecommendedFx, eventsSearchFx] as unknown as EventWithFriends[][];
+  for (const list of lists) {
+    const hit = list.find((e) => e.id === id);
+    if (hit) return hit.friends_interested;
+  }
+  return [];
+}
+
+function fixtureStatus(user: string, event: Event): AttendanceStatus | null {
+  const marked = fxStatuses(user)[event.id];
+  if (marked !== undefined) return marked;
+  // Sam's photo shows count as attended once the import ran; his older reviewed shows always do.
+  const photoShow = (unrankedFx as unknown as Event[]).some((e) => e.id === event.id);
+  const reviewed = (rankFx as unknown as Ranking).shows.some((s) => s.event.id === event.id);
+  if (reviewed || (photoShow && fxImported(user))) return "attended";
+  return null;
+}
+
+function fixtureFollowing(user: string): string[] {
+  return fxFollows(user) ?? (followsFx as FollowResponse).following;
 }
 
 let compareCount = 0;
@@ -160,13 +226,47 @@ export const api = {
   },
 
   attendanceConfirm(user: string, body: AttendanceConfirmRequest): Promise<AttendanceConfirmResponse> {
-    if (usesFixture("attendanceConfirm")) return fixture({ added: body.event_ids.length });
+    if (usesFixture("attendanceConfirm")) {
+      fxMarkImported(user);
+      for (const id of body.event_ids) fxSetStatus(user, id, "attended");
+      return fixture({ ...(attendanceConfirmFx as AttendanceConfirmResponse), added: body.event_ids.length });
+    }
     return request("POST", "/attendance/confirm", user, body);
+  },
+
+  /** Mark one show by hand: "interested" (want to go), "going", "attended" (went), or null to clear. */
+  setAttendance(user: string, eventId: string, status: AttendanceStatus | null): Promise<AttendanceSetResponse> {
+    if (usesFixture("setAttendance")) {
+      fxSetStatus(user, eventId, status);
+      return fixture({ event_id: eventId, status }, 120);
+    }
+    return request("POST", "/attendance", user, { event_id: eventId, status });
+  },
+
+  /** Shows the user went to but hasn't reviewed — the "Rank it now" prompt. */
+  unranked(user: string): Promise<Event[]> {
+    if (usesFixture("unranked")) {
+      const reviewed = new Set(fxReviewed(user));
+      const statuses = fxStatuses(user);
+      const events = fixtureEvents();
+      const manual = Object.entries(statuses)
+        .filter(([id, s]) => s === "attended" && !reviewed.has(id))
+        .map(([id]) => events.get(id))
+        .filter((e): e is Event => !!e);
+      const photo = fxImported(user)
+        ? (unrankedFx as unknown as Event[]).filter((e) => !reviewed.has(e.id) && statuses[e.id] !== null)
+        : [];
+      const seen = new Set<string>();
+      return fixture([...photo, ...manual].filter((e) => !seen.has(e.id) && seen.add(e.id)), 150);
+    }
+    return request("GET", "/attendance/unranked", user);
   },
 
   postReview(user: string, review: ReviewIn): Promise<ReviewPostResponse> {
     if (usesFixture("postReview")) {
       compareCount = 0;
+      fxMarkReviewed(user, review.event_id);
+      fxSetStatus(user, review.event_id, "attended");
       return fixture(reviewPostFx);
     }
     return request("POST", "/reviews", user, review);
@@ -202,20 +302,60 @@ export const api = {
     return request("GET", "/events?upcoming=true", user);
   },
 
+  /** Most recent past shows in town — quick picks for "Log a show". */
+  async eventsPast(user: string, limit = 12): Promise<Event[]> {
+    if (usesFixture("eventsUpcoming")) {
+      const past = Array.from(fixtureEvents().values())
+        .filter((e) => e.is_past)
+        .sort((a, b) => b.start_at.localeCompare(a.start_at));
+      return fixture(past.slice(0, limit));
+    }
+    const all = await request<EventWithFriends[]>("GET", "/events?upcoming=false", user);
+    return all.slice(0, limit).map(stripFriends);
+  },
+
+  /** Search artists, venues and genres across past and upcoming shows (upcoming first). */
+  eventsSearch(user: string, q: string, limit = 40): Promise<EventWithFriends[]> {
+    if (usesFixture("eventsSearch")) {
+      const needle = q.trim().toLowerCase();
+      const hits = Array.from(fixtureEvents().values())
+        .filter((e) => [e.artist.name, e.venue.name, ...e.artist.genres].some((s) => s.toLowerCase().includes(needle)))
+        .sort((a, b) => (a.is_past === b.is_past ? (a.is_past ? b.start_at.localeCompare(a.start_at) : a.start_at.localeCompare(b.start_at)) : a.is_past ? 1 : -1))
+        .slice(0, limit)
+        .map((e) => ({ ...e, friends_interested: fixtureFriends(e.id) }));
+      return fixture(needle ? hits : [], 180);
+    }
+    return request("GET", `/events?q=${encodeURIComponent(q)}&limit=${limit}`, user);
+  },
+
+  /** "For you": the top upcoming shows with a one-line reason each. */
+  eventsRecommended(user: string, limit = 5): Promise<RecommendedEvent[]> {
+    if (usesFixture("eventsRecommended")) {
+      const statuses = fxStatuses(user);
+      return fixture((eventsRecommendedFx as unknown as RecommendedEvent[]).filter((e) => !statuses[e.id]).slice(0, limit));
+    }
+    return request("GET", `/events/recommended?limit=${limit}`, user);
+  },
+
   eventDetail(user: string, id: string): Promise<EventDetail> {
     if (usesFixture("eventDetail")) {
       const detail = eventDetailFx as unknown as EventDetail;
-      if (id === detail.event.id) return fixture(detail);
+      if (id === detail.event.id) return fixture({ ...detail, attendance: fixtureStatus(user, detail.event) });
       const event = fixtureEvents().get(id);
       if (!event) return Promise.reject(new ApiError(404, { error: "not_found" }));
-      const upcoming = (eventsUpcomingFx as unknown as EventWithFriends[]).find((e) => e.id === id);
-      return fixture({
-        event,
-        friends_interested: upcoming?.friends_interested ?? [],
-        attendance: event.is_past ? "attended" : null,
-      });
+      return fixture({ event, friends_interested: fixtureFriends(id), attendance: fixtureStatus(user, event) });
     }
     return request("GET", `/events/${encodeURIComponent(id)}`, user);
+  },
+
+  /** Where to buy a show: official seller(s) plus resale, cheapest known price first. */
+  tickets(user: string, eventId: string): Promise<TicketOffer[]> {
+    if (usesFixture("tickets")) {
+      const event = fixtureEvents().get(eventId);
+      const fx = ticketsFx as unknown as TicketOffer[];
+      return fixture(event?.tm_url ? [{ ...fx[0], url: event.tm_url }, ...fx.slice(1)] : fx, 200);
+    }
+    return request("GET", `/events/${encodeURIComponent(eventId)}/tickets`, user);
   },
 
   async matches(user: string, eventId: string): Promise<MatchCandidate[]> {
@@ -232,6 +372,65 @@ export const api = {
   verifyStart(user: string): Promise<VerifyStartResponse> {
     if (usesFixture("verifyStart")) return fixture(verifyStartFx);
     return request("POST", "/verify/start", user);
+  },
+
+  /** Every other member, best taste match first; `q` filters by name. */
+  people(user: string, q = ""): Promise<PersonCard[]> {
+    if (usesFixture("people")) {
+      const following = new Set(fixtureFollowing(user));
+      const needle = q.trim().toLowerCase();
+      return fixture(
+        (peopleFx as unknown as PersonCard[])
+          .filter((p) => p.user.id !== user && (!needle || p.user.name.toLowerCase().includes(needle)))
+          .map((p) => ({ ...p, following: following.has(p.user.id) })),
+        150,
+      );
+    }
+    return request("GET", `/people?q=${encodeURIComponent(q)}`, user);
+  },
+
+  userProfile(user: string, id: string): Promise<UserProfile> {
+    if (usesFixture("userProfile")) {
+      const following = fixtureFollowing(user);
+      const fx = userProfileFx as unknown as UserProfile;
+      if (id === fx.user.id) return fixture({ ...fx, following: following.includes(id) });
+      const everyone = [...(usersFx as unknown as User[]), ...(peopleFx as unknown as PersonCard[]).map((p) => p.user)];
+      const u = everyone.find((x) => x.id === id);
+      if (!u) return Promise.reject(new ApiError(404, { error: "not_found" }));
+      if (id === user) {
+        const events = fixtureEvents();
+        const upcoming = Object.entries(fxStatuses(user))
+          .filter(([, s]) => s === "interested" || s === "going")
+          .map(([eid, s]) => ({ event: events.get(eid)!, status: s as "interested" | "going" }))
+          .filter((x) => x.event);
+        const shows = user === "sam" ? (rankFx as unknown as Ranking).shows : [];
+        return fixture({ user: u, following: false, follows_you: false, followers: 3, following_count: following.length, match_pct: null, shows, upcoming });
+      }
+      const card = (peopleFx as unknown as PersonCard[]).find((p) => p.user.id === id);
+      return fixture({
+        user: u,
+        following: following.includes(id),
+        follows_you: card?.follows_you ?? false,
+        followers: 2,
+        following_count: 3,
+        match_pct: card?.match_pct ?? 70,
+        shows: [],
+        upcoming: [],
+      });
+    }
+    return request("GET", `/users/${encodeURIComponent(id)}`, user);
+  },
+
+  setFollow(user: string, id: string, follow: boolean): Promise<FollowResponse> {
+    if (usesFixture("setFollow")) {
+      const cur = new Set(fixtureFollowing(user));
+      if (follow) cur.add(id);
+      else cur.delete(id);
+      const following = Array.from(cur).sort();
+      fxSetFollows(user, following);
+      return fixture({ following }, 120);
+    }
+    return request("POST", "/follows", user, { user_id: id, follow });
   },
 
   async createCrew(user: string, eventId: string, memberIds: string[]): Promise<Crew> {

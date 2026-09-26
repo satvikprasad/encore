@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useRef, useState } from "react";
 
+import { IconCheck, IconShield } from "@/components/icons";
 import { ErrorNote, Page, Spinner, TopBar } from "@/components/ui";
 import { API_URL, api, usesFixture } from "@/lib/api";
 import { markJustVerified, setFixtureVerified } from "@/lib/session";
@@ -75,7 +76,7 @@ function Verify() {
       ) : fixtureMode ? (
         <FixtureMock onDone={finish} />
       ) : (
-        <iframe title="Identity verification" src={src} className="block h-[760px] w-full border-0 bg-ink" />
+        <iframe title="Identity verification" src={src} className="block h-[740px] w-full border-0 bg-canvas" />
       )}
     </>
   );
@@ -96,30 +97,45 @@ function FixtureMock({ onDone }: { onDone: () => void }) {
   }, []);
   const steps = ["Scanning ID", "Matching selfie", "Confirming"];
   return (
-    <Page className="flex flex-col items-center pt-10 text-center">
-      <h2 className="text-lg font-semibold">Verify you&apos;re you</h2>
-      <p className="text-sm text-muted">Verified fans can see who&apos;s going.</p>
-      {step < 3 ? (
-        <div
-          className={clsx(
-            "relative mx-auto my-6 overflow-hidden border-2 border-dashed border-line transition-all duration-500",
-            step >= 1 ? "h-[150px] w-[150px] rounded-full" : "h-[140px] w-[220px] rounded-2xl",
-          )}
-        >
-          <div className="absolute inset-x-0 h-[3px] animate-[scan_1.2s_ease-in-out_infinite_alternate] bg-accent shadow-[0_0_12px_#8b5cf6]" />
-        </div>
-      ) : (
-        <div className="animate-pop my-6 text-5xl text-good">✓</div>
-      )}
-      <ol className="w-full max-w-[240px] space-y-2 text-left text-sm">
-        {steps.map((s, i) => (
-          <li key={s} className={clsx(i < step ? "text-good" : i === step ? "text-white" : "text-dim")}>
-            {i < step ? "✓ " : ""}
-            {s}
-          </li>
-        ))}
-      </ol>
-      <p className="mt-6 text-xs text-dim">Demo only: no images are captured or stored.</p>
+    <Page className="flex flex-col items-center pt-6 text-center">
+      <span className="grid h-11 w-11 place-items-center rounded-full bg-accent-soft text-accent">
+        <IconShield size={22} />
+      </span>
+      <h2 className="display text-[30px] leading-none">Verify you&apos;re you</h2>
+      <p className="-mt-2 text-sm text-muted">Verified fans can see who&apos;s going.</p>
+
+      <div className="card flex w-full flex-col items-center py-8">
+        {step < 3 ? (
+          <div
+            className={clsx(
+              "relative overflow-hidden border-2 border-dashed border-accent/40 bg-sunken transition-all duration-500",
+              step >= 1 ? "h-[150px] w-[150px] rounded-full" : "h-[140px] w-[220px] rounded-2xl",
+            )}
+          >
+            <div className="absolute inset-x-0 h-[3px] animate-[scan_1.2s_ease-in-out_infinite_alternate] bg-accent shadow-[0_0_14px_#5B45F5]" />
+          </div>
+        ) : (
+          <div className="animate-pop grid h-[150px] w-[150px] place-items-center rounded-full bg-good-soft text-good">
+            <IconCheck size={56} strokeWidth={2.4} />
+          </div>
+        )}
+        <ol className="mt-6 w-full max-w-[220px] space-y-2 text-left text-sm">
+          {steps.map((s, i) => (
+            <li key={s} className={clsx("flex items-center gap-2 transition-colors", i < step ? "text-good" : i === step ? "font-semibold text-fg" : "text-dim")}>
+              <span
+                className={clsx(
+                  "grid h-5 w-5 place-items-center rounded-full border text-[10px]",
+                  i < step ? "border-good bg-good text-white" : i === step ? "border-accent text-accent" : "border-line",
+                )}
+              >
+                {i < step ? <IconCheck size={11} strokeWidth={3} /> : i + 1}
+              </span>
+              {s}
+            </li>
+          ))}
+        </ol>
+      </div>
+      <p className="text-xs text-dim">Demo only: no images are captured or stored.</p>
       <style>{`@keyframes scan { from { top: 4%; } to { top: 94%; } }`}</style>
     </Page>
   );

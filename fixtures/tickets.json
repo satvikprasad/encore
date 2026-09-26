@@ -1,0 +1,20 @@
+[
+  {
+    "seller": "AXS",
+    "kind": "primary",
+    "url": "https://www.axs.com/events/1541673/kylie-cantrall-tickets",
+    "price_min": null,
+    "price_max": null,
+    "status": "on_sale",
+    "fetched_at": "2026-09-26T20:16:10+00:00"
+  },
+  {
+    "seller": "Gametime",
+    "kind": "resale",
+    "url": "https://gametime.co/concert/kylie-cantrall-tickets/10-10-2026-atlanta-ga-the-eastern-atlanta/events/6a710fac95bbe7e5b16d16c7",
+    "price_min": 43.0,
+    "price_max": null,
+    "status": "resale",
+    "fetched_at": "2026-09-26T21:18:36+00:00"
+  }
+]

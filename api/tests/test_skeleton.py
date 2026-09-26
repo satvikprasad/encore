@@ -26,6 +26,14 @@ FIXTURE_TYPES = {
     "crew_message.json": S.Crew,
     "crew_plan.json": S.Crew,
     "crew_get.json": S.Crew,
+    "events_recommended.json": list[S.RecommendedEvent],
+    "events_search.json": list[S.EventWithFriends],
+    "people.json": list[S.PersonCard],
+    "user_profile.json": S.UserProfile,
+    "follows.json": S.FollowResponse,
+    "unranked.json": list[S.Event],
+    "attendance_set.json": S.AttendanceSetResponse,
+    "tickets.json": list[S.TicketOffer],
 }
 
 

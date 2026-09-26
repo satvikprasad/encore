@@ -1,11 +1,782 @@
 [
   {
-    "id": "t01",
+    "id": "v_masquerade_627dd18b21",
     "artist": {
-      "id": "lumen_drift",
-      "name": "Lumen Drift",
+      "id": "the_browning",
+      "name": "The Browning",
+      "genres": [
+        "deathcore",
+        "electronic",
+        "electronicore",
+        "experimental"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-26T19:00:00-04:00",
+    "doors_at": "2026-09-26T18:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/the-browning-atlanta-georgia-09-26-2026/event/0E0064A7DD39A361?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2018/12/092626_THEBROWNING_ForSite-409x230.jpg",
+    "support": "Deadlands, Extortionist, & Blind Equation",
+    "room": "Hell",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_tabernacle_814aae6689",
+    "artist": {
+      "id": "bobby_lee",
+      "name": "Bobby Lee",
+      "genres": [
+        "country"
+      ]
+    },
+    "venue": {
+      "id": "tabernacle",
+      "name": "Tabernacle",
+      "lat": 33.7586,
+      "lng": -84.3913,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-26T19:00:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/bobby-lee-the-finally-tour-2026-atlanta-georgia-09-26-2026/event/0E00646592F88C8D",
+    "image_url": "https://s1.ticketm.net/dam/a/9a4/3273c2f1-bd2e-4ed7-9208-0b3b66e319a4_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_1c538031ed",
+    "artist": {
+      "id": "castle_rat",
+      "name": "Castle Rat",
+      "genres": [
+        "doom metal",
+        "heavy metal",
+        "metal",
+        "hard rock"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-26T19:30:00-04:00",
+    "doors_at": "2026-09-26T18:30:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/castle-rat-summon-the-beasts-tour-atlanta-georgia-09-26-2026/event/0E0064BDBD1012AE?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/tm_event/castle-rat-summon-the-beasts-tour-2026-409x230.gif",
+    "support": "Unto Others & Wraith Knight",
+    "room": "Heaven",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_7bdda755e0",
+    "artist": {
+      "id": "swavay",
+      "name": "SWAVAY",
+      "genres": [
+        "rap/hip hop"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-26T20:00:00-04:00",
+    "doors_at": "2026-09-26T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/swavay-atlanta-georgia-09-26-2026/event/0E0064D2AEED9CFC?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/tm_event/swavay-409x230.gif",
+    "support": null,
+    "room": "Altar",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_variety_88e2b51ca2",
+    "artist": {
+      "id": "syml",
+      "name": "SYML",
+      "genres": [
+        "indie folk"
+      ]
+    },
+    "venue": {
+      "id": "variety",
+      "name": "Variety Playhouse",
+      "lat": 33.7649,
+      "lng": -84.3492,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-26T20:00:00-04:00",
+    "doors_at": "2026-09-26T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1412224/syml-solo-in-north-america-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/04/uploadedimage_69dd491702e85.jpg",
+    "support": "Katelyn Tarver",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_variety_f4d1bec380",
+    "artist": {
+      "id": "url",
+      "name": "URL",
+      "genres": [
+        "rap/hip hop"
+      ]
+    },
+    "venue": {
+      "id": "variety",
+      "name": "Variety Playhouse",
+      "lat": 33.7649,
+      "lng": -84.3492,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-27T15:00:00-04:00",
+    "doors_at": "2026-09-27T14:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1576515/url-summer-madness-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/08/uploadedimage_6a8721c5ef22e.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "dev",
+        "name": "Dev Patel",
+        "avatar": "🥁",
+        "budget_max": 60.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.32,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v_masquerade_2c8d91d0da",
+    "artist": {
+      "id": "all_shall_perish",
+      "name": "All Shall Perish",
+      "genres": [
+        "deathcore",
+        "metal",
+        "metalcore",
+        "death metal"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-27T19:00:00-04:00",
+    "doors_at": "2026-09-27T18:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/all-shall-perish-atlanta-georgia-09-27-2026/event/0E0064A5E987109F?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/tm_event/all-shall-perish-409x230.gif",
+    "support": "Carnifex, Extermination Dismemberment, & Mauled",
+    "room": "Hell",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_tabernacle_13f6b6eaca",
+    "artist": {
+      "id": "hulvey",
+      "name": "Hulvey",
+      "genres": [
+        "rap/hip hop"
+      ]
+    },
+    "venue": {
+      "id": "tabernacle",
+      "name": "Tabernacle",
+      "lat": 33.7586,
+      "lng": -84.3913,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-27T19:00:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-atlanta-georgia-09-27-2026/event/0E00647FC968F758",
+    "image_url": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.34,
+          0.1,
+          0.08,
+          0.12,
+          0.08,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v_eastern_c9e5c66680",
+    "artist": {
+      "id": "jane_remover",
+      "name": "Jane Remover",
+      "genres": [
+        "digicore",
+        "hyperpop",
+        "queer",
+        "indie rock"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-27T20:00:00-04:00",
+    "doors_at": "2026-09-27T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1415381/jane-remover-live-exhibit-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/04/uploadedimage_69e28162d26c2.jpg",
+    "support": "Dazegxd",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_7b3a8a3e1e",
+    "artist": {
+      "id": "jane_remover",
+      "name": "Jane Remover",
+      "genres": [
+        "digicore",
+        "hyperpop",
+        "queer",
+        "indie rock"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-27T20:00:00-04:00",
+    "doors_at": "2026-09-27T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": null,
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/04/09272026_JaneRemover_soldout-409x230.jpg",
+    "support": "Dazegxd",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_tabernacle_2d45265b9c",
+    "artist": {
+      "id": "loathe",
+      "name": "Loathe",
+      "genres": [
+        "metalcore",
+        "alternative metal",
+        "djent",
+        "shoegaze"
+      ]
+    },
+    "venue": {
+      "id": "tabernacle",
+      "name": "Tabernacle",
+      "lat": 33.7586,
+      "lng": -84.3913,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-28T19:30:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/loathe-a-stranger-to-you-atlanta-georgia-09-28-2026/event/0E006494048645DD",
+    "image_url": "https://s1.ticketm.net/dam/a/773/d673bb12-d407-452f-90c0-5fd3e629a773_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "lena",
+        "name": "Lena Fischer",
+        "avatar": "🎤",
+        "budget_max": 80.0,
+        "accessibility_needs": [
+          "mobility"
+        ],
+        "verified": true,
+        "weights": [
+          0.13,
+          0.08,
+          0.13,
+          0.32,
+          0.1,
+          0.1,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v_eastern_d570fb874b",
+    "artist": {
+      "id": "starbomb",
+      "name": "Starbomb",
+      "genres": [
+        "comedy",
+        "comedy hip hop",
+        "comedy pop",
+        "hip hop"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-28T20:00:00-04:00",
+    "doors_at": "2026-09-28T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1445756/starbomb-featuring-dj-commander-meouch-probably-the-only-tour-ever-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/05/uploadedimage_6a0c677c47fba.jpg",
+    "support": "Scoochie Boochie",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_terminal_west_7986b16316",
+    "artist": {
+      "id": "rebecca_black",
+      "name": "Rebecca Black",
+      "genres": [
+        "pop",
+        "queer"
+      ]
+    },
+    "venue": {
+      "id": "terminal_west",
+      "name": "Terminal West",
+      "lat": 33.783,
+      "lng": -84.4108,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-28T20:00:00-04:00",
+    "doors_at": "2026-09-28T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1523994/rebecca-black-exhibitionism-on-tour-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a5e5479a5dff.jpg",
+    "support": "BAYLI",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_bdd73c41ef",
+    "artist": {
+      "id": "brat",
+      "name": "BRAT",
+      "genres": [
+        "death metal",
+        "grindcore",
+        "powerviolence",
+        "deathgrind"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-29T19:30:00-04:00",
+    "doors_at": "2026-09-29T18:30:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/brat-atlanta-georgia-09-29-2026/event/0E006518DB5A1691?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/08/092926_brat_Site-409x230.jpg",
+    "support": "U.S. Bastards & Los Ojos Muertos",
+    "room": "Altar",
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "dev",
+        "name": "Dev Patel",
+        "avatar": "🥁",
+        "budget_max": 60.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.32,
+          0.14
+        ]
+      },
+      {
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.34,
+          0.1,
+          0.08,
+          0.12,
+          0.08,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v_masquerade_53dfe35d75",
+    "artist": {
+      "id": "slothrust",
+      "name": "Slothrust",
+      "genres": [
+        "indie rock",
+        "rock",
+        "alternative",
+        "alternative rock"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-29T20:00:00-04:00",
+    "doors_at": "2026-09-29T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/slothrust-the-dystopian-theatre-tour-atlanta-georgia-09-29-2026/event/0E0064D69C266651?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/06/EU2A9224-Horizontal-322x230.png",
+    "support": "The Velveteers",
+    "room": "Hell",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_efe20d8715",
+    "artist": {
+      "id": "arin_ray",
+      "name": "Arin Ray",
+      "genres": [
+        "alternative r&b"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-29T20:00:00-04:00",
+    "doors_at": "2026-09-29T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/arin-ray-the-limbo-tour-atlanta-georgia-09-29-2026/event/0E0064D6C751AB75?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/06/PL-ArinRay-Verse-Portrait-IsmaelQuintanillaIII_IQ31186-365x230.png",
+    "support": "Baby J",
+    "room": "Purgatory",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_roxy_868746b46b",
+    "artist": {
+      "id": "suki_waterhouse",
+      "name": "Suki Waterhouse",
+      "genres": [
+        "indie pop",
+        "pop rock",
+        "singer-songwriter",
+        "alternative country"
+      ]
+    },
+    "venue": {
+      "id": "roxy",
+      "name": "Coca-Cola Roxy",
+      "lat": 33.8898,
+      "lng": -84.4686,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-29T20:00:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/suki-waterhouse-the-loveland-tour-atlanta-georgia-09-29-2026/event/0E006496C629FD4E",
+    "image_url": "https://s1.ticketm.net/dam/a/91f/fc2ae2a1-cdce-480e-b7a8-3bcae38dd91f_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_state_farm_e2e78964f3",
+    "artist": {
+      "id": "kacey_musgraves",
+      "name": "Kacey Musgraves",
+      "genres": [
+        "country",
+        "contemporary country",
+        "country pop",
+        "alternative country"
+      ]
+    },
+    "venue": {
+      "id": "state_farm",
+      "name": "State Farm Arena",
+      "lat": 33.7573,
+      "lng": -84.3963,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "on_request"
+      }
+    },
+    "start_at": "2026-09-30T19:30:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/event/0E006498B0516C45",
+    "image_url": "https://www.statefarmarena.com/assets/img/0930-Atlanta-KaceyMusgraves-Generic-640x360-b482a23479.jpg",
+    "support": "Charles Wesley Godwin",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_fcfd3c627d",
+    "artist": {
+      "id": "angel_du_t_agnostic_front",
+      "name": "Angel Du$t & Agnostic Front",
+      "genres": []
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-01T19:30:00-04:00",
+    "doors_at": "2026-10-01T18:30:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/angel-dut-and-agnostic-front-atlanta-georgia-10-01-2026/event/0E0064E1BC0CA049?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/07/100126_angeldust_Site-409x230.jpg",
+    "support": "Step 2 This & Muelas",
+    "room": "Hell",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_eastern_8860127d1d",
+    "artist": {
+      "id": "sylvan_esso",
+      "name": "Sylvan Esso",
       "genres": [
         "electronic",
+        "electropop",
+        "indietronica",
         "indie"
       ]
     },
@@ -23,39 +794,79 @@
         "interpreter": "never"
       }
     },
-    "start_at": "2026-10-24T20:00:00-04:00",
-    "doors_at": "2026-10-24T19:00:00-04:00",
-    "price_min": 45,
-    "price_max": 120,
-    "tm_url": "https://www.ticketmaster.com/event/t01-placeholder",
+    "start_at": "2026-10-01T20:00:00-04:00",
+    "doors_at": "2026-10-01T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1474780/sylvan-esso-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a6903c3ee2f5.jpg",
+    "support": null,
+    "room": null,
     "is_past": false,
     "friends_interested": [
       {
-        "id": "priya",
-        "name": "Priya Nair",
-        "avatar": "🎹",
-        "budget_max": 100,
+        "id": "dev",
+        "name": "Dev Patel",
+        "avatar": "🥁",
+        "budget_max": 60.0,
         "accessibility_needs": [],
         "verified": true,
         "weights": [
-          0.2,
-          0.18,
           0.14,
           0.1,
-          0.14,
           0.1,
+          0.1,
+          0.1,
+          0.32,
           0.14
         ]
       }
     ]
   },
   {
-    "id": "u02",
+    "id": "v_roxy_1cda2b6784",
     "artist": {
-      "id": "harbor_lights",
-      "name": "Harbor Lights",
+      "id": "kany_garcia",
+      "name": "Kany Garcia",
       "genres": [
-        "indie rock"
+        "pop"
+      ]
+    },
+    "venue": {
+      "id": "roxy",
+      "name": "Coca-Cola Roxy",
+      "lat": 33.8898,
+      "lng": -84.4686,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-01T20:00:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/kany-garcia-puerta-abierta-tour-atlanta-georgia-10-01-2026/event/0E006488C11FDD7B",
+    "image_url": "https://s1.ticketm.net/dam/a/5fa/9605ce23-339c-4879-b374-011541b825fa_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_tabernacle_2543afeab9",
+    "artist": {
+      "id": "schoolboy_q",
+      "name": "SCHOOLBOY Q",
+      "genres": [
+        "gangsta rap",
+        "hip hop",
+        "west coast hip hop",
+        "hardcore hip hop"
       ]
     },
     "venue": {
@@ -72,56 +883,212 @@
         "interpreter": "never"
       }
     },
-    "start_at": "2026-10-09T20:00:00-04:00",
-    "doors_at": "2026-10-09T19:00:00-04:00",
-    "price_min": 38,
-    "price_max": 62,
-    "tm_url": "https://www.ticketmaster.com/event/u02-placeholder",
+    "start_at": "2026-10-01T20:00:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/schoolboy-q-10-years-of-blank-atlanta-georgia-10-01-2026/event/0E0064FD9A496798",
+    "image_url": "https://s1.ticketm.net/dam/a/4b5/f2e5e163-2e13-463a-bccf-64c7b8a934b5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
     "is_past": false,
     "friends_interested": [
       {
-        "id": "dev",
-        "name": "Dev Patel",
-        "avatar": "🥁",
-        "budget_max": 60,
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100.0,
         "accessibility_needs": [],
         "verified": true,
         "weights": [
-          0.18,
-          0.24,
-          0.12,
+          0.14,
+          0.34,
+          0.1,
           0.08,
           0.12,
-          0.12,
-          0.14
-        ]
-      },
-      {
-        "id": "lena",
-        "name": "Lena Fischer",
-        "avatar": "🎤",
-        "budget_max": 80,
-        "accessibility_needs": [
-          "mobility"
-        ],
-        "verified": true,
-        "weights": [
-          0.14,
-          0.1,
-          0.14,
-          0.22,
-          0.12,
-          0.14,
+          0.08,
           0.14
         ]
       }
     ]
   },
   {
-    "id": "u03",
+    "id": "v_masquerade_54f2890ea3",
     "artist": {
-      "id": "wild_meridian",
-      "name": "Wild Meridian",
+      "id": "to_the_grave_crown_magnetar",
+      "name": "To The Grave & Crown Magnetar",
+      "genres": []
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-02T19:00:00-04:00",
+    "doors_at": "2026-10-02T18:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/event/0E0064C999FB97DB?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/06/100226_crownmagnetar_Site-409x230.jpg",
+    "support": "Face Yourself & Tracheotomy",
+    "room": "Purgatory",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_eastern_a28f731e82",
+    "artist": {
+      "id": "atliens",
+      "name": "ATLiens",
+      "genres": [
+        "dubstep",
+        "electronic",
+        "trap edm"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-02T20:00:00-04:00",
+    "doors_at": "2026-10-02T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1516750/atliens-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a4fea2fe8362.jpg",
+    "support": "Richard Finger, Nikita,The Wicked, Sqishi b2b Blankface",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_4d591adab2",
+    "artist": {
+      "id": "chinese_football",
+      "name": "Chinese Football",
+      "genres": [
+        "emo",
+        "indie rock",
+        "math rock"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-02T20:00:00-04:00",
+    "doors_at": "2026-10-02T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": null,
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/06/100226_chinesefootball_soldout-409x230.jpg",
+    "support": "Michael Cera Palin",
+    "room": "Altar",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_roxy_80da41f0cb",
+    "artist": {
+      "id": "chelsea_handler",
+      "name": "CHELSEA HANDLER",
+      "genres": []
+    },
+    "venue": {
+      "id": "roxy",
+      "name": "Coca-Cola Roxy",
+      "lat": 33.8898,
+      "lng": -84.4686,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-02T20:00:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/chelsea-handler-the-high-and-mighty-atlanta-georgia-10-02-2026/event/0E00647396DB83B3",
+    "image_url": "https://s1.ticketm.net/dam/a/e90/38e0c356-6bcb-4cd2-ab5d-97809a77ce90_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_terminal_west_9f2b8a7d74",
+    "artist": {
+      "id": "desert_dwellers",
+      "name": "Desert Dwellers",
+      "genres": [
+        "downtempo",
+        "psybient",
+        "psytrance"
+      ]
+    },
+    "venue": {
+      "id": "terminal_west",
+      "name": "Terminal West",
+      "lat": 33.783,
+      "lng": -84.4108,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-02T20:00:00-04:00",
+    "doors_at": "2026-10-02T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1506839/desert-dwellers-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/06/uploadedimage_6a3ebd9030084.jpg",
+    "support": "Skysia | Living Light",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_variety_9acbd3934b",
+    "artist": {
+      "id": "brenn",
+      "name": "Brenn!",
       "genres": [
         "folk"
       ]
@@ -140,108 +1107,304 @@
         "interpreter": "never"
       }
     },
-    "start_at": "2026-10-17T20:00:00-04:00",
-    "doors_at": "2026-10-17T19:00:00-04:00",
-    "price_min": 32,
-    "price_max": 48,
-    "tm_url": "https://www.ticketmaster.com/event/u03-placeholder",
+    "start_at": "2026-10-02T20:00:00-04:00",
+    "doors_at": "2026-10-02T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1434445/brenn-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/05/uploadedimage_69f5235b242df.jpg",
+    "support": "Mor",
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_86c9552e5c",
+    "artist": {
+      "id": "emo_night_karaoke",
+      "name": "Emo Night Karaoke",
+      "genres": [
+        "rock"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-02T21:00:00-04:00",
+    "doors_at": "2026-10-02T20:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/emo-night-karaoke-18-atlanta-georgia-10-02-2026/event/0E006489DD401F02?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2024/06/100226_emonightkaraoke_ForSite-409x230.jpg",
+    "support": null,
+    "room": "Hell",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_1dc431b695",
+    "artist": {
+      "id": "electric_feels",
+      "name": "Electric Feels",
+      "genres": [
+        "electro"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-02T22:00:00-04:00",
+    "doors_at": "2026-10-02T21:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/event/0E0064FBCDC91943?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/07/100226_ELECTRIC_site-409x230.jpg",
+    "support": null,
+    "room": "Heaven",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_b4dc807664",
+    "artist": {
+      "id": "he_is_legend",
+      "name": "He Is Legend",
+      "genres": [
+        "hard rock",
+        "metal",
+        "post-hardcore",
+        "rock"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-03T19:00:00-04:00",
+    "doors_at": "2026-10-03T18:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/event/0E00650BAE86AB52?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/08/HE-IS-LEGEND-BW-345x230.jpg",
+    "support": "In Angles, Excide, & ESCA",
+    "room": "Hell",
     "is_past": false,
     "friends_interested": [
       {
         "id": "lena",
         "name": "Lena Fischer",
         "avatar": "🎤",
-        "budget_max": 80,
+        "budget_max": 80.0,
         "accessibility_needs": [
           "mobility"
         ],
         "verified": true,
         "weights": [
-          0.14,
+          0.13,
+          0.08,
+          0.13,
+          0.32,
           0.1,
-          0.14,
-          0.22,
-          0.12,
-          0.14,
+          0.1,
           0.14
         ]
       }
     ]
   },
   {
-    "id": "u04",
+    "id": "v_tabernacle_edb16c258e",
     "artist": {
-      "id": "crystal_motel",
-      "name": "Crystal Motel",
+      "id": "fred_armisen",
+      "name": "Fred Armisen",
       "genres": [
-        "pop"
+        "films/games"
       ]
     },
     "venue": {
-      "id": "state_farm",
-      "name": "State Farm Arena",
-      "lat": 33.7573,
-      "lng": -84.3963,
+      "id": "tabernacle",
+      "name": "Tabernacle",
+      "lat": 33.7586,
+      "lng": -84.3913,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-03T19:00:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/fred-armisen-comedy-for-musicians-but-atlanta-georgia-10-03-2026/event/0E00649615F91ADE",
+    "image_url": "https://s1.ticketm.net/dam/a/6e5/8623a3d5-a590-4f02-8243-8d04c19966e5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_eastern_91ea237df4",
+    "artist": {
+      "id": "atliens",
+      "name": "ATLiens",
+      "genres": [
+        "dubstep",
+        "electronic",
+        "trap edm"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
       "multi_room": false,
       "access_profile": {
         "step_free": true,
         "ada_seating": true,
         "quiet_room": true,
         "strobe_policy": "warned",
-        "interpreter": "on_request"
+        "interpreter": "never"
       }
     },
-    "start_at": "2026-11-07T19:30:00-05:00",
-    "doors_at": "2026-11-07T18:30:00-05:00",
-    "price_min": 59,
-    "price_max": 199,
-    "tm_url": "https://www.ticketmaster.com/event/u04-placeholder",
+    "start_at": "2026-10-03T20:00:00-04:00",
+    "doors_at": "2026-10-03T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1520011/atliens-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a500e1c5e509.jpg",
+    "support": "YOOKiE, MADVKTM, Jeanie b2b Vampa",
+    "room": null,
     "is_past": false,
     "friends_interested": [
       {
-        "id": "priya",
-        "name": "Priya Nair",
-        "avatar": "🎹",
-        "budget_max": 100,
-        "accessibility_needs": [],
+        "id": "lena",
+        "name": "Lena Fischer",
+        "avatar": "🎤",
+        "budget_max": 80.0,
+        "accessibility_needs": [
+          "mobility"
+        ],
         "verified": true,
         "weights": [
-          0.2,
-          0.18,
-          0.14,
-          0.1,
-          0.14,
-          0.1,
-          0.14
-        ]
-      },
-      {
-        "id": "dev",
-        "name": "Dev Patel",
-        "avatar": "🥁",
-        "budget_max": 60,
-        "accessibility_needs": [],
-        "verified": true,
-        "weights": [
-          0.18,
-          0.24,
-          0.12,
+          0.13,
           0.08,
-          0.12,
-          0.12,
+          0.13,
+          0.32,
+          0.1,
+          0.1,
           0.14
         ]
       }
     ]
   },
   {
-    "id": "u05",
+    "id": "v_masquerade_38c4c30b89",
     "artist": {
-      "id": "static_bloom",
-      "name": "Static Bloom",
+      "id": "bragolin_carrellee",
+      "name": "Bragolin & Carrellee",
+      "genres": []
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-03T20:00:00-04:00",
+    "doors_at": "2026-10-03T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/event/0E0064CFE5B8E095?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/06/100326_carrelleebragolin_Site-409x230.jpg",
+    "support": "Tears for the Dying and Jah PHNX",
+    "room": "Altar",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_roxy_ef88aa399e",
+    "artist": {
+      "id": "grupo_duelo",
+      "name": "Grupo Duelo",
       "genres": [
-        "electronic"
+        "traditional mexicano"
       ]
+    },
+    "venue": {
+      "id": "roxy",
+      "name": "Coca-Cola Roxy",
+      "lat": 33.8898,
+      "lng": -84.4686,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-03T20:00:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/grupo-duelo-gravedad-tour-2026-atlanta-georgia-10-03-2026/event/0E00645BB631D0BA",
+    "image_url": "https://s1.ticketm.net/dam/a/ec7/5f9360ee-d0d4-4440-974e-ae819a262ec7_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "v_terminal_west_c68c700f45",
+    "artist": {
+      "id": "nether_hour_and_jed_harrelson",
+      "name": "Nether Hour and Jed Harrelson",
+      "genres": []
     },
     "venue": {
       "id": "terminal_west",
@@ -257,12 +1420,207 @@
         "interpreter": "never"
       }
     },
-    "start_at": "2026-11-14T21:00:00-05:00",
-    "doors_at": "2026-11-14T20:00:00-05:00",
-    "price_min": 25,
-    "price_max": 30,
-    "tm_url": "https://www.ticketmaster.com/event/u05-placeholder",
+    "start_at": "2026-10-03T20:00:00-04:00",
+    "doors_at": "2026-10-03T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1541700/nether-hour-and-jed-harrelson-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a68fa1b316e4.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "dev",
+        "name": "Dev Patel",
+        "avatar": "🥁",
+        "budget_max": 60.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.32,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v_variety_bb16213331",
+    "artist": {
+      "id": "da_i_freyr",
+      "name": "Daði Freyr",
+      "genres": [
+        "electropop",
+        "funktronica",
+        "synth-pop"
+      ]
+    },
+    "venue": {
+      "id": "variety",
+      "name": "Variety Playhouse",
+      "lat": 33.7649,
+      "lng": -84.3492,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-03T20:00:00-04:00",
+    "doors_at": "2026-10-03T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1382308/daoi-freyr-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/03/uploadedimage_69bd8cfc678dd.jpg",
+    "support": "BRÍET",
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.34,
+          0.1,
+          0.08,
+          0.12,
+          0.08,
+          0.14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v_masquerade_d6b675e328",
+    "artist": {
+      "id": "grucified",
+      "name": "Grucified",
+      "genres": []
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-03T22:00:00-04:00",
+    "doors_at": "2026-10-03T21:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/event/0E006521CBCCDD00?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/09/110426_grucified_Site-409x230.jpg",
+    "support": "ILYA & Th3r4",
+    "room": "Purgatory",
     "is_past": false,
     "friends_interested": []
+  },
+  {
+    "id": "v_masquerade_04cf642722",
+    "artist": {
+      "id": "bear_ghost",
+      "name": "Bear Ghost",
+      "genres": [
+        "rock",
+        "progressive rock",
+        "adventure rock"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-04T19:00:00-04:00",
+    "doors_at": "2026-10-04T18:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/event/0E0064BDCDCB4957?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/05/BearGhost-JiminyPromo-JimHesterman-1201486-copy-345x230.jpg",
+    "support": "Sarah and the Safe Word & Spaceman Bob",
+    "room": "Hell",
+    "is_past": false,
+    "friends_interested": []
+  },
+  {
+    "id": "t01",
+    "artist": {
+      "id": "kylie_cantrall",
+      "name": "Kylie Cantrall",
+      "genres": [
+        "pop"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-10T19:00:00-04:00",
+    "doors_at": "2026-10-10T18:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1541673/kylie-cantrall-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a68d3bd3a7d8.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.34,
+          0.1,
+          0.08,
+          0.12,
+          0.08,
+          0.14
+        ]
+      }
+    ]
   }
 ]

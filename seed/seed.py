@@ -1,8 +1,9 @@
 """Build data/encore.db from scratch, deterministically (AGENTS.md §7). Entry: python -m seed.seed
 
 Sources, in order of preference:
-  upcoming events: Ticketmaster cache/API, else synthetic (source='demo')
-  past events:     Setlist.fm cache/API, else synthetic (source='demo')  ← documented fallback
+  upcoming events: Ticketmaster cache/API + the venues' own sites (seed/fetch_venues.py, no key needed),
+                   else synthetic (source='demo')
+  past events:     Setlist.fm cache/API + venue-site archives, synthetic filler for venues with neither
   demo data:       seed/venues.json, seed/demo_events.json, seed/demo_users.json
 """
 import json
@@ -12,12 +13,13 @@ import sqlite3
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
-from . import ROOT, fetch_setlistfm, fetch_ticketmaster
+from . import ROOT, fetch_music, fetch_setlistfm, fetch_ticketmaster, fetch_venues
 from .personas import PERSONAS, sample_scores, sample_tags
 
 from app.constants import RANKER, UNIFORM_WEIGHTS  # noqa: E402  (path set in seed/__init__.py)
 from app.ml import taste  # noqa: E402
 from app.routers.reviews import add_provisional_review  # noqa: E402
+from app.tickets import seller_from_url  # noqa: E402
 
 SEED = 1313
 DB = ROOT / "data" / "encore.db"
@@ -70,13 +72,17 @@ class Builder:
         self.rng = random.Random(SEED)
         self.artists: set[str] = set()
         self.venues: dict[str, dict] = {}
+        self.music: dict[str, dict] = {}   # artist name -> {genres, related, fans} (seed/fetch_music.py)
 
     # ---- rows ----------------------------------------------------------------
     def artist(self, aid: str, name: str, genres: list[str], tm_id=None):
+        """Insert an artist; genres/related come from the music cache when the caller has none."""
         if aid not in self.artists:
             self.artists.add(aid)
-            self.conn.execute("INSERT INTO artists (id, name, tm_id, genres) VALUES (?,?,?,?)",
-                              (aid, name, tm_id, json.dumps(genres)))
+            meta = self.music.get(name, {})
+            self.conn.execute("INSERT INTO artists (id, name, tm_id, genres, related) VALUES (?,?,?,?,?)",
+                              (aid, name, tm_id, json.dumps(genres or meta.get("genres", [])),
+                               json.dumps(meta.get("related", []))))
 
     def venue(self, v: dict):
         self.venues[v["id"]] = v
@@ -86,11 +92,20 @@ class Builder:
             (v["id"], v["name"], v.get("tm_id"), v["lat"], v["lng"], v.get("geofence_radius_m", 150),
              int(v.get("multi_room", False)), json.dumps(v.get("access_profile", {}))))
 
-    def event(self, eid, artist_id, venue_id, start_at, doors_at, pmin, pmax, url, is_past, source):
+    def event(self, eid, artist_id, venue_id, start_at, doors_at, pmin, pmax, url, is_past, source,
+              image_url=None, support=None, room=None):
         self.conn.execute(
             "INSERT INTO events (id, artist_id, venue_id, start_at, doors_at, price_min, price_max, tm_url,"
-            " is_past, source) VALUES (?,?,?,?,?,?,?,?,?,?)",
-            (eid, artist_id, venue_id, start_at, doors_at, pmin, pmax, url, int(is_past), source))
+            " image_url, support, room, is_past, source) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            (eid, artist_id, venue_id, start_at, doors_at, pmin, pmax, url, image_url, support, room,
+             int(is_past), source))
+
+    def offer(self, event_id: str, url: str, status: str):
+        """The primary seller's page for a show (prices arrive later from keyed sources, see app/tickets.py)."""
+        self.conn.execute(
+            "INSERT OR IGNORE INTO ticket_offers (event_id, seller, kind, url, price_min, price_max, status,"
+            " fetched_at) VALUES (?,?,'primary',?,NULL,NULL,?,?)",
+            (event_id, seller_from_url(url), url, status, fetch_venues.fetched_at()))
 
     def review(self, user_id, event_id, scores, tags, price_paid=None):
         s = [int(x) for x in scores]
@@ -119,8 +134,36 @@ def build_venues(b: Builder):
         b.venue(v)
 
 
+def swap_placeholders(spec: dict, past: list[dict]) -> list[dict]:
+    """AGENTS.md §7.2: give Sam's placeholder shows a real artist when the venue's archive has a show there.
+    Photo-evidenced shows (d01–d06) keep their date and time (the demo photos' EXIF pins them), so they
+    only swap when a real show fell on that exact night; the manual ones (d07–d12) may move up to 3 days.
+    Returns the archive rows that were absorbed, so they are not inserted twice."""
+    by_venue: dict[str, list[dict]] = {}
+    for r in past:
+        if r["status"] not in ("cancelled", "postponed") and not r["room"]:  # rooms: one night, several shows
+            by_venue.setdefault(r["venue_id"], []).append(r)
+    used = []
+    for e in spec["events"]:
+        if e["id"] == "t01" or e["id"].startswith("x"):
+            continue
+        d = date.fromisoformat(e["start"][:10])
+        slack = 0 if e["id"] in PHOTO_SHOWS else 3
+        cands = [r for r in by_venue.get(e["venue"], []) if abs((date.fromisoformat(r["date"]) - d).days) <= slack
+                 and r not in used]
+        if not cands:
+            continue
+        real = min(cands, key=lambda r: (abs((date.fromisoformat(r["date"]) - d).days), r["src_id"]))
+        used.append(real)
+        e["real"] = real
+        if slack:
+            e["start"] = real["start_at"][:16]
+    return used
+
+
 def demo_event_rows(b: Builder, spec: dict) -> set[tuple[str, str]]:
-    """Insert d01–d12, x01, t01. Returns the (venue, date) nights they occupy."""
+    """Insert d01–d12, x01, t01 (placeholders already swapped for real shows by swap_placeholders where
+    possible). Returns the (venue, date) nights they occupy."""
     nights = set()
     for aid, a in spec["artists"].items():
         b.artist(aid, a["name"], a["genres"])
@@ -128,18 +171,44 @@ def demo_event_rows(b: Builder, spec: dict) -> set[tuple[str, str]]:
         d, hhmm = e["start"].split("T")
         start = local_iso(date.fromisoformat(d), hhmm)
         is_past = date.fromisoformat(d) < TODAY
-        b.event(e["id"], e["artist"], e["venue"], start, iso_minus(start, 60), *e["price"], e.get("tm_url"),
-                is_past, "demo")
+        real = e.get("real")
+        if real:
+            aid = slug(real["artist"])
+            b.artist(aid, real["artist"], [])
+            b.event(e["id"], aid, e["venue"], start, iso_minus(start, 60), None, None, real["ticket_url"], is_past,
+                    "venue", image_url=real["image_url"], support=real["support"], room=real["room"])
+        else:
+            b.event(e["id"], e["artist"], e["venue"], start, iso_minus(start, 60), *e["price"], e.get("tm_url"),
+                    is_past, "demo")
         nights.add((e["venue"], d))
+    swapped = [e["id"] for e in spec["events"] if e.get("real")]
+    print(f"demo shows: {len(swapped)} of {sum(1 for e in spec['events'] if e['id'] != 't01')} placeholders swapped"
+          f" for real shows ({', '.join(swapped) or 'none'})")
     return nights
 
 
-def build_past(b: Builder, taken: set[tuple[str, str]]) -> list[str]:
-    shows = fetch_setlistfm.load()
-    if not shows:
-        return build_past_synthetic(b, taken)
-    ids = []
-    for s in sorted(shows, key=lambda s: (s["date"], s["venue_id"], s["sf_id"])):
+def _night(e: dict) -> tuple:
+    """Dedupe key for a scraped show: one show per venue per night, or per room for multi-room venues."""
+    return (e["venue_id"], e["date"], e["room"]) if e["room"] else (e["venue_id"], e["date"])
+
+
+def _scraped_event(b: Builder, e: dict, is_past: bool) -> str:
+    """Insert a show from a venue's website (seed/fetch_venues.py) with its primary ticket offer."""
+    aid = slug(e["artist"])
+    b.artist(aid, e["artist"], [])
+    eid = f"v_{e['venue_id']}_{e['src_id']}"
+    b.event(eid, aid, e["venue_id"], e["start_at"], e["doors_at"], None, None, e["ticket_url"], is_past, "venue",
+            image_url=e["image_url"], support=e["support"], room=e["room"])
+    if e["ticket_url"]:
+        b.offer(eid, e["ticket_url"], e["status"])
+    return eid
+
+
+def build_past(b: Builder, taken: set[tuple[str, str]], scraped: list[dict]) -> list[str]:
+    """Past shows: Setlist.fm (key/cache) plus the venue sites that publish an archive; synthetic filler
+    (source='demo') only for venues with neither, so every venue has history to review."""
+    ids, real_venues = [], set()
+    for s in sorted(fetch_setlistfm.load() or [], key=lambda s: (s["date"], s["venue_id"], s["sf_id"])):
         if (s["venue_id"], s["date"]) in taken or not (PAST_START.isoformat() <= s["date"] < TODAY.isoformat()):
             continue
         taken.add((s["venue_id"], s["date"]))
@@ -149,18 +218,29 @@ def build_past(b: Builder, taken: set[tuple[str, str]]) -> list[str]:
         b.event(eid, aid, s["venue_id"], local_iso(date.fromisoformat(s["date"]), "20:00"), None, None, None, None,
                 True, "setlistfm")
         ids.append(eid)
-    print(f"past events: {len(ids)} from Setlist.fm")
+        real_venues.add(s["venue_id"])
+    for e in scraped:
+        if not (PAST_START.isoformat() <= e["date"] < TODAY.isoformat()) or _night(e) in taken:
+            continue
+        if e["status"] in ("cancelled", "postponed"):
+            continue
+        taken.add(_night(e))
+        ids.append(_scraped_event(b, e, is_past=True))
+        real_venues.add(e["venue_id"])
+    print(f"past events: {len(ids)} real ({', '.join(sorted(real_venues)) or 'none'})")
+    filler = [v["id"] for v in json.loads((SEED_DIR / "venues.json").read_text()) if v["id"] not in real_venues]
+    if filler:
+        ids += build_past_synthetic(b, taken, filler)
     return ids
 
 
-def build_past_synthetic(b: Builder, taken: set[tuple[str, str]]) -> list[str]:
-    """Documented fallback (AGENTS.md §9 M1): synthetic past events, source='demo'."""
+def build_past_synthetic(b: Builder, taken: set[tuple[str, str]], venue_ids: list[str]) -> list[str]:
+    """Documented fallback (AGENTS.md §9 M1): synthetic past events, source='demo', at the given venues."""
     for name, genre in SYNTH_ARTISTS:
         b.artist(slug(name), name, [genre])
-    venue_ids = [v["id"] for v in json.loads((SEED_DIR / "venues.json").read_text())]
     days = (TODAY - PAST_START).days
     picks = []
-    while len(picks) < 400:
+    while len(picks) < round(400 * len(venue_ids) / 7):
         vid = b.rng.choice(venue_ids)
         d = PAST_START + timedelta(days=b.rng.randrange(days))
         if (vid, d.isoformat()) in taken:
@@ -173,17 +253,34 @@ def build_past_synthetic(b: Builder, taken: set[tuple[str, str]]) -> list[str]:
         eid = f"p{n:03d}"
         b.event(eid, aid, vid, start, iso_minus(start, 60), *b.price(vid), None, True, "demo")
         ids.append(eid)
-    print(f"past events: {len(ids)} synthetic (no Setlist.fm key/cache — documented fallback)")
+    print(f"past events: {len(ids)} synthetic filler at {', '.join(venue_ids)} (no Setlist.fm key/cache)")
     return ids
 
 
-def build_upcoming(b: Builder, spec: dict) -> list[str]:
-    tm = fetch_ticketmaster.load()
+def _pin_t01(b: Builder, eid: str):
+    """Give the demo's t01 (Maya and Jordan are interested in it) a real show's details."""
+    row = b.conn.execute("SELECT artist_id, venue_id, start_at, doors_at, price_min, price_max, tm_url, image_url,"
+                         " support, room, source FROM events WHERE id = ?", (eid,)).fetchone()
+    b.conn.execute("UPDATE events SET artist_id=?, venue_id=?, start_at=?, doors_at=?, price_min=?, price_max=?,"
+                   " tm_url=?, image_url=?, support=?, room=?, source=? WHERE id = 't01'", row)
+    b.conn.execute("UPDATE ticket_offers SET event_id = 't01' WHERE event_id = ?", (eid,))
+    b.conn.execute("DELETE FROM events WHERE id = ?", (eid,))
+    name = b.conn.execute("SELECT name FROM artists WHERE id = ?", (row[0],)).fetchone()[0]
+    print(f"t01 pinned to {row[10]} show: {name} at {row[1]}, {row[2][:10]}")
+
+
+def build_upcoming(b: Builder, spec: dict, scraped: list[dict], taken: set[tuple[str, str]]) -> list[str]:
+    """Upcoming shows: Ticketmaster (key/cache) plus the venues' own sites; synthetic only when both are
+    empty. t01 is pinned to the highest-priced Ticketmaster show at eastern/tabernacle in the next 60 days
+    (AGENTS.md §7.2), else the first on-sale show at The Eastern (quiet room: Maya's need) 2–8 weeks out."""
     t01 = next(e for e in spec["events"] if e["id"] == "t01")
-    ids = []
+    window_end = (TODAY + timedelta(days=TARGET_WINDOW_DAYS)).isoformat()
+    ids: list[str] = []
+    pinned = None
+
+    tm = fetch_ticketmaster.load() or []
     if tm:
         ours = {v["name"].lower().removeprefix("the "): vid for vid, v in b.venues.items()}
-        window_end = (TODAY + timedelta(days=TARGET_WINDOW_DAYS)).isoformat()
         best = None
         for e in sorted(tm, key=lambda e: (e["start_at"], e["tm_id"])):
             if e["start_at"][:10] < TODAY.isoformat():
@@ -197,24 +294,47 @@ def build_upcoming(b: Builder, spec: dict) -> list[str]:
                              "lat": e["venue"]["lat"], "lng": e["venue"]["lng"]})
                 if vid not in b.venues:
                     continue
+            if (vid, e["start_at"][:10]) in taken:
+                continue
+            taken.add((vid, e["start_at"][:10]))
             aid = slug(e["artist"]["name"])
             b.artist(aid, e["artist"]["name"], e["artist"]["genres"], e["artist"]["tm_id"])
             eid = f"tm_{e['tm_id']}"
             b.event(eid, aid, vid, e["start_at"], e["doors_at"], e["price_min"], e["price_max"], e["tm_url"],
                     False, "ticketmaster")
+            if e["tm_url"]:
+                b.offer(eid, e["tm_url"], "on_sale")
+                b.conn.execute("UPDATE ticket_offers SET price_min = ?, price_max = ? WHERE event_id = ?",
+                               (e["price_min"], e["price_max"], eid))
             ids.append(eid)
             if vid in ("eastern", "tabernacle") and e["start_at"][:10] <= window_end and e["price_max"]:
-                if best is None or e["price_max"] > best[1]["price_max"]:
-                    best = (eid, e, aid, vid)
-        if best:  # pin t01 to the real show: same id, real details
-            eid, e, aid, vid = best
-            b.conn.execute("UPDATE events SET artist_id=?, venue_id=?, start_at=?, doors_at=?, price_min=?,"
-                           " price_max=?, tm_url=?, source='ticketmaster' WHERE id='t01'",
-                           (aid, vid, e["start_at"], e["doors_at"], e["price_min"], e["price_max"], e["tm_url"]))
-            b.conn.execute("DELETE FROM events WHERE id = ?", (eid,))
-            ids.remove(eid)
-            print(f"t01 pinned to Ticketmaster {e['tm_id']}: {e['artist']['name']} at {e['venue']['name']}")
-        print(f"upcoming events: {len(ids) + 1} from Ticketmaster")
+                if best is None or e["price_max"] > best[1]:
+                    best = (eid, e["price_max"])
+        if best:
+            pinned = best[0]
+
+    upcoming = [e for e in scraped if e["date"] >= TODAY.isoformat() and e["status"] not in ("cancelled", "postponed")]
+    added = []
+    for e in upcoming:
+        if _night(e) in taken or (e["venue_id"], e["date"]) in taken:  # Ticketmaster or the demo has that night
+            continue
+        taken.add(_night(e))
+        added.append(_scraped_event(b, e, is_past=False))
+    ids += added
+    if pinned is None:
+        soon = (TODAY + timedelta(days=14)).isoformat()
+        for vid in ("eastern", "tabernacle"):
+            cand = [f"v_{vid}_{e['src_id']}" for e in upcoming
+                    if e["venue_id"] == vid and soon <= e["date"] <= window_end and e["status"] == "on_sale"]
+            cand = [c for c in cand if c in added]
+            if cand:
+                pinned = cand[0]
+                break
+    if pinned:
+        _pin_t01(b, pinned)
+        ids.remove(pinned)
+    if ids:
+        print(f"upcoming events: {len(ids) + 1} real ({len(tm)} Ticketmaster, {len(added)} from venue sites)")
         return ids
 
     for v in EXTRA_VENUES:
@@ -329,9 +449,15 @@ def main():
     users_spec = json.loads((SEED_DIR / "demo_users.json").read_text())
 
     build_venues(b)
+    scraped = fetch_venues.load()
+    swapped = swap_placeholders(events_spec, [r for r in scraped if r["date"] < TODAY.isoformat()])
+    scraped = [r for r in scraped if r not in swapped]
+    wanted = sorted({r["artist"] for r in scraped if r["date"] >= TODAY.isoformat()} | {r["artist"] for r in swapped})
+    b.music = fetch_music.load(wanted)  # fetched + cached; MusicBrainz allows 1 req/s
+    b.music.update(fetch_music.load(sorted({r["artist"] for r in scraped} - set(wanted)), fetch_missing=False))
     nights = demo_event_rows(b, events_spec)
-    past_ids = build_past(b, nights)
-    upcoming_ids = build_upcoming(b, events_spec)
+    past_ids = build_past(b, nights, scraped)
+    upcoming_ids = build_upcoming(b, events_spec, scraped, nights)
     build_users(b, users_spec, past_ids, upcoming_ids)
     conn.commit()
     assert_taste_targets(conn, users_spec)

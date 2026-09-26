@@ -1,0 +1,302 @@
+[
+  {
+    "id": "t01",
+    "artist": {
+      "id": "kylie_cantrall",
+      "name": "Kylie Cantrall",
+      "genres": [
+        "pop"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-10T19:00:00-04:00",
+    "doors_at": "2026-10-10T18:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1541673/kylie-cantrall-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a68d3bd3a7d8.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.34,
+          0.1,
+          0.08,
+          0.12,
+          0.08,
+          0.14
+        ]
+      }
+    ],
+    "reason": "2 fans like you · Priya is going",
+    "score": 1.85
+  },
+  {
+    "id": "v_masquerade_bdd73c41ef",
+    "artist": {
+      "id": "brat",
+      "name": "BRAT",
+      "genres": [
+        "death metal",
+        "grindcore",
+        "powerviolence",
+        "deathgrind"
+      ]
+    },
+    "venue": {
+      "id": "masquerade",
+      "name": "The Masquerade",
+      "lat": 33.7522,
+      "lng": -84.3915,
+      "multi_room": true,
+      "access_profile": {
+        "step_free": false,
+        "ada_seating": false,
+        "quiet_room": false,
+        "strobe_policy": "unrestricted",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-09-29T19:30:00-04:00",
+    "doors_at": "2026-09-29T18:30:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/brat-atlanta-georgia-09-29-2026/event/0E006518DB5A1691?camefrom=cfc_masquerade_website",
+    "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2026/08/092926_brat_Site-409x230.jpg",
+    "support": "U.S. Bastards & Los Ojos Muertos",
+    "room": "Altar",
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "dev",
+        "name": "Dev Patel",
+        "avatar": "🥁",
+        "budget_max": 60.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.32,
+          0.14
+        ]
+      },
+      {
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.34,
+          0.1,
+          0.08,
+          0.12,
+          0.08,
+          0.14
+        ]
+      }
+    ],
+    "reason": "Dev and Priya are going",
+    "score": 1.528
+  },
+  {
+    "id": "v_eastern_91ea237df4",
+    "artist": {
+      "id": "atliens",
+      "name": "ATLiens",
+      "genres": [
+        "dubstep",
+        "electronic",
+        "trap edm"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-03T20:00:00-04:00",
+    "doors_at": "2026-10-03T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1520011/atliens-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a500e1c5e509.jpg",
+    "support": "YOOKiE, MADVKTM, Jeanie b2b Vampa",
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "lena",
+        "name": "Lena Fischer",
+        "avatar": "🎤",
+        "budget_max": 80.0,
+        "accessibility_needs": [
+          "mobility"
+        ],
+        "verified": true,
+        "weights": [
+          0.13,
+          0.08,
+          0.13,
+          0.32,
+          0.1,
+          0.1,
+          0.14
+        ]
+      }
+    ],
+    "reason": "Lena is going · Fits your taste in dubstep",
+    "score": 1.085
+  },
+  {
+    "id": "v_eastern_8860127d1d",
+    "artist": {
+      "id": "sylvan_esso",
+      "name": "Sylvan Esso",
+      "genres": [
+        "electronic",
+        "electropop",
+        "indietronica",
+        "indie"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-01T20:00:00-04:00",
+    "doors_at": "2026-10-01T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.axs.com/events/1474780/sylvan-esso-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2026/07/uploadedimage_6a6903c3ee2f5.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "dev",
+        "name": "Dev Patel",
+        "avatar": "🥁",
+        "budget_max": 60.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.32,
+          0.14
+        ]
+      }
+    ],
+    "reason": "Dev is going · You've been to The Eastern",
+    "score": 0.985
+  },
+  {
+    "id": "v_tabernacle_2543afeab9",
+    "artist": {
+      "id": "schoolboy_q",
+      "name": "SCHOOLBOY Q",
+      "genres": [
+        "gangsta rap",
+        "hip hop",
+        "west coast hip hop",
+        "hardcore hip hop"
+      ]
+    },
+    "venue": {
+      "id": "tabernacle",
+      "name": "Tabernacle",
+      "lat": 33.7586,
+      "lng": -84.3913,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-01T20:00:00-04:00",
+    "doors_at": null,
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/schoolboy-q-10-years-of-blank-atlanta-georgia-10-01-2026/event/0E0064FD9A496798",
+    "image_url": "https://s1.ticketm.net/dam/a/4b5/f2e5e163-2e13-463a-bccf-64c7b8a934b5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "support": null,
+    "room": null,
+    "is_past": false,
+    "friends_interested": [
+      {
+        "id": "priya",
+        "name": "Priya Nair",
+        "avatar": "🎹",
+        "budget_max": 100.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.34,
+          0.1,
+          0.08,
+          0.12,
+          0.08,
+          0.14
+        ]
+      }
+    ],
+    "reason": "Priya is going · You've been to Tabernacle",
+    "score": 0.977
+  }
+]
