@@ -13,6 +13,22 @@ from .rank import load_state
 router = APIRouter(tags=["reviews"])
 
 
+def add_provisional_review(conn, user: str, event_id: str) -> bool:
+    """Give a newly confirmed show a provisional review at the user's average θ (their "persona
+    default"), so it is ranked and matched on right away. Doubled variance marks it as a guess;
+    a real review replaces it. Returns False if the show already has a review."""
+    if conn.execute("SELECT 1 FROM reviews WHERE user_id = ? AND event_id = ?", (user, event_id)).fetchone():
+        return False
+    thetas = [json.loads(r[0]) for r in conn.execute("SELECT theta FROM reviews WHERE user_id = ?", (user,))]
+    theta = [round(sum(col) / len(col), 3) for col in zip(*thetas)] if thetas else [3.0] * 6 + [5.0]
+    conn.execute(
+        "INSERT INTO reviews (user_id, event_id, music, crowd, venue, accessibility, production, value,"
+        " would_again, tags, price_paid, theta, theta_var) VALUES (?,?,?,?,?,?,?,?,?,'[]',NULL,?,?)",
+        (user, event_id, *[int(round(x)) for x in theta[:6]], int(theta[6] >= 3), json.dumps(theta),
+         2 * RANKER["prior_var"]))
+    return True
+
+
 @router.post("/reviews", response_model=schemas.ReviewPostResponse)
 def post_review(body: schemas.ReviewIn, user: str, conn=Depends(get_db)):
     if load_event(conn, body.event_id) is None:

@@ -28,7 +28,8 @@ def match_score(w_a, scores_a: dict, w_b, scores_b: dict) -> tuple[int, list[str
     k = len(shared)
     rho = 0.0
     if k >= 2:
-        r = spearmanr([scores_a[e] for e in shared], [scores_b[e] for e in shared]).statistic
+        a, b = [scores_a[e] for e in shared], [scores_b[e] for e in shared]
+        r = spearmanr(a, b).statistic if len(set(a)) > 1 and len(set(b)) > 1 else np.nan
         rho = 0.0 if np.isnan(r) else float(r)
     cos = float(np.dot(w_a, w_b) / (np.linalg.norm(w_a) * np.linalg.norm(w_b)))
     alpha = min(1.0, k / 8)

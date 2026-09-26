@@ -6,6 +6,7 @@ from fastapi import APIRouter, Depends
 from .. import schemas
 from ..db import get_db, load_event
 from ..ml import matcher
+from .reviews import add_provisional_review
 
 router = APIRouter(tags=["media"])
 
@@ -44,5 +45,6 @@ def attendance_confirm(body: schemas.AttendanceConfirmRequest, user: str, conn=D
                      "status = 'attended', evidence = excluded.evidence, confidence = excluded.confidence",
                      (user, event_id, body.evidence, conf))
         added += prev is None or prev["status"] != "attended"
+        add_provisional_review(conn, user, event_id)
     conn.commit()
     return {"added": added}
