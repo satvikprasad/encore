@@ -49,6 +49,13 @@ CREATE TABLE crews (
   id TEXT PRIMARY KEY, event_id TEXT REFERENCES events(id), member_ids TEXT NOT NULL,  -- JSON array
   messages TEXT NOT NULL DEFAULT '[]', plan TEXT   -- JSON
 );
+CREATE TABLE media (
+  id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), event_id TEXT NOT NULL REFERENCES events(id),
+  kind TEXT NOT NULL CHECK(kind IN ('image','video')), path TEXT NOT NULL,   -- storage path or public URL (app/storage.py)
+  content_type TEXT NOT NULL, bytes INTEGER NOT NULL, caption TEXT, taken_at TEXT, created_at TEXT NOT NULL
+);
+CREATE INDEX idx_media_event ON media(event_id, created_at);
+CREATE INDEX idx_media_user ON media(user_id, created_at);
 CREATE TABLE media_items (
   id TEXT PRIMARY KEY, user_id TEXT REFERENCES users(id), captured_at TEXT NOT NULL,
   lat REAL NOT NULL, lng REAL NOT NULL, matched_event_id TEXT, confidence REAL

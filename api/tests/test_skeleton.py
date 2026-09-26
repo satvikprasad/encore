@@ -34,6 +34,9 @@ FIXTURE_TYPES = {
     "unranked.json": list[S.Event],
     "attendance_set.json": S.AttendanceSetResponse,
     "tickets.json": list[S.TicketOffer],
+    "media.json": list[S.MediaFile],
+    "media_feed.json": list[S.MediaFile],
+    "media_upload.json": S.MediaFile,
 }
 
 

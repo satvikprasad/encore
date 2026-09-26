@@ -79,6 +79,15 @@ export async function listMedia(userId: string, eventId: string): Promise<Stored
   }
 }
 
+export async function listAllMedia(userId: string): Promise<StoredMedia[]> {
+  try {
+    const [rows] = await tx<StoredMedia[]>("readonly", (s) => s.index("byOwner").getAll(userId));
+    return (rows ?? []).sort((a, b) => b.addedAt.localeCompare(a.addedAt));
+  } catch {
+    return [];
+  }
+}
+
 /** event id → number of attachments, for badges on lists. */
 export async function countMedia(userId: string): Promise<Record<string, number>> {
   try {

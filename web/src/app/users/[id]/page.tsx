@@ -3,24 +3,39 @@
 import { useEffect, useState } from "react";
 
 import { PreferenceBars } from "@/components/charts";
-import { IconBookmark, IconCheck } from "@/components/icons";
+import { Lightbox } from "@/components/MediaGallery";
+import { IconBookmark, IconCamera, IconCheck } from "@/components/icons";
 import { FollowButton } from "@/components/PersonRow";
 import { RankedList } from "@/components/RankedList";
 import { Avatar, ErrorNote, EventRow, Page, Ring, SectionTitle, Spinner, TopBar, VerifiedBadge } from "@/components/ui";
 import { api } from "@/lib/api";
 import { firstName } from "@/lib/format";
 import { useUser } from "@/lib/user";
-import type { UserProfile } from "@/types";
+import type { MediaFile, UserProfile } from "@/types";
 
 export default function UserPage({ params }: { params: { id: string } }) {
   const { userId } = useUser();
   const [profile, setProfile] = useState<UserProfile | null>(null);
+  const [moments, setMoments] = useState<MediaFile[] | null>(null);
+  const [open, setOpen] = useState<MediaFile | null>(null);
   const [error, setError] = useState<unknown>(null);
 
   useEffect(() => {
     setProfile(null);
+    setMoments(null);
     api.userProfile(userId, params.id).then(setProfile, setError);
   }, [userId, params.id]);
+
+  // Their photos & videos appear once you follow them (or when it's you).
+  const canSee = !!profile && (profile.following || profile.user.id === userId);
+  useEffect(() => {
+    if (!canSee) return;
+    let live = true;
+    api.userMedia(userId, params.id).then((l) => live && setMoments(l), () => live && setMoments([]));
+    return () => {
+      live = false;
+    };
+  }, [canSee, userId, params.id]);
 
   const u = profile?.user;
 
@@ -72,6 +87,41 @@ export default function UserPage({ params }: { params: { id: string } }) {
                 </p>
               ) : null}
             </header>
+
+            <section className="animate-rise space-y-3" style={{ animationDelay: "40ms" }}>
+              <SectionTitle right={moments?.length ? <span className="text-xs text-muted">{moments.length} moment{moments.length === 1 ? "" : "s"}</span> : null}>
+                {u.id === userId ? "Your moments" : `${firstName(u.name)}'s moments`}
+              </SectionTitle>
+              {!canSee ? (
+                <div className="card flex items-center gap-3 text-sm text-muted">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-sunken text-fg">
+                    <IconCamera size={18} />
+                  </span>
+                  Follow {firstName(u.name)} to see their photos and videos from shows.
+                </div>
+              ) : moments === null ? (
+                <Spinner />
+              ) : moments.length === 0 ? (
+                <div className="card text-sm text-muted">No photos or videos yet.</div>
+              ) : (
+                <div className="grid grid-cols-3 gap-2">
+                  {moments.slice(0, 9).map((m) => (
+                    <button key={m.id} onClick={() => setOpen(m)} className="relative aspect-square overflow-hidden rounded-2xl bg-sunken shadow-card transition hover:opacity-90">
+                      {m.kind === "video" ? (
+                        <video src={m.url} muted playsInline preload="metadata" className="h-full w-full object-cover" />
+                      ) : (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={m.url} alt="" loading="lazy" className="h-full w-full object-cover" />
+                      )}
+                      <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 pb-1.5 pt-6 text-left text-[10px] font-semibold text-white">
+                        <span className="block truncate">{m.event.artist.name}</span>
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
+              {open ? <Lightbox item={open} mine={open.user.id === userId} onClose={() => setOpen(null)} /> : null}
+            </section>
 
             <section className="card animate-rise" style={{ animationDelay: "60ms" }}>
               <div className="label mb-1">What {firstName(u.name)} cares about</div>

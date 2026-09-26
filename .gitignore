@@ -12,6 +12,9 @@ node_modules/
 .env
 .env.local
 
+# Uploaded photos and videos (local storage provider); make seed recreates the demo ones
+data/media/
+
 # OS
 .DS_Store
 

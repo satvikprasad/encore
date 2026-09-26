@@ -8,7 +8,6 @@ import { IconCamera, IconCheck, IconLock, IconPin } from "@/components/icons";
 import { ArtistArt, ErrorNote, EventRow, Page, Spinner, TopBar } from "@/components/ui";
 import { api } from "@/lib/api";
 import { readPhoto } from "@/lib/exif";
-import { saveMedia } from "@/lib/media";
 import { fmtDate } from "@/lib/format";
 import { useUser } from "@/lib/user";
 import type { MediaItem, MediaMatch } from "@/types";
@@ -28,6 +27,8 @@ export default function ImportPage() {
   const [itemCount, setItemCount] = useState(0);
   const [matches, setMatches] = useState<MediaMatch[]>([]);
   const itemFiles = useRef<File[]>([]); // files that produced each posted item, in order
+  const [share, setShare] = useState(true);
+  const [uploaded, setUploaded] = useState<{ done: number; total: number } | null>(null);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [added, setAdded] = useState<MediaMatch[]>([]);
   const [dragging, setDragging] = useState(false);
@@ -73,14 +74,22 @@ export default function ImportPage() {
         evidence: "photo",
         confidences: chosen.map((m) => m.confidence),
       });
-      // Keep the photos with the show (in this browser only) so they're there when you look back.
-      await Promise.all(
-        chosen.map((m) => {
-          const files = (m.item_indices ?? []).map((i) => itemFiles.current[i]).filter((f): f is File => !!f);
-          return files.length ? saveMedia(userId, m.event.id, files) : Promise.resolve([]);
-        }),
-      );
       setAdded(chosen);
+      setPhase("done");
+      if (share) {
+        // Attach the photos to each show so you (and the people who follow you) can look back at them.
+        const jobs = chosen.flatMap((m) => (m.item_indices ?? []).map((i) => itemFiles.current[i]).filter((f): f is File => !!f).map((f) => [m.event.id, f] as const));
+        setUploaded({ done: 0, total: jobs.length });
+        for (const [eventId, file] of jobs) {
+          try {
+            await api.uploadMedia(userId, eventId, file);
+          } catch {
+            /* a failed upload shouldn't stop the rest */
+          }
+          setUploaded((u) => (u ? { ...u, done: u.done + 1 } : u));
+        }
+      }
+      return;
       setPhase("done");
     } catch (e) {
       setError(e);
@@ -236,6 +245,18 @@ export default function ImportPage() {
               })}
             </ul>
             {matches.length ? (
+              <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-line bg-surface px-3.5 py-3 text-sm shadow-card">
+                <input type="checkbox" className="sr-only" checked={share} onChange={(e) => setShare(e.target.checked)} />
+                <span className={clsx("grid h-5 w-5 shrink-0 place-items-center rounded-md border transition", share ? "border-accent bg-accent text-white" : "border-line bg-surface text-transparent")}>
+                  <IconCheck size={12} strokeWidth={3} />
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-semibold">Add my photos to these shows</span>
+                  <span className="block text-xs text-muted">People who follow you can see them on the show page.</span>
+                </span>
+              </label>
+            ) : null}
+            {matches.length ? (
               <button className="btn-primary sticky bottom-6 w-full" disabled={!selected} onClick={confirm}>
                 Confirm {selected} show{selected === 1 ? "" : "s"}
               </button>
@@ -259,7 +280,13 @@ export default function ImportPage() {
                 <div className="display mt-3 text-[30px] leading-none">
                   Added {added.length} show{added.length === 1 ? "" : "s"}
                 </div>
-                <p className="mt-2 text-sm text-white/70">Your photos are attached to each show. Review one to start your ranking.</p>
+                <p className="mt-2 text-sm text-white/70">
+                  {uploaded && uploaded.done < uploaded.total
+                    ? `Uploading photos ${uploaded.done}/${uploaded.total}…`
+                    : uploaded && uploaded.total
+                      ? `${uploaded.total} photo${uploaded.total === 1 ? "" : "s"} added to your shows.`
+                      : "Review one to start your ranking."}
+                </p>
               </div>
             </div>
             <ul className="space-y-3">
@@ -319,7 +346,7 @@ function ConfidenceChip({ value }: { value: number }) {
 function PrivacyNote() {
   return (
     <p className="flex items-center justify-center gap-1.5 text-center text-xs text-dim">
-      <IconLock size={13} /> Photos never leave your device. Only time and location are sent.
+      <IconLock size={13} /> Matching uses only each photo&apos;s time and place. Photos are uploaded only for shows you confirm.
     </p>
   );
 }

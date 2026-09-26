@@ -4,12 +4,52 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { IconCamera, IconChevron, IconSearch, IconSparkle, IconTrophy } from "@/components/icons";
+import { Lightbox } from "@/components/MediaGallery";
 import { RankPrompt } from "@/components/RankPrompt";
 import { ArtistArt, Avatar, AvatarStack, ErrorNote, SectionTitle, Spinner } from "@/components/ui";
 import { api } from "@/lib/api";
 import { firstName, fmtPriceRange, fmtShortDate, sellerName } from "@/lib/format";
 import { useUser } from "@/lib/user";
-import type { RecommendedEvent } from "@/types";
+import type { MediaFile, RecommendedEvent } from "@/types";
+
+/** Latest photos & videos from people you follow — tap to open. */
+function FriendMoments({ userId }: { userId: string }) {
+  const [items, setItems] = useState<MediaFile[]>([]);
+  const [open, setOpen] = useState<MediaFile | null>(null);
+  useEffect(() => {
+    let live = true;
+    api.mediaFeed(userId).then((l) => live && setItems(l), () => {});
+    return () => {
+      live = false;
+    };
+  }, [userId]);
+  if (!items.length) return null;
+  return (
+    <section className="animate-rise space-y-3">
+      <SectionTitle right={<span className="text-xs text-muted">from people you follow</span>}>Friends&apos; moments</SectionTitle>
+      <div className="-mx-4 flex snap-x gap-3 overflow-x-auto px-4 pb-1 [scrollbar-width:none]">
+        {items.map((m) => (
+          <button key={m.id} onClick={() => setOpen(m)} className="relative h-44 w-32 shrink-0 snap-start overflow-hidden rounded-3xl bg-sunken text-left shadow-card transition hover:-translate-y-0.5 hover:shadow-lift">
+            {m.kind === "video" ? (
+              <video src={m.url} muted playsInline preload="metadata" className="h-full w-full object-cover" />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={m.url} alt="" loading="lazy" className="h-full w-full object-cover" />
+            )}
+            <span className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/70 to-transparent" />
+            <span className="absolute inset-x-2 bottom-2 text-white">
+              <span className="flex items-center gap-1 text-[11px] font-semibold">
+                <Avatar user={m.user} size={16} /> {firstName(m.user.name)}
+              </span>
+              <span className="mt-0.5 block truncate text-[11px] text-white/80">{m.event.artist.name}</span>
+            </span>
+          </button>
+        ))}
+      </div>
+      {open ? <Lightbox item={open} mine={open.user.id === userId} onClose={() => setOpen(null)} /> : null}
+    </section>
+  );
+}
 
 function greeting(): string {
   const h = new Date().getHours();
@@ -52,6 +92,8 @@ export default function Home() {
       </Link>
 
       <RankPrompt userId={userId} />
+
+      <FriendMoments userId={userId} />
 
       <section className="animate-rise relative overflow-hidden rounded-3xl bg-fg p-4 text-white shadow-lift">
         <div className="pointer-events-none absolute -right-10 -top-14 h-44 w-44 rounded-full bg-accent opacity-80 blur-2xl" />

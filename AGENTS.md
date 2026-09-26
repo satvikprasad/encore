@@ -170,6 +170,13 @@ CREATE TABLE crews (
   id TEXT PRIMARY KEY, event_id TEXT REFERENCES events(id), member_ids TEXT NOT NULL,  -- JSON array
   messages TEXT NOT NULL DEFAULT '[]', plan TEXT   -- JSON
 );
+CREATE TABLE media (
+  id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), event_id TEXT NOT NULL REFERENCES events(id),
+  kind TEXT NOT NULL CHECK(kind IN ('image','video')), path TEXT NOT NULL,   -- storage path or public URL (app/storage.py)
+  content_type TEXT NOT NULL, bytes INTEGER NOT NULL, caption TEXT, taken_at TEXT, created_at TEXT NOT NULL
+);
+CREATE INDEX idx_media_event ON media(event_id, created_at);
+CREATE INDEX idx_media_user ON media(user_id, created_at);
 CREATE TABLE media_items (
   id TEXT PRIMARY KEY, user_id TEXT REFERENCES users(id), captured_at TEXT NOT NULL,
   lat REAL NOT NULL, lng REAL NOT NULL, matched_event_id TEXT, confidence REAL
@@ -213,6 +220,7 @@ interface Artist { id:string; name:string; genres:string[] }
 interface Venue { id:string; name:string; lat:number; lng:number; multi_room:boolean;
   access_profile:{ step_free:boolean; ada_seating:boolean; quiet_room:boolean; strobe_policy:"none"|"warned"|"unrestricted"; interpreter:"on_request"|"never" } }
 interface Event { id:string; artist:Artist; venue:Venue; start_at:string; doors_at:string|null; price_min:number|null; price_max:number|null; tm_url:string|null; image_url?:string|null; support?:string|null; room?:string|null; is_past:boolean }   // tm_url = primary seller's page
+interface MediaFile { id:string; user:User; event:Event; kind:"image"|"video"; url:string; content_type:string; bytes:number; caption:string|null; taken_at:string|null; created_at:string }
 interface TicketOffer { seller:string; kind:"primary"|"resale"; url:string; price_min:number|null; price_max:number|null; status:string|null; fetched_at:string }
 interface Review { user_id:string; event_id:string; scores:Vec7; tags:string[]; price_paid:number|null }   // scores[6] = would_again ? 5 : 1
 interface RankedShow { event:Event; theta:Vec7; score:number; tier:"S"|"A"|"B"|"C"; rank:number }
@@ -258,6 +266,10 @@ Every endpoint below has `fixtures/<name>.json` with a realistic response for **
 | `people.json` | `GET /people?q=&user=` | — | `PersonCard[]` — every other member, best taste match first |
 | `user_profile.json` | `GET /users/{id}?user=` | — | `UserProfile` |
 | `follows.json` | `POST /follows?user=` | `{user_id, follow:boolean}` | `{following:string[]}` |
+| `media_upload.json` | `POST /media/upload?user=&event=&name=&caption=` | raw file bytes, `Content-Type` = file type (jpeg/png/webp/heic/gif/mp4/mov/webm, ≤ 80 MB) | `MediaFile` — stored via `app/storage.py` (local disk by default, Supabase Storage with env) |
+| `media.json` | `GET /media?user=&event=` / `GET /media?user=&of=` | — | `MediaFile[]` — a show's media from you + people you follow / a member's media (empty unless you follow them) |
+| `media_feed.json` | `GET /media/feed?user=` | — | `MediaFile[]` — latest from people you follow ("Friends' moments") |
+| — | `DELETE /media/{id}?user=` | — | `{ok:true}` (owner only); `GET /media-files/{path}` serves local-storage files |
 | `tickets.json` | `GET /events/{id}/tickets?user=` | — | `TicketOffer[]` — official seller(s) from the venue scrape + resale; prices filled by Ticketmaster Discovery / SeatGeek when keys are set (`api/app/tickets.py`, 4 s timeout, cached 6 h) |
 
 **Gate rule (M4, middleware):** `GET /matches/*`, `POST /crews` where any `member_ids` is not a direct follow of the caller, and `POST /crews/{id}/messages` where the crew has a non-follow → 403 `verification_required` unless `users.verified = 1`.
@@ -320,6 +332,7 @@ Deletes Sam's `d01–d06` attendances/reviews/media_items and comparisons, sets 
 - **Venue scrapers (`seed/fetch_venues.py`, no keys):** Tabernacle + Coca-Cola Roxy (Live Nation) publish schema.org `MusicEvent` JSON-LD on `/shows`; The Eastern, Terminal West and Variety Playhouse load a public AEG feed (`aegwebprod.blob.core.windows.net/json/events/{127,211,214}/events.json`) with AXS links, doors, support and posters; The Masquerade is WordPress event cards (`itemprop="startDate"` is the *doors* time; four rooms); State Farm Arena is an HTML list (games/community events filtered out). None publish prices or an archive. Raw pages are cached in `data/cache/venues/` (committed) so `make seed` is deterministic; delete the cache to refresh. Browser UA + 0.5 s between requests; a parse failure skips that venue, never breaks seeding.
 - **Past shows (`fetch_venues.load_past`):** the Wayback Machine keeps monthly copies of the Tabernacle, Roxy, Masquerade and State Farm Arena calendars; replaying ~13 months of snapshots through the same parsers yields ~550 real past shows (only the normalized `data/cache/venues/past_shows.json` is cached — the raw snapshots would be 40 MB). The AEG feeds are not archived, so The Eastern / Terminal West / Variety keep synthetic filler until a `SETLISTFM_API_KEY` exists. Sam's placeholder shows (§7.2) are swapped for a real show at that venue on that night (photo shows) or within ±3 days (manual ones) by `seed.swap_placeholders`.
 - **Genres & similar artists (`seed/fetch_music.py`, no keys):** MusicBrainz tags (1 req/s, ~2 s per artist, cached in `data/cache/music/artists.json`) fill `artists.genres`; Deezer's related-artists endpoint fills `artists.related`. `ml/recommend.py` uses both (genre Jaccard, "Similar to X, who you've seen").
+- **Photos & videos (`api/app/routers/gallery.py`, `app/storage.py`):** uploads are one raw-body request per file (no multipart dependency). `MEDIA_STORAGE=local` keeps files in `data/media/` (gitignored; `make seed` recreates the friends' demo photos there) and serves them at `/media-files/…`; `MEDIA_STORAGE=supabase` + `SUPABASE_URL/SERVICE_KEY/BUCKET` puts them in a public Supabase bucket so every device shares them. Rows store the provider path/URL, never the host. HEIC/HEVC from iPhones is stored as-is; only Safari renders it.
 - **Ticket prices (`api/app/tickets.py`):** Eventbrite pages carry face value in JSON-LD; Gametime search results carry resale lowest price + the event page (no keys). Ticketmaster and AXS event pages return 401/403 to servers, and StubHub/SeatGeek/Vivid need partner keys, so official Ticketmaster prices need `TICKETMASTER_API_KEY` and SeatGeek resale needs `SEATGEEK_CLIENT_ID`. Lookups run in parallel at request time with a 5 s cap and are cached 6 h in `ticket_offers`.
 - **Setlist.fm:** requires API key (apply immediately), 2 req/s, header `x-api-key`, `Accept: application/json`. `GET /rest/1.0/search/setlists?venueName=...&p=N`. Backfill ~400 events across 7 venues takes 3–5 min; cache to `data/cache/setlistfm/`. Setlist.fm dates are `dd-MM-yyyy`; assume 20:00 local start.
 - **exifr:** `exifr.parse(file, {gps:true, pick:["DateTimeOriginal","OffsetTimeOriginal","GPSLatitude","GPSLongitude"]})`. Parses HEIC on Safari. If `OffsetTimeOriginal` missing, assume `America/New_York`. Send ISO strings with offset.

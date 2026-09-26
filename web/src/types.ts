@@ -44,4 +44,5 @@ export interface UpcomingPlan { event: Event; status: "interested" | "going" }
 export interface UserProfile { user: User; following: boolean; follows_you: boolean; followers: number; following_count: number; match_pct: number | null; shows: RankedShow[]; upcoming: UpcomingPlan[] } // match_pct null for yourself
 export interface FollowRequest { user_id: string; follow: boolean }
 export interface FollowResponse { following: string[] }
+export interface MediaFile { id: string; user: User; event: Event; kind: "image" | "video"; url: string; content_type: string; bytes: number; caption: string | null; taken_at: string | null; created_at: string } // a photo/video attached to a show; visible to the uploader's followers
 export interface TicketOffer { seller: string; kind: "primary" | "resale"; url: string; price_min: number | null; price_max: number | null; status: string | null; fetched_at: string } // prices null until a keyed source fills them

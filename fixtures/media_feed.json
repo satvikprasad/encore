@@ -1,0 +1,307 @@
+[
+  {
+    "id": "m_seed_10",
+    "user": {
+      "id": "lena",
+      "name": "Lena Fischer",
+      "avatar": "🎤",
+      "budget_max": 80.0,
+      "accessibility_needs": [
+        "mobility"
+      ],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.08,
+        0.13,
+        0.32,
+        0.1,
+        0.1,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "d12",
+      "artist": {
+        "id": "slander",
+        "name": "SLANDER",
+        "genres": [
+          "dubstep",
+          "electronic"
+        ]
+      },
+      "venue": {
+        "id": "roxy",
+        "name": "Coca-Cola Roxy",
+        "lat": 33.8898,
+        "lng": -84.4686,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": true,
+          "ada_seating": true,
+          "quiet_room": false,
+          "strobe_policy": "warned",
+          "interpreter": "never"
+        }
+      },
+      "start_at": "2025-09-06T20:00:00-04:00",
+      "doors_at": "2025-09-06T19:00:00-04:00",
+      "price_min": null,
+      "price_max": null,
+      "tm_url": "https://www.ticketmaster.com/slander-presents-voyager-atlanta-georgia-09-06-2025/event/0E0062D1136263E0",
+      "image_url": "https://s1.ticketm.net/dam/a/7e2/1b73cafe-2667-40a5-a909-4a8c001b57e2_RETINA_PORTRAIT_16_9.jpg",
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/lena_d12_10.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 31067,
+    "caption": null,
+    "taken_at": "2025-09-06T22:00:00-04:00",
+    "created_at": "2025-09-06T22:00:00-04:00"
+  },
+  {
+    "id": "m_seed_03",
+    "user": {
+      "id": "dev",
+      "name": "Dev Patel",
+      "avatar": "🥁",
+      "budget_max": 60.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "d11",
+      "artist": {
+        "id": "midnight_relay",
+        "name": "Midnight Relay",
+        "genres": [
+          "hip hop"
+        ]
+      },
+      "venue": {
+        "id": "terminal_west",
+        "name": "Terminal West",
+        "lat": 33.783,
+        "lng": -84.4108,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": false,
+          "ada_seating": false,
+          "quiet_room": false,
+          "strobe_policy": "warned",
+          "interpreter": "never"
+        }
+      },
+      "start_at": "2025-08-09T20:00:00-04:00",
+      "doors_at": "2025-08-09T19:00:00-04:00",
+      "price_min": 30.0,
+      "price_max": 45.0,
+      "tm_url": null,
+      "image_url": null,
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/dev_d11_3.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 30993,
+    "caption": null,
+    "taken_at": "2025-08-09T22:00:00-04:00",
+    "created_at": "2025-08-09T22:00:00-04:00"
+  },
+  {
+    "id": "m_seed_04",
+    "user": {
+      "id": "lena",
+      "name": "Lena Fischer",
+      "avatar": "🎤",
+      "budget_max": 80.0,
+      "accessibility_needs": [
+        "mobility"
+      ],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.08,
+        0.13,
+        0.32,
+        0.1,
+        0.1,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "d10",
+      "artist": {
+        "id": "hollow_pines",
+        "name": "Hollow Pines",
+        "genres": [
+          "americana"
+        ]
+      },
+      "venue": {
+        "id": "variety",
+        "name": "Variety Playhouse",
+        "lat": 33.7649,
+        "lng": -84.3492,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": true,
+          "ada_seating": true,
+          "quiet_room": false,
+          "strobe_policy": "unrestricted",
+          "interpreter": "never"
+        }
+      },
+      "start_at": "2025-06-21T20:00:00-04:00",
+      "doors_at": "2025-06-21T19:00:00-04:00",
+      "price_min": 28.0,
+      "price_max": 40.0,
+      "tm_url": null,
+      "image_url": null,
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/lena_d10_4.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 31332,
+    "caption": null,
+    "taken_at": "2025-06-21T22:00:00-04:00",
+    "created_at": "2025-06-21T22:00:00-04:00"
+  },
+  {
+    "id": "m_seed_02",
+    "user": {
+      "id": "priya",
+      "name": "Priya Nair",
+      "avatar": "🎹",
+      "budget_max": 100.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "d08",
+      "artist": {
+        "id": "paper_satellites",
+        "name": "Paper Satellites",
+        "genres": [
+          "indie pop"
+        ]
+      },
+      "venue": {
+        "id": "tabernacle",
+        "name": "Tabernacle",
+        "lat": 33.7586,
+        "lng": -84.3913,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": true,
+          "ada_seating": true,
+          "quiet_room": false,
+          "strobe_policy": "warned",
+          "interpreter": "never"
+        }
+      },
+      "start_at": "2025-03-22T20:00:00-04:00",
+      "doors_at": "2025-03-22T19:00:00-04:00",
+      "price_min": 35.0,
+      "price_max": 60.0,
+      "tm_url": null,
+      "image_url": null,
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/priya_d08_2.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 31406,
+    "caption": null,
+    "taken_at": "2025-03-22T22:00:00-04:00",
+    "created_at": "2025-03-22T22:00:00-04:00"
+  },
+  {
+    "id": "m_seed_01",
+    "user": {
+      "id": "priya",
+      "name": "Priya Nair",
+      "avatar": "🎹",
+      "budget_max": 100.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "d07",
+      "artist": {
+        "id": "neon_cathedral",
+        "name": "Neon Cathedral",
+        "genres": [
+          "electronic"
+        ]
+      },
+      "venue": {
+        "id": "eastern",
+        "name": "The Eastern",
+        "lat": 33.7524,
+        "lng": -84.3648,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": true,
+          "ada_seating": true,
+          "quiet_room": true,
+          "strobe_policy": "warned",
+          "interpreter": "never"
+        }
+      },
+      "start_at": "2025-02-15T20:00:00-05:00",
+      "doors_at": "2025-02-15T19:00:00-05:00",
+      "price_min": 40.0,
+      "price_max": 70.0,
+      "tm_url": null,
+      "image_url": null,
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/priya_d07_1.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 31442,
+    "caption": null,
+    "taken_at": "2025-02-15T22:00:00-05:00",
+    "created_at": "2025-02-15T22:00:00-05:00"
+  }
+]

@@ -259,6 +259,20 @@ class TicketOffer(BaseModel):
     fetched_at: str
 
 
+class MediaFile(BaseModel):
+    """A photo or video someone attached to a show (GET /media, /media/feed, POST /media/upload)."""
+    id: str
+    user: User
+    event: Event
+    kind: Literal["image", "video"]
+    url: str
+    content_type: str
+    bytes: int
+    caption: Optional[str]
+    taken_at: Optional[str]
+    created_at: str
+
+
 class FollowRequest(BaseModel):
     user_id: str
     follow: bool

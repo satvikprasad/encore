@@ -9,6 +9,7 @@ Sources, in order of preference:
 import json
 import random
 import re
+import shutil
 import sqlite3
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
@@ -421,6 +422,32 @@ def build_users(b: Builder, spec: dict, past_ids: list[str], upcoming_ids: list[
     b.conn.executemany("INSERT INTO follows VALUES (?,?)", sorted(follows))
 
 
+DEMO_MEDIA = [  # (user, event, demo photo) — friends' photos so Sam's feed and show pages have moments in them
+    ("priya", "d07", "d02_1.jpg"), ("priya", "d08", "d03_1.jpg"), ("dev", "d11", "d05_2.jpg"), ("lena", "d10", "d06_1.jpg"),
+    ("maya", "d04", "d04_1.jpg"), ("maya", "d04", "d04_2.jpg"), ("maya", "d02", "d02_2.jpg"), ("jordan", "d01", "d01_1.jpg"),
+    ("jordan", "d11", "d05_1.jpg"), ("lena", "d12", "d06_2.jpg"),
+]
+
+
+def build_media(b: Builder):
+    """Seed friends' photos: copies of the generated demo JPEGs (no real photos in the repo, AGENTS.md §0.7)
+    under data/media/seed/, with rows timestamped two hours into each show."""
+    root = ROOT / "data" / "media" / "seed"
+    root.mkdir(parents=True, exist_ok=True)
+    for n, (uid, eid, photo) in enumerate(DEMO_MEDIA, 1):
+        src = ROOT / "demo_photos" / photo
+        if not src.exists():
+            continue
+        path = f"seed/{uid}_{eid}_{n}.jpg"
+        shutil.copyfile(src, ROOT / "data" / "media" / path)
+        start = b.conn.execute("SELECT start_at FROM events WHERE id = ?", (eid,)).fetchone()[0]
+        taken = (datetime.fromisoformat(start) + timedelta(hours=2)).isoformat(timespec="seconds")
+        b.conn.execute(
+            "INSERT INTO media (id, user_id, event_id, kind, path, content_type, bytes, caption, taken_at, created_at)"
+            " VALUES (?,?,?,?,?,?,?,?,?,?)",
+            (f"m_seed_{n:02d}", uid, eid, "image", path, "image/jpeg", src.stat().st_size, None, taken, taken))
+
+
 def assert_taste_targets(conn: sqlite3.Connection, spec: dict):
     """AGENTS.md §7.3: after Sam's 6 photo shows are added and reviewed with defaults (the provisional
     review POST /attendance/confirm creates), Sam–Maya ∈ [80, 88] and Sam–Jordan ∈ [66, 76].
@@ -459,6 +486,7 @@ def main():
     past_ids = build_past(b, nights, scraped)
     upcoming_ids = build_upcoming(b, events_spec, scraped, nights)
     build_users(b, users_spec, past_ids, upcoming_ids)
+    build_media(b)
     conn.commit()
     assert_taste_targets(conn, users_spec)
     conn.commit()

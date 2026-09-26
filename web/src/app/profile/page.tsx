@@ -10,7 +10,6 @@ import { PersonRow } from "@/components/PersonRow";
 import { RankedList } from "@/components/RankedList";
 import { Avatar, ErrorNote, EventRow, Spinner, VerifiedBadge } from "@/components/ui";
 import { api } from "@/lib/api";
-import { countMedia } from "@/lib/media";
 import { useUser } from "@/lib/user";
 import type { Event, PersonCard, UserProfile } from "@/types";
 
@@ -31,7 +30,11 @@ export default function ProfilePage() {
     api.userProfile(userId, userId).then(setProfile, setError);
     api.unranked(userId).then((l: Event[]) => setUnranked(new Set(l.map((e) => e.id))), () => {});
     api.people(userId).then((p) => setFollowing(p.filter((x) => x.following)), () => setFollowing([]));
-    countMedia(userId).then(setMediaCounts);
+    api.userMedia(userId, userId).then((list) => {
+      const counts: Record<string, number> = {};
+      for (const m of list) counts[m.event.id] = (counts[m.event.id] ?? 0) + 1;
+      setMediaCounts(counts);
+    }, () => {});
   }, [userId]);
 
   const u = profile?.user ?? user;

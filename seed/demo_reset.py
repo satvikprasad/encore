@@ -4,6 +4,7 @@ Removes Sam's d01–d06 attendances/reviews/media items, all of Sam's comparison
 un-verifies Sam, and resets Sam's weights and review variances.
 """
 import json
+import shutil
 import sqlite3
 
 from .seed import DB, PHOTO_SHOWS
@@ -17,6 +18,8 @@ def main():
     conn.execute(f"DELETE FROM reviews WHERE user_id = 'sam' AND event_id IN ({marks})", PHOTO_SHOWS)
     conn.execute(f"DELETE FROM attendance WHERE user_id = 'sam' AND event_id IN ({marks})", PHOTO_SHOWS)
     conn.execute("DELETE FROM media_items WHERE user_id = 'sam'")
+    conn.execute("DELETE FROM media WHERE user_id = 'sam'")
+    shutil.rmtree(DB.parent / "media" / "sam", ignore_errors=True)  # Sam's uploaded photos and videos
     conn.execute("DELETE FROM comparisons WHERE user_id = 'sam'")
     conn.execute("UPDATE reviews SET theta_var = ? WHERE user_id = 'sam'", (RANKER["prior_var"],))
     conn.execute("UPDATE users SET verified = 0, verified_at = NULL, verification_ref = NULL, weights = ?"

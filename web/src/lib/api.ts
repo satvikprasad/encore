@@ -14,6 +14,7 @@ import type {
   EventWithFriends,
   FollowResponse,
   MatchCandidate,
+  MediaFile,
   MediaItem,
   MediaMatch,
   PersonCard,
@@ -27,6 +28,7 @@ import type {
   Vec7,
   VerifyStartResponse,
 } from "@/types";
+import { deleteMedia as localDelete, listAllMedia as localAll, listMedia as localList, saveMedia as localSave, type StoredMedia } from "@/lib/media";
 import {
   fxFollows,
   fxImported,
@@ -80,6 +82,7 @@ export type Endpoint =
   | "setAttendance"
   | "unranked"
   | "tickets"
+  | "media"
   | "matches"
   | "verifyStart"
   | "createCrew"
@@ -118,7 +121,7 @@ async function fixture<T>(data: unknown, ms = 250): Promise<T> {
   return clone<T>(data);
 }
 
-async function request<T>(method: "GET" | "POST", path: string, user: string | null, body?: unknown): Promise<T> {
+async function request<T>(method: "GET" | "POST" | "DELETE", path: string, user: string | null, body?: unknown): Promise<T> {
   const url = new URL(path, API_URL);
   if (user) url.searchParams.set("user", user);
   const res = await fetch(url, {
@@ -184,6 +187,14 @@ function fixtureStatus(user: string, event: Event): AttendanceStatus | null {
 
 function fixtureFollowing(user: string): string[] {
   return fxFollows(user) ?? (followsFx as FollowResponse).following;
+}
+
+/** Fixture mode has no media server: browser-stored files stand in, shaped like the API's MediaFile. */
+function localAsMediaFile(user: string, m: StoredMedia): MediaFile {
+  const everyone = [...(usersFx as unknown as User[]), ...(peopleFx as unknown as PersonCard[]).map((p) => p.user)];
+  const owner = everyone.find((u) => u.id === user) ?? { id: user, name: user, avatar: "", budget_max: null, accessibility_needs: [], verified: false, weights: [0.1429, 0.1429, 0.1429, 0.1429, 0.1429, 0.1429, 0.1426] as Vec7 };
+  const event = fixtureEvents().get(m.eventId) ?? (eventDetailFx as unknown as EventDetail).event;
+  return { id: m.id, user: owner, event, kind: m.kind, url: URL.createObjectURL(m.blob), content_type: m.blob.type, bytes: m.blob.size, caption: null, taken_at: null, created_at: m.addedAt };
 }
 
 let compareCount = 0;
@@ -346,6 +357,54 @@ export const api = {
       return fixture({ event, friends_interested: fixtureFriends(id), attendance: fixtureStatus(user, event) });
     }
     return request("GET", `/events/${encodeURIComponent(id)}`, user);
+  },
+
+  // ---- photos & videos -------------------------------------------------------------
+
+  /** Upload one file as the raw request body; `onProgress` gets 0…1. Visible to the uploader's followers. */
+  uploadMedia(user: string, eventId: string, file: File, onProgress?: (pct: number) => void, caption?: string): Promise<MediaFile> {
+    if (usesFixture("media")) return localSave(user, eventId, [file]).then((rows) => localAsMediaFile(user, rows[0]));
+    return new Promise((resolve, reject) => {
+      const url = new URL("/media/upload", API_URL);
+      url.searchParams.set("user", user);
+      url.searchParams.set("event", eventId);
+      url.searchParams.set("name", file.name);
+      if (caption) url.searchParams.set("caption", caption);
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", url.toString());
+      xhr.setRequestHeader("Content-Type", file.type || "application/octet-stream");
+      xhr.upload.onprogress = (e) => e.lengthComputable && onProgress?.(e.loaded / e.total);
+      xhr.onload = () => {
+        const json = xhr.responseText ? JSON.parse(xhr.responseText) : null;
+        if (xhr.status >= 200 && xhr.status < 300) resolve(json as MediaFile);
+        else reject(new ApiError(xhr.status, json));
+      };
+      xhr.onerror = () => reject(new ApiError(0, { error: "network" }));
+      xhr.send(file);
+    });
+  },
+
+  /** A show's media: yours plus people you follow. */
+  eventMedia(user: string, eventId: string): Promise<MediaFile[]> {
+    if (usesFixture("media")) return localList(user, eventId).then((rows) => rows.map((m) => localAsMediaFile(user, m)));
+    return request("GET", `/media?event=${encodeURIComponent(eventId)}`, user);
+  },
+
+  /** A member's media — only when you follow them (or it's you). */
+  userMedia(user: string, of: string): Promise<MediaFile[]> {
+    if (usesFixture("media")) return of === user ? localAll(user).then((rows) => rows.map((m) => localAsMediaFile(user, m))) : Promise.resolve([]);
+    return request("GET", `/media?of=${encodeURIComponent(of)}`, user);
+  },
+
+  /** Friends' moments: the latest from people you follow. */
+  mediaFeed(user: string): Promise<MediaFile[]> {
+    if (usesFixture("media")) return Promise.resolve([]);
+    return request("GET", "/media/feed", user);
+  },
+
+  deleteMedia(user: string, id: string): Promise<{ ok: true }> {
+    if (usesFixture("media")) return localDelete(id).then(() => ({ ok: true as const }));
+    return request("DELETE", `/media/${encodeURIComponent(id)}`, user);
   },
 
   /** Where to buy a show: official seller(s) plus resale, cheapest known price first. */
