@@ -170,7 +170,7 @@ class ComparePair(BaseModel):
 
 class ReviewPostResponse(BaseModel):
     ok: Literal[True]
-    next_compare: ComparePair
+    next_compare: Optional[ComparePair]  # null until the user has reviewed 2 shows
 
 
 class CompareNext(BaseModel):

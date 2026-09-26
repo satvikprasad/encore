@@ -35,7 +35,7 @@ def match(items: list[dict], venues: list[dict], events: list[dict]) -> list[dic
     items:  [{lat, lng, captured_at}]
     venues: [{id, lat, lng, geofence_radius_m, multi_room}]
     events: [{id, venue_id, start_at, doors_at}]
-    Returns [{cluster_id, event_id, confidence, photo_count, suggested}] sorted by
+    Returns [{cluster_id, event_id, confidence, photo_count, suggested, item_indices}] sorted by
     event start, one per (venue, date) cluster, dropping clusters below the ask threshold.
     """
     events_by_venue = defaultdict(list)
@@ -44,8 +44,9 @@ def match(items: list[dict], venues: list[dict], events: list[dict]) -> list[dic
 
     # (venue_id, event date) -> event_id -> per-photo scores
     clusters: dict[tuple[str, str], dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
+    members: dict[str, list[int]] = defaultdict(list)
     starts = {}
-    for item in items:
+    for n, item in enumerate(items):
         t = parse_time(item["captured_at"])
         for v in venues:
             r = v["geofence_radius_m"]
@@ -56,6 +57,7 @@ def match(items: list[dict], venues: list[dict], events: list[dict]) -> list[dic
             for e, lo, hi in events_by_venue[v["id"]]:
                 if lo <= t <= hi:
                     clusters[(v["id"], e["start_at"][:10])][e["id"]].append(math.exp(-d / r) * prior)
+                    members[e["id"]].append(n)
                     starts[e["id"]] = e["start_at"]
 
     out = []
@@ -72,6 +74,7 @@ def match(items: list[dict], venues: list[dict], events: list[dict]) -> list[dic
             "confidence": round(c, 3),
             "photo_count": len(by_event[event_id]),
             "suggested": "auto" if c >= MATCH_THRESHOLDS["auto"] else "ask",
+            "item_indices": sorted(set(members[event_id])),
         })
     out.sort(key=lambda m: starts[m["event_id"]])
     return out
