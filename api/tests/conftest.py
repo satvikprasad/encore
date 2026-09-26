@@ -1,0 +1,27 @@
+import sys
+from pathlib import Path
+
+import pytest
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from tests.dbutil import make_db  # noqa: E402
+
+
+@pytest.fixture
+def db(tmp_path, monkeypatch):
+    """Temp SQLite DB seeded from fixtures; the app is pointed at it via ENCORE_DB."""
+    path = tmp_path / "encore.db"
+    conn = make_db(path)
+    monkeypatch.setenv("ENCORE_DB", str(path))
+    yield conn
+    conn.close()
+
+
+@pytest.fixture
+def client(db):
+    from fastapi.testclient import TestClient
+
+    from app.main import app
+
+    return TestClient(app)
