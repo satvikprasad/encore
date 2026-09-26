@@ -1,15 +1,11 @@
 """Crew plan: M2's group scorer picks and scores options, Grok writes the prose.
 Fallback: top option, per-member notes from scores and constraints."""
-import json
 import re
 from datetime import datetime, timedelta
 
+from ..ml import group
+from ..ml.group import need_met
 from . import grok, prompts
-
-try:
-    from ..ml.group import score_options as _score_options
-except ImportError:  # M2 hasn't shipped group.py yet
-    _score_options = None
 
 NEED_FEATURES = {
     "mobility": "step-free entry and ADA seating",
@@ -21,52 +17,10 @@ NEED_FEATURES = {
 }
 
 
-def need_met(need: str, access: dict) -> bool:
-    """Constraint satisfaction rules from AGENTS.md §3 (same as ml/group.py)."""
-    if need == "mobility":
-        return access["step_free"] and access["ada_seating"]
-    if need in ("sensory", "neurodivergent"):
-        return access["quiet_room"] and access["strobe_policy"] != "unrestricted"
-    if need == "hearing":
-        return access["interpreter"] == "on_request"
-    return access["ada_seating"]  # vision, chronic
-
-
 # ---- options ---------------------------------------------------------------
 
-def _normalize(option: dict) -> dict:
-    """Accept M2's option dicts; we rely on event_id, tier_label, price and per-member scores."""
-    per_member = option.get("per_member") or [
-        {"user_id": uid, "score": s} for uid, s in option.get("member_scores", {}).items()]
-    return {
-        "event_id": option["event_id"],
-        "tier_label": option["tier_label"],
-        "price": float(option["price"]),
-        "per_member": [{"user_id": m["user_id"], "score": float(m["score"])} for m in per_member],
-    }
-
-
-def _stub_options(event: dict, members: list[dict]) -> list[dict]:
-    """Stand-in until ml/group.py lands: three price tiers, scored on budget only."""
-    lo, hi = event["price_min"], event["price_max"]
-    if lo is None or hi is None:
-        tiers = [("General admission", lo or hi or 0.0)]
-    else:
-        tiers = [("Cheapest", lo), ("Mid-price", round((lo + hi) / 2, 2)), ("Best seats", hi)]
-    options = []
-    for label, price in tiers:
-        scores = [{"user_id": m["id"],
-                   "score": 1.0 if m["budget_max"] is None or price <= m["budget_max"] else 0.0}
-                  for m in members]
-        options.append({"event_id": event["id"], "tier_label": label, "price": price, "per_member": scores})
-    options.sort(key=lambda o: (-min(s["score"] for s in o["per_member"]), o["price"]))
-    return options
-
-
 def score_options(event: dict, members: list[dict]) -> list[dict]:
-    if _score_options is None:
-        return _stub_options(event, members)
-    return [_normalize(o) for o in _score_options([m["id"] for m in members], event["id"])]
+    return group.score_options([m["id"] for m in members], event["id"])
 
 
 # ---- fallback prose ----------------------------------------------------------

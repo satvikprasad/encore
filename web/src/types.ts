@@ -24,7 +24,7 @@ export interface AttendanceConfirmRequest { event_ids: string[]; evidence: "phot
 export interface AttendanceConfirmResponse { added: number }
 export type ReviewIn = Omit<Review, "user_id">;
 export interface ComparePair { event_a: Event; event_b: Event }
-export interface ReviewPostResponse { ok: true; next_compare: ComparePair }
+export interface ReviewPostResponse { ok: true; next_compare: ComparePair | null } // null until 2 shows reviewed
 export interface CompareNext { event_a: Event; event_b: Event; question: string }
 export interface CompareRequest { event_a: string; event_b: string; winner: string }
 export type EventWithFriends = Event & { friends_interested: User[] };
