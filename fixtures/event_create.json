@@ -1,0 +1,31 @@
+{
+  "id": "u_9b24768e3d",
+  "artist": {
+    "id": "bruno_mars",
+    "name": "Bruno Mars",
+    "genres": []
+  },
+  "venue": {
+    "id": "state_farm",
+    "name": "State Farm Arena",
+    "lat": 33.7573,
+    "lng": -84.3963,
+    "multi_room": false,
+    "access_profile": {
+      "step_free": true,
+      "ada_seating": true,
+      "quiet_room": true,
+      "strobe_policy": "warned",
+      "interpreter": "on_request"
+    }
+  },
+  "start_at": "2026-05-16T20:00:00-04:00",
+  "doors_at": null,
+  "price_min": null,
+  "price_max": null,
+  "tm_url": null,
+  "image_url": "https://cdn-images.dzcdn.net/images/artist/90f0b5b11df4f87ee878f38569b5995b/250x250-000000-80-0-0.jpg",
+  "support": null,
+  "room": null,
+  "is_past": true
+}

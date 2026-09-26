@@ -1,12 +1,23 @@
-"""M1 — events: list/search, recommendations, detail."""
+"""M1 — events: list/search, recommendations, detail; plus user-added shows."""
+import hashlib
+import json
+import re
+from datetime import date, datetime
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
 
-from .. import schemas, tickets
-from ..db import EVENT_SQL, event_from_row, get_db, load_event, user_from_row
+from .. import artists, schemas, tickets
+from ..db import EVENT_SQL, event_from_row, get_db, load_event, load_user, user_from_row
 from ..ml import recommend
+
+TZ = ZoneInfo("America/New_York")
+
+
+def slug(s: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
 
 router = APIRouter(tags=["events"])
 
@@ -33,6 +44,67 @@ def list_events(user: str, upcoming: bool = True, q: Optional[str] = None, limit
         rows = conn.execute(EVENT_SQL + " WHERE e.is_past = ? ORDER BY e.start_at " + ("ASC" if upcoming else "DESC"),
                             (0 if upcoming else 1,))
     return [{**event_from_row(r), "friends_interested": friends_interested(conn, user, r["id"])} for r in rows]
+
+
+@router.get("/artists/search", response_model=list[schemas.ArtistHit])
+def artist_search(q: str):
+    return artists.search_artists(q)
+
+
+def _resolve_venue(conn, venue: str) -> Optional[str]:
+    """Our venue id for an id, a known name, or a new place (geocoded and added). None if unknown."""
+    key = venue.strip()
+    if not key:
+        return None
+    row = conn.execute("SELECT id FROM venues WHERE id = ? OR lower(name) = lower(?)", (key, key)).fetchone()
+    if row is None:
+        row = conn.execute("SELECT id FROM venues WHERE lower(name) LIKE lower(?) ORDER BY length(name) LIMIT 1",
+                           (f"%{key}%",)).fetchone()
+    if row:
+        return row["id"]
+    coords = artists.geocode(key)
+    if coords is None:
+        return None
+    vid = slug(key)
+    conn.execute("INSERT OR IGNORE INTO venues (id, name, lat, lng, geofence_radius_m, multi_room, access_profile)"
+                 " VALUES (?,?,?,?,150,0,'{}')", (vid, key, coords[0], coords[1]))
+    return vid
+
+
+@router.post("/events", response_model=schemas.Event)
+def create_event(body: schemas.EventCreateRequest, user: str, conn=Depends(get_db)):
+    """Add a show the calendar doesn't have. Same artist + venue + night → the existing show."""
+    if load_user(conn, user) is None:
+        return JSONResponse(status_code=404, content={"error": "unknown_user"})
+    try:
+        day = date.fromisoformat(body.date)
+        hhmm = datetime.strptime(body.time or "20:00", "%H:%M").time()
+    except ValueError:
+        return JSONResponse(status_code=422, content={"error": "bad_date"})
+    if not body.artist.strip():
+        return JSONResponse(status_code=422, content={"error": "artist_required"})
+    vid = _resolve_venue(conn, body.venue)
+    if vid is None:
+        return JSONResponse(status_code=422, content={"error": "venue_not_found"})
+    meta = artists.artist_details(body.artist)
+    aid = slug(meta["name"])
+    if conn.execute("SELECT 1 FROM artists WHERE id = ?", (aid,)).fetchone() is None:
+        conn.execute("INSERT INTO artists (id, name, genres, related) VALUES (?,?,?,?)",
+                     (aid, meta["name"], "[]", json.dumps(meta["related"])))
+    existing = conn.execute("SELECT id FROM events WHERE artist_id = ? AND venue_id = ? AND substr(start_at, 1, 10) = ?",
+                            (aid, vid, day.isoformat())).fetchone()
+    if existing:
+        conn.commit()
+        return load_event(conn, existing["id"])
+    start = datetime.combine(day, hhmm).replace(tzinfo=TZ)
+    eid = "u_" + hashlib.sha1(f"{aid}|{vid}|{day}".encode()).hexdigest()[:10]
+    conn.execute(
+        "INSERT INTO events (id, artist_id, venue_id, start_at, doors_at, price_min, price_max, tm_url, image_url,"
+        " support, room, is_past, source) VALUES (?,?,?,?,NULL,NULL,NULL,NULL,?,?,NULL,?,'user')",
+        (eid, aid, vid, start.isoformat(timespec="seconds"), meta["picture"], (body.support or "").strip() or None,
+         int(day < datetime.now(TZ).date())))
+    conn.commit()
+    return load_event(conn, eid)
 
 
 @router.get("/events/recommended", response_model=list[schemas.RecommendedEvent])

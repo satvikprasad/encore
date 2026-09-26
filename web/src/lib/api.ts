@@ -2,6 +2,7 @@
 // NEXT_PUBLIC_USE_FIXTURES=true serves everything from fixtures (every endpoint is green, so the real
 // API is the default), and OVERRIDES pins individual endpoints either way.
 import type {
+  ArtistHit,
   AttendanceConfirmRequest,
   AttendanceConfirmResponse,
   AttendanceSetResponse,
@@ -10,6 +11,7 @@ import type {
   CompareRequest,
   Crew,
   Event,
+  EventCreateRequest,
   EventDetail,
   EventWithFriends,
   FollowResponse,
@@ -41,12 +43,14 @@ import {
   isFixtureVerified,
 } from "@/lib/session";
 
+import artistSearchFx from "@fixtures/artist_search.json";
 import attendanceConfirmFx from "@fixtures/attendance_confirm.json";
 import compareNextFx from "@fixtures/compare_next.json";
 import comparePostFx from "@fixtures/compare_post.json";
 import crewCreateFx from "@fixtures/crew_create.json";
 import crewGetFx from "@fixtures/crew_get.json";
 import crewPlanFx from "@fixtures/crew_plan.json";
+import eventCreateFx from "@fixtures/event_create.json";
 import eventDetailFx from "@fixtures/event_detail.json";
 import eventsRecommendedFx from "@fixtures/events_recommended.json";
 import eventsSearchFx from "@fixtures/events_search.json";
@@ -83,6 +87,7 @@ export type Endpoint =
   | "unranked"
   | "tickets"
   | "media"
+  | "createEvent"
   | "matches"
   | "verifyStart"
   | "createCrew"
@@ -405,6 +410,35 @@ export const api = {
   deleteMedia(user: string, id: string): Promise<{ ok: true }> {
     if (usesFixture("media")) return localDelete(id).then(() => ({ ok: true as const }));
     return request("DELETE", `/media/${encodeURIComponent(id)}`, user);
+  },
+
+  /** Artist autocomplete (Deezer, via the API) for the add-a-show form. */
+  searchArtists(q: string): Promise<ArtistHit[]> {
+    if (usesFixture("createEvent")) {
+      const needle = q.trim().toLowerCase();
+      return fixture((artistSearchFx as unknown as ArtistHit[]).filter((a) => a.name.toLowerCase().includes(needle)), 120);
+    }
+    return request("GET", `/artists/search?q=${encodeURIComponent(q)}`, null);
+  },
+
+  /** Add a show the calendars don't have. Same artist + venue + night returns the existing show. */
+  createEvent(user: string, body: EventCreateRequest): Promise<Event> {
+    if (usesFixture("createEvent")) {
+      const sample = eventCreateFx as unknown as Event;
+      const venue = Array.from(fixtureEvents().values()).find((e) => e.venue.id === body.venue || e.venue.name.toLowerCase() === body.venue.toLowerCase())?.venue ?? sample.venue;
+      const today = new Date().toISOString().slice(0, 10);
+      return fixture({
+        ...sample,
+        id: `u_${Date.now().toString(36)}`,
+        artist: { id: body.artist.toLowerCase().replace(/[^a-z0-9]+/g, "_"), name: body.artist, genres: [] },
+        venue,
+        start_at: `${body.date}T${body.time ?? "20:00"}:00-04:00`,
+        image_url: null,
+        support: body.support ?? null,
+        is_past: body.date < today,
+      });
+    }
+    return request("POST", "/events", user, body);
   },
 
   /** Where to buy a show: official seller(s) plus resale, cheapest known price first. */

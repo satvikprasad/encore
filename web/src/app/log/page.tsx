@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
 
-import { IconCamera, IconLock, IconTrophy } from "@/components/icons";
+import { AddShowSheet } from "@/components/AddShowSheet";
+import { IconCamera, IconChevron, IconLock, IconPlus, IconTrophy } from "@/components/icons";
 import { ArtistArt, ErrorNote, SearchField, Spinner, TopBar } from "@/components/ui";
 import { api } from "@/lib/api";
 import { fmtShortDate } from "@/lib/format";
@@ -13,9 +14,19 @@ import type { Event, EventWithFriends } from "@/types";
 
 /** Log a show: find a past show (or import from photos), mark it "went", rate it. */
 export default function LogPage() {
+  return (
+    <Suspense fallback={<Spinner />}>
+      <Log />
+    </Suspense>
+  );
+}
+
+function Log() {
   const { userId } = useUser();
   const router = useRouter();
-  const [q, setQ] = useState("");
+  const params = useSearchParams();
+  const [q, setQ] = useState(params.get("add") ?? "");
+  const [adding, setAdding] = useState(params.has("add"));
   const [results, setResults] = useState<EventWithFriends[] | null>(null);
   const [pending, setPending] = useState<Event[] | null>(null);
   const [recent, setRecent] = useState<Event[] | null>(null);
@@ -59,6 +70,18 @@ export default function LogPage() {
 
   const searching = q.trim().length > 0;
   const pendingIds = new Set(pending?.map((e) => e.id) ?? []);
+  const addButton = (
+    <button onClick={() => setAdding(true)} className="card flex w-full items-center gap-3.5 text-left transition hover:-translate-y-0.5 hover:shadow-lift">
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-fg text-white">
+        <IconPlus size={22} />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-[15px] font-semibold tracking-tight">Can&apos;t find it? Add the show</span>
+        <span className="block text-xs text-muted">Any artist, any venue, any date — past shows go straight to ranking.</span>
+      </span>
+      <IconChevron size={18} className="text-dim" />
+    </button>
+  );
 
   return (
     <>
@@ -136,15 +159,23 @@ export default function LogPage() {
 
         {error ? <ErrorNote error={error} /> : null}
         {searching && !results && !error ? <Spinner /> : null}
-        {results?.length === 0 ? <div className="card text-sm text-muted">No past shows match “{q.trim()}”.</div> : null}
+        {results?.length === 0 ? (
+          <>
+            <div className="card text-sm text-muted">No past shows match “{q.trim()}” in the calendars we track.</div>
+            {addButton}
+          </>
+        ) : null}
         {results?.length ? (
           <section className="space-y-2">
             <div className="label px-1">Past shows</div>
             {results.map((e, i) => (
               <ShowPick key={e.id} event={e} busy={picking === e.id} disabled={!!picking} onPick={() => pick(e)} delay={i * 30} />
             ))}
+            {addButton}
           </section>
         ) : null}
+        {!searching ? <div className="animate-rise" style={{ animationDelay: "180ms" }}>{addButton}</div> : null}
+        <AddShowSheet userId={userId} open={adding} onClose={() => setAdding(false)} initialArtist={q.trim()} />
       </main>
     </>
   );

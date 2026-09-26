@@ -37,6 +37,8 @@ FIXTURE_TYPES = {
     "media.json": list[S.MediaFile],
     "media_feed.json": list[S.MediaFile],
     "media_upload.json": S.MediaFile,
+    "event_create.json": S.Event,
+    "artist_search.json": list[S.ArtistHit],
 }
 
 

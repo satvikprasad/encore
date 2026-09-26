@@ -65,14 +65,18 @@ NOT_A_SHOW = re.compile(r"\bvs\.?\b|\bHawks\b|\bDream\b|Playoffs|Preseason|\bGam
 
 # ---- fetching + cache -----------------------------------------------------------
 
-def _get(url: str, timeout: float = 25) -> Optional[str]:
-    try:
-        r = httpx.get(url, headers=HEADERS, timeout=timeout, follow_redirects=True)
-        r.raise_for_status()
-        return r.text
-    except httpx.HTTPError as e:
-        print(f"venues: {url} failed ({e}); skipped")
-        return None
+def _get(url: str, timeout: float = 25, attempts: int = 1) -> Optional[str]:
+    for attempt in range(attempts):
+        try:
+            r = httpx.get(url, headers=HEADERS, timeout=timeout, follow_redirects=True)
+            r.raise_for_status()
+            return r.text
+        except httpx.HTTPError as e:
+            if attempt + 1 < attempts:
+                time.sleep(20 * (attempt + 1))  # the archive refuses bursts; back off and retry
+                continue
+            print(f"venues: {url} failed ({e}); skipped")
+    return None
 
 
 def _fetch(name: str, url: str) -> Optional[str]:
@@ -318,11 +322,11 @@ ARCHIVED = {  # venue -> (adapter, live url); the AEG feeds are not archived, so
 
 
 def _snapshots(url: str, start: str, end: str) -> list[str]:
-    """One archived copy per month between start and end (YYYYMM)."""
+    """Archived copies between start and end (YYYYMM), at most one per day."""
     try:
         r = httpx.get(WAYBACK_CDX, timeout=60, params={
             "url": url.split("://", 1)[1].removeprefix("www."), "from": start, "to": end, "output": "json", "fl": "timestamp",
-            "filter": "statuscode:200", "collapse": "timestamp:6", "limit": 60})
+            "filter": "statuscode:200", "collapse": "timestamp:8", "limit": 400})
         r.raise_for_status()
         return [row[0] for row in r.json()[1:]] if r.text.strip() else []
     except (httpx.HTTPError, ValueError) as e:
@@ -338,14 +342,14 @@ def build_past(today: date, months: int = 13) -> list[dict]:
         stamps = _snapshots(url, start, today.strftime("%Y%m"))
         print(f"venues: {venue_id}: {len(stamps)} archived copies")
         for ts in stamps:
-            page = _get(f"https://web.archive.org/web/{ts}id_/{url}", timeout=90)
+            page = _get(f"https://web.archive.org/web/{ts}id_/{url}", timeout=90, attempts=4)
             if page is None:
                 continue
             try:
                 rows += [r for r in PARSERS[adapter](venue_id, page) if r["date"] < today.isoformat()]
             except Exception as e:
                 print(f"venues: could not parse {venue_id}@{ts} ({e})")
-            time.sleep(1.0)
+            time.sleep(1.5)
     return _dedupe_sorted(rows, today.isoformat())
 
 

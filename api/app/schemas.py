@@ -273,6 +273,23 @@ class MediaFile(BaseModel):
     created_at: str
 
 
+class ArtistHit(BaseModel):
+    """GET /artists/search: an artist as Deezer knows them (for the add-a-show form)."""
+    id: int
+    name: str
+    picture: Optional[str]
+    fans: int
+
+
+class EventCreateRequest(BaseModel):
+    """POST /events: add a show that isn't in the calendar (a past one to rank, or an upcoming one)."""
+    artist: str
+    venue: str                   # one of our venue ids, a known venue's name, or a new venue to geocode
+    date: str                    # YYYY-MM-DD, local
+    time: Optional[str] = None   # HH:MM local; 20:00 when omitted
+    support: Optional[str] = None
+
+
 class FollowRequest(BaseModel):
     user_id: str
     follow: bool

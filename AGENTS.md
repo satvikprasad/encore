@@ -221,6 +221,8 @@ interface Venue { id:string; name:string; lat:number; lng:number; multi_room:boo
   access_profile:{ step_free:boolean; ada_seating:boolean; quiet_room:boolean; strobe_policy:"none"|"warned"|"unrestricted"; interpreter:"on_request"|"never" } }
 interface Event { id:string; artist:Artist; venue:Venue; start_at:string; doors_at:string|null; price_min:number|null; price_max:number|null; tm_url:string|null; image_url?:string|null; support?:string|null; room?:string|null; is_past:boolean }   // tm_url = primary seller's page
 interface MediaFile { id:string; user:User; event:Event; kind:"image"|"video"; url:string; content_type:string; bytes:number; caption:string|null; taken_at:string|null; created_at:string }
+interface ArtistHit { id:number; name:string; picture:string|null; fans:number }
+interface EventCreateRequest { artist:string; venue:string; date:string; time?:string|null; support?:string|null }
 interface TicketOffer { seller:string; kind:"primary"|"resale"; url:string; price_min:number|null; price_max:number|null; status:string|null; fetched_at:string }
 interface Review { user_id:string; event_id:string; scores:Vec7; tags:string[]; price_paid:number|null }   // scores[6] = would_again ? 5 : 1
 interface RankedShow { event:Event; theta:Vec7; score:number; tier:"S"|"A"|"B"|"C"; rank:number }
@@ -270,6 +272,8 @@ Every endpoint below has `fixtures/<name>.json` with a realistic response for **
 | `media.json` | `GET /media?user=&event=` / `GET /media?user=&of=` | — | `MediaFile[]` — a show's media from you + people you follow / a member's media (empty unless you follow them) |
 | `media_feed.json` | `GET /media/feed?user=` | — | `MediaFile[]` — latest from people you follow ("Friends' moments") |
 | — | `DELETE /media/{id}?user=` | — | `{ok:true}` (owner only); `GET /media-files/{path}` serves local-storage files |
+| `event_create.json` | `POST /events?user=` | `EventCreateRequest` | `Event` — user-added show (`source='user'`); artist name/picture/related from Deezer, unknown venues geocoded via Nominatim; same artist+venue+night returns the existing show |
+| `artist_search.json` | `GET /artists/search?q=` | — | `ArtistHit[]` — Deezer artist autocomplete for the add-a-show form |
 | `tickets.json` | `GET /events/{id}/tickets?user=` | — | `TicketOffer[]` — official seller(s) from the venue scrape + resale; prices filled by Ticketmaster Discovery / SeatGeek when keys are set (`api/app/tickets.py`, 4 s timeout, cached 6 h) |
 
 **Gate rule (M4, middleware):** `GET /matches/*`, `POST /crews` where any `member_ids` is not a direct follow of the caller, and `POST /crews/{id}/messages` where the crew has a non-follow → 403 `verification_required` unless `users.verified = 1`.

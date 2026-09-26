@@ -115,7 +115,14 @@ function Shows({ userId, q }: { userId: string; q: string }) {
       <div className="label px-1">{needle ? `Results for “${needle}”` : "Upcoming in Atlanta"}</div>
       {error ? <ErrorNote error={error} /> : null}
       {!results && !error ? <Spinner /> : null}
-      {results?.length === 0 ? <div className="card text-sm text-muted">No shows match “{needle}”. Try an artist or a venue.</div> : null}
+      {results?.length === 0 ? (
+        <div className="card space-y-3 text-sm text-muted">
+          <p>No shows match “{needle}” in the calendars we track.</p>
+          <Link href={`/log?add=${encodeURIComponent(needle)}`} className="btn-primary w-full">
+            Add “{needle}” as a show
+          </Link>
+        </div>
+      ) : null}
       {results?.map((e, i) => {
         const st = statuses[e.id] ?? null;
         return (

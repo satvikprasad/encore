@@ -45,4 +45,6 @@ export interface UserProfile { user: User; following: boolean; follows_you: bool
 export interface FollowRequest { user_id: string; follow: boolean }
 export interface FollowResponse { following: string[] }
 export interface MediaFile { id: string; user: User; event: Event; kind: "image" | "video"; url: string; content_type: string; bytes: number; caption: string | null; taken_at: string | null; created_at: string } // a photo/video attached to a show; visible to the uploader's followers
+export interface ArtistHit { id: number; name: string; picture: string | null; fans: number } // Deezer match, for the add-a-show form
+export interface EventCreateRequest { artist: string; venue: string; date: string; time?: string | null; support?: string | null } // venue: our id, a known name, or a new place (geocoded)
 export interface TicketOffer { seller: string; kind: "primary" | "resale"; url: string; price_min: number | null; price_max: number | null; status: string | null; fetched_at: string } // prices null until a keyed source fills them
