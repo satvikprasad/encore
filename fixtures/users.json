@@ -1,0 +1,108 @@
+[
+  {
+    "id": "sam",
+    "name": "Sam Okafor",
+    "avatar": "🎛️",
+    "budget_max": 90,
+    "accessibility_needs": [],
+    "verified": false,
+    "weights": [
+      0.1429,
+      0.1429,
+      0.1429,
+      0.1429,
+      0.1429,
+      0.1429,
+      0.1426
+    ]
+  },
+  {
+    "id": "maya",
+    "name": "Maya Chen",
+    "avatar": "🎧",
+    "budget_max": 120,
+    "accessibility_needs": [
+      "sensory"
+    ],
+    "verified": true,
+    "weights": [
+      0.12,
+      0.08,
+      0.12,
+      0.12,
+      0.31,
+      0.1,
+      0.15
+    ]
+  },
+  {
+    "id": "jordan",
+    "name": "Jordan Reyes",
+    "avatar": "🎸",
+    "budget_max": 75,
+    "accessibility_needs": [],
+    "verified": true,
+    "weights": [
+      0.34,
+      0.1,
+      0.1,
+      0.08,
+      0.12,
+      0.11,
+      0.15
+    ]
+  },
+  {
+    "id": "priya",
+    "name": "Priya Nair",
+    "avatar": "🎹",
+    "budget_max": 100,
+    "accessibility_needs": [],
+    "verified": true,
+    "weights": [
+      0.2,
+      0.18,
+      0.14,
+      0.1,
+      0.14,
+      0.1,
+      0.14
+    ]
+  },
+  {
+    "id": "dev",
+    "name": "Dev Patel",
+    "avatar": "🥁",
+    "budget_max": 60,
+    "accessibility_needs": [],
+    "verified": true,
+    "weights": [
+      0.18,
+      0.24,
+      0.12,
+      0.08,
+      0.12,
+      0.12,
+      0.14
+    ]
+  },
+  {
+    "id": "lena",
+    "name": "Lena Fischer",
+    "avatar": "🎤",
+    "budget_max": 80,
+    "accessibility_needs": [
+      "mobility"
+    ],
+    "verified": true,
+    "weights": [
+      0.14,
+      0.1,
+      0.14,
+      0.22,
+      0.12,
+      0.14,
+      0.14
+    ]
+  }
+]

@@ -1,0 +1,134 @@
+{
+  "id": "crew_demo",
+  "event": {
+    "id": "t01",
+    "artist": {
+      "id": "lumen_drift",
+      "name": "Lumen Drift",
+      "genres": [
+        "electronic",
+        "indie"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2026-10-24T20:00:00-04:00",
+    "doors_at": "2026-10-24T19:00:00-04:00",
+    "price_min": 45,
+    "price_max": 120,
+    "tm_url": "https://www.ticketmaster.com/event/t01-placeholder",
+    "is_past": false
+  },
+  "members": [
+    {
+      "id": "sam",
+      "name": "Sam Okafor",
+      "avatar": "🎛️",
+      "budget_max": 90,
+      "accessibility_needs": [],
+      "verified": false,
+      "weights": [
+        0.1429,
+        0.1429,
+        0.1429,
+        0.1429,
+        0.1429,
+        0.1429,
+        0.1426
+      ]
+    },
+    {
+      "id": "maya",
+      "name": "Maya Chen",
+      "avatar": "🎧",
+      "budget_max": 120,
+      "accessibility_needs": [
+        "sensory"
+      ],
+      "verified": true,
+      "weights": [
+        0.12,
+        0.08,
+        0.12,
+        0.12,
+        0.31,
+        0.1,
+        0.15
+      ]
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Reyes",
+      "avatar": "🎸",
+      "budget_max": 75,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.34,
+        0.1,
+        0.1,
+        0.08,
+        0.12,
+        0.11,
+        0.15
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "user_id": "sam",
+      "text": "Lumen Drift at The Eastern on the 24th? I want seats where we can actually see the lights.",
+      "at": "2026-09-26T21:02:00-04:00"
+    },
+    {
+      "user_id": "jordan",
+      "text": "I'm in but I can't do more than $75 all in.",
+      "at": "2026-09-26T21:03:30-04:00"
+    },
+    {
+      "user_id": "maya",
+      "text": "Down if we can be somewhere less loud — I need a quiet spot to step out to.",
+      "at": "2026-09-26T21:05:10-04:00"
+    }
+  ],
+  "plan": {
+    "option": {
+      "event_id": "t01",
+      "tier_label": "GA balcony",
+      "price": 45
+    },
+    "meet_at": "2026-10-24T18:45:00-04:00",
+    "meet_where": "The Eastern box office, Bill Kennedy Way entrance",
+    "per_member": [
+      {
+        "user_id": "sam",
+        "score": 0.82,
+        "note": "Balcony rail has a clean view of the full light rig."
+      },
+      {
+        "user_id": "maya",
+        "score": 0.88,
+        "note": "The Eastern has a quiet room, and the balcony sits away from the subs."
+      },
+      {
+        "user_id": "jordan",
+        "score": 0.79,
+        "note": "$45 keeps you under your $75 cap with fees."
+      }
+    ],
+    "compromise_note": "Picked the $45 balcony tier: Jordan's $75 budget rules out the floor, and Maya's sensory need is covered by The Eastern's quiet room.",
+    "summary": "Lumen Drift, GA balcony at The Eastern, $45 each. Meet at the box office at 6:45 PM."
+  }
+}
