@@ -19,44 +19,176 @@
       ]
     },
     "event": {
-      "id": "d11",
+      "id": "x_bts",
       "artist": {
-        "id": "midnight_relay",
-        "name": "Midnight Relay",
+        "id": "bts",
+        "name": "BTS",
         "genres": [
-          "hip hop"
+          "k-pop",
+          "boy group",
+          "pop",
+          "dance"
         ]
       },
       "venue": {
-        "id": "terminal_west",
-        "name": "Terminal West",
-        "lat": 33.783,
-        "lng": -84.4108,
+        "id": "metlife",
+        "name": "MetLife Stadium",
+        "lat": 40.8135,
+        "lng": -74.0745,
         "multi_room": false,
         "access_profile": {
           "step_free": false,
           "ada_seating": false,
           "quiet_room": false,
-          "strobe_policy": "warned",
+          "strobe_policy": "unrestricted",
           "interpreter": "never"
-        }
+        },
+        "city": "East Rutherford, NJ"
       },
-      "start_at": "2025-08-09T20:00:00-04:00",
-      "doors_at": "2025-08-09T19:00:00-04:00",
-      "price_min": 30.0,
-      "price_max": 45.0,
+      "start_at": "2026-08-01T19:30:00-04:00",
+      "doors_at": "2026-08-01T18:30:00-04:00",
+      "price_min": null,
+      "price_max": null,
       "tm_url": null,
-      "image_url": null,
+      "image_url": "https://cdn-images.dzcdn.net/images/artist/b5c64fa8216ca158e52b4d88bd9388ff/1000x1000-000000-80-0-0.jpg",
       "support": null,
       "room": null,
       "is_past": true
     },
     "kind": "image",
-    "url": "http://localhost:8000/media-files/seed/dev_d11_3.jpg",
+    "url": "http://localhost:8000/media-files/seed/03_bts_rm.jpg",
     "content_type": "image/jpeg",
-    "bytes": 30993,
+    "bytes": 277611,
+    "caption": "RM on the big screen",
+    "taken_at": "2026-08-01T22:05:00-04:00",
+    "created_at": "2026-08-01T22:05:00-04:00"
+  },
+  {
+    "id": "m_seed_02",
+    "user": {
+      "id": "dev",
+      "name": "Satvik Prasad",
+      "avatar": "🥁",
+      "budget_max": 60.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "x_bts",
+      "artist": {
+        "id": "bts",
+        "name": "BTS",
+        "genres": [
+          "k-pop",
+          "boy group",
+          "pop",
+          "dance"
+        ]
+      },
+      "venue": {
+        "id": "metlife",
+        "name": "MetLife Stadium",
+        "lat": 40.8135,
+        "lng": -74.0745,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": false,
+          "ada_seating": false,
+          "quiet_room": false,
+          "strobe_policy": "unrestricted",
+          "interpreter": "never"
+        },
+        "city": "East Rutherford, NJ"
+      },
+      "start_at": "2026-08-01T19:30:00-04:00",
+      "doors_at": "2026-08-01T18:30:00-04:00",
+      "price_min": null,
+      "price_max": null,
+      "tm_url": null,
+      "image_url": "https://cdn-images.dzcdn.net/images/artist/b5c64fa8216ca158e52b4d88bd9388ff/1000x1000-000000-80-0-0.jpg",
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/02_bts_metlife_2.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 254897,
     "caption": null,
-    "taken_at": "2025-08-09T22:00:00-04:00",
-    "created_at": "2025-08-09T22:00:00-04:00"
+    "taken_at": "2026-08-01T21:40:00-04:00",
+    "created_at": "2026-08-01T21:40:00-04:00"
+  },
+  {
+    "id": "m_seed_01",
+    "user": {
+      "id": "dev",
+      "name": "Satvik Prasad",
+      "avatar": "🥁",
+      "budget_max": 60.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "x_bts",
+      "artist": {
+        "id": "bts",
+        "name": "BTS",
+        "genres": [
+          "k-pop",
+          "boy group",
+          "pop",
+          "dance"
+        ]
+      },
+      "venue": {
+        "id": "metlife",
+        "name": "MetLife Stadium",
+        "lat": 40.8135,
+        "lng": -74.0745,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": false,
+          "ada_seating": false,
+          "quiet_room": false,
+          "strobe_policy": "unrestricted",
+          "interpreter": "never"
+        },
+        "city": "East Rutherford, NJ"
+      },
+      "start_at": "2026-08-01T19:30:00-04:00",
+      "doors_at": "2026-08-01T18:30:00-04:00",
+      "price_min": null,
+      "price_max": null,
+      "tm_url": null,
+      "image_url": "https://cdn-images.dzcdn.net/images/artist/b5c64fa8216ca158e52b4d88bd9388ff/1000x1000-000000-80-0-0.jpg",
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/01_bts_metlife_1.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 620820,
+    "caption": "ARMY bomb ocean",
+    "taken_at": "2026-08-01T21:20:54-04:00",
+    "created_at": "2026-08-01T21:20:54-04:00"
   }
 ]

@@ -1,0 +1,140 @@
+{
+  "_note": "The team's own concert photos and videos, seeded as friends' moments (files live in demo_photos/; make seed copies them to data/media/seed). Shows listed under `events` are added like user-added shows (source='user', Deezer artist picture). A media entry with \"event\": null attaches to that person's most recent real show instead. Dates/venues marked _guess are placeholders — correct them here.",
+  "venues": [
+    {
+      "id": "metlife",
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, NJ",
+      "lat": 40.8135,
+      "lng": -74.0745,
+      "geofence_radius_m": 400
+    },
+    {
+      "id": "seatgeek_stadium",
+      "name": "SeatGeek Stadium",
+      "city": "Bridgeview, IL",
+      "lat": 41.7478,
+      "lng": -87.8049,
+      "geofence_radius_m": 400
+    }
+  ],
+  "events": [
+    {
+      "id": "x_bts",
+      "artist": "BTS",
+      "venue": "metlife",
+      "start": "2026-08-01T19:30",
+      "tz": "America/New_York",
+      "attended_by": [
+        "dev"
+      ]
+    },
+    {
+      "id": "x_northcoast",
+      "artist": "North Coast Music Festival",
+      "venue": "seatgeek_stadium",
+      "start": "2026-09-06T14:00",
+      "tz": "America/Chicago",
+      "attended_by": [
+        "lena"
+      ]
+    },
+    {
+      "id": "x_bruno",
+      "artist": "Bruno Mars",
+      "venue": "state_farm",
+      "start": "2026-04-04T20:00",
+      "tz": "America/New_York",
+      "attended_by": [
+        "priya"
+      ],
+      "_guess": "date guessed from nothing — the photo has no metadata"
+    }
+  ],
+  "media": [
+    {
+      "user": "dev",
+      "event": "x_bts",
+      "file": "bts_metlife_1.jpg",
+      "taken_at": "2026-08-01T21:20:54-04:00",
+      "caption": "ARMY bomb ocean"
+    },
+    {
+      "user": "dev",
+      "event": "x_bts",
+      "file": "bts_metlife_2.jpg",
+      "taken_at": "2026-08-01T21:40:00-04:00",
+      "caption": null
+    },
+    {
+      "user": "dev",
+      "event": "x_bts",
+      "file": "bts_rm.jpg",
+      "taken_at": "2026-08-01T22:05:00-04:00",
+      "caption": "RM on the big screen"
+    },
+    {
+      "user": "lena",
+      "event": "x_northcoast",
+      "file": "northcoast_stage.jpg",
+      "taken_at": "2026-09-06T17:30:00-05:00",
+      "caption": "How do we talk to ABGs"
+    },
+    {
+      "user": "lena",
+      "event": "x_northcoast",
+      "file": "northcoast_flag.jpg",
+      "taken_at": "2026-09-06T18:50:45-05:00",
+      "caption": null
+    },
+    {
+      "user": "lena",
+      "event": "x_northcoast",
+      "file": "northcoast_night.jpg",
+      "taken_at": "2026-09-06T21:12:05-05:00",
+      "caption": "night three"
+    },
+    {
+      "user": "lena",
+      "event": "x_northcoast",
+      "file": "laser_set.mp4",
+      "taken_at": "2026-09-06T22:30:00-05:00",
+      "caption": "lasers"
+    },
+    {
+      "user": "priya",
+      "event": "x_bruno",
+      "file": "bruno_mars.jpg",
+      "taken_at": "2026-04-04T21:45:00-04:00",
+      "caption": "piano set"
+    },
+    {
+      "user": "sam",
+      "event": "d12",
+      "file": "cow_palace_crowd.jpg",
+      "taken_at": "2025-09-06T23:15:00-04:00",
+      "caption": null
+    },
+    {
+      "user": "priya",
+      "event": null,
+      "file": "friends_outside.jpg",
+      "taken_at": null,
+      "caption": "post-show"
+    },
+    {
+      "user": "priya",
+      "event": null,
+      "file": "selfie_green.jpg",
+      "taken_at": null,
+      "caption": null
+    },
+    {
+      "user": "priya",
+      "event": null,
+      "file": "selfie_group.jpg",
+      "taken_at": null,
+      "caption": "the whole crew"
+    }
+  ]
+}

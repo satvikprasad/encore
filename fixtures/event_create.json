@@ -3,7 +3,12 @@
   "artist": {
     "id": "bruno_mars",
     "name": "Bruno Mars",
-    "genres": []
+    "genres": [
+      "pop",
+      "funk",
+      "r&b",
+      "contemporary r&b"
+    ]
   },
   "venue": {
     "id": "state_farm",
@@ -17,7 +22,8 @@
       "quiet_room": true,
       "strobe_policy": "warned",
       "interpreter": "on_request"
-    }
+    },
+    "city": "Atlanta, GA"
   },
   "start_at": "2026-05-16T20:00:00-04:00",
   "doors_at": null,

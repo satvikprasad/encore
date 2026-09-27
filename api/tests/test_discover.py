@@ -33,6 +33,13 @@ def test_search_spans_past_and_upcoming(api):
     assert len(api.get("/events?user=sam&q=e&limit=7").json()) == 7
 
 
+def test_out_of_town_show_keeps_its_city(api):
+    bts = api.get("/events/x_bts?user=priya").json()["event"]
+    assert bts["venue"]["name"] == "MetLife Stadium" and bts["venue"]["city"] == "East Rutherford, NJ"
+    assert bts["image_url"] and bts["artist"]["name"] == "BTS"
+    assert api.get("/events/t01?user=sam").json()["event"]["venue"]["city"] == "Atlanta, GA"
+
+
 def test_recommended_for_sam(api):
     recs = api.get("/events/recommended?user=sam").json()
     assert len(recs) == 5 and not any(e["is_past"] for e in recs)
@@ -88,7 +95,8 @@ def test_people_profiles_and_follows(api):
     assert [p["user"]["id"] for p in api.get("/people?user=sam&q=MAY").json()] == ["maya"]
 
     maya = api.get("/users/maya?user=sam").json()
-    assert maya["match_pct"] == 92 and maya["following"] is False and maya["followers"] == 1
+    assert maya["match_pct"] == 92 and maya["following"] is False
+    assert maya["followers"] == 0  # nobody follows Maya, so she stays a "fan like you" for every demo user
     assert [s["rank"] for s in maya["shows"]] == list(range(1, len(maya["shows"]) + 1))
     assert [(u["event"]["id"], u["status"]) for u in maya["upcoming"]] == [("t01", "interested")]
     assert api.get("/users/sam?user=sam").json()["match_pct"] is None

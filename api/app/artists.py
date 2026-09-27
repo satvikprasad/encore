@@ -42,28 +42,35 @@ def related_artists(artist_id: int, limit: int = 8) -> list[str]:
 @lru_cache(maxsize=512)
 def artist_details(name: str) -> dict:
     """{name, picture, related} for the best Deezer match of `name` (exact name preferred), else just the name."""
-    hits = search_artists(name, limit=3)
-    hit = next((h for h in hits if _norm(h["name"]) == _norm(name)), hits[0] if hits else None)
+    hits = search_artists(name, limit=8)
+    exact = [h for h in hits if _norm(h["name"]) == _norm(name)]  # names collide ("BTS" ×3): take the popular one
+    hit = max(exact, key=lambda h: h.get("fans", 0)) if exact else (hits[0] if hits else None)
     if not hit:
         return {"name": name.strip(), "picture": None, "related": []}
     return {"name": hit["name"], "picture": hit["picture"], "related": related_artists(hit["id"])}
 
 
-_geocache: dict[str, Optional[tuple[float, float]]] = {}
+_geocache: dict[str, Optional[tuple[float, float, str]]] = {}
 
 
-def geocode(place: str, city: str = "Atlanta, GA") -> Optional[tuple[float, float]]:
-    """(lat, lng) for a venue name near the city via Nominatim, or None. One request per second, cached."""
+def geocode(place: str, city: str = "Atlanta, GA") -> Optional[tuple[float, float, str]]:
+    """(lat, lng, "City, ST") for a venue name via Nominatim, or None. One request per second, cached.
+    The city hint only biases the search: "MetLife Stadium" still resolves to East Rutherford, NJ."""
     key = _norm(f"{place}|{city}")
     if key in _geocache:
         return _geocache[key]
     result = None
     try:
         r = httpx.get("https://nominatim.openstreetmap.org/search",
-                      params={"q": f"{place}, {city}", "format": "json", "limit": 1}, timeout=TIMEOUT, headers=UA)
+                      params={"q": place, "format": "json", "limit": 1, "addressdetails": 1, "countrycodes": "us"},
+                      timeout=TIMEOUT, headers=UA)
         hits = r.json() if r.status_code == 200 else []
         if hits:
-            result = (round(float(hits[0]["lat"]), 5), round(float(hits[0]["lon"]), 5))
+            a = hits[0].get("address", {})
+            town = a.get("city") or a.get("town") or a.get("village") or a.get("county") or ""
+            state = (a.get("ISO3166-2-lvl4") or "").split("-")[-1]
+            label = ", ".join(x for x in (town, state) if x) or city
+            result = (round(float(hits[0]["lat"]), 5), round(float(hits[0]["lon"]), 5), label)
     except (httpx.HTTPError, ValueError, KeyError):
         result = None
     _geocache[key] = result

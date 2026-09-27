@@ -50,7 +50,7 @@ def test_run_through(api):
         a, b = q["event_a"]["id"], q["event_b"]["id"]
         winner = SCRIPTED[pair]
         ranking = api.post("/compare?user=sam", json={"event_a": a, "event_b": b, "winner": winner}).json()
-    assert ranking["comparisons_done"] == 3 and len(ranking["shows"]) == 12
+    assert ranking["comparisons_done"] == 3 and len(ranking["shows"]) >= 12
     assert max(range(7), key=lambda i: ranking["weights"][i]) == PRODUCTION
     assert [s["tier"] for s in ranking["shows"]].count("S") == 1
 

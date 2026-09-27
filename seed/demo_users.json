@@ -266,8 +266,8 @@
    "persona": "crowd",
    "follows": [
     "sam",
-    "maya",
-    "dev"
+    "dev",
+    "lena"
    ],
    "reviews": {
     "d07": [
@@ -308,9 +308,10 @@
    "verified": true,
    "persona": "value",
    "follows": [
-    "sam",
     "jordan",
-    "lena"
+    "lena",
+    "priya",
+    "sam"
    ],
    "reviews": {
     "d10": [
@@ -351,8 +352,8 @@
    "verified": true,
    "persona": "access",
    "follows": [
-    "sam",
-    "priya"
+    "priya",
+    "sam"
    ],
    "reviews": {
     "d12": [

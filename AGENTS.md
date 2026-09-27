@@ -12,7 +12,7 @@
 4. **SQLite, one file.** `data/encore.db`, committed after seeding. Never write migrations; drop and reseed.
 5. **Dependencies are the lists in §2.** Ask before adding anything else.
 6. **Verification stays mocked.** Do not integrate a real KYC vendor before the demo is end-to-end green.
-7. **No real photos in the repo.** `demo_photos/` contains only generated JPEGs (seeded as friends' demo photos).
+7. **Only the team's own photos in the repo.** `demo_photos/` holds the team's concert photos/videos (used with permission), seeded as friends' moments via `seed/demo_media.json`.
 8. **Demo determinism.** `make seed` must produce byte-identical `encore.db` every run (fixed RNG seed 1313). The demo user Sam is defined in §7, not generated.
 9. **Feature freeze 2:00 AM Sunday.** After that, only commits that fix a failing run-through.
 10. **Definition of done** for every task is in §9. A task is not done until its check passes.
@@ -129,7 +129,8 @@ CREATE TABLE artists (id TEXT PRIMARY KEY, name TEXT NOT NULL, tm_id TEXT, genre
 CREATE TABLE venues (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, tm_id TEXT, lat REAL NOT NULL, lng REAL NOT NULL,
   geofence_radius_m INTEGER NOT NULL DEFAULT 150, multi_room INTEGER NOT NULL DEFAULT 0,
-  access_profile TEXT NOT NULL DEFAULT '{}'    -- JSON: step_free, ada_seating, quiet_room, strobe_policy, interpreter
+  access_profile TEXT NOT NULL DEFAULT '{}',   -- JSON: step_free, ada_seating, quiet_room, strobe_policy, interpreter
+  city TEXT NOT NULL DEFAULT 'Atlanta, GA'
 );
 CREATE TABLE events (
   id TEXT PRIMARY KEY, artist_id TEXT NOT NULL REFERENCES artists(id), venue_id TEXT NOT NULL REFERENCES venues(id),
@@ -210,7 +211,7 @@ type Need = "mobility"|"sensory"|"hearing"|"vision"|"chronic"|"neurodivergent";
 
 interface User { id:string; name:string; avatar:string; budget_max:number|null; accessibility_needs:Need[]; verified:boolean; weights:Vec7 }
 interface Artist { id:string; name:string; genres:string[] }
-interface Venue { id:string; name:string; lat:number; lng:number; multi_room:boolean;
+interface Venue { id:string; name:string; lat:number; lng:number; multi_room:boolean; city?:string;
   access_profile:{ step_free:boolean; ada_seating:boolean; quiet_room:boolean; strobe_policy:"none"|"warned"|"unrestricted"; interpreter:"on_request"|"never" } }
 interface Event { id:string; artist:Artist; venue:Venue; start_at:string; doors_at:string|null; price_min:number|null; price_max:number|null; tm_url:string|null; image_url?:string|null; support?:string|null; room?:string|null; is_past:boolean }   // tm_url = primary seller's page
 interface MediaFile { id:string; user:User; event:Event; kind:"image"|"video"; url:string; content_type:string; bytes:number; caption:string|null; taken_at:string|null; created_at:string }
@@ -310,7 +311,7 @@ Target upcoming event: **`t01`** — the highest-priced real Ticketmaster event 
 **Verify at seed time (assert in `seed.py`):** `taste.match("sam","maya") ∈ [80, 88]` and `taste.match("sam","jordan") ∈ [66, 76]` after the demo user marks d01–d06 as "went" (each gets a provisional review). If not, nudge Maya's/Jordan's review scores until they are.
 
 ### 7.4 Demo photos
-Photo-based show detection was removed (it could not identify shows reliably); logging is search → "I went", or "Add the show". `demo_photos/*.jpg` are generated images that `make seed` copies to `data/media/seed/` as the friends' photos in the demo feed.
+Photo-based show detection was removed (it could not identify shows reliably); logging is search → "I went", or "Add the show". `demo_photos/` holds the team's own photos and videos; `seed/demo_media.json` maps each to a person and a show (adding the out-of-town shows — BTS at MetLife, a festival at SeatGeek Stadium — as user-added shows with Deezer pictures) and `make seed` copies them to `data/media/seed/`.
 
 ### 7.5 `demo_reset.py`
 Deletes Sam's `d01–d06` attendances/reviews/media_items and comparisons, sets `verified=0`, resets Sam's `weights` to uniform, deletes any crew containing Sam. Run before every run-through and before recording.

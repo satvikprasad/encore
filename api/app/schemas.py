@@ -45,6 +45,7 @@ class Venue(BaseModel):
     lng: float
     multi_room: bool
     access_profile: AccessProfile
+    city: str = "Atlanta, GA"
 
 
 class Event(BaseModel):

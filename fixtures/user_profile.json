@@ -20,7 +20,7 @@
   },
   "following": false,
   "follows_you": false,
-  "followers": 1,
+  "followers": 0,
   "following_count": 1,
   "match_pct": 92,
   "shows": [
@@ -44,7 +44,8 @@
             "quiet_room": false,
             "strobe_policy": "warned",
             "interpreter": "never"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2026-09-15T18:30:00-04:00",
         "doors_at": null,
@@ -91,7 +92,8 @@
             "quiet_room": false,
             "strobe_policy": "unrestricted",
             "interpreter": "never"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2025-09-18T20:00:00-04:00",
         "doors_at": "2025-09-18T19:00:00-04:00",
@@ -138,7 +140,8 @@
             "quiet_room": true,
             "strobe_policy": "warned",
             "interpreter": "never"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2025-02-15T20:00:00-05:00",
         "doors_at": "2025-02-15T19:00:00-05:00",
@@ -185,7 +188,8 @@
             "quiet_room": true,
             "strobe_policy": "warned",
             "interpreter": "never"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2025-11-22T20:00:00-05:00",
         "doors_at": "2025-11-22T19:00:00-05:00",
@@ -230,7 +234,8 @@
             "quiet_room": false,
             "strobe_policy": "unrestricted",
             "interpreter": "never"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2025-08-01T19:00:00-04:00",
         "doors_at": "2025-08-01T18:00:00-04:00",
@@ -275,7 +280,8 @@
             "quiet_room": false,
             "strobe_policy": "warned",
             "interpreter": "never"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2025-11-23T19:30:00-05:00",
         "doors_at": null,
@@ -320,7 +326,8 @@
             "quiet_room": false,
             "strobe_policy": "warned",
             "interpreter": "never"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2026-03-26T19:30:00-04:00",
         "doors_at": null,
@@ -367,7 +374,8 @@
             "quiet_room": true,
             "strobe_policy": "warned",
             "interpreter": "on_request"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2025-05-10T19:30:00-04:00",
         "doors_at": "2025-05-10T18:30:00-04:00",
@@ -415,7 +423,8 @@
             "quiet_room": true,
             "strobe_policy": "warned",
             "interpreter": "on_request"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2026-02-28T19:30:00-05:00",
         "doors_at": "2026-02-28T18:30:00-05:00",
@@ -460,7 +469,8 @@
             "quiet_room": false,
             "strobe_policy": "unrestricted",
             "interpreter": "never"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2025-10-04T20:00:00-04:00",
         "doors_at": "2025-10-04T19:00:00-04:00",
@@ -509,7 +519,8 @@
             "quiet_room": true,
             "strobe_policy": "warned",
             "interpreter": "never"
-          }
+          },
+          "city": "Atlanta, GA"
         },
         "start_at": "2026-10-10T19:00:00-04:00",
         "doors_at": "2026-10-10T18:00:00-04:00",

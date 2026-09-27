@@ -47,16 +47,18 @@ def _deezer_genres() -> dict[int, str]:
 
 
 def deezer(name: str) -> dict:
-    """{'deezer_id', 'fans', 'related': [...], 'genre': str|None} — empty dict when Deezer doesn't know them."""
+    """{'deezer_id', 'fans', 'picture', 'related': [...], 'genre': str|None} — empty dict when Deezer doesn't know them."""
     try:
-        r = httpx.get(f"{DEEZER}/search/artist", params={"q": name, "limit": 3}, timeout=15)
+        r = httpx.get(f"{DEEZER}/search/artist", params={"q": name, "limit": 8}, timeout=15)
         hits = r.json().get("data", [])
     except (httpx.HTTPError, ValueError):
         return {}
-    hit = next((h for h in hits if _norm(h["name"]) == _norm(name)), hits[0] if hits else None)
+    exact = [h for h in hits if _norm(h["name"]) == _norm(name)]
+    hit = max(exact, key=lambda h: h.get("nb_fan", 0)) if exact else (hits[0] if hits else None)
     if not hit:
         return {}
-    out = {"deezer_id": hit["id"], "fans": hit.get("nb_fan", 0), "related": [], "genre": None}
+    out = {"deezer_id": hit["id"], "fans": hit.get("nb_fan", 0), "related": [], "genre": None,
+           "picture": hit.get("picture_xl") or hit.get("picture_big") or hit.get("picture_medium") or None}
     try:
         rel = httpx.get(f"{DEEZER}/artist/{hit['id']}/related", params={"limit": MAX_RELATED}, timeout=15).json()
         out["related"] = [a["name"] for a in rel.get("data", [])][:MAX_RELATED]
@@ -104,6 +106,17 @@ def load(names: list[str], fetch_missing: bool = True) -> dict[str, dict]:
     """{artist name: {genres: [...], related: [...], fans: int}} for the given names, fetching the ones not
     yet cached (≈2 s per artist: MusicBrainz's rate limit dominates)."""
     data = _read()
+    # Entries cached before pictures were kept get a Deezer-only refresh (no MusicBrainz call).
+    stale = [n for n in dict.fromkeys(names) if n in data and "picture" not in data[n]] if fetch_missing else []
+    for i, name in enumerate(stale, 1):
+        dz = deezer(name)
+        data[name]["picture"] = dz.get("picture")
+        if dz.get("related") and not data[name].get("related"):
+            data[name]["related"] = dz["related"]
+        if i % 20 == 0 or i == len(stale):
+            _write(data)
+            print(f"music: pictures {i}/{len(stale)}")
+        time.sleep(0.25)
     missing = [n for n in dict.fromkeys(names) if n not in data]
     if missing and fetch_missing:
         print(f"music: fetching {len(missing)} artists (~{len(missing) * 2 // 60} min)")
@@ -113,12 +126,13 @@ def load(names: list[str], fetch_missing: bool = True) -> dict[str, dict]:
             genres = [t for t in tags if t not in SKIP_TAGS][:MAX_GENRES]
             if not genres and dz.get("genre"):
                 genres = [dz["genre"].lower()]
-            data[name] = {"genres": genres, "related": dz.get("related", []), "fans": dz.get("fans", 0)}
+            data[name] = {"genres": genres, "related": dz.get("related", []), "fans": dz.get("fans", 0),
+                          "picture": dz.get("picture")}
             if i % 10 == 0 or i == len(missing):
                 _write(data)
                 print(f"music: {i}/{len(missing)}")
             time.sleep(1.05)  # MusicBrainz asks for ≤ 1 request/second
-    return {n: data.get(n, {"genres": [], "related": [], "fans": 0}) for n in names}
+    return {n: data.get(n, {"genres": [], "related": [], "fans": 0, "picture": None}) for n in names}
 
 
 def wanted_names() -> list[str]:
@@ -140,4 +154,5 @@ if __name__ == "__main__":
     got = load(names)
     with_genres = sum(1 for v in got.values() if v["genres"])
     with_related = sum(1 for v in got.values() if v["related"])
-    print(f"{len(names)} artists: {with_genres} with genres, {with_related} with related artists (cache: {FILE.relative_to(ROOT)})")
+    with_picture = sum(1 for v in got.values() if v.get("picture"))
+    print(f"{len(names)} artists: {with_genres} with genres, {with_related} with related artists, {with_picture} with pictures (cache: {FILE.relative_to(ROOT)})")

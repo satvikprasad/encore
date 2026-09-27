@@ -20,7 +20,8 @@
         "quiet_room": true,
         "strobe_policy": "warned",
         "interpreter": "never"
-      }
+      },
+      "city": "Atlanta, GA"
     },
     "start_at": "2026-10-10T19:00:00-04:00",
     "doors_at": "2026-10-10T18:00:00-04:00",

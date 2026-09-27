@@ -60,7 +60,7 @@ def load_users(conn: sqlite3.Connection, user_ids: list[str]) -> list[dict]:
 
 EVENT_SQL = """
 SELECT e.*, a.name AS artist_name, a.genres AS artist_genres,
-       v.name AS venue_name, v.lat, v.lng, v.multi_room, v.access_profile
+       v.name AS venue_name, v.lat, v.lng, v.multi_room, v.access_profile, v.city
 FROM events e
 JOIN artists a ON a.id = e.artist_id
 JOIN venues v ON v.id = e.venue_id
@@ -89,6 +89,7 @@ def event_from_row(row: sqlite3.Row) -> dict:
             "lat": row["lat"],
             "lng": row["lng"],
             "multi_room": bool(row["multi_room"]),
+            "city": row["city"] if "city" in row.keys() else "Atlanta, GA",
             # Auto-created venues have an empty profile; assume the worst.
             "access_profile": {**_DEFAULT_ACCESS, **json.loads(row["access_profile"] or "{}")},
         },

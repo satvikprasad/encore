@@ -88,10 +88,10 @@ class Builder:
     def venue(self, v: dict):
         self.venues[v["id"]] = v
         self.conn.execute(
-            "INSERT INTO venues (id, name, tm_id, lat, lng, geofence_radius_m, multi_room, access_profile)"
-            " VALUES (?,?,?,?,?,?,?,?)",
+            "INSERT INTO venues (id, name, tm_id, lat, lng, geofence_radius_m, multi_room, access_profile, city)"
+            " VALUES (?,?,?,?,?,?,?,?,?)",
             (v["id"], v["name"], v.get("tm_id"), v["lat"], v["lng"], v.get("geofence_radius_m", 150),
-             int(v.get("multi_room", False)), json.dumps(v.get("access_profile", {}))))
+             int(v.get("multi_room", False)), json.dumps(v.get("access_profile", {})), v.get("city", "Atlanta, GA")))
 
     def event(self, eid, artist_id, venue_id, start_at, doors_at, pmin, pmax, url, is_past, source,
               image_url=None, support=None, room=None):
@@ -177,7 +177,8 @@ def demo_event_rows(b: Builder, spec: dict) -> set[tuple[str, str]]:
             aid = slug(real["artist"])
             b.artist(aid, real["artist"], [])
             b.event(e["id"], aid, e["venue"], start, iso_minus(start, 60), None, None, real["ticket_url"], is_past,
-                    "venue", image_url=real["image_url"], support=real["support"], room=real["room"])
+                    "venue", image_url=real["image_url"] or b.music.get(real["artist"], {}).get("picture"),
+                    support=real["support"], room=real["room"])
         else:
             b.event(e["id"], e["artist"], e["venue"], start, iso_minus(start, 60), *e["price"], e.get("tm_url"),
                     is_past, "demo")
@@ -199,7 +200,7 @@ def _scraped_event(b: Builder, e: dict, is_past: bool) -> str:
     b.artist(aid, e["artist"], [])
     eid = f"v_{e['venue_id']}_{e['src_id']}"
     b.event(eid, aid, e["venue_id"], e["start_at"], e["doors_at"], None, None, e["ticket_url"], is_past, "venue",
-            image_url=e["image_url"], support=e["support"], room=e["room"])
+            image_url=e["image_url"] or b.music.get(e["artist"], {}).get("picture"), support=e["support"], room=e["room"])
     if e["ticket_url"]:
         b.offer(eid, e["ticket_url"], e["status"])
     return eid
@@ -422,30 +423,70 @@ def build_users(b: Builder, spec: dict, past_ids: list[str], upcoming_ids: list[
     b.conn.executemany("INSERT INTO follows VALUES (?,?)", sorted(follows))
 
 
-DEMO_MEDIA = [  # (user, event, demo photo) — friends' photos so Sam's feed and show pages have moments in them
-    ("priya", "d07", "d02_1.jpg"), ("priya", "d08", "d03_1.jpg"), ("dev", "d11", "d05_2.jpg"), ("lena", "d10", "d06_1.jpg"),
-    ("maya", "d04", "d04_1.jpg"), ("maya", "d04", "d04_2.jpg"), ("maya", "d02", "d02_2.jpg"), ("jordan", "d01", "d01_1.jpg"),
-    ("jordan", "d11", "d05_1.jpg"), ("lena", "d12", "d06_2.jpg"),
-]
+MEDIA_TYPES = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp",
+               ".mp4": "video/mp4", ".mov": "video/quicktime", ".webm": "video/webm"}
 
 
-def build_media(b: Builder):
-    """Seed friends' photos: copies of the generated demo JPEGs (no real photos in the repo, AGENTS.md §0.7)
-    under data/media/seed/, with rows timestamped two hours into each show."""
+def _recent_real_show(b: Builder, uid: str, used: set[str]):
+    row = b.conn.execute(
+        "SELECT e.id FROM attendance a JOIN events e ON e.id = a.event_id WHERE a.user_id = ? AND a.status = 'attended'"
+        " AND e.is_past = 1 AND e.source IN ('venue', 'user') ORDER BY e.start_at DESC", (uid,)).fetchall()
+    for (eid,) in row:
+        if eid not in used:
+            used.add(eid)
+            return eid
+    return None
+
+
+def build_demo_media(b: Builder, users_spec: dict):
+    """The team's photos and videos as friends' moments (seed/demo_media.json, files in demo_photos/), plus the
+    shows they were taken at, added like user-added shows (source='user', Deezer artist picture)."""
+    spec = json.loads((SEED_DIR / "demo_media.json").read_text())
+    persona = {u["id"]: u["persona"] for u in users_spec["users"]}
+    for v in spec.get("venues", []):
+        if v["id"] not in b.venues:
+            b.venue(v)
+    b.music.update(fetch_music.load(sorted({e["artist"] for e in spec["events"]})))
+    for e in spec["events"]:
+        d, hhmm = e["start"].split("T")
+        h, m = map(int, hhmm.split(":"))
+        start = datetime(*map(int, d.split("-")), h, m, tzinfo=ZoneInfo(e.get("tz", "America/New_York"))).isoformat(timespec="seconds")
+        aid = slug(e["artist"])
+        b.artist(aid, e["artist"], [])
+        is_past = date.fromisoformat(d) < TODAY
+        b.event(e["id"], aid, e["venue"], start, iso_minus(start, 60), None, None, None, is_past, "user",
+                image_url=b.music.get(e["artist"], {}).get("picture"))
+        for uid in e.get("attended_by", []):
+            b.attend(uid, e["id"])
+            if is_past and uid in persona:
+                b.review(uid, e["id"], sample_scores(persona[uid], b.rng), sample_tags(persona[uid], b.rng))
     root = ROOT / "data" / "media" / "seed"
+    shutil.rmtree(root, ignore_errors=True)
     root.mkdir(parents=True, exist_ok=True)
-    for n, (uid, eid, photo) in enumerate(DEMO_MEDIA, 1):
-        src = ROOT / "demo_photos" / photo
+    used: dict[str, set[str]] = {}
+    for m in spec["media"]:  # explicitly placed media claim their show, so auto-placed ones spread to other shows
+        if m.get("event"):
+            used.setdefault(m["user"], set()).add(m["event"])
+    seeded = 0
+    for n, m in enumerate(spec["media"], 1):
+        src = ROOT / "demo_photos" / m["file"]
         if not src.exists():
             continue
-        path = f"seed/{uid}_{eid}_{n}.jpg"
+        eid = m.get("event") or _recent_real_show(b, m["user"], used.setdefault(m["user"], set()))
+        if eid is None:
+            continue
+        path = f"seed/{n:02d}_{src.name}"
         shutil.copyfile(src, ROOT / "data" / "media" / path)
         start = b.conn.execute("SELECT start_at FROM events WHERE id = ?", (eid,)).fetchone()[0]
-        taken = (datetime.fromisoformat(start) + timedelta(hours=2)).isoformat(timespec="seconds")
+        taken = m.get("taken_at") or (datetime.fromisoformat(start) + timedelta(hours=2)).isoformat(timespec="seconds")
+        ctype = MEDIA_TYPES.get(src.suffix.lower(), "application/octet-stream")
         b.conn.execute(
             "INSERT INTO media (id, user_id, event_id, kind, path, content_type, bytes, caption, taken_at, created_at)"
             " VALUES (?,?,?,?,?,?,?,?,?,?)",
-            (f"m_seed_{n:02d}", uid, eid, "image", path, "image/jpeg", src.stat().st_size, None, taken, taken))
+            (f"m_seed_{n:02d}", m["user"], eid, "video" if ctype.startswith("video/") else "image", path, ctype,
+             src.stat().st_size, m.get("caption"), taken, taken))
+        seeded += 1
+    print(f"demo media: {seeded} photos/videos from demo_photos/, {len(spec['events'])} shows added")
 
 
 def assert_taste_targets(conn: sqlite3.Connection, spec: dict):
@@ -486,7 +527,7 @@ def main():
     past_ids = build_past(b, nights, scraped)
     upcoming_ids = build_upcoming(b, events_spec, scraped, nights)
     build_users(b, users_spec, past_ids, upcoming_ids)
-    build_media(b)
+    build_demo_media(b, users_spec)
     conn.commit()
     assert_taste_targets(conn, users_spec)
     conn.commit()

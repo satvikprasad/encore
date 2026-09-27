@@ -6,7 +6,7 @@ export type Need = "mobility" | "sensory" | "hearing" | "vision" | "chronic" | "
 
 export interface User { id: string; name: string; avatar: string; budget_max: number | null; accessibility_needs: Need[]; verified: boolean; weights: Vec7 }
 export interface Artist { id: string; name: string; genres: string[] }
-export interface Venue { id: string; name: string; lat: number; lng: number; multi_room: boolean;
+export interface Venue { id: string; name: string; lat: number; lng: number; multi_room: boolean; city?: string;
   access_profile: { step_free: boolean; ada_seating: boolean; quiet_room: boolean; strobe_policy: "none" | "warned" | "unrestricted"; interpreter: "on_request" | "never" } }
 export interface Event { id: string; artist: Artist; venue: Venue; start_at: string; doors_at: string | null; price_min: number | null; price_max: number | null; tm_url: string | null; image_url?: string | null; support?: string | null; room?: string | null; is_past: boolean } // tm_url = the primary seller's page; image/support/room from the venue sites
 export interface Review { user_id: string; event_id: string; scores: Vec7; tags: string[]; price_paid: number | null } // scores[6] = would_again ? 5 : 1

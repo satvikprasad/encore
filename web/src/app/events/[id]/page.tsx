@@ -152,7 +152,7 @@ export default function EventPage({ params }: { params: { id: string } }) {
             {/* Details: full rows, nothing truncated */}
             <section className="card animate-rise divide-y divide-line/70 p-0" style={{ animationDelay: "60ms" }}>
               <Row icon={<IconCalendar size={18} />} label={fmtLongDate(e.start_at)} sub={`${e.doors_at ? `Doors ${fmtTime(e.doors_at)} · ` : ""}Show ${fmtTime(e.start_at)}`} />
-              <Row icon={<IconPin size={18} />} label={e.venue.name} sub={`${e.room ? `${e.room} room · ` : ""}Atlanta, GA`} />
+              <Row icon={<IconPin size={18} />} label={e.venue.name} sub={`${e.room ? `${e.room} room · ` : ""}${e.venue.city ?? "Atlanta, GA"}`} />
               {!e.is_past ? (
                 <Row
                   icon={<IconTicket size={18} />}

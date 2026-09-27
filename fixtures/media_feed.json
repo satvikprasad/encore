@@ -1,6 +1,6 @@
 [
   {
-    "id": "m_seed_10",
+    "id": "m_seed_07",
     "user": {
       "id": "lena",
       "name": "Ayush Shah",
@@ -21,93 +21,92 @@
       ]
     },
     "event": {
-      "id": "d12",
+      "id": "x_northcoast",
       "artist": {
-        "id": "slander",
-        "name": "SLANDER",
-        "genres": [
-          "dubstep",
-          "electronic"
-        ]
+        "id": "north_coast_music_festival",
+        "name": "North Coast Music Festival",
+        "genres": []
       },
       "venue": {
-        "id": "roxy",
-        "name": "Coca-Cola Roxy",
-        "lat": 33.8898,
-        "lng": -84.4686,
-        "multi_room": false,
-        "access_profile": {
-          "step_free": true,
-          "ada_seating": true,
-          "quiet_room": false,
-          "strobe_policy": "warned",
-          "interpreter": "never"
-        }
-      },
-      "start_at": "2025-09-06T20:00:00-04:00",
-      "doors_at": "2025-09-06T19:00:00-04:00",
-      "price_min": null,
-      "price_max": null,
-      "tm_url": "https://www.ticketmaster.com/slander-presents-voyager-atlanta-georgia-09-06-2025/event/0E0062D1136263E0",
-      "image_url": "https://s1.ticketm.net/dam/a/7e2/1b73cafe-2667-40a5-a909-4a8c001b57e2_RETINA_PORTRAIT_16_9.jpg",
-      "support": null,
-      "room": null,
-      "is_past": true
-    },
-    "kind": "image",
-    "url": "http://localhost:8000/media-files/seed/lena_d12_10.jpg",
-    "content_type": "image/jpeg",
-    "bytes": 31067,
-    "caption": null,
-    "taken_at": "2025-09-06T22:00:00-04:00",
-    "created_at": "2025-09-06T22:00:00-04:00"
-  },
-  {
-    "id": "m_seed_03",
-    "user": {
-      "id": "dev",
-      "name": "Satvik Prasad",
-      "avatar": "🥁",
-      "budget_max": 60.0,
-      "accessibility_needs": [],
-      "verified": true,
-      "weights": [
-        0.14,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.32,
-        0.14
-      ]
-    },
-    "event": {
-      "id": "d11",
-      "artist": {
-        "id": "midnight_relay",
-        "name": "Midnight Relay",
-        "genres": [
-          "hip hop"
-        ]
-      },
-      "venue": {
-        "id": "terminal_west",
-        "name": "Terminal West",
-        "lat": 33.783,
-        "lng": -84.4108,
+        "id": "seatgeek_stadium",
+        "name": "SeatGeek Stadium",
+        "lat": 41.7478,
+        "lng": -87.8049,
         "multi_room": false,
         "access_profile": {
           "step_free": false,
           "ada_seating": false,
           "quiet_room": false,
-          "strobe_policy": "warned",
+          "strobe_policy": "unrestricted",
           "interpreter": "never"
-        }
+        },
+        "city": "Bridgeview, IL"
       },
-      "start_at": "2025-08-09T20:00:00-04:00",
-      "doors_at": "2025-08-09T19:00:00-04:00",
-      "price_min": 30.0,
-      "price_max": 45.0,
+      "start_at": "2026-09-06T14:00:00-05:00",
+      "doors_at": "2026-09-06T14:00:00-04:00",
+      "price_min": null,
+      "price_max": null,
+      "tm_url": null,
+      "image_url": null,
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "video",
+    "url": "http://localhost:8000/media-files/seed/07_laser_set.mp4",
+    "content_type": "video/mp4",
+    "bytes": 5402531,
+    "caption": "lasers",
+    "taken_at": "2026-09-06T22:30:00-05:00",
+    "created_at": "2026-09-06T22:30:00-05:00"
+  },
+  {
+    "id": "m_seed_06",
+    "user": {
+      "id": "lena",
+      "name": "Ayush Shah",
+      "avatar": "🎤",
+      "budget_max": 80.0,
+      "accessibility_needs": [
+        "mobility"
+      ],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.08,
+        0.13,
+        0.32,
+        0.1,
+        0.1,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "x_northcoast",
+      "artist": {
+        "id": "north_coast_music_festival",
+        "name": "North Coast Music Festival",
+        "genres": []
+      },
+      "venue": {
+        "id": "seatgeek_stadium",
+        "name": "SeatGeek Stadium",
+        "lat": 41.7478,
+        "lng": -87.8049,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": false,
+          "ada_seating": false,
+          "quiet_room": false,
+          "strobe_policy": "unrestricted",
+          "interpreter": "never"
+        },
+        "city": "Bridgeview, IL"
+      },
+      "start_at": "2026-09-06T14:00:00-05:00",
+      "doors_at": "2026-09-06T14:00:00-04:00",
+      "price_min": null,
+      "price_max": null,
       "tm_url": null,
       "image_url": null,
       "support": null,
@@ -115,12 +114,73 @@
       "is_past": true
     },
     "kind": "image",
-    "url": "http://localhost:8000/media-files/seed/dev_d11_3.jpg",
+    "url": "http://localhost:8000/media-files/seed/06_northcoast_night.jpg",
     "content_type": "image/jpeg",
-    "bytes": 30993,
+    "bytes": 500712,
+    "caption": "night three",
+    "taken_at": "2026-09-06T21:12:05-05:00",
+    "created_at": "2026-09-06T21:12:05-05:00"
+  },
+  {
+    "id": "m_seed_05",
+    "user": {
+      "id": "lena",
+      "name": "Ayush Shah",
+      "avatar": "🎤",
+      "budget_max": 80.0,
+      "accessibility_needs": [
+        "mobility"
+      ],
+      "verified": true,
+      "weights": [
+        0.13,
+        0.08,
+        0.13,
+        0.32,
+        0.1,
+        0.1,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "x_northcoast",
+      "artist": {
+        "id": "north_coast_music_festival",
+        "name": "North Coast Music Festival",
+        "genres": []
+      },
+      "venue": {
+        "id": "seatgeek_stadium",
+        "name": "SeatGeek Stadium",
+        "lat": 41.7478,
+        "lng": -87.8049,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": false,
+          "ada_seating": false,
+          "quiet_room": false,
+          "strobe_policy": "unrestricted",
+          "interpreter": "never"
+        },
+        "city": "Bridgeview, IL"
+      },
+      "start_at": "2026-09-06T14:00:00-05:00",
+      "doors_at": "2026-09-06T14:00:00-04:00",
+      "price_min": null,
+      "price_max": null,
+      "tm_url": null,
+      "image_url": null,
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/05_northcoast_flag.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 699028,
     "caption": null,
-    "taken_at": "2025-08-09T22:00:00-04:00",
-    "created_at": "2025-08-09T22:00:00-04:00"
+    "taken_at": "2026-09-06T18:50:45-05:00",
+    "created_at": "2026-09-06T18:50:45-05:00"
   },
   {
     "id": "m_seed_04",
@@ -144,32 +204,31 @@
       ]
     },
     "event": {
-      "id": "d10",
+      "id": "x_northcoast",
       "artist": {
-        "id": "hollow_pines",
-        "name": "Hollow Pines",
-        "genres": [
-          "americana"
-        ]
+        "id": "north_coast_music_festival",
+        "name": "North Coast Music Festival",
+        "genres": []
       },
       "venue": {
-        "id": "variety",
-        "name": "Variety Playhouse",
-        "lat": 33.7649,
-        "lng": -84.3492,
+        "id": "seatgeek_stadium",
+        "name": "SeatGeek Stadium",
+        "lat": 41.7478,
+        "lng": -87.8049,
         "multi_room": false,
         "access_profile": {
-          "step_free": true,
-          "ada_seating": true,
+          "step_free": false,
+          "ada_seating": false,
           "quiet_room": false,
           "strobe_policy": "unrestricted",
           "interpreter": "never"
-        }
+        },
+        "city": "Bridgeview, IL"
       },
-      "start_at": "2025-06-21T20:00:00-04:00",
-      "doors_at": "2025-06-21T19:00:00-04:00",
-      "price_min": 28.0,
-      "price_max": 40.0,
+      "start_at": "2026-09-06T14:00:00-05:00",
+      "doors_at": "2026-09-06T14:00:00-04:00",
+      "price_min": null,
+      "price_max": null,
       "tm_url": null,
       "image_url": null,
       "support": null,
@@ -177,75 +236,207 @@
       "is_past": true
     },
     "kind": "image",
-    "url": "http://localhost:8000/media-files/seed/lena_d10_4.jpg",
+    "url": "http://localhost:8000/media-files/seed/04_northcoast_stage.jpg",
     "content_type": "image/jpeg",
-    "bytes": 31332,
-    "caption": null,
-    "taken_at": "2025-06-21T22:00:00-04:00",
-    "created_at": "2025-06-21T22:00:00-04:00"
+    "bytes": 657866,
+    "caption": "How do we talk to ABGs",
+    "taken_at": "2026-09-06T17:30:00-05:00",
+    "created_at": "2026-09-06T17:30:00-05:00"
+  },
+  {
+    "id": "m_seed_03",
+    "user": {
+      "id": "dev",
+      "name": "Satvik Prasad",
+      "avatar": "🥁",
+      "budget_max": 60.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "x_bts",
+      "artist": {
+        "id": "bts",
+        "name": "BTS",
+        "genres": [
+          "k-pop",
+          "boy group",
+          "pop",
+          "dance"
+        ]
+      },
+      "venue": {
+        "id": "metlife",
+        "name": "MetLife Stadium",
+        "lat": 40.8135,
+        "lng": -74.0745,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": false,
+          "ada_seating": false,
+          "quiet_room": false,
+          "strobe_policy": "unrestricted",
+          "interpreter": "never"
+        },
+        "city": "East Rutherford, NJ"
+      },
+      "start_at": "2026-08-01T19:30:00-04:00",
+      "doors_at": "2026-08-01T18:30:00-04:00",
+      "price_min": null,
+      "price_max": null,
+      "tm_url": null,
+      "image_url": "https://cdn-images.dzcdn.net/images/artist/b5c64fa8216ca158e52b4d88bd9388ff/1000x1000-000000-80-0-0.jpg",
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/03_bts_rm.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 277611,
+    "caption": "RM on the big screen",
+    "taken_at": "2026-08-01T22:05:00-04:00",
+    "created_at": "2026-08-01T22:05:00-04:00"
   },
   {
     "id": "m_seed_02",
     "user": {
-      "id": "priya",
-      "name": "Jasmine Liu",
-      "avatar": "🎹",
-      "budget_max": 100.0,
+      "id": "dev",
+      "name": "Satvik Prasad",
+      "avatar": "🥁",
+      "budget_max": 60.0,
       "accessibility_needs": [],
       "verified": true,
       "weights": [
         0.14,
-        0.34,
         0.1,
-        0.08,
-        0.12,
-        0.08,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
         0.14
       ]
     },
     "event": {
-      "id": "d08",
+      "id": "x_bts",
       "artist": {
-        "id": "paper_satellites",
-        "name": "Paper Satellites",
+        "id": "bts",
+        "name": "BTS",
         "genres": [
-          "indie pop"
+          "k-pop",
+          "boy group",
+          "pop",
+          "dance"
         ]
       },
       "venue": {
-        "id": "tabernacle",
-        "name": "Tabernacle",
-        "lat": 33.7586,
-        "lng": -84.3913,
+        "id": "metlife",
+        "name": "MetLife Stadium",
+        "lat": 40.8135,
+        "lng": -74.0745,
         "multi_room": false,
         "access_profile": {
-          "step_free": true,
-          "ada_seating": true,
+          "step_free": false,
+          "ada_seating": false,
           "quiet_room": false,
-          "strobe_policy": "warned",
+          "strobe_policy": "unrestricted",
           "interpreter": "never"
-        }
+        },
+        "city": "East Rutherford, NJ"
       },
-      "start_at": "2025-03-22T20:00:00-04:00",
-      "doors_at": "2025-03-22T19:00:00-04:00",
-      "price_min": 35.0,
-      "price_max": 60.0,
+      "start_at": "2026-08-01T19:30:00-04:00",
+      "doors_at": "2026-08-01T18:30:00-04:00",
+      "price_min": null,
+      "price_max": null,
       "tm_url": null,
-      "image_url": null,
+      "image_url": "https://cdn-images.dzcdn.net/images/artist/b5c64fa8216ca158e52b4d88bd9388ff/1000x1000-000000-80-0-0.jpg",
       "support": null,
       "room": null,
       "is_past": true
     },
     "kind": "image",
-    "url": "http://localhost:8000/media-files/seed/priya_d08_2.jpg",
+    "url": "http://localhost:8000/media-files/seed/02_bts_metlife_2.jpg",
     "content_type": "image/jpeg",
-    "bytes": 31406,
+    "bytes": 254897,
     "caption": null,
-    "taken_at": "2025-03-22T22:00:00-04:00",
-    "created_at": "2025-03-22T22:00:00-04:00"
+    "taken_at": "2026-08-01T21:40:00-04:00",
+    "created_at": "2026-08-01T21:40:00-04:00"
   },
   {
     "id": "m_seed_01",
+    "user": {
+      "id": "dev",
+      "name": "Satvik Prasad",
+      "avatar": "🥁",
+      "budget_max": 60.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.32,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "x_bts",
+      "artist": {
+        "id": "bts",
+        "name": "BTS",
+        "genres": [
+          "k-pop",
+          "boy group",
+          "pop",
+          "dance"
+        ]
+      },
+      "venue": {
+        "id": "metlife",
+        "name": "MetLife Stadium",
+        "lat": 40.8135,
+        "lng": -74.0745,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": false,
+          "ada_seating": false,
+          "quiet_room": false,
+          "strobe_policy": "unrestricted",
+          "interpreter": "never"
+        },
+        "city": "East Rutherford, NJ"
+      },
+      "start_at": "2026-08-01T19:30:00-04:00",
+      "doors_at": "2026-08-01T18:30:00-04:00",
+      "price_min": null,
+      "price_max": null,
+      "tm_url": null,
+      "image_url": "https://cdn-images.dzcdn.net/images/artist/b5c64fa8216ca158e52b4d88bd9388ff/1000x1000-000000-80-0-0.jpg",
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/01_bts_metlife_1.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 620820,
+    "caption": "ARMY bomb ocean",
+    "taken_at": "2026-08-01T21:20:54-04:00",
+    "created_at": "2026-08-01T21:20:54-04:00"
+  },
+  {
+    "id": "m_seed_08",
     "user": {
       "id": "priya",
       "name": "Jasmine Liu",
@@ -264,44 +455,225 @@
       ]
     },
     "event": {
-      "id": "d07",
+      "id": "x_bruno",
       "artist": {
-        "id": "neon_cathedral",
-        "name": "Neon Cathedral",
+        "id": "bruno_mars",
+        "name": "Bruno Mars",
         "genres": [
-          "electronic"
+          "pop",
+          "funk",
+          "r&b",
+          "contemporary r&b"
         ]
       },
       "venue": {
-        "id": "eastern",
-        "name": "The Eastern",
-        "lat": 33.7524,
-        "lng": -84.3648,
+        "id": "state_farm",
+        "name": "State Farm Arena",
+        "lat": 33.7573,
+        "lng": -84.3963,
         "multi_room": false,
         "access_profile": {
           "step_free": true,
           "ada_seating": true,
           "quiet_room": true,
           "strobe_policy": "warned",
-          "interpreter": "never"
-        }
+          "interpreter": "on_request"
+        },
+        "city": "Atlanta, GA"
       },
-      "start_at": "2025-02-15T20:00:00-05:00",
-      "doors_at": "2025-02-15T19:00:00-05:00",
-      "price_min": 40.0,
-      "price_max": 70.0,
+      "start_at": "2026-04-04T20:00:00-04:00",
+      "doors_at": "2026-04-04T19:00:00-04:00",
+      "price_min": null,
+      "price_max": null,
       "tm_url": null,
-      "image_url": null,
+      "image_url": "https://cdn-images.dzcdn.net/images/artist/90f0b5b11df4f87ee878f38569b5995b/1000x1000-000000-80-0-0.jpg",
       "support": null,
       "room": null,
       "is_past": true
     },
     "kind": "image",
-    "url": "http://localhost:8000/media-files/seed/priya_d07_1.jpg",
+    "url": "http://localhost:8000/media-files/seed/08_bruno_mars.jpg",
     "content_type": "image/jpeg",
-    "bytes": 31442,
+    "bytes": 62484,
+    "caption": "piano set",
+    "taken_at": "2026-04-04T21:45:00-04:00",
+    "created_at": "2026-04-04T21:45:00-04:00"
+  },
+  {
+    "id": "m_seed_10",
+    "user": {
+      "id": "priya",
+      "name": "Jasmine Liu",
+      "avatar": "🎹",
+      "budget_max": 100.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "v_masquerade_8e0b8cbd60",
+      "artist": {
+        "id": "thxsomch",
+        "name": "ThxSoMch",
+        "genres": []
+      },
+      "venue": {
+        "id": "masquerade",
+        "name": "The Masquerade",
+        "lat": 33.7522,
+        "lng": -84.3915,
+        "multi_room": true,
+        "access_profile": {
+          "step_free": false,
+          "ada_seating": false,
+          "quiet_room": false,
+          "strobe_policy": "unrestricted",
+          "interpreter": "never"
+        },
+        "city": "Atlanta, GA"
+      },
+      "start_at": "2025-11-01T20:00:00-04:00",
+      "doors_at": "2025-11-01T19:00:00-04:00",
+      "price_min": null,
+      "price_max": null,
+      "tm_url": "https://www.ticketmaster.com/thxsomch-atlanta-georgia-11-01-2025/event/0E0062E8974A3C36?camefrom=cfc_masquerade_website",
+      "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2023/09/110125_thxsomuch_forSite-409x230.jpg",
+      "support": "re6ce",
+      "room": "Hell",
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/10_friends_outside.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 599746,
+    "caption": "post-show",
+    "taken_at": "2025-11-01T22:00:00-04:00",
+    "created_at": "2025-11-01T22:00:00-04:00"
+  },
+  {
+    "id": "m_seed_11",
+    "user": {
+      "id": "priya",
+      "name": "Jasmine Liu",
+      "avatar": "🎹",
+      "budget_max": 100.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "v_masquerade_648625584b",
+      "artist": {
+        "id": "josh_conway_of_the_mar_as_dj_set",
+        "name": "Josh Conway of the Marías Dj Set",
+        "genres": []
+      },
+      "venue": {
+        "id": "masquerade",
+        "name": "The Masquerade",
+        "lat": 33.7522,
+        "lng": -84.3915,
+        "multi_room": true,
+        "access_profile": {
+          "step_free": false,
+          "ada_seating": false,
+          "quiet_room": false,
+          "strobe_policy": "unrestricted",
+          "interpreter": "never"
+        },
+        "city": "Atlanta, GA"
+      },
+      "start_at": "2025-09-20T00:00:00-04:00",
+      "doors_at": "2025-09-19T23:00:00-04:00",
+      "price_min": null,
+      "price_max": null,
+      "tm_url": "https://www.ticketmaster.com/shaky-knees-presents-josh-conway-the-atlanta-georgia-09-19-2025/event/0E0062F5D130337F?camefrom=cfc_masquerade_website",
+      "image_url": "https://www.masqueradeatlanta.com/wp-content/uploads/2024/07/Josh-Conway-349x230.jpeg",
+      "support": null,
+      "room": "Hell",
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/11_selfie_green.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 255109,
     "caption": null,
-    "taken_at": "2025-02-15T22:00:00-05:00",
-    "created_at": "2025-02-15T22:00:00-05:00"
+    "taken_at": "2025-09-20T02:00:00-04:00",
+    "created_at": "2025-09-20T02:00:00-04:00"
+  },
+  {
+    "id": "m_seed_12",
+    "user": {
+      "id": "priya",
+      "name": "Jasmine Liu",
+      "avatar": "🎹",
+      "budget_max": 100.0,
+      "accessibility_needs": [],
+      "verified": true,
+      "weights": [
+        0.14,
+        0.34,
+        0.1,
+        0.08,
+        0.12,
+        0.08,
+        0.14
+      ]
+    },
+    "event": {
+      "id": "v_state_farm_76a20ce467",
+      "artist": {
+        "id": "yfn_lucci",
+        "name": "YFN Lucci",
+        "genres": []
+      },
+      "venue": {
+        "id": "state_farm",
+        "name": "State Farm Arena",
+        "lat": 33.7573,
+        "lng": -84.3963,
+        "multi_room": false,
+        "access_profile": {
+          "step_free": true,
+          "ada_seating": true,
+          "quiet_room": true,
+          "strobe_policy": "warned",
+          "interpreter": "on_request"
+        },
+        "city": "Atlanta, GA"
+      },
+      "start_at": "2025-08-23T19:00:00-04:00",
+      "doors_at": null,
+      "price_min": null,
+      "price_max": null,
+      "tm_url": "https://www.ticketmaster.com/event/0E0062B5B0213882",
+      "image_url": "https://www.statefarmarena.com/assets/img/yfnlucci_web_eventlisting_640x360-c4dd0cd28d.png",
+      "support": null,
+      "room": null,
+      "is_past": true
+    },
+    "kind": "image",
+    "url": "http://localhost:8000/media-files/seed/12_selfie_group.jpg",
+    "content_type": "image/jpeg",
+    "bytes": 378198,
+    "caption": "the whole crew",
+    "taken_at": "2025-08-23T21:00:00-04:00",
+    "created_at": "2025-08-23T21:00:00-04:00"
   }
 ]

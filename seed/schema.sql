@@ -11,7 +11,8 @@ CREATE TABLE artists (id TEXT PRIMARY KEY, name TEXT NOT NULL, tm_id TEXT, genre
 CREATE TABLE venues (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, tm_id TEXT, lat REAL NOT NULL, lng REAL NOT NULL,
   geofence_radius_m INTEGER NOT NULL DEFAULT 150, multi_room INTEGER NOT NULL DEFAULT 0,
-  access_profile TEXT NOT NULL DEFAULT '{}'    -- JSON: step_free, ada_seating, quiet_room, strobe_policy, interpreter
+  access_profile TEXT NOT NULL DEFAULT '{}',   -- JSON: step_free, ada_seating, quiet_room, strobe_policy, interpreter
+  city TEXT NOT NULL DEFAULT 'Atlanta, GA'
 );
 CREATE TABLE events (
   id TEXT PRIMARY KEY, artist_id TEXT NOT NULL REFERENCES artists(id), venue_id TEXT NOT NULL REFERENCES venues(id),

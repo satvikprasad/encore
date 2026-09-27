@@ -78,7 +78,8 @@
  "A Hundred Drums & Zen Selekta": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "A Lot Like Birds": {
   "genres": [
@@ -129,7 +130,8 @@
    "Tape B",
    "Ganja White Night"
   ],
-  "fans": 1260
+  "fans": 1260,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ca8462f7bc860249a1702419d52bd481/1000x1000-000000-80-0-0.jpg"
  },
  "AJ Ghent & His Singing Guitar": {
   "genres": [],
@@ -163,7 +165,8 @@
  "ALVARO DIAZ": {
   "genres": [],
   "related": [],
-  "fans": 20
+  "fans": 20,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/98cc9353a8a0ba0fd4dd1ce285e80d8a/1000x1000-000000-80-0-0.jpg"
  },
  "ATLiens": {
   "genres": [
@@ -181,7 +184,8 @@
    "Kai Wachi",
    "Wooli"
   ],
-  "fans": 4185
+  "fans": 4185,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bcd67cfa4a09aa091bde3dc079d0fd4e/1000x1000-000000-80-0-0.jpg"
  },
  "AVATAR": {
   "genres": [
@@ -214,7 +218,8 @@
    "that mexican ot",
    "Key Glock"
   ],
-  "fans": 1257
+  "fans": 1257,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2f3a950884089683ed0659f107dbd2f6/1000x1000-000000-80-0-0.jpg"
  },
  "Abrevity": {
   "genres": [
@@ -262,14 +267,16 @@
    "The Flat Stanleys",
    "Panucci's Pizza"
   ],
-  "fans": 859
+  "fans": 859,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/416e9c3999f7093b6e04cf477887f022/1000x1000-000000-80-0-0.jpg"
  },
  "Adrian Uribe": {
   "genres": [
    "reggaeton"
   ],
   "related": [],
-  "fans": 19
+  "fans": 19,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f4c63fe0b3586ef2efb5acb4d264c812/1000x1000-000000-80-0-0.jpg"
  },
  "Afrobeats to the World": {
   "genres": [],
@@ -360,7 +367,8 @@
    "films/games"
   ],
   "related": [],
-  "fans": 367
+  "fans": 367,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/3a256ab03dd115deb544ddf7077ab6a2/1000x1000-000000-80-0-0.jpg"
  },
  "Ali Wong Live": {
   "genres": [],
@@ -383,7 +391,8 @@
    "The World Is A Beautiful Place & I Am No Longer Afraid To Die",
    "Moose Blood"
   ],
-  "fans": 880
+  "fans": 880,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/e5acc25235851fd7e96c6a46702acc32/1000x1000-000000-80-0-0.jpg"
  },
  "All Shall Perish": {
   "genres": [
@@ -402,7 +411,8 @@
    "Winds Of Plague",
    "Despised Icon"
   ],
-  "fans": 40756
+  "fans": 40756,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fd4bd253596588f68c7ec974948c8d46/1000x1000-000000-80-0-0.jpg"
  },
  "All Time Low": {
   "genres": [
@@ -437,7 +447,8 @@
    "Elliot Moss",
    "Banks"
   ],
-  "fans": 5671
+  "fans": 5671,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/e9631641a7606d659af983497cec77ba/1000x1000-000000-80-0-0.jpg"
  },
  "Allen Stone and Ripe": {
   "genres": [],
@@ -477,7 +488,8 @@
    "Chance Peña",
    "Josiah and the Bonnevilles"
   ],
-  "fans": 2588
+  "fans": 2588,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/da6677c3278400a99de664862c11c82f/1000x1000-000000-80-0-0.jpg"
  },
  "American Aquarium": {
   "genres": [
@@ -494,7 +506,8 @@
    "Shane Smith & the Saints",
    "Colter Wall"
   ],
-  "fans": 1958
+  "fans": 1958,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d0b7e83ef88e958ffb5b58a5b86c947c/1000x1000-000000-80-0-0.jpg"
  },
  "Aminé": {
   "genres": [
@@ -548,7 +561,8 @@
    "THE BOBBY LEES",
    "Thee Oh Sees"
   ],
-  "fans": 42875
+  "fans": 42875,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b75431a14d36a5359ba21a91d7d3862f/1000x1000-000000-80-0-0.jpg"
  },
  "An Evening": {
   "genres": [
@@ -581,7 +595,8 @@
    "alternative"
   ],
   "related": [],
-  "fans": 7
+  "fans": 7,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f54bfe84ac4a93a800fbaa1564948239/1000x1000-000000-80-0-0.jpg"
  },
  "An Intimate Evening with Tamar & Friends": {
   "genres": [],
@@ -624,7 +639,8 @@
    "Eros Ramazzotti",
    "Zucchero"
   ],
-  "fans": 1233687
+  "fans": 1233687,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5cf85899fe97765586903022dcce83f9/1000x1000-000000-80-0-0.jpg"
  },
  "Anella": {
   "genres": [
@@ -645,7 +661,8 @@
  "Angel Du$t & Agnostic Front": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Angel Du$t & Ovlov": {
   "genres": [],
@@ -674,7 +691,8 @@
    "Mr. Bungle",
    "Soul Glo"
   ],
-  "fans": 34449
+  "fans": 34449,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c21b44bc8beca51d3166caad74591b10/1000x1000-000000-80-0-0.jpg"
  },
  "Another One Down!": {
   "genres": [
@@ -716,12 +734,14 @@
    "1300SAINT",
    "SLAYR"
   ],
-  "fans": 649
+  "fans": 649,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4edc5663a2ea3b012468cf7141eafca2/1000x1000-000000-80-0-0.jpg"
  },
  "Arch Enemy & The Black Dahlia Murder": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Arcángel": {
   "genres": [
@@ -740,7 +760,8 @@
    "Tomatito",
    "Estrella Morente"
   ],
-  "fans": 1685
+  "fans": 1685,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/39489adc754c97d99efc20d78d2aba60/1000x1000-000000-80-0-0.jpg"
  },
  "Arin Ray": {
   "genres": [
@@ -756,7 +777,8 @@
    "Elhae",
    "Ari Lennox"
   ],
-  "fans": 5339
+  "fans": 5339,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/09b1d5f568b8c30d5dafda59fd9ceca3/1000x1000-000000-80-0-0.jpg"
  },
  "Artemas": {
   "genres": [
@@ -775,7 +797,8 @@
    "Nessa Barrett",
    "Nic Dean"
   ],
-  "fans": 60491
+  "fans": 60491,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6f557a91c8294fe5d555a1bf6135cb02/1000x1000-000000-80-0-0.jpg"
  },
  "As It Is": {
   "genres": [
@@ -817,7 +840,8 @@
  "Ascension Halloween": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Ashnikko": {
   "genres": [
@@ -843,7 +867,8 @@
    "films/games"
   ],
   "related": [],
-  "fans": 126
+  "fans": 126,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6cec6da9a98e49b451bf783b59a6fe10/1000x1000-000000-80-0-0.jpg"
  },
  "Attack Attack!": {
   "genres": [
@@ -916,7 +941,8 @@
    "Widowspeak",
    "Marta Del Grandi"
   ],
-  "fans": 32
+  "fans": 32,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f9671179c541bd92d6f93eb74861bd27/1000x1000-000000-80-0-0.jpg"
  },
  "BIG ASS TRUCK I.E.": {
   "genres": [
@@ -934,7 +960,8 @@
    "SPEED",
    "Pain of Truth"
   ],
-  "fans": 467
+  "fans": 467,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/af6ad56f296f3033a8130dd8e034597a/1000x1000-000000-80-0-0.jpg"
  },
  "BLESSD": {
   "genres": [
@@ -969,12 +996,33 @@
    "Dead Heat",
    "Siberian Meat Grinder"
   ],
-  "fans": 326
+  "fans": 326,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c51bb1853d2fcd891b616d61ca4ca613/1000x1000-000000-80-0-0.jpg"
  },
  "BRYCE CRAWFORD \"I LOVE JESUS U.S. TOUR": {
   "genres": [],
   "related": [],
   "fans": 0
+ },
+ "BTS": {
+  "genres": [
+   "k-pop",
+   "boy group",
+   "pop",
+   "dance"
+  ],
+  "related": [
+   "j-hope",
+   "Jungkook",
+   "Jimin",
+   "JIN",
+   "Agust D",
+   "Rm",
+   "GOT7",
+   "Monsta X"
+  ],
+  "fans": 803,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b5c64fa8216ca158e52b4d88bd9388ff/1000x1000-000000-80-0-0.jpg"
  },
  "Baby Bugs": {
   "genres": [
@@ -1053,7 +1101,8 @@
    "Midrift",
    "Deftones"
   ],
-  "fans": 18099
+  "fans": 18099,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8e22f71adadf0184b695aa5bd016e967/1000x1000-000000-80-0-0.jpg"
  },
  "Bassvictim": {
   "genres": [
@@ -1072,7 +1121,8 @@
    "2hollis",
    "meat computer"
   ],
-  "fans": 2491
+  "fans": 2491,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ba6dd187b8a3be973972f00e28db8167/1000x1000-000000-80-0-0.jpg"
  },
  "Bay Faction": {
   "genres": [
@@ -1118,7 +1168,8 @@
    "Desolated",
    "Contention"
   ],
-  "fans": 270
+  "fans": 270,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/75dfe0cff6f411a4168b52687e29e3d5/1000x1000-000000-80-0-0.jpg"
  },
  "Beach Fossils": {
   "genres": [
@@ -1155,7 +1206,8 @@
    "Rusty Cage",
    "Creature Feature"
   ],
-  "fans": 5346
+  "fans": 5346,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bd08e9cd8a29cf4bd22140e69b6698db/1000x1000-000000-80-0-0.jpg"
  },
  "Beartooth": {
   "genres": [
@@ -1174,7 +1226,8 @@
    "Crown The Empire",
    "Memphis May Fire"
   ],
-  "fans": 81573
+  "fans": 81573,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2bee3391656b303f94dc857a3a3b19b7/1000x1000-000000-80-0-0.jpg"
  },
  "Belmont": {
   "genres": [
@@ -1213,7 +1266,8 @@
  "Benjamin Tod & Lost Dog Street Band": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Between The Buried And Me & Hail The Sun": {
   "genres": [],
@@ -1236,7 +1290,8 @@
    "The Rolling Stones",
    "The Black Crowes"
   ],
-  "fans": 4360
+  "fans": 4360,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/865838100c44a1a88478f468c1623e71/1000x1000-000000-80-0-0.jpg"
  },
  "Bill Burr Live": {
   "genres": [],
@@ -1286,7 +1341,8 @@
  "Bitch Cabal": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Bitch Cabal Feat. Wednesday & Mannequin Pussy": {
   "genres": [],
@@ -1310,7 +1366,8 @@
    "Wednesday",
    "Been Stellar"
   ],
-  "fans": 23183
+  "fans": 23183,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5d8bf8877cefa207508196c2e61a2ad8/1000x1000-000000-80-0-0.jpg"
  },
  "Black Label Society": {
   "genres": [
@@ -1403,7 +1460,8 @@
    "The White Buffalo",
    "Sturgill Simpson"
   ],
-  "fans": 40706
+  "fans": 40706,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/cc137230133cd4d2974a6fd65f9945e9/1000x1000-000000-80-0-0.jpg"
  },
  "Blackbraid": {
   "genres": [
@@ -1437,12 +1495,14 @@
    "Tyler Braden",
    "Gavin Adcock"
   ],
-  "fans": 1031
+  "fans": 1031,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/3baf4c5aefd17d7de7521d04b34804c2/1000x1000-000000-80-0-0.jpg"
  },
  "Bleachers Forever": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Bleeding Through": {
   "genres": [
@@ -1517,7 +1577,8 @@
    "Fuel",
    "Staind"
   ],
-  "fans": 35314
+  "fans": 35314,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2efb3908ec82ca2cf463b2d915ecaeb2/1000x1000-000000-80-0-0.jpg"
  },
  "Bo Staloch": {
   "genres": [],
@@ -1531,7 +1592,8 @@
    "Darren Kiely",
    "Buffalo Traffic Jam"
   ],
-  "fans": 297
+  "fans": 297,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5cff753129b3dd47e6a9a737651382c9/1000x1000-000000-80-0-0.jpg"
  },
  "Bob Moses & Cannons": {
   "genres": [],
@@ -1552,7 +1614,8 @@
    "Trees Speak",
    "Zaliva-D"
   ],
-  "fans": 252
+  "fans": 252,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/a2305cd2fb2d6cde94974d115abb727c/1000x1000-000000-80-0-0.jpg"
  },
  "Bodysnatcher": {
   "genres": [
@@ -1571,7 +1634,8 @@
    "Chelsea Grin",
    "The Acacia Strain"
   ],
-  "fans": 4309
+  "fans": 4309,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6b4959d06d31d3241b61d07a2751cf0d/1000x1000-000000-80-0-0.jpg"
  },
  "Bomba Estéreo + Rawayana": {
   "genres": [],
@@ -1616,7 +1680,8 @@
    "Hands Like Houses",
    "Issues"
   ],
-  "fans": 7756
+  "fans": 7756,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1b406e76ad92d6b70605d9d4dcebea90/1000x1000-000000-80-0-0.jpg"
  },
  "Boy Harsher": {
   "genres": [
@@ -1635,7 +1700,8 @@
    "Minuit Machine",
    "The KVB"
   ],
-  "fans": 31246
+  "fans": 31246,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/a6dbe6032f169e9b2a8c29b1871dbf12/1000x1000-000000-80-0-0.jpg"
  },
  "Boys Night Out": {
   "genres": [
@@ -1667,12 +1733,14 @@
    "Yazoo",
    "Visage"
   ],
-  "fans": 196732
+  "fans": 196732,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/73c95b5fc1a6a80dd2534b2ef6f148ac/1000x1000-000000-80-0-0.jpg"
  },
  "Bragolin & Carrellee": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Brenn!": {
   "genres": [
@@ -1688,7 +1756,8 @@
    "Michael Marcagi",
    "liv romano"
   ],
-  "fans": 3190
+  "fans": 3190,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7161821d73df9b5dbef38969fa9ac732/1000x1000-000000-80-0-0.jpg"
  },
  "Bridge City Sinners": {
   "genres": [
@@ -1733,14 +1802,16 @@
    "The National",
    "First Aid Kit"
   ],
-  "fans": 48415
+  "fans": 48415,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8ce1a32a2fa97166caf11e925b377dc1/1000x1000-000000-80-0-0.jpg"
  },
  "Broadway Rave": {
   "genres": [
    "pop"
   ],
   "related": [],
-  "fans": 134
+  "fans": 134,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7573e9741d1c6588e4105f28d4151a44/1000x1000-000000-80-0-0.jpg"
  },
  "Bruce Cockburn": {
   "genres": [
@@ -1759,7 +1830,28 @@
    "Nick Lowe",
    "Eric Clapton"
   ],
-  "fans": 4267
+  "fans": 4267,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ab4499b1d6d96211ecb99fb9d4908029/1000x1000-000000-80-0-0.jpg"
+ },
+ "Bruno Mars": {
+  "genres": [
+   "pop",
+   "funk",
+   "r&b",
+   "contemporary r&b"
+  ],
+  "related": [
+   "Maroon 5",
+   "Rihanna",
+   "Charlie Puth",
+   "Katy Perry",
+   "Justin Bieber",
+   "Ed Sheeran",
+   "Lady Gaga",
+   "Miley Cyrus"
+  ],
+  "fans": 12797461,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/90f0b5b11df4f87ee878f38569b5995b/1000x1000-000000-80-0-0.jpg"
  },
  "Brutalismus 3000": {
   "genres": [
@@ -1775,7 +1867,8 @@
    "VCL",
    "Garcia sauvage"
   ],
-  "fans": 27016
+  "fans": 27016,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/91230b3768c9a390aab16dfe7cf2fe92/1000x1000-000000-80-0-0.jpg"
  },
  "Buddha Trixie": {
   "genres": [
@@ -1791,17 +1884,20 @@
    "Sisyfuss",
    "Vundabar"
   ],
-  "fans": 350
+  "fans": 350,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fd38d432bc9d57d77476c06446967354/1000x1000-000000-80-0-0.jpg"
  },
  "Bulwark LIVE": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Burndown Tour 2026": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Burning Witches": {
   "genres": [
@@ -1825,7 +1921,8 @@
  "ButtTootKing": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "ButtTootKing ft. Lydia B Kollins, Suzie Toot, & Kori King": {
   "genres": [],
@@ -1849,7 +1946,8 @@
    "UK Subs",
    "The Clash"
   ],
-  "fans": 58575
+  "fans": 58575,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2e90c86c29aa8a22490e0ba22beddfa6/1000x1000-000000-80-0-0.jpg"
  },
  "CA7RIEL & Paco Amoroso": {
   "genres": [
@@ -1870,12 +1968,14 @@
  "CHELSEA HANDLER": {
   "genres": [],
   "related": [],
-  "fans": 9
+  "fans": 9,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f89db952165a01680731d4e69725d458/1000x1000-000000-80-0-0.jpg"
  },
  "CLOSE YOUR EYES 1ST TOUR [BEYOND YOUR EYES] IN NORTH AMERICA": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "COMBICHRIST": {
   "genres": [
@@ -1894,7 +1994,8 @@
    "Dope Stars Inc.",
    "Avatar"
   ],
-  "fans": 40401
+  "fans": 40401,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/e55a56697e82da3025367adf23321cd6/1000x1000-000000-80-0-0.jpg"
  },
  "Cafuné": {
   "genres": [
@@ -1962,15 +2063,26 @@
    "Eline",
    "Ekloz"
   ],
-  "fans": 521
+  "fans": 521,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/514abe061d8a6c1204076bb909962caf/1000x1000-000000-80-0-0.jpg"
  },
  "Carl Cox": {
   "genres": [
    "techno",
    "english"
   ],
-  "related": [],
-  "fans": 29
+  "related": [
+   "Alan Fitzpatrick",
+   "Green Velvet",
+   "Nina Kraviz",
+   "Dubfire",
+   "Christian Smith",
+   "Sam Paganini",
+   "ANNA",
+   "Maceo Plex"
+  ],
+  "fans": 29,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d3d9f5bf4750e23c5a2e879327c2d446/1000x1000-000000-80-0-0.jpg"
  },
  "Castle Rat": {
   "genres": [
@@ -1989,7 +2101,8 @@
    "Heretoir",
    "deafheaven"
   ],
-  "fans": 4373
+  "fans": 4373,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1720c5fa0153aa0d6a466451d9becf1a/1000x1000-000000-80-0-0.jpg"
  },
  "Catch Your Breath": {
   "genres": [
@@ -2005,7 +2118,8 @@
    "Dark Divine",
    "Rain City Drive"
   ],
-  "fans": 7375
+  "fans": 7375,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/cc47030e9c5c7e26a651f4c1a1ab1086/1000x1000-000000-80-0-0.jpg"
  },
  "Cavetown": {
   "genres": [
@@ -2024,7 +2138,8 @@
    "Mitski",
    "Sir Chloe"
   ],
-  "fans": 292442
+  "fans": 292442,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/75a11215087b9952d40581c0c08e1eee/1000x1000-000000-80-0-0.jpg"
  },
  "Ceremony": {
   "genres": [
@@ -2043,7 +2158,8 @@
    "REZN",
    "Black Tusk"
   ],
-  "fans": 3532
+  "fans": 3532,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7fd40d262bf06bfc92e64e50b38b23ef/1000x1000-000000-80-0-0.jpg"
  },
  "Chanel Beads": {
   "genres": [
@@ -2059,7 +2175,8 @@
    "Kelsey Lu",
    "Eartheater"
   ],
-  "fans": 1999
+  "fans": 1999,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/a2ccf9da17f6cc0811f58a6223dea37b/1000x1000-000000-80-0-0.jpg"
  },
  "Charli xcx": {
   "genres": [
@@ -2078,7 +2195,8 @@
    "Rina Sawayama",
    "Carly Rae Jepsen"
   ],
-  "fans": 1889194
+  "fans": 1889194,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5a4f593c65c71292b4389e871f76c023/1000x1000-000000-80-0-0.jpg"
  },
  "Chase Petra": {
   "genres": [
@@ -2095,7 +2213,8 @@
    "Mother Mother",
    "Roe Kapara"
   ],
-  "fans": 1352
+  "fans": 1352,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b3e01e99758e23e972df9724b9d9f226/1000x1000-000000-80-0-0.jpg"
  },
  "Chasing Abbey": {
   "genres": [
@@ -2111,7 +2230,8 @@
    "Vinny Marchi",
    "Derina Harvey Band"
   ],
-  "fans": 2787
+  "fans": 2787,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/523433674ba9b90b65e421df45638e3e/1000x1000-000000-80-0-0.jpg"
  },
  "Chat Pile": {
   "genres": [
@@ -2130,7 +2250,8 @@
    "SLIFT",
    "Russian Circles"
   ],
-  "fans": 5900
+  "fans": 5900,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4085051eedb2fcac132a53cb2712ffa2/1000x1000-000000-80-0-0.jpg"
  },
  "Chinese Football": {
   "genres": [
@@ -2148,7 +2269,8 @@
    "Totorro",
    "a picture of her"
   ],
-  "fans": 833
+  "fans": 833,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/429f89acb452c7ee216f25f889e8fde5/1000x1000-000000-80-0-0.jpg"
  },
  "Christone \"KINGFISH\" Ingram": {
   "genres": [
@@ -2164,7 +2286,8 @@
    "Robben Ford",
    "Luther Allison"
   ],
-  "fans": 10785
+  "fans": 10785,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2970a1a8ef17d26e5ed597daf30630ce/1000x1000-000000-80-0-0.jpg"
  },
  "Colour Revolt": {
   "genres": [
@@ -2180,7 +2303,8 @@
    "Hundred Suns",
    "Calling All Captains"
   ],
-  "fans": 601
+  "fans": 601,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d95d1e0030820fae216589d69e4f231f/1000x1000-000000-80-0-0.jpg"
  },
  "Cortisa Star": {
   "genres": [
@@ -2199,14 +2323,16 @@
    "Cece Natalie",
    "Underscores"
   ],
-  "fans": 739
+  "fans": 739,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/700eb6a91182133cc976be40df18d1c6/1000x1000-000000-80-0-0.jpg"
  },
  "Cory Grinder": {
   "genres": [
    "country"
   ],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": "https://cdn-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg"
  },
  "Cracker": {
   "genres": [
@@ -2225,7 +2351,8 @@
    "Spacehog",
    "Dave Matthews Band"
   ],
-  "fans": 4467
+  "fans": 4467,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8e2f588e7a87da2bbf13ce205ed041c9/1000x1000-000000-80-0-0.jpg"
  },
  "Cryogeyser": {
   "genres": [
@@ -2242,7 +2369,8 @@
    "Sweet Trip",
    "Helvetia"
   ],
-  "fans": 606
+  "fans": 606,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/512fbf193c18f5b3b3d388cd305d2675/1000x1000-000000-80-0-0.jpg"
  },
  "DECEITS": {
   "genres": [
@@ -2261,12 +2389,14 @@
    "Fearing",
    "TRAITRS"
   ],
-  "fans": 1100
+  "fans": 1100,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f5f595055d14c8efccd2d924fb40eadd/1000x1000-000000-80-0-0.jpg"
  },
  "DJ Meredith Marks": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "DJ Shadow": {
   "genres": [
@@ -2285,26 +2415,30 @@
    "Kid Loco",
    "Bonobo"
   ],
-  "fans": 178252
+  "fans": 178252,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/237560c9b17b53262931cb34500efc67/1000x1000-000000-80-0-0.jpg"
  },
  "DYING FETUS & SANGUISUGABOGG": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Dan and Peggy Reeder": {
   "genres": [
    "pop"
   ],
   "related": [],
-  "fans": 2
+  "fans": 2,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f3467cf85a6759fc535fa1230f53eeb8/1000x1000-000000-80-0-0.jpg"
  },
  "Daniel Sloss": {
   "genres": [
    "films/games"
   ],
   "related": [],
-  "fans": 75
+  "fans": 75,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/9771004d4586c64546bb45087ffb8a6c/1000x1000-000000-80-0-0.jpg"
  },
  "Dave Chappelle": {
   "genres": [
@@ -2312,7 +2446,8 @@
    "standup comedy"
   ],
   "related": [],
-  "fans": 884
+  "fans": 884,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/3932ba3d23169fd3055e5ad79f1834f1/1000x1000-000000-80-0-0.jpg"
  },
  "Daði Freyr": {
   "genres": [
@@ -2330,12 +2465,14 @@
    "Alessandra",
    "Vesna"
   ],
-  "fans": 13684
+  "fans": 13684,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5c2649aca658a086f272d9b3a0f924bc/1000x1000-000000-80-0-0.jpg"
  },
  "Dead Poet Society & Honey Revenge": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Death Cab for Cutie": {
   "genres": [
@@ -2354,7 +2491,8 @@
    "Bloc Party",
    "Bombay Bicycle Club"
   ],
-  "fans": 200546
+  "fans": 200546,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/3f44f1d9518985b54ecdaf08994ce027/1000x1000-000000-80-0-0.jpg"
  },
  "Deer Tick": {
   "genres": [
@@ -2371,7 +2509,8 @@
    "Langhorne Slim",
    "Johnny Flynn"
   ],
-  "fans": 7654
+  "fans": 7654,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/58f44caf8aed8d246633008d52fe4b08/1000x1000-000000-80-0-0.jpg"
  },
  "Desert Dwellers": {
   "genres": [
@@ -2389,19 +2528,22 @@
    "Liquid Bloom",
    "Temple Step Project"
   ],
-  "fans": 7154
+  "fans": 7154,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/46d5c8d674eab932097b75164ef36c2c/1000x1000-000000-80-0-0.jpg"
  },
  "Disney Worlds Collide Concert Tour": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Dizgo": {
   "genres": [
    "rock"
   ],
   "related": [],
-  "fans": 57
+  "fans": 57,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/89c77f6c429ed647fa6309cff5c97c91/1000x1000-000000-80-0-0.jpg"
  },
  "Doja Cat": {
   "genres": [
@@ -2420,7 +2562,8 @@
    "Flo Milli",
    "Chloe x Halle"
   ],
-  "fans": 2505087
+  "fans": 2505087,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/9e3a3b8792a04c4578da7b905ffeaf2b/1000x1000-000000-80-0-0.jpg"
  },
  "Don Omar": {
   "genres": [
@@ -2438,7 +2581,8 @@
    "J Alvarez",
    "Tony Dize"
   ],
-  "fans": 4036251
+  "fans": 4036251,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/3edb52cebe741e547363a093e26d4655/1000x1000-000000-80-0-0.jpg"
  },
  "Donny Benet": {
   "genres": [
@@ -2454,7 +2598,8 @@
    "Franc Moody",
    "Jafunk"
   ],
-  "fans": 2965
+  "fans": 2965,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/dbaa7744f1ae03389b5dea4dbeaa9539/1000x1000-000000-80-0-0.jpg"
  },
  "DragonForce": {
   "genres": [
@@ -2473,7 +2618,8 @@
    "Sabaton",
    "Dream Evil"
   ],
-  "fans": 324134
+  "fans": 324134,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/9dfb9d035b3e932de5a2f393b3e4ec71/1000x1000-000000-80-0-0.jpg"
  },
  "Dälek": {
   "genres": [
@@ -2492,7 +2638,8 @@
    "MAQUINA.",
    "Trainfantome"
   ],
-  "fans": 6390
+  "fans": 6390,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/0f60b4c11e0a7633ff3fdc2e065064b4/1000x1000-000000-80-0-0.jpg"
  },
  "EPIK HIGH": {
   "genres": [
@@ -2511,7 +2658,8 @@
    "HEIZE",
    "Dynamicduo"
   ],
-  "fans": 34105
+  "fans": 34105,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1b8ad753e249ec1df2d662bd4e701767/1000x1000-000000-80-0-0.jpg"
  },
  "Ecca Vandal": {
   "genres": [
@@ -2530,7 +2678,8 @@
    "Show Me the Body",
    "Dinosaur Pile-up"
   ],
-  "fans": 7141
+  "fans": 7141,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c1e4a3715140f88c83ba2792a67debbc/1000x1000-000000-80-0-0.jpg"
  },
  "Eddie 9V": {
   "genres": [
@@ -2549,14 +2698,16 @@
    "Marcus King",
    "The Dip"
   ],
-  "fans": 736
+  "fans": 736,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/40b57ac5cf131ae815fd851b6179006c/1000x1000-000000-80-0-0.jpg"
  },
  "Electric Feels": {
   "genres": [
    "electro"
   ],
   "related": [],
-  "fans": 500
+  "fans": 500,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d4d6a714ed30eaf5b6865575fb550b4b/1000x1000-000000-80-0-0.jpg"
  },
  "Ella Boh": {
   "genres": [
@@ -2572,12 +2723,14 @@
    "PLVTINUM",
    "Hila"
   ],
-  "fans": 2235
+  "fans": 2235,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fbd04f72ca4a14151486b8bd1fa711cd/1000x1000-000000-80-0-0.jpg"
  },
  "Emancipator \"Chrysalis Tour": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Emma Nissen": {
   "genres": [
@@ -2594,14 +2747,16 @@
    "Doe",
    "Sam Rivera"
   ],
-  "fans": 2458
+  "fans": 2458,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b9c907c0a01e195c204524408158e3ad/1000x1000-000000-80-0-0.jpg"
  },
  "Emo Night Karaoke": {
   "genres": [
    "rock"
   ],
   "related": [],
-  "fans": 3
+  "fans": 3,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/0a7609a7c7a6a046e0f1f6436edae8fe/1000x1000-000000-80-0-0.jpg"
  },
  "Emo Nite": {
   "genres": [
@@ -2617,7 +2772,8 @@
    "Canine",
    "Ezéchiel Pailhès"
   ],
-  "fans": 13715
+  "fans": 13715,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/559ddc302bb74fbbe997de1b903651c7/1000x1000-000000-80-0-0.jpg"
  },
  "EsDeeKid": {
   "genres": [
@@ -2636,7 +2792,8 @@
    "Rich Amiri",
    "Rockout Danny"
   ],
-  "fans": 33737
+  "fans": 33737,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/afad4388b6359c9d3fef0110d01efcd3/1000x1000-000000-80-0-0.jpg"
  },
  "Ethan Regan": {
   "genres": [
@@ -2652,7 +2809,8 @@
    "Chance Peña",
    "Briston Maroney"
   ],
-  "fans": 361
+  "fans": 361,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/89d5e68d16b80ac5469630b70741101a/1000x1000-000000-80-0-0.jpg"
  },
  "FORBIDDEN": {
   "genres": [
@@ -2669,7 +2827,8 @@
    "Sacred Reich",
    "Municipal Waste"
   ],
-  "fans": 10663
+  "fans": 10663,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/968e4d9f3d3361c3dfd14067698ef4ac/1000x1000-000000-80-0-0.jpg"
  },
  "Fenix TX": {
   "genres": [
@@ -2686,7 +2845,8 @@
    "Unwritten Law",
    "Rufio"
   ],
-  "fans": 5438
+  "fans": 5438,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6e68781d71ce9ab9649869ca4b80352b/1000x1000-000000-80-0-0.jpg"
  },
  "Fetty Wap": {
   "genres": [
@@ -2705,7 +2865,8 @@
    "YG",
    "Rae Sremmurd"
   ],
-  "fans": 438063
+  "fans": 438063,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6554aa6290d0d53a74f0b3a1112bbe1f/1000x1000-000000-80-0-0.jpg"
  },
  "Fink": {
   "genres": [
@@ -2724,7 +2885,8 @@
    "Half Moon Run",
    "Emilíana Torrini"
   ],
-  "fans": 68316
+  "fans": 68316,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/022c398e8ca51eab67c613f594f6a196/1000x1000-000000-80-0-0.jpg"
  },
  "Finn Wolfhard": {
   "genres": [
@@ -2742,20 +2904,32 @@
    "Sarah Kinsley",
    "The Army, The Navy"
   ],
-  "fans": 7372
+  "fans": 7372,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fda404ba767931584dd9161955cf1aab/1000x1000-000000-80-0-0.jpg"
  },
  "Flagman": {
   "genres": [
    "alternative metal",
    "funk metal"
   ],
-  "related": [],
-  "fans": 4
+  "related": [
+   "Slaves on Dope",
+   "Primer 55",
+   "Vision of Disorder",
+   "Mushroomhead",
+   "Ill Niño",
+   "Otep",
+   "Motograter",
+   "Spineshank"
+  ],
+  "fans": 4,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/42524d6fce41c18114a5ebd723e04ab5/1000x1000-000000-80-0-0.jpg"
  },
  "Forkside Seats": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Foster The People": {
   "genres": [
@@ -2774,17 +2948,20 @@
    "Bombay Bicycle Club",
    "Saint Motel"
   ],
-  "fans": 1114086
+  "fans": 1114086,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fe79e60f3beec07d6ab8bd6b3bf033e0/1000x1000-000000-80-0-0.jpg"
  },
  "Foy Vance World Tour": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Frankly Scarlet & Runaway Gin": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Fred Armisen": {
   "genres": [
@@ -2800,7 +2977,8 @@
    "Gabby's Dollhouse",
    "The Wiggles"
   ],
-  "fans": 65
+  "fans": 65,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/55d7d38791d2d8a145ad72fabf7e6f7b/1000x1000-000000-80-0-0.jpg"
  },
  "Freddie Gibbs": {
   "genres": [
@@ -2819,7 +2997,8 @@
    "Ab-Soul",
    "Mike"
   ],
-  "fans": 92389
+  "fans": 92389,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d6b8027630bf2c2cd179d56724eeaae2/1000x1000-000000-80-0-0.jpg"
  },
  "Freddie Gibbs w/ The Alchemist": {
   "genres": [],
@@ -2840,12 +3019,14 @@
    "Kenzi Richardson",
    "Milo Manheim"
   ],
-  "fans": 10056
+  "fans": 10056,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/daaf2385ac49a62ebf263c0ed3be70c6/1000x1000-000000-80-0-0.jpg"
  },
  "Friendship & Charlotte Cornfield": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Friko": {
   "genres": [
@@ -2864,7 +3045,8 @@
    "Getdown Services",
    "MEMORIALS"
   ],
-  "fans": 1154
+  "fans": 1154,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2fe84eb46e3fd99e14752818efd77176/1000x1000-000000-80-0-0.jpg"
  },
  "Fruit Bats": {
   "genres": [
@@ -2880,7 +3062,8 @@
    "Rostam",
    "Cut Worms"
   ],
-  "fans": 4020
+  "fans": 4020,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5ca5ff63beac533fe46f3bff787b4b01/1000x1000-000000-80-0-0.jpg"
  },
  "Futurebirds": {
   "genres": [
@@ -2899,7 +3082,8 @@
    "Josh Ritter",
    "Jamestown Revival"
   ],
-  "fans": 695
+  "fans": 695,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4a55e3361f29c311ed6ea687305b9714/1000x1000-000000-80-0-0.jpg"
  },
  "GWAR": {
   "genres": [
@@ -2918,7 +3102,8 @@
    "Pantera",
    "Overkill"
   ],
-  "fans": 16204
+  "fans": 16204,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/251170d268bf96662f06f77e6d1b224b/1000x1000-000000-80-0-0.jpg"
  },
  "Gable Price And Friends": {
   "genres": [
@@ -2936,7 +3121,8 @@
    "John Mark Pantana",
    "Cory Asbury"
   ],
-  "fans": 1698
+  "fans": 1698,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bd8049bc1d920cca438bd159de73e4b9/1000x1000-000000-80-0-0.jpg"
  },
  "Games We Play": {
   "genres": [
@@ -2952,7 +3138,8 @@
    "Simple Creatures",
    "408"
   ],
-  "fans": 2006
+  "fans": 2006,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/aa91f0f708492ce1a7ef9b86832fd43c/1000x1000-000000-80-0-0.jpg"
  },
  "George Clanton": {
   "genres": [
@@ -2971,7 +3158,8 @@
    "Part Time",
    "Mid-air Thief"
   ],
-  "fans": 3558
+  "fans": 3558,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/eb154ae2aabb9fea999afe3b2ca51420/1000x1000-000000-80-0-0.jpg"
  },
  "Giles Corey": {
   "genres": [
@@ -2990,12 +3178,14 @@
    "Alison's Halo",
    "LSD and the Search for God"
   ],
-  "fans": 3755
+  "fans": 3755,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/63bce760c65ae51fb3786751c0301993/1000x1000-000000-80-0-0.jpg"
  },
  "Gimme Gimme Disco": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Gnarls Barkley": {
   "genres": [
@@ -3014,7 +3204,8 @@
    "Son Little",
    "Tahiti 80"
   ],
-  "fans": 135629
+  "fans": 135629,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4a341e560eb0b004a2af17888f122f72/1000x1000-000000-80-0-0.jpg"
  },
  "Goodbye June": {
   "genres": [
@@ -3031,12 +3222,14 @@
    "Silvertide",
    "Laura Cox"
   ],
-  "fans": 4812
+  "fans": 4812,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fa6e889c56a81d5d60815ce1bfac121a/1000x1000-000000-80-0-0.jpg"
  },
  "Gov't Mule and Ziggy Marley": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Gracie Abrams": {
   "genres": [
@@ -3055,7 +3248,8 @@
    "Holly Humberstone",
    "Luke Hemmings"
   ],
-  "fans": 405179
+  "fans": 405179,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8e20445d55cd9b577359d57cf914f01f/1000x1000-000000-80-0-0.jpg"
  },
  "Greg Freeman": {
   "genres": [
@@ -3071,12 +3265,14 @@
    "caroline",
    "Sorry"
   ],
-  "fans": 399
+  "fans": 399,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/20dc49675c917a038a088b769b50f02a/1000x1000-000000-80-0-0.jpg"
  },
  "Grucified": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Grupo Duelo": {
   "genres": [
@@ -3092,7 +3288,8 @@
    "El Poder del Norte",
    "Los Invasores De Nuevo León"
   ],
-  "fans": 261297
+  "fans": 261297,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4b4bb3ae9d3d057e4439d546b533aa0b/1000x1000-000000-80-0-0.jpg"
  },
  "H3adband": {
   "genres": [
@@ -3108,7 +3305,8 @@
    "Da Getta",
    "Younginsosleaze"
   ],
-  "fans": 369
+  "fans": 369,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1a823809fcd5e64ab7c2497421102b04/1000x1000-000000-80-0-0.jpg"
  },
  "Haiden Henderson": {
   "genres": [
@@ -3124,7 +3322,8 @@
    "Myla",
    "Chloe Adams"
   ],
-  "fans": 4488
+  "fans": 4488,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/3ecf300a49604de73770e783685b844f/1000x1000-000000-80-0-0.jpg"
  },
  "Haley Smalls": {
   "genres": [
@@ -3140,19 +3339,31 @@
    "Ann Marie",
    "Tone Stith"
   ],
-  "fans": 1204
+  "fans": 1204,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c01a760a3f7f09fda79485471fe74420/1000x1000-000000-80-0-0.jpg"
  },
  "Hans Zimmer Live": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Havok": {
   "genres": [
    "thrash metal"
   ],
-  "related": [],
-  "fans": 5
+  "related": [
+   "Evile",
+   "Exodus",
+   "Sodom",
+   "Suicidal Angels",
+   "Warbringer",
+   "Destruction",
+   "Kreator",
+   "Onslaught"
+  ],
+  "fans": 5,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/266826b63efefa1381bd282791025583/1000x1000-000000-80-0-0.jpg"
  },
  "Hawthorne Heights": {
   "genres": [
@@ -3171,7 +3382,8 @@
    "The Spill Canvas",
    "The Academy Is..."
   ],
-  "fans": 26015
+  "fans": 26015,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b4e1d7c874cafc30d9b9cda47cd728bc/1000x1000-000000-80-0-0.jpg"
  },
  "He Is Legend": {
   "genres": [
@@ -3190,7 +3402,8 @@
    "Manes",
    "Wormrot"
   ],
-  "fans": 4493
+  "fans": 4493,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2c447e3dffdb737e22bd03fd0eda32f9/1000x1000-000000-80-0-0.jpg"
  },
  "Headache": {
   "genres": [
@@ -3206,7 +3419,8 @@
    "Saya Gray",
    "Mort Garson"
   ],
-  "fans": 2688
+  "fans": 2688,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8bbf4e073b4c4802adef56ccc5941192/1000x1000-000000-80-0-0.jpg"
  },
  "Heal The Hurt": {
   "genres": [
@@ -3222,12 +3436,14 @@
    "Hollow Front",
    "Our Promise"
   ],
-  "fans": 187
+  "fans": 187,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/75d10fe30b5fb8f60fabba2b3d88ee18/1000x1000-000000-80-0-0.jpg"
  },
  "Heated Rivalry Rave": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Hiss Golden Messenger": {
   "genres": [
@@ -3246,24 +3462,28 @@
    "Fenne Lily",
    "Nathaniel Rateliff"
   ],
-  "fans": 3018
+  "fans": 3018,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/268780cffdac226082f2542959e02cc0/1000x1000-000000-80-0-0.jpg"
  },
  "Hit Like A Girl": {
   "genres": [
    "emo"
   ],
   "related": [],
-  "fans": 79
+  "fans": 79,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/30e9c1b219acd404d281a51dcd5dcf34/1000x1000-000000-80-0-0.jpg"
  },
  "Ho99o9 & N8NOFACE": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Holiday Hootenanny 15": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Holywatr": {
   "genres": [
@@ -3281,17 +3501,20 @@
    "Asava",
    "Static Dress"
   ],
-  "fans": 1396
+  "fans": 1396,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f38e4cf7d5c7d33a4135a238c466882b/1000x1000-000000-80-0-0.jpg"
  },
  "Hot Wheels Monster Trucks Live": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "House Party Rave": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "House Party Rave feat. Pagu + friends": {
   "genres": [],
@@ -3312,7 +3535,8 @@
    "Gia Ford",
    "Rostam"
   ],
-  "fans": 1259
+  "fans": 1259,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/adf2de5aecb5d16517b4b7cf24a00bc3/1000x1000-000000-80-0-0.jpg"
  },
  "Hulvey": {
   "genres": [
@@ -3328,12 +3552,14 @@
    "WHATUPRG",
    "1k Phew"
   ],
-  "fans": 28604
+  "fans": 28604,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/13ad957ccc7692bfef88aaa71bf89ecd/1000x1000-000000-80-0-0.jpg"
  },
  "Hunxho 2Night Only Tour": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "IGORRR": {
   "genres": [
@@ -3352,7 +3578,8 @@
    "Sylosis",
    "Machine Head"
   ],
-  "fans": 45433
+  "fans": 45433,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6f34dca28dd2889aedd7597de1d3b325/1000x1000-000000-80-0-0.jpg"
  },
  "Ian McConnell": {
   "genres": [
@@ -3368,7 +3595,8 @@
    "Dina Rebekka",
    "Jack Harris"
   ],
-  "fans": 1951
+  "fans": 1951,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/db7006645f8054e9321e8a5ca04c5f2d/1000x1000-000000-80-0-0.jpg"
  },
  "Imminence": {
   "genres": [
@@ -3386,17 +3614,20 @@
    "Annisokay",
    "Architects"
   ],
-  "fans": 33518
+  "fans": 33518,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/9aabcc9f2e8b8033ca2a715dec56d5cc/1000x1000-000000-80-0-0.jpg"
  },
  "In Her Own Words & Every Avenue": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Insomnium & Amorphis": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Interpol": {
   "genres": [
@@ -3414,7 +3645,8 @@
    "Paul Banks",
    "Kasabian"
   ],
-  "fans": 479609
+  "fans": 479609,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ca11e5724bfd7be68c0db67ee474bc9f/1000x1000-000000-80-0-0.jpg"
  },
  "Iron & Wine": {
   "genres": [
@@ -3433,12 +3665,14 @@
    "Leif Vollebekk",
    "The Paper Kites"
   ],
-  "fans": 108967
+  "fans": 108967,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2e0663823d66f63ee702138b66544d19/1000x1000-000000-80-0-0.jpg"
  },
  "JACK WHITE LIVE 2026": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "JOHNNYSWIM": {
   "genres": [
@@ -3457,7 +3691,8 @@
    "Tom Speight",
    "Jamie Lawson"
   ],
-  "fans": 4054
+  "fans": 4054,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/731bbbd43ba6c4c51c386c4ba35c04b1/1000x1000-000000-80-0-0.jpg"
  },
  "JPEGMAFIA": {
   "genres": [
@@ -3476,7 +3711,8 @@
    "redveil",
    "Danny Brown"
   ],
-  "fans": 48077
+  "fans": 48077,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/66251bd5d137fb7270d66c407a6f96e2/1000x1000-000000-80-0-0.jpg"
  },
  "Jady": {
   "genres": [
@@ -3492,7 +3728,8 @@
    "AViVA",
    "Call Me Karizma"
   ],
-  "fans": 34
+  "fans": 34,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7202f8fdad8ad1c283d8b26ff5d1fc23/1000x1000-000000-80-0-0.jpg"
  },
  "Jai Wolf": {
   "genres": [
@@ -3510,7 +3747,8 @@
    "Les Gordon",
    "Kidswaste"
   ],
-  "fans": 8143
+  "fans": 8143,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c1767d73b0f282aaf88a34fc0f7f5844/1000x1000-000000-80-0-0.jpg"
  },
  "Jalen Ngonda": {
   "genres": [
@@ -3528,7 +3766,8 @@
    "Lady Wray",
    "Kelly Finnigan"
   ],
-  "fans": 17748
+  "fans": 17748,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/139fec85da0f4dc84477898fdd1ca090/1000x1000-000000-80-0-0.jpg"
  },
  "James Marriott": {
   "genres": [
@@ -3544,7 +3783,8 @@
    "The Happy Fits",
    "Crawlers"
   ],
-  "fans": 6458
+  "fans": 6458,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6d01f7c41693cc0c1184a275adc95794/1000x1000-000000-80-0-0.jpg"
  },
  "Jane Remover": {
   "genres": [
@@ -3563,17 +3803,20 @@
    "venturing",
    "Daîne"
   ],
-  "fans": 6835
+  "fans": 6835,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ebd6b5e5a0b0f178163005de1869767b/1000x1000-000000-80-0-0.jpg"
  },
  "Jason Bonham's Led Zeppelin Evening": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Jim Henson's Labyrinth": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "JoJo": {
   "genres": [
@@ -3582,8 +3825,18 @@
    "r&b",
    "soul"
   ],
-  "related": [],
-  "fans": 7
+  "related": [
+   "Klaus & Klaus",
+   "Die Zipfelbuben",
+   "DJ Ötzi",
+   "Markus Becker",
+   "Dorfrocker",
+   "Lollies",
+   "Mountain Crew",
+   "MICHL MÜLLER"
+  ],
+  "fans": 7,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/1000x1000-000000-80-0-0.jpg"
  },
  "John Summit": {
   "genres": [
@@ -3602,7 +3855,8 @@
    "Meduza",
    "Chapter & Verse"
   ],
-  "fans": 20465
+  "fans": 20465,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/200982268dcabae98644b1601a90a948/1000x1000-000000-80-0-0.jpg"
  },
  "Johnny Blue Skies & the Dark Clouds": {
   "genres": [
@@ -3618,7 +3872,8 @@
    "Senora May",
    "The Brudi Brothers"
   ],
-  "fans": 1211
+  "fans": 1211,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fc5cb7ca7961392b11791b2b82de2e4b/1000x1000-000000-80-0-0.jpg"
  },
  "Jonas Brothers": {
   "genres": [
@@ -3636,7 +3891,8 @@
    "DNCE",
    "Selena Gomez"
   ],
-  "fans": 1688799
+  "fans": 1688799,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7a8fb7b9433605f55cbb18e6bb3e90f8/1000x1000-000000-80-0-0.jpg"
  },
  "Josie Edwards": {
   "genres": [
@@ -3652,7 +3908,8 @@
    "PEGGY",
    "alex robbins"
   ],
-  "fans": 3377
+  "fans": 3377,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d7913c3125b28afccd186e8a15692ce0/1000x1000-000000-80-0-0.jpg"
  },
  "Journey": {
   "genres": [
@@ -3661,8 +3918,18 @@
    "arena rock",
    "hard rock"
   ],
-  "related": [],
-  "fans": 23
+  "related": [
+   "Foreigner",
+   "Survivor",
+   "Whitesnake",
+   "Boston",
+   "Def Leppard",
+   "REO Speedwagon",
+   "Cheap Trick",
+   "Asia"
+  ],
+  "fans": 23,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/518ba69b281e105c07cca863e3b9a0cb/1000x1000-000000-80-0-0.jpg"
  },
  "Joy Oladokun": {
   "genres": [
@@ -3681,7 +3948,8 @@
    "Seafret",
    "Stephen Sanchez"
   ],
-  "fans": 4244
+  "fans": 4244,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6526e0618f2793aaab786a2cf663ce9c/1000x1000-000000-80-0-0.jpg"
  },
  "Judah & the Lion": {
   "genres": [
@@ -3697,7 +3965,8 @@
    "The Strumbellas",
    "The Hunts"
   ],
-  "fans": 5659
+  "fans": 5659,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/73b83362397992e3e0f66aeca6113898/1000x1000-000000-80-0-0.jpg"
  },
  "Julia Jacklin": {
   "genres": [
@@ -3716,7 +3985,8 @@
    "Soccer Mommy",
    "Haley Heynderickx"
   ],
-  "fans": 12138
+  "fans": 12138,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/588f948bdce39ec021552a0bdae22f85/1000x1000-000000-80-0-0.jpg"
  },
  "Justin Nozuka": {
   "genres": [
@@ -3732,7 +4002,8 @@
    "KT Tunstall",
    "Lily Kershaw"
   ],
-  "fans": 58968
+  "fans": 58968,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/0e0a1b8720d3465d30b0f062c19f9317/1000x1000-000000-80-0-0.jpg"
  },
  "KATSEYE": {
   "genres": [
@@ -3741,8 +4012,18 @@
    "pop",
    "2020s"
   ],
-  "related": [],
-  "fans": 27
+  "related": [
+   "JENNIE",
+   "LISA",
+   "LE SSERAFIM",
+   "GIRLSET",
+   "BLACKPINK",
+   "ROSÉ",
+   "The Debut: Dream Academy",
+   "TWICE"
+  ],
+  "fans": 27,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/a7331f638b9165efa88d5da9d405e8b1/1000x1000-000000-80-0-0.jpg"
  },
  "Kacey Musgraves": {
   "genres": [
@@ -3761,7 +4042,8 @@
    "Gabby Barrett",
    "Kelsea Ballerini"
   ],
-  "fans": 77759
+  "fans": 77759,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/229fe42ffc5b16b51112ffee967453e1/1000x1000-000000-80-0-0.jpg"
  },
  "Kany Garcia": {
   "genres": [
@@ -3777,7 +4059,8 @@
    "Pablo Alboran",
    "Ricardo Arjona"
   ],
-  "fans": 372542
+  "fans": 372542,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1c0b5b253a18b3eb45e635dc9f8eb550/1000x1000-000000-80-0-0.jpg"
  },
  "Karan Aujla": {
   "genres": [
@@ -3793,7 +4076,8 @@
    "Sidhu Moose Wala",
    "Cheema Y"
   ],
-  "fans": 33111
+  "fans": 33111,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/a91a1d5ea91e85e4f0966569b50e8d6a/1000x1000-000000-80-0-0.jpg"
  },
  "Katie Pruitt": {
   "genres": [
@@ -3812,12 +4096,14 @@
    "Olive Klug",
    "Indigo Girls"
   ],
-  "fans": 1011
+  "fans": 1011,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d5ec9c76f4fac25e9ccf35b8967f84a3/1000x1000-000000-80-0-0.jpg"
  },
  "Katt Williams On Book Tour!": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Kevin Atwater": {
   "genres": [
@@ -3833,7 +4119,8 @@
    "Annabelle Dinda",
    "The Army, The Navy"
   ],
-  "fans": 1544
+  "fans": 1544,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/361d12c06b5af72dea846fd68a386c60/1000x1000-000000-80-0-0.jpg"
  },
  "Kingdom of Giants": {
   "genres": [
@@ -3849,12 +4136,14 @@
    "NORTHLANE",
    "Bury Tomorrow"
   ],
-  "fans": 7229
+  "fans": 7229,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/da39d4d9f8dd326f7391897424df8c25/1000x1000-000000-80-0-0.jpg"
  },
  "Kitchen Dwellers & Dogs In A Pile": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Know Good": {
   "genres": [
@@ -3873,7 +4162,8 @@
    "Zeds dead",
    "Rsun"
   ],
-  "fans": 553
+  "fans": 553,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/18c9d60344eaaa6e34a4d3f91edcfc5f/1000x1000-000000-80-0-0.jpg"
  },
  "Know Good Presents": {
   "genres": [],
@@ -3894,14 +4184,16 @@
    "LØLØ",
    "Will Linley"
   ],
-  "fans": 1904
+  "fans": 1904,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/e63788bf89600e5617eecea4341f2e2f/1000x1000-000000-80-0-0.jpg"
  },
  "Kyle Kinane": {
   "genres": [
    "films/games"
   ],
   "related": [],
-  "fans": 473
+  "fans": 473,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/96ba9791c6b9fc6f45d990cc87dacbd3/1000x1000-000000-80-0-0.jpg"
  },
  "Kylie Cantrall": {
   "genres": [
@@ -3917,7 +4209,8 @@
    "Ruby Rose Turner",
    "Malachi Barton"
   ],
-  "fans": 17087
+  "fans": 17087,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/a96745a24150805b44060d001d4a32d9/1000x1000-000000-80-0-0.jpg"
  },
  "L7": {
   "genres": [
@@ -3925,8 +4218,18 @@
    "punk",
    "rock and indie"
   ],
-  "related": [],
-  "fans": 4
+  "related": [
+   "Mudhoney",
+   "Veruca Salt",
+   "Babes in Toyland",
+   "The Smashing Pumpkins",
+   "Jane's Addiction",
+   "Hole",
+   "Therapy?",
+   "Butthole Surfers"
+  ],
+  "fans": 4,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c0e61a9419cdf68c145b9cc1a4b77607/1000x1000-000000-80-0-0.jpg"
  },
  "LAUNDRY DAY": {
   "genres": [
@@ -3942,7 +4245,8 @@
    "Grentperez",
    "Dominic Fike"
   ],
-  "fans": 1098
+  "fans": 1098,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f720543f3ef594a3eb414a527680e3e1/1000x1000-000000-80-0-0.jpg"
  },
  "LILYISTHATYOU": {
   "genres": [
@@ -3961,7 +4265,8 @@
    "Stela Cole",
    "KiNG MALA"
   ],
-  "fans": 1693
+  "fans": 1693,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fb01d438e874f294d072ab436bb2e2e8/1000x1000-000000-80-0-0.jpg"
  },
  "La Reezy": {
   "genres": [
@@ -3977,7 +4282,8 @@
    "Big Sad 1900",
    "Juicy J"
   ],
-  "fans": 470
+  "fans": 470,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4c9b382cddbdb6b8145b3c8337834118/1000x1000-000000-80-0-0.jpg"
  },
  "Lambrini Girls": {
   "genres": [
@@ -3996,7 +4302,8 @@
    "Mannequin Pussy",
    "We Hate You Please Die"
   ],
-  "fans": 14406
+  "fans": 14406,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/18c31e258cfb8e4f8e296bbc63132be8/1000x1000-000000-80-0-0.jpg"
  },
  "Lenny Pearce": {
   "genres": [
@@ -4012,7 +4319,8 @@
    "Lizot",
    "Snorre Glimbat"
   ],
-  "fans": 3255
+  "fans": 3255,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/76dbb773ec575150e9aac8b0dba4fb98/1000x1000-000000-80-0-0.jpg"
  },
  "Leo Kottke": {
   "genres": [
@@ -4030,7 +4338,8 @@
    "Southside Johnny & The Asbury Jukes",
    "Todd Snider"
   ],
-  "fans": 2741
+  "fans": 2741,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/0e13aa337dc5ee6b2659704d23bda19a/1000x1000-000000-80-0-0.jpg"
  },
  "Liim": {
   "genres": [
@@ -4046,7 +4355,8 @@
    "Kevin Abstract",
    "Salimata"
   ],
-  "fans": 368
+  "fans": 368,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/674f91e8f0dde0a1cc3ca1bde32989a7/1000x1000-000000-80-0-0.jpg"
  },
  "Like Roses": {
   "genres": [
@@ -4062,7 +4372,8 @@
    "Grayscale",
    "Hot Mulligan"
   ],
-  "fans": 1038
+  "fans": 1038,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/11bb577914e43f2f81c9fc55b2d7000a/1000x1000-000000-80-0-0.jpg"
  },
  "Loathe": {
   "genres": [
@@ -4081,12 +4392,14 @@
    "Holywatr",
    "Periphery"
   ],
-  "fans": 15616
+  "fans": 15616,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d1ffd74f65dd921ea70714dc101e4dc5/1000x1000-000000-80-0-0.jpg"
  },
  "Los Gaiteros de San Jacinto, Fruko, and Carmelo Torres present Madre Cumbia": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Los Gemelos de Sinaloa": {
   "genres": [
@@ -4102,7 +4415,8 @@
    "Abraham Vazquez",
    "Los Dareyes De La Sierra"
   ],
-  "fans": 25358
+  "fans": 25358,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/14105c91539de0a0da4794f2ffda1fdc/1000x1000-000000-80-0-0.jpg"
  },
  "Lucy Bedroque": {
   "genres": [
@@ -4118,7 +4432,8 @@
    "prettifun",
    "2slimey"
   ],
-  "fans": 3394
+  "fans": 3394,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/0c2b1d1452c91b4123796066373d32ca/1000x1000-000000-80-0-0.jpg"
  },
  "Luna": {
   "genres": [
@@ -4136,7 +4451,8 @@
    "MEEK",
    "XO"
   ],
-  "fans": 449
+  "fans": 449,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/053ce932d3f12bf3681e463087cfc51a/1000x1000-000000-80-0-0.jpg"
  },
  "LØLØ": {
   "genres": [
@@ -4145,8 +4461,18 @@
    "pop punk",
    "pop rock"
   ],
-  "related": [],
-  "fans": 52
+  "related": [
+   "Charlotte Sands",
+   "Taylor Acorn",
+   "Waterparks",
+   "Royal & the Serpent",
+   "Stand Atlantic",
+   "Arrows in Action",
+   "Huddy",
+   "YUNGBLUD"
+  ],
+  "fans": 52,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1e025ba749251c547b7d8ba0703134ed/1000x1000-000000-80-0-0.jpg"
  },
  "MARIS": {
   "genres": [
@@ -4162,14 +4488,25 @@
    "Caroline Kingsbury",
    "King Princess"
   ],
-  "fans": 149
+  "fans": 149,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c506958a745b4a58430f2e3829a12bcf/1000x1000-000000-80-0-0.jpg"
  },
  "MICO": {
   "genres": [
    "rap/hip hop"
   ],
-  "related": [],
-  "fans": 2
+  "related": [
+   "Emei",
+   "Omar Rudberg",
+   "Mad Tsai",
+   "5 Seconds Of Summer",
+   "Conan Gray",
+   "Mckenna Grace",
+   "Haiden Henderson",
+   "Jvke"
+  ],
+  "fans": 2,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/766c8b2ab7efc7117e4fca27e2e847f7/1000x1000-000000-80-0-0.jpg"
  },
  "MOVEMENTS": {
   "genres": [
@@ -4188,7 +4525,8 @@
    "Grayscale",
    "Microwave"
   ],
-  "fans": 9494
+  "fans": 9494,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8e750bf5dcfee7b7b0d658c6692b24b0/1000x1000-000000-80-0-0.jpg"
  },
  "Madds Buckley": {
   "genres": [
@@ -4204,12 +4542,14 @@
    "Cosmo Sheldrake",
    "Yaelokre"
   ],
-  "fans": 4308
+  "fans": 4308,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/57233058ae4aac309cbcf17d090229de/1000x1000-000000-80-0-0.jpg"
  },
  "Madeon presents Victory Live": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Manchester Orchestra": {
   "genres": [
@@ -4225,7 +4565,8 @@
    "Of Monsters And Men",
    "Ben Howard"
   ],
-  "fans": 42624
+  "fans": 42624,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/e49d23843a1d9afd946ed2b7a0f716ea/1000x1000-000000-80-0-0.jpg"
  },
  "Mass Of The Fermenting Dregs": {
   "genres": [
@@ -4244,7 +4585,8 @@
    "Tricot",
    "Haru Nemuri"
   ],
-  "fans": 7763
+  "fans": 7763,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ef2a1c3770f110186a68bd10446ca71a/1000x1000-000000-80-0-0.jpg"
  },
  "Mastodon": {
   "genres": [
@@ -4263,7 +4605,8 @@
    "Fear Factory",
    "Kvelertak"
   ],
-  "fans": 209021
+  "fans": 209021,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/080bcc35e30d506b5cf6b5e83e7665ac/1000x1000-000000-80-0-0.jpg"
  },
  "Matisyahu": {
   "genres": [
@@ -4282,24 +4625,28 @@
    "Katchafire",
    "Damian Marley"
   ],
-  "fans": 165047
+  "fans": 165047,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ec71b65f33b66b8bc77ebd320450fd97/1000x1000-000000-80-0-0.jpg"
  },
  "Matt Mathews": {
   "genres": [
    "folk"
   ],
   "related": [],
-  "fans": 26
+  "fans": 26,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/757cbcaaa60b39da920c9ae06c71071b/1000x1000-000000-80-0-0.jpg"
  },
  "Medium Build Presents The King of Having Fun on Tour": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Microwave / Free Throw": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Missio": {
   "genres": [
@@ -4316,7 +4663,8 @@
    "Royal & the Serpent",
    "Echos"
   ],
-  "fans": 54442
+  "fans": 54442,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/30fa243d45caa7db5f38b7082ee27b84/1000x1000-000000-80-0-0.jpg"
  },
  "Monsieur Periné": {
   "genres": [
@@ -4324,7 +4672,8 @@
    "latin pop"
   ],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": "https://cdn-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg"
  },
  "Montell Fish": {
   "genres": [
@@ -4340,7 +4689,8 @@
    "Bryant Barnes",
    "Elias"
   ],
-  "fans": 230856
+  "fans": 230856,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/24b966e608fa8a459c73b0e2252fd92b/1000x1000-000000-80-0-0.jpg"
  },
  "Mountain Grass Unit": {
   "genres": [
@@ -4356,7 +4706,8 @@
    "Sierra Ferrell",
    "Abby Webster"
   ],
-  "fans": 125
+  "fans": 125,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/23d436219e7460fa175f814bb540cf20/1000x1000-000000-80-0-0.jpg"
  },
  "Movements": {
   "genres": [
@@ -4375,7 +4726,8 @@
    "Grayscale",
    "Microwave"
   ],
-  "fans": 9494
+  "fans": 9494,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8e750bf5dcfee7b7b0d658c6692b24b0/1000x1000-000000-80-0-0.jpg"
  },
  "My Upside Down": {
   "genres": [
@@ -4391,7 +4743,8 @@
    "GunsLikeGirls",
    "Leathermouth"
   ],
-  "fans": 186
+  "fans": 186,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1943f0df70d7a44bf007d5162e69c1ea/1000x1000-000000-80-0-0.jpg"
  },
  "NEMZZZ": {
   "genres": [
@@ -4407,7 +4760,8 @@
    "Rushy",
    "FourNine"
   ],
-  "fans": 58831
+  "fans": 58831,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4e9f29d4171f32a99219c2e79d4ba72c/1000x1000-000000-80-0-0.jpg"
  },
  "NINE VICIOUS": {
   "genres": [
@@ -4423,12 +4777,14 @@
    "Nettspend",
    "Protect"
   ],
-  "fans": 5656
+  "fans": 5656,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ba41eaa05a853a94e023e9e5d110c23e/1000x1000-000000-80-0-0.jpg"
  },
  "Nacho Redondo": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Neal Francis": {
   "genres": [
@@ -4447,7 +4803,8 @@
    "Lady Wray",
    "Mayer Hawthorne"
   ],
-  "fans": 1521
+  "fans": 1521,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8bdd80c2d37f84c8a6a2acd74cb3c258/1000x1000-000000-80-0-0.jpg"
  },
  "Neal Francis with Sam Fribush Organ Trio": {
   "genres": [],
@@ -4468,12 +4825,14 @@
    "margø",
    "Stellar"
   ],
-  "fans": 51868
+  "fans": 51868,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/26c8557d44c69b37f89e13b7ebeed068/1000x1000-000000-80-0-0.jpg"
  },
  "Nether Hour and Jed Harrelson": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Never Easy": {
   "genres": [
@@ -4489,7 +4848,8 @@
    "Silent Vice",
    "Violent Vira"
   ],
-  "fans": 1089
+  "fans": 1089,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/907ce0607cd611e3d05f02aa5cab3c3f/1000x1000-000000-80-0-0.jpg"
  },
  "Nevertel": {
   "genres": [
@@ -4505,12 +4865,14 @@
    "Point North",
    "Caskets"
   ],
-  "fans": 4271
+  "fans": 4271,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/119747c0e50e5932b2087a7c26cfa1d3/1000x1000-000000-80-0-0.jpg"
  },
  "New Country 101-FIVE": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "New Country 101-FIVE presents": {
   "genres": [],
@@ -4531,12 +4893,14 @@
    "Joshua Bassett",
    "Only The Poets"
   ],
-  "fans": 1029957
+  "fans": 1029957,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/36a047a6cea9461ada0df8614d0836c7/1000x1000-000000-80-0-0.jpg"
  },
  "Night of the Living Drag": {
   "genres": [],
   "related": [],
-  "fans": 69
+  "fans": 69,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/26c6fa4d34644f2ea7d9fc1ba4cf7a96/1000x1000-000000-80-0-0.jpg"
  },
  "Ninajirachi": {
   "genres": [
@@ -4555,7 +4919,8 @@
    "Daîne",
    "tsubi club"
   ],
-  "fans": 6589
+  "fans": 6589,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c4dc2676b8b1aa0c679d614deb66bcdf/1000x1000-000000-80-0-0.jpg"
  },
  "Ninth Key": {
   "genres": [
@@ -4574,7 +4939,14 @@
    "OHKAYA",
    "Dark Divine"
   ],
-  "fans": 1189
+  "fans": 1189,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/af71bf869d2982f1085771c127972a9e/1000x1000-000000-80-0-0.jpg"
+ },
+ "North Coast Music Festival": {
+  "genres": [],
+  "related": [],
+  "fans": 0,
+  "picture": null
  },
  "Olivia Rodrigo": {
   "genres": [
@@ -4593,12 +4965,14 @@
    "Joshua Bassett",
    "Harry Styles"
   ],
-  "fans": 1828059
+  "fans": 1828059,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2c9e480317183c037eaebcd7ba96daf4/1000x1000-000000-80-0-0.jpg"
  },
  "Olivia Rodrigo Night": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Orville Peck": {
   "genres": [
@@ -4617,7 +4991,8 @@
    "Willow Avalon",
    "Margo Price"
   ],
-  "fans": 15585
+  "fans": 15585,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5cc6eaa9166760d326db52cc7909f185/1000x1000-000000-80-0-0.jpg"
  },
  "Osees": {
   "genres": [
@@ -4636,7 +5011,8 @@
    "Tropical Fuck Storm",
    "The Black Angels"
   ],
-  "fans": 6558
+  "fans": 6558,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5bb2214fed974acbfdc6550af397b469/1000x1000-000000-80-0-0.jpg"
  },
  "Osees ft. Brigid Dawson": {
   "genres": [],
@@ -4657,7 +5033,8 @@
    "Saba",
    "Kenny Mason"
   ],
-  "fans": 994
+  "fans": 994,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fc3204f8d247a945ac8fd2508820ed3d/1000x1000-000000-80-0-0.jpg"
  },
  "PABLO ALBORAN": {
   "genres": [
@@ -4673,7 +5050,8 @@
    "Malú",
    "Ricardo Arjona"
   ],
-  "fans": 949522
+  "fans": 949522,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ee30d88448c4705f30302fde826f4388/1000x1000-000000-80-0-0.jpg"
  },
  "PALACE": {
   "genres": [
@@ -4682,8 +5060,18 @@
    "singer-songwriter",
    "united states"
   ],
-  "related": [],
-  "fans": 6
+  "related": [
+   "Mild Orange",
+   "ISLAND",
+   "Marlon Funaki",
+   "Whitney",
+   "Dope Lemon",
+   "Yellow Days",
+   "Far Caspian",
+   "Peach Pit"
+  ],
+  "fans": 6,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4542a45ddffc891b0832b0d723b85af3/1000x1000-000000-80-0-0.jpg"
  },
  "Paige Fish": {
   "genres": [
@@ -4699,7 +5087,8 @@
    "liv romano",
    "Holly Humberstone"
   ],
-  "fans": 355
+  "fans": 355,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ee34167c139b37ba820f07527c98de2f/1000x1000-000000-80-0-0.jpg"
  },
  "Pain of Truth": {
   "genres": [
@@ -4718,7 +5107,8 @@
    "Sunami",
    "Guilt Trip"
   ],
-  "fans": 1655
+  "fans": 1655,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/83a427b8016a14801ecda10dfdd60353/1000x1000-000000-80-0-0.jpg"
  },
  "Paloma Morphy": {
   "genres": [
@@ -4734,12 +5124,14 @@
    "Ed Maverick",
    "Esteman"
   ],
-  "fans": 1559
+  "fans": 1559,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4a41007e31d791ffa78b407133c388b3/1000x1000-000000-80-0-0.jpg"
  },
  "Parcels- LOVED Tour 2026": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Paris Paloma": {
   "genres": [
@@ -4758,7 +5150,8 @@
    "Kiki Rockwell",
    "aeseaes"
   ],
-  "fans": 41246
+  "fans": 41246,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/0a4d55e11f689bb149c6309953019652/1000x1000-000000-80-0-0.jpg"
  },
  "Pattie Gonia": {
   "genres": [
@@ -4774,12 +5167,14 @@
    "Martin Luke Brown",
    "Glom"
   ],
-  "fans": 181
+  "fans": 181,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c9c6a893bd5dc25614a6ed55a6b75c43/1000x1000-000000-80-0-0.jpg"
  },
  "Paula Cole THIS FIRE": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "PeelingFlesh": {
   "genres": [
@@ -4796,7 +5191,8 @@
    "Vulvodynia",
    "Boltcutter"
   ],
-  "fans": 4335
+  "fans": 4335,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/aa1b573062f715d3f1ce502498712582/1000x1000-000000-80-0-0.jpg"
  },
  "Penelope Road": {
   "genres": [
@@ -4812,7 +5208,8 @@
    "Fulton Lee",
    "Jaïr Faria"
   ],
-  "fans": 528
+  "fans": 528,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6e0de91cdde9f7ab7c641d76e8019b29/1000x1000-000000-80-0-0.jpg"
  },
  "Pentatonix": {
   "genres": [
@@ -4831,7 +5228,8 @@
    "Miley Cyrus",
    "OneRepublic"
   ],
-  "fans": 452736
+  "fans": 452736,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/29a6e9a87152d98762befbcea0b6ffb2/1000x1000-000000-80-0-0.jpg"
  },
  "Periphery": {
   "genres": [
@@ -4840,8 +5238,18 @@
    "metalcore",
    "alternative metal"
   ],
-  "related": [],
-  "fans": 2
+  "related": [
+   "NORTHLANE",
+   "August Burns Red",
+   "TesseracT",
+   "Bleed From Within",
+   "Stray From The Path",
+   "Stick To Your Guns",
+   "Monuments",
+   "Malevolence"
+  ],
+  "fans": 2,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c14eafe0755e97ef91b62159dcdfb1be/1000x1000-000000-80-0-0.jpg"
  },
  "Phoebe Bridgers": {
   "genres": [
@@ -4860,7 +5268,8 @@
    "Samia",
    "Ethel Cain"
   ],
-  "fans": 207433
+  "fans": 207433,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/aaf9a93b5b4dc7a2368d375201cc58e1/1000x1000-000000-80-0-0.jpg"
  },
  "Plini": {
   "genres": [
@@ -4879,7 +5288,8 @@
    "The Omnific",
    "Angel Vivaldi"
   ],
-  "fans": 22995
+  "fans": 22995,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fcfe650f2d35617aaa0b4f79bc56b6e0/1000x1000-000000-80-0-0.jpg"
  },
  "Prateek Kuhad": {
   "genres": [
@@ -4896,7 +5306,8 @@
    "Sofia Mills",
    "Kylie Dailey"
   ],
-  "fans": 3444
+  "fans": 3444,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7f69b3905ae630b3f7bcd826bd2dc46f/1000x1000-000000-80-0-0.jpg"
  },
  "Prayers": {
   "genres": [
@@ -4912,7 +5323,8 @@
    "Kaelan Mikla",
    "Sydney Valette"
   ],
-  "fans": 4543
+  "fans": 4543,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/56f5bb40e7e3af27eeb495615605c599/1000x1000-000000-80-0-0.jpg"
  },
  "Pretty Sick": {
   "genres": [
@@ -4931,7 +5343,8 @@
    "Wisp",
    "Rehash"
   ],
-  "fans": 2027
+  "fans": 2027,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/0ed9e6734b1f5f6a2083d634c2a653f0/1000x1000-000000-80-0-0.jpg"
  },
  "Public Image Ltd": {
   "genres": [
@@ -4950,7 +5363,8 @@
    "Wire",
    "Joy Division"
   ],
-  "fans": 23760
+  "fans": 23760,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2b811d043c14ee1561d5a9e5283c494b/1000x1000-000000-80-0-0.jpg"
  },
  "Qendesra": {
   "genres": [
@@ -4966,7 +5380,8 @@
    "threetwenty",
    "Venna"
   ],
-  "fans": 1798
+  "fans": 1798,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/05c3ab3bb23bb08f2c40a8d29d4db78a/1000x1000-000000-80-0-0.jpg"
  },
  "Quadeca": {
   "genres": [
@@ -4985,7 +5400,8 @@
    "Yves Tumor",
    "venturing"
   ],
-  "fans": 8321
+  "fans": 8321,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4faad223e633d04975c9966a4d7afadf/1000x1000-000000-80-0-0.jpg"
  },
  "ROA": {
   "genres": [
@@ -5001,7 +5417,8 @@
    "TELL YOUR STORY music by Ikson™",
    "Daxten"
   ],
-  "fans": 9473
+  "fans": 9473,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4e2b11d548823d45fe806fc16d5221c2/1000x1000-000000-80-0-0.jpg"
  },
  "RUSH": {
   "genres": [
@@ -5010,8 +5427,18 @@
    "hard rock",
    "pop rock"
   ],
-  "related": [],
-  "fans": 28
+  "related": [
+   "Deep Purple",
+   "Aerosmith",
+   "Van Halen",
+   "KISS",
+   "ZZ Top",
+   "Blue Öyster Cult",
+   "Thin Lizzy",
+   "Alice Cooper"
+  ],
+  "fans": 28,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d6261144619bc30736f72807067dc928/1000x1000-000000-80-0-0.jpg"
  },
  "Rachel Bochner": {
   "genres": [
@@ -5030,7 +5457,8 @@
    "Ashe",
    "Peach PRC"
   ],
-  "fans": 401
+  "fans": 401,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ba81e42d9611d2f43be0d03a581ab390/1000x1000-000000-80-0-0.jpg"
  },
  "Ravyn Lenae": {
   "genres": [
@@ -5049,7 +5477,8 @@
    "Blood Orange",
    "Thundercat"
   ],
-  "fans": 24858
+  "fans": 24858,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/0217429675acd87d9123932804c660ff/1000x1000-000000-80-0-0.jpg"
  },
  "Ravyn Lenae Presents": {
   "genres": [],
@@ -5070,7 +5499,8 @@
    "Bahamas",
    "Richy Mitch & The Coal Miners"
   ],
-  "fans": 3062
+  "fans": 3062,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fdf96bc2077ba051275b259304be6084/1000x1000-000000-80-0-0.jpg"
  },
  "Rebecca Black": {
   "genres": [
@@ -5087,17 +5517,20 @@
    "Rose Gray",
    "Rina Sawayama"
   ],
-  "fans": 30343
+  "fans": 30343,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ce18b4289a78388aef06a927f18ee55d/1000x1000-000000-80-0-0.jpg"
  },
  "Rene Vaca & That Mexican OT": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Rio Amor & Friends LIVE!": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Ripe": {
   "genres": [
@@ -5114,14 +5547,16 @@
    "The Fearless Flyers",
    "Busty and the Bass"
   ],
-  "fans": 586
+  "fans": 586,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/638e55788aeb543f618dae424f88f6f6/1000x1000-000000-80-0-0.jpg"
  },
  "Robby Hoffman": {
   "genres": [
    "films/games"
   ],
   "related": [],
-  "fans": 2
+  "fans": 2,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6fc3c6e4bc40d975538a838770abac9d/1000x1000-000000-80-0-0.jpg"
  },
  "Robert Lester Folsom": {
   "genres": [
@@ -5137,20 +5572,32 @@
    "Cleveland Francis",
    "Cut Worms"
   ],
-  "fans": 817
+  "fans": 817,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7d4a710f32da4d9a8bed1101fe3aeffc/1000x1000-000000-80-0-0.jpg"
  },
  "Rocky Dale Davis": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Rod Wave": {
   "genres": [
    "trap",
    "2020s"
   ],
-  "related": [],
-  "fans": 372
+  "related": [
+   "A Boogie Wit da Hoodie",
+   "Toosii",
+   "Lil Durk",
+   "YoungBoy Never Broke Again",
+   "Lil Tjay",
+   "DaBaby",
+   "YNW Melly",
+   "Roddy Ricch"
+  ],
+  "fans": 372,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/317fdb25ec62d66553f0ca1a090b7d24/1000x1000-000000-80-0-0.jpg"
  },
  "Rodrigo y Gabriela": {
   "genres": [
@@ -5169,12 +5616,14 @@
    "Las Rubias Del Norte",
    "Bonga"
   ],
-  "fans": 180764
+  "fans": 180764,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f57800c9405017127923e9dc87885f7c/1000x1000-000000-80-0-0.jpg"
  },
  "Rumours ATL": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Russian Circles": {
   "genres": [
@@ -5193,7 +5642,8 @@
    "Isis",
    "Oh Hiroshima"
   ],
-  "fans": 37975
+  "fans": 37975,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/9d7f994e6ec3d3082542c4894247be35/1000x1000-000000-80-0-0.jpg"
  },
  "SCHOOLBOY Q": {
   "genres": [
@@ -5212,7 +5662,8 @@
    "Kid Cudi",
    "Black Hippy"
   ],
-  "fans": 544404
+  "fans": 544404,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/712254b1fdbf8ee516eb25cd991b9bae/1000x1000-000000-80-0-0.jpg"
  },
  "SHYNE": {
   "genres": [
@@ -5228,15 +5679,26 @@
    "DMX",
    "The LOX"
   ],
-  "fans": 228
+  "fans": 228,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/199d070bdc5a070000ba3dda2f27716b/1000x1000-000000-80-0-0.jpg"
  },
  "SLANDER": {
   "genres": [
    "dubstep",
    "electronic"
   ],
-  "related": [],
-  "fans": 17
+  "related": [
+   "Seven Lions",
+   "Illenium",
+   "Dabin",
+   "Blanke",
+   "RL Grime",
+   "Excision",
+   "Mitis",
+   "Trivecta"
+  ],
+  "fans": 17,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/aee1c2039a0e754ec53f9931e7632a20/1000x1000-000000-80-0-0.jpg"
  },
  "SLANDER PRESENTS": {
   "genres": [],
@@ -5260,7 +5722,8 @@
    "Sydney Rose",
    "Role Model"
   ],
-  "fans": 167492
+  "fans": 167492,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/82ef9a2db0c80f8588569d955c78d695/1000x1000-000000-80-0-0.jpg"
  },
  "SUGAR": {
   "genres": [
@@ -5270,7 +5733,8 @@
    "power pop"
   ],
   "related": [],
-  "fans": 41
+  "fans": 41,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1e454c47d6518a2dce54652e7d1b794a/1000x1000-000000-80-0-0.jpg"
  },
  "SWAVAY": {
   "genres": [
@@ -5286,7 +5750,8 @@
    "IDK",
    "Tommy Richman"
   ],
-  "fans": 874
+  "fans": 874,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8de773a1d21d22c73d61192bbdf37370/1000x1000-000000-80-0-0.jpg"
  },
  "SYML": {
   "genres": [
@@ -5302,7 +5767,8 @@
    "Seafret",
    "Amber Run"
   ],
-  "fans": 95546
+  "fans": 95546,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bd0895beeb134cd4af68e5fdb96758a5/1000x1000-000000-80-0-0.jpg"
  },
  "Sabaton": {
   "genres": [
@@ -5321,7 +5787,8 @@
    "Nanowar of Steel",
    "Battle Beast"
   ],
-  "fans": 412588
+  "fans": 412588,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2dd0e3482f66099ac900770165abfda3/1000x1000-000000-80-0-0.jpg"
  },
  "Sammy Rae & The Friends": {
   "genres": [
@@ -5338,7 +5805,8 @@
    "Oh He Dead",
    "Zinadelphia"
   ],
-  "fans": 3905
+  "fans": 3905,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/864647351e583c316c773a9d9cff4862/1000x1000-000000-80-0-0.jpg"
  },
  "Sammy Rae & The Friends with special guest Melt": {
   "genres": [],
@@ -5348,12 +5816,14 @@
  "San Holo presents TRUE LOVE IN A MADE UP WORLD": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Sanctuary Park Tour": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Sap": {
   "genres": [
@@ -5369,7 +5839,8 @@
    "Fury in Few",
    "Scarlet House"
   ],
-  "fans": 325
+  "fans": 325,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/de19f37c8f55283deb333fb9d62e84f5/1000x1000-000000-80-0-0.jpg"
  },
  "Shakey Graves": {
   "genres": [
@@ -5388,12 +5859,14 @@
    "The Decemberists",
    "The Tallest Man on Earth"
   ],
-  "fans": 13588
+  "fans": 13588,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/109f0b631f0a349be11a091fa57059a3/1000x1000-000000-80-0-0.jpg"
  },
  "Shawn James \"FLEW TOO CLOSE TO THE SUN TOUR": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Show Me The Body": {
   "genres": [
@@ -5412,7 +5885,8 @@
    "Ceremony",
    "Gouge Away"
   ],
-  "fans": 5369
+  "fans": 5369,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bc2bfbe1ef45ed07d0ee61c013a962d4/1000x1000-000000-80-0-0.jpg"
  },
  "Sienna Spiro": {
   "genres": [
@@ -5431,7 +5905,8 @@
    "Gracie Abrams",
    "Olivia Rodrigo"
   ],
-  "fans": 55912
+  "fans": 55912,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6f778ffd11cb07365112baaa2047c254/1000x1000-000000-80-0-0.jpg"
  },
  "Silverada": {
   "genres": [
@@ -5447,14 +5922,16 @@
    "Flatland Cavalry",
    "Cross Canadian Ragweed"
   ],
-  "fans": 159
+  "fans": 159,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/89f5f10cdfb98090b5735543b51963c1/1000x1000-000000-80-0-0.jpg"
  },
  "Sleeping": {
   "genres": [
    "alternative"
   ],
   "related": [],
-  "fans": 11
+  "fans": 11,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/aff680866f94f97fd6f96f8182e919ef/1000x1000-000000-80-0-0.jpg"
  },
  "Sleeping With Sirens": {
   "genres": [
@@ -5492,7 +5969,8 @@
    "Black Honey",
    "Last Train"
   ],
-  "fans": 3122
+  "fans": 3122,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5b7b6743efa5d64d310c29e9f15e14be/1000x1000-000000-80-0-0.jpg"
  },
  "Slow Pulp": {
   "genres": [
@@ -5510,7 +5988,8 @@
    "Lala Lala",
    "Freak Slug"
   ],
-  "fans": 4278
+  "fans": 4278,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/0635249c8ff489fefb621107277b0fa6/1000x1000-000000-80-0-0.jpg"
  },
  "Smidley": {
   "genres": [
@@ -5526,7 +6005,8 @@
    "After Louise",
    "Baby Nova"
   ],
-  "fans": 167
+  "fans": 167,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b65ac76830671b4b16a6cd0bb17dfa3f/1000x1000-000000-80-0-0.jpg"
  },
  "Starbomb": {
   "genres": [
@@ -5545,7 +6025,8 @@
    "Runtown",
    "DJ Tunez"
   ],
-  "fans": 126290
+  "fans": 126290,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ad1eae92bd7727d01b8f93f139665dad/1000x1000-000000-80-0-0.jpg"
  },
  "Starbomb featuring DJ Commander Meouch": {
   "genres": [],
@@ -5569,7 +6050,8 @@
    "All Time Low",
    "Roam"
   ],
-  "fans": 22574
+  "fans": 22574,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/eea728ebcfe4d81110ba1d165e763543/1000x1000-000000-80-0-0.jpg"
  },
  "Static Dress": {
   "genres": [
@@ -5587,7 +6069,8 @@
    "156/Silence",
    "Greyhaven"
   ],
-  "fans": 2707
+  "fans": 2707,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/9a56843a332ad3e84ce5bb81efa1a8cb/1000x1000-000000-80-0-0.jpg"
  },
  "Stella Lefty": {
   "genres": [
@@ -5605,7 +6088,8 @@
    "Paige Fish",
    "Chanel Yates"
   ],
-  "fans": 2963
+  "fans": 2963,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/67cc073ca1341421e400f5f6d8a102f5/1000x1000-000000-80-0-0.jpg"
  },
  "Stephen Day": {
   "genres": [
@@ -5614,8 +6098,18 @@
    "soft rock",
    "soul"
   ],
-  "related": [],
-  "fans": 2
+  "related": [
+   "Lawrence",
+   "Charlie Burg",
+   "Bruno Major",
+   "Lake Street Dive",
+   "Adam Melchor",
+   "Eloise",
+   "Joy Oladokun",
+   "John-Robert"
+  ],
+  "fans": 2,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b466351b5b330d3bd548a525eef553fc/1000x1000-000000-80-0-0.jpg"
  },
  "Stephen Day Presents": {
   "genres": [],
@@ -5636,12 +6130,14 @@
    "Koe Wetzel",
    "Gabriella Rose"
   ],
-  "fans": 8125
+  "fans": 8125,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2dfa892b670e81fe95979c08952884f2/1000x1000-000000-80-0-0.jpg"
  },
  "Story Of The Year & Silverstein": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Streetlight Manifesto": {
   "genres": [
@@ -5659,7 +6155,8 @@
    "Rancid",
    "Mustard Plug"
   ],
-  "fans": 28008
+  "fans": 28008,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/429da39245ef01574e1cf0565246af0a/1000x1000-000000-80-0-0.jpg"
  },
  "Stryper": {
   "genres": [
@@ -5678,7 +6175,8 @@
    "L.A. Guns",
    "Danger Danger"
   ],
-  "fans": 43791
+  "fans": 43791,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/da9c0f20bd53627770b067a739b70e02/1000x1000-000000-80-0-0.jpg"
  },
  "Sub Urban": {
   "genres": [
@@ -5697,7 +6195,8 @@
    "MISSIO",
    "Lou Bliss"
   ],
-  "fans": 239387
+  "fans": 239387,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7b49d4759a476dea7e868488c0a478ce/1000x1000-000000-80-0-0.jpg"
  },
  "Subtronics": {
   "genres": [
@@ -5714,14 +6213,25 @@
    "Zeds dead",
    "Ray Volpe"
   ],
-  "fans": 19070
+  "fans": 19070,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/23d07534f604c5ee93a78fd19e7d89ad/1000x1000-000000-80-0-0.jpg"
  },
  "Sueco": {
   "genres": [
    "pop punk"
   ],
-  "related": [],
-  "fans": 12
+  "related": [
+   "mgk",
+   "nothing,nowhere.",
+   "Stand Atlantic",
+   "Mod Sun",
+   "Magnolia Park",
+   "AS IT IS",
+   "THE HARA",
+   "Jeris Johnson"
+  ],
+  "fans": 12,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ebcb502b5999f4b4651f6f8d6c04c0eb/1000x1000-000000-80-0-0.jpg"
  },
  "Suicide Silence": {
   "genres": [
@@ -5738,7 +6248,8 @@
    "Bodysnatcher",
    "Carnifex"
   ],
-  "fans": 325977
+  "fans": 325977,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4650083eb25b840cf7a7ea977916c820/1000x1000-000000-80-0-0.jpg"
  },
  "Suki Waterhouse": {
   "genres": [
@@ -5757,7 +6268,8 @@
    "Matilda Mann",
    "Remy Bond"
   ],
-  "fans": 27517
+  "fans": 27517,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ba4f7cd06e235d794255be79e37dbbe9/1000x1000-000000-80-0-0.jpg"
  },
  "Surprise Chef": {
   "genres": [
@@ -5776,7 +6288,8 @@
    "Yuuf",
    "Menahan Street Band"
   ],
-  "fans": 3672
+  "fans": 3672,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6eb0549fd634a2cfe2cf9c10da37be6f/1000x1000-000000-80-0-0.jpg"
  },
  "Sweeping Promises": {
   "genres": [
@@ -5794,7 +6307,8 @@
    "Chalk",
    "Opus Kink"
   ],
-  "fans": 1106
+  "fans": 1106,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8afe7e73d79b1a716e0b9e36b7fc4d0b/1000x1000-000000-80-0-0.jpg"
  },
  "Sweet Pill": {
   "genres": [
@@ -5813,7 +6327,8 @@
    "Balance and Composure",
    "Joyce Manor"
   ],
-  "fans": 1102
+  "fans": 1102,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c2428f45436d4778dbca3e268eaf9744/1000x1000-000000-80-0-0.jpg"
  },
  "Switchfoot": {
   "genres": [
@@ -5832,7 +6347,8 @@
    "Audio Adrenaline",
    "Hawk Nelson"
   ],
-  "fans": 2356
+  "fans": 2356,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/072b4bb06a6138533356f8e1f0e0a26e/1000x1000-000000-80-0-0.jpg"
  },
  "Switchfoot with special guest Anberlin": {
   "genres": [],
@@ -5853,7 +6369,8 @@
    "Jenevieve",
    "Alex Isley"
   ],
-  "fans": 10294
+  "fans": 10294,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7b17c474242c390f9b02671a353dc27f/1000x1000-000000-80-0-0.jpg"
  },
  "Sylvan Esso": {
   "genres": [
@@ -5872,7 +6389,8 @@
    "Chet Faker",
    "The Whitest Boy Alive"
   ],
-  "fans": 22506
+  "fans": 22506,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6db0e57cec95381a97ebdc1a66a35b6e/1000x1000-000000-80-0-0.jpg"
  },
  "THE ELOVATERS": {
   "genres": [
@@ -5889,12 +6407,14 @@
    "Slightly Stoopid",
    "Rebelution"
   ],
-  "fans": 1652
+  "fans": 1652,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2bc5b3be268d5981d09d0aab20ac30d8/1000x1000-000000-80-0-0.jpg"
  },
  "THE MUSICAL BOX proudly presents …AND THEN THERE WAS…PHIL": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "TYLA": {
   "genres": [
@@ -5910,7 +6430,8 @@
    "Chlöe",
    "Leigh-Anne"
   ],
-  "fans": 191925
+  "fans": 191925,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/24a1f0e2b55a08734fd38cc82089246c/1000x1000-000000-80-0-0.jpg"
  },
  "Tab Benoit": {
   "genres": [
@@ -5929,7 +6450,8 @@
    "Freddie King",
    "Albert Cummings"
   ],
-  "fans": 10820
+  "fans": 10820,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/56f9c63920f888779cd401d4ebe3e1e8/1000x1000-000000-80-0-0.jpg"
  },
  "Tab Benoit w/ Jesse Dayton": {
   "genres": [],
@@ -5950,7 +6472,8 @@
    "SHERELLE",
    "Ray Keith"
   ],
-  "fans": 1924
+  "fans": 1924,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1786a7356c7d28c4dd20594e15ede9f2/1000x1000-000000-80-0-0.jpg"
  },
  "Tank and The Bangas": {
   "genres": [
@@ -5969,7 +6492,8 @@
    "Benny Sings",
    "Jordan Rakei"
   ],
-  "fans": 9358
+  "fans": 9358,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/3b7a1dc24954f2b0cba9a3ec64cac913/1000x1000-000000-80-0-0.jpg"
  },
  "Teddy Swims": {
   "genres": [
@@ -5988,7 +6512,8 @@
    "Rag'n'Bone Man",
    "Dermot Kennedy"
   ],
-  "fans": 422402
+  "fans": 422402,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b00bd63bc45477674d8f21af2b73f4fd/1000x1000-000000-80-0-0.jpg"
  },
  "Temples": {
   "genres": [
@@ -6005,7 +6530,8 @@
    "Ty Segall",
    "Yard Act"
   ],
-  "fans": 42495
+  "fans": 42495,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/25fa967aadd1a4ef9a63cb81d1917d1a/1000x1000-000000-80-0-0.jpg"
  },
  "Texas Is The Reason": {
   "genres": [
@@ -6022,7 +6548,8 @@
    "Cap'n Jazz",
    "Rainer Maria"
   ],
-  "fans": 3328
+  "fans": 3328,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bdca9d6708e37f5be2b99f14f0a720a8/1000x1000-000000-80-0-0.jpg"
  },
  "The Afghan Whigs": {
   "genres": [
@@ -6039,7 +6566,8 @@
    "Ty Segall",
    "The Dandy Warhols"
   ],
-  "fans": 12671
+  "fans": 12671,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/576302b49934b2e026b1efd0b24b3e87/1000x1000-000000-80-0-0.jpg"
  },
  "The Bends": {
   "genres": [
@@ -6055,7 +6583,8 @@
    "Winyah",
    "The Walters"
   ],
-  "fans": 563
+  "fans": 563,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/32b8b32c90150f05c2ab91dcd2b8f040/1000x1000-000000-80-0-0.jpg"
  },
  "The Brothers Comatose": {
   "genres": [
@@ -6071,7 +6600,8 @@
    "Trampled by Turtles",
    "Lost Dog Street Band"
   ],
-  "fans": 1054
+  "fans": 1054,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8ce546100add40e71f83d45187f442f6/1000x1000-000000-80-0-0.jpg"
  },
  "The Browning": {
   "genres": [
@@ -6090,12 +6620,14 @@
    "Breakdown Of Sanity",
    "August Burns Red"
   ],
-  "fans": 17146
+  "fans": 17146,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/e6512732ab5cc8d1727d083485c065a4/1000x1000-000000-80-0-0.jpg"
  },
  "The Damned- Final Damnation 50": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "The Dread Crew of Oddwood": {
   "genres": [
@@ -6113,7 +6645,8 @@
    "The Longest Johns",
    "Fisherman's Friends"
   ],
-  "fans": 1352
+  "fans": 1352,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f9cb9295baf8f9f10d6e5230f9b2e328/1000x1000-000000-80-0-0.jpg"
  },
  "The Greyboy Allstars": {
   "genres": [
@@ -6129,7 +6662,8 @@
    "Chris Joss",
    "Idris Muhammad"
   ],
-  "fans": 1743
+  "fans": 1743,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/32c781c87fbebb90e807e3fdf84fd376/1000x1000-000000-80-0-0.jpg"
  },
  "The Hails": {
   "genres": [
@@ -6145,7 +6679,8 @@
    "Jawny",
    "Dreamer Boy"
   ],
-  "fans": 737
+  "fans": 737,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b2a5cf2fd138da1da4ed2a759974b58f/1000x1000-000000-80-0-0.jpg"
  },
  "The Hip Abduction": {
   "genres": [
@@ -6161,7 +6696,8 @@
    "Slightly Stoopid",
    "Brendan Clemente"
   ],
-  "fans": 1343
+  "fans": 1343,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b7a3bac0e78328bad45da96088418b42/1000x1000-000000-80-0-0.jpg"
  },
  "The Interrupters": {
   "genres": [
@@ -6179,12 +6715,14 @@
    "Authority Zero",
    "Transplants"
   ],
-  "fans": 39191
+  "fans": 39191,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/60b7a9ef4962cb33114a1ace4be0ea41/1000x1000-000000-80-0-0.jpg"
  },
  "The Jinkx & DeLa Holiday Show": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "The Kilans": {
   "genres": [
@@ -6200,7 +6738,8 @@
    "Arcy Drive",
    "Mustard Service"
   ],
-  "fans": 177
+  "fans": 177,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/3355f2863547cf564baebf4785b196cd/1000x1000-000000-80-0-0.jpg"
  },
  "The Lemon Twigs": {
   "genres": [
@@ -6219,7 +6758,8 @@
    "Pond",
    "Alex Cameron"
   ],
-  "fans": 14020
+  "fans": 14020,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d7b11fe3a5ac7928a1d422b5cdd9f461/1000x1000-000000-80-0-0.jpg"
  },
  "The Lemonheads": {
   "genres": [
@@ -6238,7 +6778,8 @@
    "Buffalo Tom",
    "The Smashing Pumpkins"
   ],
-  "fans": 18214
+  "fans": 18214,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8ec94e74c0e4e8b83f5b5476af4379c7/1000x1000-000000-80-0-0.jpg"
  },
  "The Linda Lindas": {
   "genres": [
@@ -6257,7 +6798,8 @@
    "Bloc Party",
    "Blood Red Shoes"
   ],
-  "fans": 7394
+  "fans": 7394,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ae805cbd18176b7827c8b2d93b885c2b/1000x1000-000000-80-0-0.jpg"
  },
  "The Menzingers": {
   "genres": [
@@ -6276,7 +6818,8 @@
    "Less Than Jake",
    "Zebrahead"
   ],
-  "fans": 13030
+  "fans": 13030,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b4737286d8a9d6371a9eadd384c5f9f0/1000x1000-000000-80-0-0.jpg"
  },
  "The Neighbourhood": {
   "genres": [
@@ -6295,7 +6838,8 @@
    "The Neighbourhood",
    "Chase Atlantic"
   ],
-  "fans": 1669645
+  "fans": 1669645,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8fdcc9f74aa9f930c28f5b9ea0da0fd4/1000x1000-000000-80-0-0.jpg"
  },
  "The Number Twelve Looks Like You": {
   "genres": [
@@ -6314,7 +6858,8 @@
    "Norma Jean",
    "Every Time I Die"
   ],
-  "fans": 1920
+  "fans": 1920,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b4c0f3ba74a5a0e3c1f309b644fdfc42/1000x1000-000000-80-0-0.jpg"
  },
  "The OBGMs": {
   "genres": [
@@ -6330,7 +6875,8 @@
    "Petrol Girls",
    "Screaming Females"
   ],
-  "fans": 761
+  "fans": 761,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1fa5a8d3a2c6a3063bd379a72b12e957/1000x1000-000000-80-0-0.jpg"
  },
  "The Paradox": {
   "genres": [
@@ -6347,7 +6893,8 @@
    "408",
    "Good Charlotte"
   ],
-  "fans": 4656
+  "fans": 4656,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7c084c2d7ab1f7bdc6036eeeba6527d0/1000x1000-000000-80-0-0.jpg"
  },
  "The Rat Utopia Experiment": {
   "genres": [
@@ -6366,7 +6913,8 @@
    "Slutever",
    "GRLwood"
   ],
-  "fans": 861
+  "fans": 861,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bb46e42662c11b1c047f4553aeb0289d/1000x1000-000000-80-0-0.jpg"
  },
  "The Record Company": {
   "genres": [
@@ -6385,7 +6933,8 @@
    "Black Pistol Fire",
    "Seasick Steve"
   ],
-  "fans": 6453
+  "fans": 6453,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/73d6a0ac4b6d2dbc2f9dd4429ff2dd33/1000x1000-000000-80-0-0.jpg"
  },
  "The Red Clay Strays": {
   "genres": [
@@ -6402,14 +6951,16 @@
    "Josh Meloy",
    "Oliver Anthony Music"
   ],
-  "fans": 11911
+  "fans": 11911,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/23ae347b24bc7ea92572ce0b80760c32/1000x1000-000000-80-0-0.jpg"
  },
  "The Renaissance Orchestra": {
   "genres": [
    "classical"
   ],
   "related": [],
-  "fans": 18
+  "fans": 18,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/89af2dac6ebb64a1b89e2bb56170ede6/1000x1000-000000-80-0-0.jpg"
  },
  "The Revivalists": {
   "genres": [
@@ -6425,7 +6976,8 @@
    "Brandon Flowers",
    "Kings of Leon"
   ],
-  "fans": 10035
+  "fans": 10035,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5449b47ee1ca02ce7cc651f1fde0ce64/1000x1000-000000-80-0-0.jpg"
  },
  "The SteelDrivers": {
   "genres": [
@@ -6442,14 +6994,16 @@
    "Dan Tyminski",
    "November South"
   ],
-  "fans": 7828
+  "fans": 7828,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2f931aa2672f8482d4703fec4cdc3cb0/1000x1000-000000-80-0-0.jpg"
  },
  "The Taylor Party": {
   "genres": [
    "alternative"
   ],
   "related": [],
-  "fans": 2
+  "fans": 2,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/c29ab64b9adef2e4da8648a2ce1611ec/1000x1000-000000-80-0-0.jpg"
  },
  "The Warning": {
   "genres": [
@@ -6468,7 +7022,8 @@
    "Halocene",
    "Mammoth"
   ],
-  "fans": 54556
+  "fans": 54556,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f3850a5039ccabc6691ec8ba01b27460/1000x1000-000000-80-0-0.jpg"
  },
  "The Wldlfe": {
   "genres": [
@@ -6484,7 +7039,8 @@
    "Vacation Manor",
    "Landon Conrath"
   ],
-  "fans": 765
+  "fans": 765,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1a1b142f4e34069e7a42bb930af0f834/1000x1000-000000-80-0-0.jpg"
  },
  "The Wrecks": {
   "genres": [
@@ -6500,7 +7056,8 @@
    "Little Hurt",
    "I DONT KNOW HOW BUT THEY FOUND ME"
   ],
-  "fans": 2323
+  "fans": 2323,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8bc553643d6293601920ac57a46631bc/1000x1000-000000-80-0-0.jpg"
  },
  "Thievery Corporation": {
   "genres": [
@@ -6519,7 +7076,8 @@
    "DJ Cam",
    "Yonderboi"
   ],
-  "fans": 160292
+  "fans": 160292,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5b4d5cc0aeaf942b259956efc72c962b/1000x1000-000000-80-0-0.jpg"
  },
  "Tiny Habits": {
   "genres": [
@@ -6535,12 +7093,14 @@
    "Mon Rovîa",
    "Phoebe Bridgers"
   ],
-  "fans": 1719
+  "fans": 1719,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d287fc6eb728ed7d277cc18a172f3938/1000x1000-000000-80-0-0.jpg"
  },
  "To The Grave & Crown Magnetar": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Token": {
   "genres": [
@@ -6549,8 +7109,18 @@
    "alternative hip hop",
    "boom bap"
   ],
-  "related": [],
-  "fans": 3
+  "related": [
+   "Hopsin",
+   "Chris Webby",
+   "Logic",
+   "Tech N9ne",
+   "Yelawolf",
+   "Ollie Joseph",
+   "Bazanji",
+   "Lil Dicky"
+  ],
+  "fans": 3,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/eaef27401842668920396555dadb6621/1000x1000-000000-80-0-0.jpg"
  },
  "Tokyo Machine": {
   "genres": [
@@ -6568,7 +7138,8 @@
    "Boom Kitty",
    "Pixel Terror"
   ],
-  "fans": 16738
+  "fans": 16738,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2081d68bbe88685176838a6647a5cb3d/1000x1000-000000-80-0-0.jpg"
  },
  "Tokyo Tea Room": {
   "genres": [
@@ -6587,12 +7158,14 @@
    "HOMESHAKE",
    "Hector Gachan"
   ],
-  "fans": 2038
+  "fans": 2038,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4c7a5f8e3e9e932f91a268862d8b93fe/1000x1000-000000-80-0-0.jpg"
  },
  "Tommy Emmanuel, CGP": {
   "genres": [],
   "related": [],
-  "fans": 361
+  "fans": 361,
+  "picture": "https://cdn-images.dzcdn.net/images/artist//1000x1000-000000-80-0-0.jpg"
  },
  "Tommy Fleece": {
   "genres": [
@@ -6608,7 +7181,8 @@
    "The Hellp",
    "Kimj"
   ],
-  "fans": 236
+  "fans": 236,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/0290aef9bb0076c4fb8d849daaf2d173/1000x1000-000000-80-0-0.jpg"
  },
  "Trampled By Turtles": {
   "genres": [
@@ -6627,12 +7201,14 @@
    "Shovels & Rope",
    "Lost Dog Street Band"
   ],
-  "fans": 8238
+  "fans": 8238,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/84dfe152c02a84b1107f03e683d34c70/1000x1000-000000-80-0-0.jpg"
  },
  "Trap Karaoke": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Trippie Redd": {
   "genres": [
@@ -6651,7 +7227,8 @@
    "Kodak Black",
    "Internet money"
   ],
-  "fans": 727818
+  "fans": 727818,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/60c5c67b39409eefb8fa892c0363979c/1000x1000-000000-80-0-0.jpg"
  },
  "Trivium": {
   "genres": [
@@ -6670,7 +7247,8 @@
    "Bullet for My Valentine",
    "As I Lay Dying"
   ],
-  "fans": 380955
+  "fans": 380955,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/02a9979e29b87c3f230bac28439021a7/1000x1000-000000-80-0-0.jpg"
  },
  "Two Door Cinema Club": {
   "genres": [
@@ -6689,14 +7267,25 @@
    "The Wombats",
    "Bombay Bicycle Club"
   ],
-  "fans": 608895
+  "fans": 608895,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/fdda4a6426606458b5ad22d5cf4a7f24/1000x1000-000000-80-0-0.jpg"
  },
  "Tōth": {
   "genres": [
    "alternative"
   ],
-  "related": [],
-  "fans": 17
+  "related": [
+   "Oracle Sisters",
+   "Skinshape",
+   "Drug Cabin",
+   "Youth Lagoon",
+   "Yumi Zouma",
+   "Babeheaven",
+   "Kate Bollinger",
+   "Whitney"
+  ],
+  "fans": 17,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/19e927c90784465a3f5c2a5d43ca34c7/1000x1000-000000-80-0-0.jpg"
  },
  "URL": {
   "genres": [
@@ -6712,7 +7301,8 @@
    "Sports",
    "Tokyo Tea Room"
   ],
-  "fans": 73
+  "fans": 73,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f896e7ad4fda2a1111d9c1bf804bca8b/1000x1000-000000-80-0-0.jpg"
  },
  "Underoath": {
   "genres": [
@@ -6731,7 +7321,8 @@
    "A Day to Remember",
    "Drop Dead, Gorgeous"
   ],
-  "fans": 97418
+  "fans": 97418,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/62af962d6a8e28e7a4feaa72f7be36bb/1000x1000-000000-80-0-0.jpg"
  },
  "VNV Nation": {
   "genres": [
@@ -6750,7 +7341,8 @@
    "Chrom",
    "De/Vision"
   ],
-  "fans": 46822
+  "fans": 46822,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b61038d0656196b685cf6ae0132b2820/1000x1000-000000-80-0-0.jpg"
  },
  "Valley": {
   "genres": [
@@ -6768,7 +7360,8 @@
    "Del Water Gap",
    "Role Model"
   ],
-  "fans": 8035
+  "fans": 8035,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/41d696f30c511fe86969b4650cc76575/1000x1000-000000-80-0-0.jpg"
  },
  "Venna": {
   "genres": [
@@ -6784,7 +7377,8 @@
    "ENNY",
    "Paul Grant"
   ],
-  "fans": 3125
+  "fans": 3125,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/b0c03378eb1fcd7665b982929059bd0e/1000x1000-000000-80-0-0.jpg"
  },
  "Vince Staples": {
   "genres": [
@@ -6801,12 +7395,14 @@
    "MAC MILLER",
    "JID"
   ],
-  "fans": 93365
+  "fans": 93365,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/52c68f84bdb34d5e43cda73c0c458931/1000x1000-000000-80-0-0.jpg"
  },
  "Watch What Crappens": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Waterparks": {
   "genres": [
@@ -6825,7 +7421,8 @@
    "Charlotte Sands",
    "My Chemical Romance"
   ],
-  "fans": 19266
+  "fans": 19266,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6cd954f3117338517621600cc892ed31/1000x1000-000000-80-0-0.jpg"
  },
  "Waylon Wyatt": {
   "genres": [
@@ -6844,7 +7441,8 @@
    "Tyler Nance",
    "The Jack Wharff Band"
   ],
-  "fans": 3712
+  "fans": 3712,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1626d66e30fb117201d5518bae5f5753/1000x1000-000000-80-0-0.jpg"
  },
  "Weezer": {
   "genres": [
@@ -6863,7 +7461,8 @@
    "Placebo",
    "Kings of Leon"
   ],
-  "fans": 730913
+  "fans": 730913,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bc95beeeaaed3cfaebecb5f97d87d49b/1000x1000-000000-80-0-0.jpg"
  },
  "West 22nd": {
   "genres": [
@@ -6882,7 +7481,8 @@
    "Briston Maroney",
    "Rainbow Kitten Surprise"
   ],
-  "fans": 184
+  "fans": 184,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/714b76f7cb44778239318a8609edb15d/1000x1000-000000-80-0-0.jpg"
  },
  "Wheeler Walker Jr.": {
   "genres": [
@@ -6901,7 +7501,8 @@
    "Montgomery Gentry",
    "Frank Foster"
   ],
-  "fans": 7748
+  "fans": 7748,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/64b891138aa8b4b0877229816520b840/1000x1000-000000-80-0-0.jpg"
  },
  "Whethan": {
   "genres": [
@@ -6920,7 +7521,8 @@
    "Tove Lo",
    "Kiiara"
   ],
-  "fans": 10211
+  "fans": 10211,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/a1813ec7a1a6722e48df07e9d3ad325f/1000x1000-000000-80-0-0.jpg"
  },
  "Whitechapel": {
   "genres": [
@@ -6938,12 +7540,14 @@
    "Distant",
    "Brand of Sacrifice"
   ],
-  "fans": 95872
+  "fans": 95872,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/53917a918d9d65b25a65706418adf338/1000x1000-000000-80-0-0.jpg"
  },
  "Wild 'N Out Live": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "Winyah": {
   "genres": [
@@ -6959,7 +7563,8 @@
    "Spacey Jane",
    "The Moss"
   ],
-  "fans": 288
+  "fans": 288,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d2008e9abe16e7b3c88d078b18d81e45/1000x1000-000000-80-0-0.jpg"
  },
  "Wolf and Bear": {
   "genres": [
@@ -6975,7 +7580,8 @@
    "Emarosa",
    "Silverstein"
   ],
-  "fans": 996
+  "fans": 996,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/2624d9ee6000daf6d655b1d2d2d2d870/1000x1000-000000-80-0-0.jpg"
  },
  "Yacht Rock Revue": {
   "genres": [
@@ -6991,7 +7597,8 @@
    "Starbuck",
    "Rupert Holmes"
   ],
-  "fans": 183
+  "fans": 183,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bd306b70889153e7e1295197eebd1edd/1000x1000-000000-80-0-0.jpg"
  },
  "Yaelokre": {
   "genres": [
@@ -7007,7 +7614,8 @@
    "Sparkbird",
    "Rabbitology"
   ],
-  "fans": 19410
+  "fans": 19410,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/91404aa35594c69fc6d80775ee2231e0/1000x1000-000000-80-0-0.jpg"
  },
  "Yebba": {
   "genres": [
@@ -7026,7 +7634,8 @@
    "Eloise",
    "Jessie Reyez"
   ],
-  "fans": 28586
+  "fans": 28586,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/46f3dc37c70c0c9a5f04391155a0477b/1000x1000-000000-80-0-0.jpg"
  },
  "Yonder Mountain String Band": {
   "genres": [
@@ -7045,7 +7654,8 @@
    "The Steeldrivers",
    "Vincent Neil Emerson"
   ],
-  "fans": 2316
+  "fans": 2316,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/deacff238e4ca7bb9af48cf6935eda05/1000x1000-000000-80-0-0.jpg"
  },
  "Young Miko": {
   "genres": [
@@ -7064,12 +7674,14 @@
    "Brray",
    "Quevedo"
   ],
-  "fans": 136646
+  "fans": 136646,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/5912325ca89e72e925de22d05001ed4a/1000x1000-000000-80-0-0.jpg"
  },
  "Yuki Chiba / FIRST NORTH AMERICA HEADLINE TOUR": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "ZAUNTEE": {
   "genres": [
@@ -7086,7 +7698,8 @@
    "Anike",
    "1k Phew"
   ],
-  "fans": 2921
+  "fans": 2921,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d1807fc2969a875c728829a2f9d05797/1000x1000-000000-80-0-0.jpg"
  },
  "ajj": {
   "genres": [
@@ -7105,7 +7718,8 @@
    "Los Campesinos!",
    "Blue Foster"
   ],
-  "fans": 8460
+  "fans": 8460,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/75dd00ced6b5d473bf362b79039881cb/1000x1000-000000-80-0-0.jpg"
  },
  "aurorawave": {
   "genres": [
@@ -7121,7 +7735,8 @@
    "The Pretty Wild",
    "MISSING NO."
   ],
-  "fans": 2238
+  "fans": 2238,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/427bdc6d8ffec4637822e58213273ead/1000x1000-000000-80-0-0.jpg"
  },
  "blitzkid": {
   "genres": [
@@ -7140,14 +7755,16 @@
    "The Crimson Ghosts",
    "Agent Orange"
   ],
-  "fans": 5092
+  "fans": 5092,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/433e633615d8b997cb99222985c9e0ac/1000x1000-000000-80-0-0.jpg"
  },
  "brotherkenzie": {
   "genres": [
    "rock"
   ],
   "related": [],
-  "fans": 118
+  "fans": 118,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bbce14d80259f0b5accf5855c2a0164a/1000x1000-000000-80-0-0.jpg"
  },
  "bunii": {
   "genres": [
@@ -7166,14 +7783,25 @@
    "Fried By Fluoride",
    "requiem for you"
   ],
-  "fans": 1020
+  "fans": 1020,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/7a4a2e528c8e5cd1b5a12644a85a4fb6/1000x1000-000000-80-0-0.jpg"
  },
  "caroline": {
   "genres": [
    "pop"
   ],
-  "related": [],
-  "fans": 1
+  "related": [
+   "Wednesday",
+   "Black Country, New Road",
+   "Greg Freeman",
+   "Cate Le Bon",
+   "Horsegirl",
+   "Water From Your Eyes",
+   "MJ Lenderman",
+   "Panda Bear"
+  ],
+  "fans": 1,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f87bcd00446630e8affae3948ab6cec4/1000x1000-000000-80-0-0.jpg"
  },
  "emo orchestra": {
   "genres": [
@@ -7189,7 +7817,8 @@
    "Maÿd Hubb",
    "Tsunami Wazahari"
   ],
-  "fans": 2723
+  "fans": 2723,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/a691e84b118196534aeb3f787619b0e9/1000x1000-000000-80-0-0.jpg"
  },
  "emo orchestra with the spill canvas": {
   "genres": [],
@@ -7199,7 +7828,8 @@
  "flwr chyld & friends": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "gavn!": {
   "genres": [
@@ -7215,7 +7845,8 @@
    "Jonah Kagen",
    "RYMAN LEON"
   ],
-  "fans": 2266
+  "fans": 2266,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/07cdfc08fbc16d3f913019bb92be4ba0/1000x1000-000000-80-0-0.jpg"
  },
  "half•alive": {
   "genres": [
@@ -7233,7 +7864,8 @@
    "Rainbow Kitten Surprise",
    "Tessa Violet"
   ],
-  "fans": 23763
+  "fans": 23763,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bf7efdd85dce3c1c9841acc0a8dab0bb/1000x1000-000000-80-0-0.jpg"
  },
  "hey, nothing": {
   "genres": [
@@ -7249,7 +7881,8 @@
    "Current Joys",
    "Slow Pulp"
   ],
-  "fans": 3288
+  "fans": 3288,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/6006deadd5009b5ccdd7c739065fef59/1000x1000-000000-80-0-0.jpg"
  },
  "horsegiirL": {
   "genres": [
@@ -7267,7 +7900,8 @@
    "DJ G2G",
    "Namasenda"
   ],
-  "fans": 5445
+  "fans": 5445,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/ed47549dacf1e4a7e72a36e6dd7413cb/1000x1000-000000-80-0-0.jpg"
  },
  "ian sweet": {
   "genres": [
@@ -7283,7 +7917,8 @@
    "Chloe Slater",
    "Junior Varsity"
   ],
-  "fans": 777
+  "fans": 777,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/4f30933a5cce9547a9952d3c7561e9f3/1000x1000-000000-80-0-0.jpg"
  },
  "ivri": {
   "genres": [
@@ -7302,7 +7937,8 @@
    "Cafuné",
    "Temachii"
   ],
-  "fans": 3258
+  "fans": 3258,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d41d8cd98f00b204e9800998ecf8427e/1000x1000-000000-80-0-0.jpg"
  },
  "kwn": {
   "genres": [
@@ -7318,19 +7954,22 @@
    "Isaiah falls",
    "Bryson Tiller"
   ],
-  "fans": 15304
+  "fans": 15304,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/3a2693405af41a886a0a2061ecf40b69/1000x1000-000000-80-0-0.jpg"
  },
  "lespecial": {
   "genres": [
    "rock"
   ],
   "related": [],
-  "fans": 282
+  "fans": 282,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/994cb2440a00634cc23ee8159915445a/1000x1000-000000-80-0-0.jpg"
  },
  "makari & kurt travis": {
   "genres": [],
   "related": [],
-  "fans": 0
+  "fans": 0,
+  "picture": null
  },
  "nimino": {
   "genres": [
@@ -7347,7 +7986,8 @@
    "Carlita",
    "DJ Seinfeld"
   ],
-  "fans": 3455
+  "fans": 3455,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d0455af8743c96937ee949937d944752/1000x1000-000000-80-0-0.jpg"
  },
  "oso oso": {
   "genres": [
@@ -7366,14 +8006,16 @@
    "The World Is A Beautiful Place & I Am No Longer Afraid To Die",
    "Modern Baseball"
   ],
-  "fans": 898
+  "fans": 898,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/8a806fb07b3f1994da604c0159dba873/1000x1000-000000-80-0-0.jpg"
  },
  "problems": {
   "genres": [
    "electro"
   ],
   "related": [],
-  "fans": 91
+  "fans": 91,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/3089c8eb09eceab4f8c27318ce178f74/1000x1000-000000-80-0-0.jpg"
  },
  "she's green": {
   "genres": [
@@ -7389,7 +8031,8 @@
    "They Are Gutting a Body of Water",
    "IAN SWEET"
   ],
-  "fans": 1035
+  "fans": 1035,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/1e285f8fe91748fece5064caed919ed1/1000x1000-000000-80-0-0.jpg"
  },
  "sorry ghost": {
   "genres": [
@@ -7406,7 +8049,8 @@
    "Buddha Trixie",
    "The Aubreys"
   ],
-  "fans": 580
+  "fans": 580,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/f2631b6a2ce994467a0c277f27f7b57a/1000x1000-000000-80-0-0.jpg"
  },
  "surely tempo": {
   "genres": [
@@ -7422,7 +8066,8 @@
    "Sisyfuss",
    "Dxngelo"
   ],
-  "fans": 325
+  "fans": 325,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/bdbb5bf158fa537d66377b2acdd55dd4/1000x1000-000000-80-0-0.jpg"
  },
  "tiLLie": {
   "genres": [
@@ -7431,7 +8076,8 @@
    "pop rock"
   ],
   "related": [],
-  "fans": 684
+  "fans": 684,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/e23066163f21176a822b54001ee648a2/1000x1000-000000-80-0-0.jpg"
  },
  "wave to earth": {
   "genres": [
@@ -7449,6 +8095,7 @@
    "Jeon Jin Hee",
    "Keshi"
   ],
-  "fans": 43040
+  "fans": 43040,
+  "picture": "https://cdn-images.dzcdn.net/images/artist/d27a4c2c28addd9d63bc141683839fdf/1000x1000-000000-80-0-0.jpg"
  }
 }

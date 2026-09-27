@@ -62,12 +62,12 @@ def _resolve_venue(conn, venue: str) -> Optional[str]:
                            (f"%{key}%",)).fetchone()
     if row:
         return row["id"]
-    coords = artists.geocode(key)
-    if coords is None:
+    found = artists.geocode(key)
+    if found is None:
         return None
     vid = slug(key)
-    conn.execute("INSERT OR IGNORE INTO venues (id, name, lat, lng, geofence_radius_m, multi_room, access_profile)"
-                 " VALUES (?,?,?,?,150,0,'{}')", (vid, key, coords[0], coords[1]))
+    conn.execute("INSERT OR IGNORE INTO venues (id, name, lat, lng, geofence_radius_m, multi_room, access_profile, city)"
+                 " VALUES (?,?,?,?,150,0,'{}',?)", (vid, key, found[0], found[1], found[2]))
     return vid
 
 

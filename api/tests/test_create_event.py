@@ -10,7 +10,7 @@ def offline(monkeypatch):
     monkeypatch.setattr(artists, "search_artists", lambda q, limit=6: (
         [{"id": 1, "name": "Bruno Mars", "picture": "https://cdn.example/bruno.jpg", "fans": 9000000}] if "bruno" in q.lower() else []))
     monkeypatch.setattr(artists, "related_artists", lambda artist_id, limit=8: ["Anderson .Paak", "Silk Sonic"])
-    monkeypatch.setattr(artists, "geocode", lambda place, city="Atlanta, GA": (33.7554, -84.4010) if "mercedes" in place.lower() else None)
+    monkeypatch.setattr(artists, "geocode", lambda place, city="Atlanta, GA": (33.7554, -84.4010, "Atlanta, GA") if "mercedes" in place.lower() else None)
     monkeypatch.setattr(artists.httpx, "get", lambda *a, **k: (_ for _ in ()).throw(AssertionError("network call")))
 
 
@@ -36,6 +36,7 @@ def test_add_show_at_a_new_venue_geocodes_it(client):
     e = r.json()
     assert e["artist"]["name"] == "Unknown Local Band" and e["image_url"] is None   # no Deezer match: name kept as typed
     assert e["venue"]["name"] == "Mercedes-Benz Stadium" and abs(e["venue"]["lat"] - 33.7554) < 1e-4 and e["is_past"] is False
+    assert e["venue"]["city"] == "Atlanta, GA"
     assert client.post("/events?user=sam", json={"artist": "X", "venue": "Nowhere Hall", "date": "2027-01-15"}).status_code == 422
     assert client.post("/events?user=sam", json={"artist": "X", "venue": "state_farm", "date": "not-a-date"}).status_code == 422
     assert client.post("/events?user=sam", json={"artist": "  ", "venue": "state_farm", "date": "2027-01-15"}).status_code == 422

@@ -17,7 +17,7 @@ def main():
     marks = ",".join("?" * len(DEMO_SHOWS))
     conn.execute(f"DELETE FROM reviews WHERE user_id = 'sam' AND event_id IN ({marks})", DEMO_SHOWS)
     conn.execute(f"DELETE FROM attendance WHERE user_id = 'sam' AND event_id IN ({marks})", DEMO_SHOWS)
-    conn.execute("DELETE FROM media WHERE user_id = 'sam'")
+    conn.execute("DELETE FROM media WHERE user_id = 'sam' AND id NOT LIKE 'm_seed_%'")
     shutil.rmtree(DB.parent / "media" / "sam", ignore_errors=True)  # Sam's uploaded photos and videos
     conn.execute("DELETE FROM comparisons WHERE user_id = 'sam'")
     conn.execute("UPDATE reviews SET theta_var = ? WHERE user_id = 'sam'", (RANKER["prior_var"],))
