@@ -6,8 +6,6 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-from tests.test_matcher import DECOYS, PHOTOS
-
 SEEDED = Path(__file__).resolve().parents[2] / "data" / "encore.db"
 pytestmark = pytest.mark.skipif(not SEEDED.exists(), reason="run `make seed` first")
 
@@ -73,14 +71,11 @@ def test_manual_marks_and_unranked_prompt(api):
     assert api.post("/attendance?user=sam", json={"event_id": "nope", "status": "going"}).status_code == 404
 
 
-def test_photo_import_feeds_the_prompt(api):
-    items = [{"lat": a, "lng": b, "captured_at": t} for a, b, t in PHOTOS + DECOYS]
-    found = api.post("/media/match?user=sam", json={"items": items}).json()
-    api.post("/attendance/confirm?user=sam", json={"event_ids": [m["event"]["id"] for m in found], "evidence": "photo",
-                                                  "confidences": [m["confidence"] for m in found]})
+def test_logged_shows_feed_the_prompt_newest_first(api):
+    for eid in ("d01", "d02", "d03", "d04", "d05", "d06"):
+        api.post("/attendance?user=sam", json={"event_id": eid, "status": "attended"})
     unranked = [e["id"] for e in api.get("/attendance/unranked?user=sam").json()]
-    assert sorted(unranked) == ["d01", "d02", "d03", "d04", "d05", "d06"]
-    assert unranked[0] == "d04"  # surest match first: the show the demo reviews
+    assert unranked == ["d06", "d05", "d04", "d03", "d02", "d01"]  # most recent show first
 
 
 def test_people_profiles_and_follows(api):

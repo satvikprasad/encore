@@ -56,7 +56,3 @@ CREATE TABLE media (
 );
 CREATE INDEX idx_media_event ON media(event_id, created_at);
 CREATE INDEX idx_media_user ON media(user_id, created_at);
-CREATE TABLE media_items (
-  id TEXT PRIMARY KEY, user_id TEXT REFERENCES users(id), captured_at TEXT NOT NULL,
-  lat REAL NOT NULL, lng REAL NOT NULL, matched_event_id TEXT, confidence REAL
-);

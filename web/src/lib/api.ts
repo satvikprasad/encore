@@ -3,8 +3,6 @@
 // API is the default), and OVERRIDES pins individual endpoints either way.
 import type {
   ArtistHit,
-  AttendanceConfirmRequest,
-  AttendanceConfirmResponse,
   AttendanceSetResponse,
   AttendanceStatus,
   CompareNext,
@@ -17,8 +15,6 @@ import type {
   FollowResponse,
   MatchCandidate,
   MediaFile,
-  MediaItem,
-  MediaMatch,
   PersonCard,
   Ranking,
   RecommendedEvent,
@@ -33,8 +29,6 @@ import type {
 import { deleteMedia as localDelete, listAllMedia as localAll, listMedia as localList, saveMedia as localSave, type StoredMedia } from "@/lib/media";
 import {
   fxFollows,
-  fxImported,
-  fxMarkImported,
   fxMarkReviewed,
   fxReviewed,
   fxSetFollows,
@@ -44,7 +38,6 @@ import {
 } from "@/lib/session";
 
 import artistSearchFx from "@fixtures/artist_search.json";
-import attendanceConfirmFx from "@fixtures/attendance_confirm.json";
 import compareNextFx from "@fixtures/compare_next.json";
 import comparePostFx from "@fixtures/compare_post.json";
 import crewCreateFx from "@fixtures/crew_create.json";
@@ -58,7 +51,6 @@ import eventsUpcomingFx from "@fixtures/events_upcoming.json";
 import followsFx from "@fixtures/follows.json";
 import matchesFx from "@fixtures/matches.json";
 import matchesLockedFx from "@fixtures/matches_locked.json";
-import mediaMatchFx from "@fixtures/media_match.json";
 import peopleFx from "@fixtures/people.json";
 import rankFx from "@fixtures/rank.json";
 import reviewPostFx from "@fixtures/review_post.json";
@@ -73,8 +65,6 @@ const USE_FIXTURES = process.env.NEXT_PUBLIC_USE_FIXTURES === "true";
 
 export type Endpoint =
   | "users"
-  | "mediaMatch"
-  | "attendanceConfirm"
   | "postReview"
   | "compareNext"
   | "postCompare"
@@ -156,7 +146,6 @@ function fixtureEvents(): Map<string, Event> {
     ...(eventsRecommendedFx as unknown as Event[]),
     ...(eventsSearchFx as unknown as Event[]),
     ...(unrankedFx as unknown as Event[]),
-    ...(mediaMatchFx as unknown as MediaMatch[]).map((m) => m.event),
     ...(rankFx as unknown as Ranking).shows.map((s) => s.event),
     ...profile.shows.map((s) => s.event),
     ...profile.upcoming.map((u) => u.event),
@@ -183,11 +172,8 @@ function fixtureFriends(id: string): User[] {
 function fixtureStatus(user: string, event: Event): AttendanceStatus | null {
   const marked = fxStatuses(user)[event.id];
   if (marked !== undefined) return marked;
-  // Sam's photo shows count as attended once the import ran; his older reviewed shows always do.
-  const photoShow = (unrankedFx as unknown as Event[]).some((e) => e.id === event.id);
-  const reviewed = (rankFx as unknown as Ranking).shows.some((s) => s.event.id === event.id);
-  if (reviewed || (photoShow && fxImported(user))) return "attended";
-  return null;
+  // The demo user's reviewed shows always count as attended.
+  return (rankFx as unknown as Ranking).shows.some((s) => s.event.id === event.id) ? "attended" : null;
 }
 
 function fixtureFollowing(user: string): string[] {
@@ -236,20 +222,6 @@ export const api = {
     return request("GET", "/users", null);
   },
 
-  mediaMatch(user: string, items: MediaItem[]): Promise<MediaMatch[]> {
-    if (usesFixture("mediaMatch")) return fixture(mediaMatchFx, 700);
-    return request("POST", "/media/match", user, { items });
-  },
-
-  attendanceConfirm(user: string, body: AttendanceConfirmRequest): Promise<AttendanceConfirmResponse> {
-    if (usesFixture("attendanceConfirm")) {
-      fxMarkImported(user);
-      for (const id of body.event_ids) fxSetStatus(user, id, "attended");
-      return fixture({ ...(attendanceConfirmFx as AttendanceConfirmResponse), added: body.event_ids.length });
-    }
-    return request("POST", "/attendance/confirm", user, body);
-  },
-
   /** Mark one show by hand: "interested" (want to go), "going", "attended" (went), or null to clear. */
   setAttendance(user: string, eventId: string, status: AttendanceStatus | null): Promise<AttendanceSetResponse> {
     if (usesFixture("setAttendance")) {
@@ -268,12 +240,9 @@ export const api = {
       const manual = Object.entries(statuses)
         .filter(([id, s]) => s === "attended" && !reviewed.has(id))
         .map(([id]) => events.get(id))
-        .filter((e): e is Event => !!e);
-      const photo = fxImported(user)
-        ? (unrankedFx as unknown as Event[]).filter((e) => !reviewed.has(e.id) && statuses[e.id] !== null)
-        : [];
-      const seen = new Set<string>();
-      return fixture([...photo, ...manual].filter((e) => !seen.has(e.id) && seen.add(e.id)), 150);
+        .filter((e): e is Event => !!e)
+        .sort((a, b) => b.start_at.localeCompare(a.start_at));
+      return fixture(manual, 150);
     }
     return request("GET", "/attendance/unranked", user);
   },

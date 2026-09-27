@@ -2,11 +2,11 @@
 
 import clsx from "clsx";
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { ReviewRadar } from "@/components/charts";
 import { IconCamera, IconChevron } from "@/components/icons";
-import { ArtistArt } from "@/components/ui";
+import { ArtistArt, Segmented } from "@/components/ui";
 import { fmtShortDate } from "@/lib/format";
 import type { RankedShow } from "@/types";
 
@@ -17,26 +17,77 @@ const TIER: Record<RankedShow["tier"], { badge: string; name: string }> = {
   C: { badge: "bg-sunken text-muted", name: "The rest" },
 };
 
+type Sort = "rank" | "venue" | "artist" | "date";
+
+interface Group {
+  key: string;
+  title: string;
+  badge?: RankedShow["tier"];
+  shows: RankedShow[];
+}
+
+function groupShows(shows: RankedShow[], sort: Sort): Group[] {
+  if (sort === "rank") {
+    return (["S", "A", "B", "C"] as const)
+      .map((t) => ({ key: t, title: TIER[t].name, badge: t, shows: shows.filter((s) => s.tier === t) }))
+      .filter((g) => g.shows.length);
+  }
+  if (sort === "venue") {
+    const byVenue = new Map<string, RankedShow[]>();
+    for (const s of shows) byVenue.set(s.event.venue.name, [...(byVenue.get(s.event.venue.name) ?? []), s]);
+    return Array.from(byVenue.entries())
+      .map(([name, list]) => ({ key: name, title: name, shows: list.sort((a, b) => a.rank - b.rank) }))
+      .sort((a, b) => a.shows[0].rank - b.shows[0].rank); // the venue with your best night first
+  }
+  if (sort === "artist") {
+    return [{ key: "artist", title: "A → Z", shows: [...shows].sort((a, b) => a.event.artist.name.localeCompare(b.event.artist.name) || a.rank - b.rank) }];
+  }
+  return [{ key: "date", title: "Most recent first", shows: [...shows].sort((a, b) => b.event.start_at.localeCompare(a.event.start_at)) }];
+}
+
 /**
- * A user's ranked shows grouped into tiers; tap a row for its radar. Shows in `unrankedIds`
- * only have a provisional review (imported, never rated) and get a "Rank it" action instead.
+ * A user's ranked shows, sortable by rank (tiers), venue, artist, or date; tap a row for its radar.
+ * Shows in `unrankedIds` only have a provisional review (logged, never rated) and get "Rank it" instead.
  */
-export function RankedList({ shows, unrankedIds, mediaCounts, mine = true }: { shows: RankedShow[]; unrankedIds?: Set<string>; mediaCounts?: Record<string, number>; mine?: boolean }) {
+export function RankedList({
+  shows,
+  unrankedIds,
+  mediaCounts,
+  mine = true,
+}: {
+  shows: RankedShow[];
+  unrankedIds?: Set<string>;
+  mediaCounts?: Record<string, number>;
+  mine?: boolean;
+}) {
   const [open, setOpen] = useState<string | null>(null);
-  const tiers = (["S", "A", "B", "C"] as const)
-    .map((t) => ({ tier: t, shows: shows.filter((s) => s.tier === t) }))
-    .filter((t) => t.shows.length);
+  const [sort, setSort] = useState<Sort>("rank");
+  const groups = useMemo(() => groupShows(shows, sort), [shows, sort]);
+  if (!shows.length) return null;
 
   return (
     <>
-      {tiers.map(({ tier, shows: rows }, ti) => (
-        <section key={tier} className="animate-rise space-y-2" style={{ animationDelay: `${80 + ti * 60}ms` }}>
+      <Segmented
+        value={sort}
+        onChange={setSort}
+        options={[
+          { value: "rank", label: "Rank" },
+          { value: "venue", label: "Venue" },
+          { value: "artist", label: "Artist" },
+          { value: "date", label: "Date" },
+        ]}
+      />
+      {groups.map((g, gi) => (
+        <section key={g.key} className="animate-rise space-y-2" style={{ animationDelay: `${60 + gi * 50}ms` }}>
           <div className="flex items-center gap-2.5 px-1">
-            <span className={clsx("grid h-7 w-7 place-items-center rounded-lg text-sm font-black shadow-card", TIER[tier].badge)}>{tier}</span>
-            <span className="text-xs font-semibold text-muted">{TIER[tier].name}</span>
+            {g.badge ? (
+              <span className={clsx("grid h-7 w-7 place-items-center rounded-lg text-sm font-black shadow-card", TIER[g.badge].badge)}>{g.badge}</span>
+            ) : null}
+            <span className="text-xs font-semibold text-muted">{g.title}</span>
+            {sort === "venue" ? <span className="text-[11px] text-dim">· {g.shows.length}</span> : null}
             <span className="h-px flex-1 bg-line" />
           </div>
-          {rows.map((s) => {
+          {g.shows.map((s) => {
             const isOpen = open === s.event.id;
             const provisional = unrankedIds?.has(s.event.id) ?? false;
             return (
@@ -48,7 +99,7 @@ export function RankedList({ shows, unrankedIds, mediaCounts, mine = true }: { s
                     <div className="truncate text-[15px] font-semibold tracking-tight">{s.event.artist.name}</div>
                     <div className="flex items-center gap-1.5 truncate text-xs text-muted">
                       <span className="truncate">
-                        {s.event.venue.name} · {fmtShortDate(s.event.start_at)}
+                        {sort === "venue" ? fmtShortDate(s.event.start_at) : `${s.event.venue.name} · ${fmtShortDate(s.event.start_at)}`}
                       </span>
                       {mediaCounts?.[s.event.id] ? (
                         <span className="flex shrink-0 items-center gap-0.5 rounded-full bg-accent-soft px-1.5 py-0.5 text-[10px] font-semibold text-accent">
@@ -57,6 +108,7 @@ export function RankedList({ shows, unrankedIds, mediaCounts, mine = true }: { s
                       ) : null}
                     </div>
                   </div>
+                  {sort !== "rank" ? <span className={clsx("grid h-6 w-6 shrink-0 place-items-center rounded-md text-[11px] font-black", TIER[s.tier].badge)}>{s.tier}</span> : null}
                   {provisional ? (
                     <span className="rounded-full bg-warn-soft px-2.5 py-1 text-[11px] font-semibold text-warn">Not ranked</span>
                   ) : (
@@ -67,7 +119,7 @@ export function RankedList({ shows, unrankedIds, mediaCounts, mine = true }: { s
                 {isOpen ? (
                   <div className="animate-pop border-t border-line/70 px-3 pb-3">
                     {provisional ? (
-                      <p className="px-1 pb-3 pt-3 text-sm text-muted">We know you went, but you haven&apos;t rated it yet — it sits at your average until you do.</p>
+                      <p className="px-1 pb-3 pt-3 text-sm text-muted">You logged this one but haven&apos;t rated it yet — it sits at your average until you do.</p>
                     ) : (
                       <ReviewRadar theta={s.theta} />
                     )}

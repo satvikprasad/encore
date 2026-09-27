@@ -93,15 +93,6 @@ class MatchCandidate(BaseModel):
     icebreaker: Optional[str]
 
 
-class MediaMatch(BaseModel):
-    cluster_id: str
-    event: Event
-    confidence: float
-    photo_count: int
-    suggested: Literal["auto", "ask"]
-    item_indices: list[int] = []   # positions in the request's items that formed this cluster
-
-
 class Message(BaseModel):
     user_id: str
     text: str
@@ -138,26 +129,6 @@ class Crew(BaseModel):
 
 
 # ---- request bodies & composite responses (AGENTS.md §6) ------------------
-
-class MediaItem(BaseModel):
-    lat: float
-    lng: float
-    captured_at: str
-
-
-class MediaMatchRequest(BaseModel):
-    items: list[MediaItem]
-
-
-class AttendanceConfirmRequest(BaseModel):
-    event_ids: list[str]
-    evidence: Literal["photo", "manual"]
-    confidences: Optional[list[float]] = None
-
-
-class AttendanceConfirmResponse(BaseModel):
-    added: int
-
 
 class ReviewIn(BaseModel):
     """POST /reviews body: Review without user_id."""

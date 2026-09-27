@@ -210,7 +210,7 @@
     "friends_interested": [
       {
         "id": "dev",
-        "name": "Dev Patel",
+        "name": "Satvik Prasad",
         "avatar": "🥁",
         "budget_max": 60.0,
         "accessibility_needs": [],
@@ -299,7 +299,7 @@
     "friends_interested": [
       {
         "id": "priya",
-        "name": "Priya Nair",
+        "name": "Jasmine Liu",
         "avatar": "🎹",
         "budget_max": 100.0,
         "accessibility_needs": [],
@@ -428,7 +428,7 @@
     "friends_interested": [
       {
         "id": "lena",
-        "name": "Lena Fischer",
+        "name": "Ayush Shah",
         "avatar": "🎤",
         "budget_max": 80.0,
         "accessibility_needs": [
@@ -556,25 +556,8 @@
     "is_past": false,
     "friends_interested": [
       {
-        "id": "dev",
-        "name": "Dev Patel",
-        "avatar": "🥁",
-        "budget_max": 60.0,
-        "accessibility_needs": [],
-        "verified": true,
-        "weights": [
-          0.14,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.32,
-          0.14
-        ]
-      },
-      {
         "id": "priya",
-        "name": "Priya Nair",
+        "name": "Jasmine Liu",
         "avatar": "🎹",
         "budget_max": 100.0,
         "accessibility_needs": [],
@@ -586,6 +569,23 @@
           0.08,
           0.12,
           0.08,
+          0.14
+        ]
+      },
+      {
+        "id": "dev",
+        "name": "Satvik Prasad",
+        "avatar": "🥁",
+        "budget_max": 60.0,
+        "accessibility_needs": [],
+        "verified": true,
+        "weights": [
+          0.14,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.32,
           0.14
         ]
       }
@@ -806,7 +806,7 @@
     "friends_interested": [
       {
         "id": "dev",
-        "name": "Dev Patel",
+        "name": "Satvik Prasad",
         "avatar": "🥁",
         "budget_max": 60.0,
         "accessibility_needs": [],
@@ -895,7 +895,7 @@
     "friends_interested": [
       {
         "id": "priya",
-        "name": "Priya Nair",
+        "name": "Jasmine Liu",
         "avatar": "🎹",
         "budget_max": 100.0,
         "accessibility_needs": [],
@@ -1224,7 +1224,7 @@
     "friends_interested": [
       {
         "id": "lena",
-        "name": "Lena Fischer",
+        "name": "Ayush Shah",
         "avatar": "🎤",
         "budget_max": 80.0,
         "accessibility_needs": [
@@ -1314,7 +1314,7 @@
     "friends_interested": [
       {
         "id": "lena",
-        "name": "Lena Fischer",
+        "name": "Ayush Shah",
         "avatar": "🎤",
         "budget_max": 80.0,
         "accessibility_needs": [
@@ -1432,7 +1432,7 @@
     "friends_interested": [
       {
         "id": "dev",
-        "name": "Dev Patel",
+        "name": "Satvik Prasad",
         "avatar": "🥁",
         "budget_max": 60.0,
         "accessibility_needs": [],
@@ -1486,7 +1486,7 @@
     "friends_interested": [
       {
         "id": "priya",
-        "name": "Priya Nair",
+        "name": "Jasmine Liu",
         "avatar": "🎹",
         "budget_max": 100.0,
         "accessibility_needs": [],
@@ -1606,7 +1606,7 @@
     "friends_interested": [
       {
         "id": "priya",
-        "name": "Priya Nair",
+        "name": "Jasmine Liu",
         "avatar": "🎹",
         "budget_max": 100.0,
         "accessibility_needs": [],

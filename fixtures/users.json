@@ -1,7 +1,7 @@
 [
   {
     "id": "sam",
-    "name": "Sam Okafor",
+    "name": "Artem Kim",
     "avatar": "🎛️",
     "budget_max": 90,
     "accessibility_needs": [],
@@ -54,7 +54,7 @@
   },
   {
     "id": "priya",
-    "name": "Priya Nair",
+    "name": "Jasmine Liu",
     "avatar": "🎹",
     "budget_max": 100,
     "accessibility_needs": [],
@@ -71,7 +71,7 @@
   },
   {
     "id": "dev",
-    "name": "Dev Patel",
+    "name": "Satvik Prasad",
     "avatar": "🥁",
     "budget_max": 60,
     "accessibility_needs": [],
@@ -88,7 +88,7 @@
   },
   {
     "id": "lena",
-    "name": "Lena Fischer",
+    "name": "Ayush Shah",
     "avatar": "🎤",
     "budget_max": 80,
     "accessibility_needs": [

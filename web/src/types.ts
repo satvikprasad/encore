@@ -13,15 +13,10 @@ export interface Review { user_id: string; event_id: string; scores: Vec7; tags:
 export interface RankedShow { event: Event; theta: Vec7; score: number; tier: "S" | "A" | "B" | "C"; rank: number }
 export interface Ranking { user_id: string; weights: Vec7; shows: RankedShow[]; comparisons_done: number }
 export interface MatchCandidate { user: User; match_pct: number; shared_event_ids: string[]; explanation: string | null; icebreaker: string | null }
-export interface MediaMatch { cluster_id: string; event: Event; confidence: number; photo_count: number; suggested: "auto" | "ask"; item_indices?: number[] } // item_indices: positions in the posted items
 export interface Crew { id: string; event: Event; members: User[]; messages: { user_id: string; text: string; at: string }[]; plan: Plan | null }
 export interface Plan { option: { event_id: string; tier_label: string; price: number }; meet_at: string; meet_where: string; per_member: { user_id: string; score: number; note: string }[]; compromise_note: string; summary: string }
 
 // ---- request bodies & composite responses (AGENTS.md §6) ----
-export interface MediaItem { lat: number; lng: number; captured_at: string }
-export interface MediaMatchRequest { items: MediaItem[] }
-export interface AttendanceConfirmRequest { event_ids: string[]; evidence: "photo" | "manual"; confidences?: number[] }
-export interface AttendanceConfirmResponse { added: number }
 export type ReviewIn = Omit<Review, "user_id">;
 export interface ComparePair { event_a: Event; event_b: Event }
 export interface ReviewPostResponse { ok: true; next_compare: ComparePair | null } // null until 2 shows reviewed

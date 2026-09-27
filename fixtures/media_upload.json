@@ -1,8 +1,8 @@
 {
-  "id": "m_85e9a069fa3ebc61",
+  "id": "m_a6f0645bf6c10948",
   "user": {
     "id": "sam",
-    "name": "Sam Okafor",
+    "name": "Artem Kim",
     "avatar": "🎛️",
     "budget_max": 90.0,
     "accessibility_needs": [],
@@ -52,10 +52,10 @@
     "is_past": true
   },
   "kind": "image",
-  "url": "http://localhost:8000/media-files/sam/d04/m_85e9a069fa3ebc61.jpg",
+  "url": "http://localhost:8000/media-files/sam/d04/m_a6f0645bf6c10948.jpg",
   "content_type": "image/jpeg",
   "bytes": 31237,
   "caption": "LED wall",
   "taken_at": null,
-  "created_at": "2026-09-26T22:34:28+00:00"
+  "created_at": "2026-09-27T00:02:52+00:00"
 }

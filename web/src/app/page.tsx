@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { IconCamera, IconChevron, IconSearch, IconSparkle, IconTrophy } from "@/components/icons";
+import { IconChevron, IconSearch, IconSparkle, IconTrophy } from "@/components/icons";
 import { Lightbox } from "@/components/MediaGallery";
 import { RankPrompt } from "@/components/RankPrompt";
 import { ArtistArt, Avatar, AvatarStack, ErrorNote, SectionTitle, Spinner } from "@/components/ui";
@@ -100,15 +100,10 @@ export default function Home() {
         <div className="pointer-events-none absolute -bottom-16 -left-8 h-40 w-40 rounded-full bg-coral opacity-60 blur-2xl" />
         <div className="relative">
           <div className="display text-[26px] leading-none">Been to a show?</div>
-          <p className="mt-1.5 text-xs text-white/70">Log it, rate it, and it lands in your ranking.</p>
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <Link href="/log" className="flex items-center justify-center gap-2 rounded-full bg-white py-3 text-sm font-semibold text-fg transition hover:bg-white/90">
-              <IconTrophy size={17} /> Log a show
-            </Link>
-            <Link href="/import" className="flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 py-3 text-sm font-semibold backdrop-blur transition hover:bg-white/15">
-              <IconCamera size={17} /> Camera roll
-            </Link>
-          </div>
+          <p className="mt-1.5 text-xs text-white/70">Search it (or add it), rate it, and it lands in your ranking.</p>
+          <Link href="/log" className="mt-4 flex items-center justify-center gap-2 rounded-full bg-white py-3 text-sm font-semibold text-fg transition hover:bg-white/90">
+            <IconTrophy size={17} /> Log a show
+          </Link>
         </div>
       </section>
 

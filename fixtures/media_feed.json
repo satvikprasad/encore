@@ -3,7 +3,7 @@
     "id": "m_seed_10",
     "user": {
       "id": "lena",
-      "name": "Lena Fischer",
+      "name": "Ayush Shah",
       "avatar": "🎤",
       "budget_max": 80.0,
       "accessibility_needs": [
@@ -66,7 +66,7 @@
     "id": "m_seed_03",
     "user": {
       "id": "dev",
-      "name": "Dev Patel",
+      "name": "Satvik Prasad",
       "avatar": "🥁",
       "budget_max": 60.0,
       "accessibility_needs": [],
@@ -126,7 +126,7 @@
     "id": "m_seed_04",
     "user": {
       "id": "lena",
-      "name": "Lena Fischer",
+      "name": "Ayush Shah",
       "avatar": "🎤",
       "budget_max": 80.0,
       "accessibility_needs": [
@@ -188,7 +188,7 @@
     "id": "m_seed_02",
     "user": {
       "id": "priya",
-      "name": "Priya Nair",
+      "name": "Jasmine Liu",
       "avatar": "🎹",
       "budget_max": 100.0,
       "accessibility_needs": [],
@@ -248,7 +248,7 @@
     "id": "m_seed_01",
     "user": {
       "id": "priya",
-      "name": "Priya Nair",
+      "name": "Jasmine Liu",
       "avatar": "🎹",
       "budget_max": 100.0,
       "accessibility_needs": [],

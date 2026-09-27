@@ -55,7 +55,7 @@ def test_visibility_follows_the_follow_graph(client, media_root):
     assert ids(client.get("/media?user=jordan&of=priya")) == []                # not following: nothing, no error
     assert client.get("/media?user=sam").status_code == 400
     feed = client.get("/media/feed?user=sam").json()
-    assert [m["id"] for m in feed] == [priya["id"]] and feed[0]["user"]["name"] == "Priya Nair"   # friends only, not own
+    assert [m["id"] for m in feed] == [priya["id"]] and feed[0]["user"]["name"] == "Jasmine Liu"   # friends only, not own
     assert client.get("/media/feed?user=priya").json() == []
 
 

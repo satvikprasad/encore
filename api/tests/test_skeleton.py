@@ -11,8 +11,6 @@ FIXTURES = Path(__file__).resolve().parents[2] / "fixtures"
 
 FIXTURE_TYPES = {
     "users.json": list[S.User],
-    "media_match.json": list[S.MediaMatch],
-    "attendance_confirm.json": S.AttendanceConfirmResponse,
     "review_post.json": S.ReviewPostResponse,
     "compare_next.json": S.CompareNext,
     "compare_post.json": S.Ranking,
@@ -55,7 +53,7 @@ def test_users_from_real_db(client):
     r = client.get("/users")
     assert r.status_code == 200
     sam = next(u for u in r.json() if u["id"] == "sam")
-    assert sam["name"] == "Sam Okafor" and sam["verified"] is False
+    assert sam["name"] == "Artem Kim" and sam["verified"] is False
 
 
 def test_cors_allows_web(client):

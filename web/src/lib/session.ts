@@ -112,10 +112,3 @@ export function fxMarkReviewed(user: string, eventId: string) {
   write("session", `encore.fx.reviewed.${user}`, JSON.stringify(Array.from(new Set([...fxReviewed(user), eventId]))));
 }
 
-export function fxImported(user: string): boolean {
-  return read("session", `encore.fx.imported.${user}`) === "1";
-}
-
-export function fxMarkImported(user: string) {
-  write("session", `encore.fx.imported.${user}`, "1");
-}

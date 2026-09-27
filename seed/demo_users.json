@@ -3,7 +3,7 @@
  "users": [
   {
    "id": "sam",
-   "name": "Sam Okafor",
+   "name": "Artem Kim",
    "avatar": "🎛️",
    "budget_max": 90,
    "needs": [],
@@ -258,7 +258,7 @@
   },
   {
    "id": "priya",
-   "name": "Priya Nair",
+   "name": "Jasmine Liu",
    "avatar": "🎹",
    "budget_max": 100,
    "needs": [],
@@ -301,7 +301,7 @@
   },
   {
    "id": "dev",
-   "name": "Dev Patel",
+   "name": "Satvik Prasad",
    "avatar": "🥁",
    "budget_max": 60,
    "needs": [],
@@ -342,7 +342,7 @@
   },
   {
    "id": "lena",
-   "name": "Lena Fischer",
+   "name": "Ayush Shah",
    "avatar": "🎤",
    "budget_max": 80,
    "needs": [

@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 
 import { AddShowSheet } from "@/components/AddShowSheet";
-import { IconCamera, IconChevron, IconLock, IconPlus, IconTrophy } from "@/components/icons";
+import { IconChevron, IconPlus, IconTrophy } from "@/components/icons";
 import { ArtistArt, ErrorNote, SearchField, Spinner, TopBar } from "@/components/ui";
 import { api } from "@/lib/api";
 import { fmtShortDate } from "@/lib/format";
@@ -89,40 +89,13 @@ function Log() {
       <main className="space-y-5 px-4 pb-32 pt-2">
         <div className="px-1">
           <h1 className="display text-[32px] leading-none">Which show?</h1>
-          <p className="mt-1.5 text-sm text-muted">Search a past show in Atlanta, or let your photos find them.</p>
+          <p className="mt-1.5 text-sm text-muted">Search a past show in Atlanta — or add one the calendars missed.</p>
         </div>
         <SearchField value={q} onChange={setQ} autoFocus placeholder="Artist or venue" />
 
         {!searching ? (
           <>
-            <Link
-              href="/import"
-              className="animate-rise relative flex min-h-[200px] flex-col justify-between overflow-hidden rounded-[28px] bg-fg p-5 text-white shadow-lift transition hover:-translate-y-0.5"
-            >
-              <div className="pointer-events-none absolute -right-12 -top-16 h-52 w-52 rounded-full bg-accent opacity-80 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-16 -left-8 h-44 w-44 rounded-full bg-coral opacity-60 blur-3xl" />
-              <div className="pointer-events-none absolute right-5 top-5 flex -space-x-3">
-                {[-14, 0, 14].map((rot, i) => (
-                  <span
-                    key={rot}
-                    className="block h-16 w-12 rounded-lg border-2 border-white/90 shadow-lift"
-                    style={{ transform: `rotate(${rot}deg) translateY(${i === 1 ? -6 : 0}px)`, background: `linear-gradient(160deg, hsl(${262 + i * 60} 80% 70%), hsl(${300 + i * 60} 70% 45%))` }}
-                  />
-                ))}
-              </div>
-              <span className="relative grid h-11 w-11 place-items-center rounded-full bg-white/15 backdrop-blur">
-                <IconCamera size={22} />
-              </span>
-              <div className="relative">
-                <div className="display text-[28px] leading-none">Import from camera roll</div>
-                <p className="mt-2 max-w-[260px] text-xs leading-relaxed text-white/70">
-                  Pick your concert photos and we match when and where each was taken to a show. Two photos are usually enough.
-                </p>
-                <p className="mt-3 flex items-center gap-1.5 text-[11px] text-white/60">
-                  <IconLock size={12} /> Photos never leave your device.
-                </p>
-              </div>
-            </Link>
+            <div className="animate-rise">{addButton}</div>
 
             {pending?.length ? (
               <section className="animate-rise space-y-2" style={{ animationDelay: "60ms" }}>
@@ -174,7 +147,6 @@ function Log() {
             {addButton}
           </section>
         ) : null}
-        {!searching ? <div className="animate-rise" style={{ animationDelay: "180ms" }}>{addButton}</div> : null}
         <AddShowSheet userId={userId} open={adding} onClose={() => setAdding(false)} initialArtist={q.trim()} />
       </main>
     </>

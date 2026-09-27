@@ -1,72 +1,5 @@
 [
   {
-    "id": "d04",
-    "artist": {
-      "id": "aurora_fields",
-      "name": "Aurora Fields",
-      "genres": [
-        "electronic",
-        "pop"
-      ]
-    },
-    "venue": {
-      "id": "state_farm",
-      "name": "State Farm Arena",
-      "lat": 33.7573,
-      "lng": -84.3963,
-      "multi_room": false,
-      "access_profile": {
-        "step_free": true,
-        "ada_seating": true,
-        "quiet_room": true,
-        "strobe_policy": "warned",
-        "interpreter": "on_request"
-      }
-    },
-    "start_at": "2026-02-28T19:30:00-05:00",
-    "doors_at": "2026-02-28T18:30:00-05:00",
-    "price_min": 65.0,
-    "price_max": 180.0,
-    "tm_url": null,
-    "image_url": null,
-    "support": null,
-    "room": null,
-    "is_past": true
-  },
-  {
-    "id": "d02",
-    "artist": {
-      "id": "velvet_static",
-      "name": "Velvet Static",
-      "genres": [
-        "synth-pop"
-      ]
-    },
-    "venue": {
-      "id": "eastern",
-      "name": "The Eastern",
-      "lat": 33.7524,
-      "lng": -84.3648,
-      "multi_room": false,
-      "access_profile": {
-        "step_free": true,
-        "ada_seating": true,
-        "quiet_room": true,
-        "strobe_policy": "warned",
-        "interpreter": "never"
-      }
-    },
-    "start_at": "2025-11-22T20:00:00-05:00",
-    "doors_at": "2025-11-22T19:00:00-05:00",
-    "price_min": 40.0,
-    "price_max": 65.0,
-    "tm_url": null,
-    "image_url": null,
-    "support": null,
-    "room": null,
-    "is_past": true
-  },
-  {
     "id": "d06",
     "artist": {
       "id": "the_low_tides",
@@ -133,37 +66,35 @@
     "is_past": true
   },
   {
-    "id": "d01",
+    "id": "d04",
     "artist": {
-      "id": "freddie_gibbs",
-      "name": "Freddie Gibbs",
+      "id": "aurora_fields",
+      "name": "Aurora Fields",
       "genres": [
-        "gangsta rap",
-        "hip hop",
-        "hardcore hip hop",
-        "midwest rap"
+        "electronic",
+        "pop"
       ]
     },
     "venue": {
-      "id": "tabernacle",
-      "name": "Tabernacle",
-      "lat": 33.7586,
-      "lng": -84.3913,
+      "id": "state_farm",
+      "name": "State Farm Arena",
+      "lat": 33.7573,
+      "lng": -84.3963,
       "multi_room": false,
       "access_profile": {
         "step_free": true,
         "ada_seating": true,
-        "quiet_room": false,
+        "quiet_room": true,
         "strobe_policy": "warned",
-        "interpreter": "never"
+        "interpreter": "on_request"
       }
     },
-    "start_at": "2025-10-11T20:00:00-04:00",
-    "doors_at": "2025-10-11T19:00:00-04:00",
-    "price_min": null,
-    "price_max": null,
-    "tm_url": "https://www.ticketmaster.com/freddie-gibbs-w-the-alchemist-alfredo-atlanta-georgia-10-11-2025/event/0E0062FE0AB0527F",
-    "image_url": "https://s1.ticketm.net/dam/a/44c/9c846eb2-6b32-492f-b06d-0c5c0a89144c_1581391_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "start_at": "2026-02-28T19:30:00-05:00",
+    "doors_at": "2026-02-28T18:30:00-05:00",
+    "price_min": 65.0,
+    "price_max": 180.0,
+    "tm_url": null,
+    "image_url": null,
     "support": null,
     "room": null,
     "is_past": true
@@ -197,6 +128,75 @@
     "price_max": 45.0,
     "tm_url": null,
     "image_url": null,
+    "support": null,
+    "room": null,
+    "is_past": true
+  },
+  {
+    "id": "d02",
+    "artist": {
+      "id": "velvet_static",
+      "name": "Velvet Static",
+      "genres": [
+        "synth-pop"
+      ]
+    },
+    "venue": {
+      "id": "eastern",
+      "name": "The Eastern",
+      "lat": 33.7524,
+      "lng": -84.3648,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": true,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2025-11-22T20:00:00-05:00",
+    "doors_at": "2025-11-22T19:00:00-05:00",
+    "price_min": 40.0,
+    "price_max": 65.0,
+    "tm_url": null,
+    "image_url": null,
+    "support": null,
+    "room": null,
+    "is_past": true
+  },
+  {
+    "id": "d01",
+    "artist": {
+      "id": "freddie_gibbs",
+      "name": "Freddie Gibbs",
+      "genres": [
+        "gangsta rap",
+        "hip hop",
+        "hardcore hip hop",
+        "midwest rap"
+      ]
+    },
+    "venue": {
+      "id": "tabernacle",
+      "name": "Tabernacle",
+      "lat": 33.7586,
+      "lng": -84.3913,
+      "multi_room": false,
+      "access_profile": {
+        "step_free": true,
+        "ada_seating": true,
+        "quiet_room": false,
+        "strobe_policy": "warned",
+        "interpreter": "never"
+      }
+    },
+    "start_at": "2025-10-11T20:00:00-04:00",
+    "doors_at": "2025-10-11T19:00:00-04:00",
+    "price_min": null,
+    "price_max": null,
+    "tm_url": "https://www.ticketmaster.com/freddie-gibbs-w-the-alchemist-alfredo-atlanta-georgia-10-11-2025/event/0E0062FE0AB0527F",
+    "image_url": "https://s1.ticketm.net/dam/a/44c/9c846eb2-6b32-492f-b06d-0c5c0a89144c_1581391_TABLET_LANDSCAPE_LARGE_16_9.jpg",
     "support": null,
     "room": null,
     "is_past": true

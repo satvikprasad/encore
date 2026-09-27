@@ -49,10 +49,6 @@ CREATE TABLE crews (
   id TEXT PRIMARY KEY, event_id TEXT REFERENCES events(id), member_ids TEXT NOT NULL,  -- JSON array
   messages TEXT NOT NULL DEFAULT '[]', plan TEXT   -- JSON
 );
-CREATE TABLE media_items (
-  id TEXT PRIMARY KEY, user_id TEXT REFERENCES users(id), captured_at TEXT NOT NULL,
-  lat REAL NOT NULL, lng REAL NOT NULL, matched_event_id TEXT, confidence REAL
-);
 """
 
 FIXTURES = Path(__file__).resolve().parents[2] / "fixtures"
@@ -73,8 +69,8 @@ def make_db(path: Path) -> sqlite3.Connection:
              int(u["verified"]), json.dumps(u["weights"])),
         )
     events = {e["id"]: e for e in json.loads((FIXTURES / "events_upcoming.json").read_text())}
-    for m in json.loads((FIXTURES / "media_match.json").read_text()):
-        events[m["event"]["id"]] = m["event"]
+    for e in json.loads((FIXTURES / "unranked.json").read_text()):  # d01–d06
+        events.setdefault(e["id"], e)
     for s in json.loads((FIXTURES / "rank.json").read_text())["shows"]:
         events[s["event"]["id"]] = s["event"]
     detail = json.loads((FIXTURES / "event_detail.json").read_text())["event"]  # t01, whatever the slice holds

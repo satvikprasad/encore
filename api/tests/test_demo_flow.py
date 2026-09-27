@@ -5,8 +5,6 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-from tests.test_matcher import DECOYS, PHOTOS
-
 SEEDED = Path(__file__).resolve().parents[2] / "data" / "encore.db"
 PRODUCTION = 4
 pytestmark = pytest.mark.skipif(not SEEDED.exists(), reason="run `make seed` first")
@@ -32,15 +30,10 @@ def test_run_through(api):
     sam = next(u for u in users if u["id"] == "sam")
     assert sam["verified"] is False
 
-    # 2. Import: 14 photos → 6 shows, decoys ignored; confirm all.
-    items = [{"lat": a, "lng": b, "captured_at": t} for a, b, t in PHOTOS + DECOYS]
-    found = api.post("/media/match?user=sam", json={"items": items}).json()
-    assert [m["event"]["id"] for m in found] == ["d01", "d02", "d03", "d04", "d05", "d06"]
-    assert all(m["suggested"] == "auto" for m in found)
-    added = api.post("/attendance/confirm?user=sam", json={
-        "event_ids": [m["event"]["id"] for m in found], "evidence": "photo",
-        "confidences": [m["confidence"] for m in found]}).json()
-    assert added == {"added": 6}
+    # 2. Log a show: search each of the six shows and mark "I went" → they wait in the Rank-it prompt.
+    for eid in ("d01", "d02", "d03", "d04", "d05", "d06"):
+        assert api.post("/attendance?user=sam", json={"event_id": eid, "status": "attended"}).json()["status"] == "attended"
+    assert {e["id"] for e in api.get("/attendance/unranked?user=sam").json()} == {"d01", "d02", "d03", "d04", "d05", "d06"}
 
     # 3. Review d04 → 3 compares → ranking; weights move toward production.
     r = api.post("/reviews?user=sam", json={"event_id": "d04", "scores": [4, 3, 3, 4, 4, 3, 5],

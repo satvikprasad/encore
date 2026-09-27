@@ -30,7 +30,7 @@ TODAY = date(2026, 9, 26)          # fixed "now" so the build never depends on t
 PAST_START = date(2024, 9, 27)
 TARGET_WINDOW_DAYS = 60
 VERIFIED_AT = "2026-09-01T12:00:00+00:00"
-PHOTO_SHOWS = ["d01", "d02", "d03", "d04", "d05", "d06"]
+DEMO_SHOWS = ["d01", "d02", "d03", "d04", "d05", "d06"]   # the six shows the demo user logs during the run-through
 
 EXTRA_VENUES = [  # stand-ins for venues Ticketmaster returns beyond our 7 (empty access profile)
     {"id": "fox_theatre", "name": "Fox Theatre", "lat": 33.7726, "lng": -84.3856},
@@ -137,8 +137,8 @@ def build_venues(b: Builder):
 
 def swap_placeholders(spec: dict, past: list[dict]) -> list[dict]:
     """AGENTS.md §7.2: give Sam's placeholder shows a real artist when the venue's archive has a show there.
-    Photo-evidenced shows (d01–d06) keep their date and time (the demo photos' EXIF pins them), so they
-    only swap when a real show fell on that exact night; the manual ones (d07–d12) may move up to 3 days.
+    The six shows logged during the demo (d01–d06) keep their night, so they only swap when a real show fell
+    on that exact date; the pre-existing ones (d07–d12) may move up to 3 days.
     Returns the archive rows that were absorbed, so they are not inserted twice."""
     by_venue: dict[str, list[dict]] = {}
     for r in past:
@@ -149,7 +149,7 @@ def swap_placeholders(spec: dict, past: list[dict]) -> list[dict]:
         if e["id"] == "t01" or e["id"].startswith("x"):
             continue
         d = date.fromisoformat(e["start"][:10])
-        slack = 0 if e["id"] in PHOTO_SHOWS else 3
+        slack = 0 if e["id"] in DEMO_SHOWS else 3
         cands = [r for r in by_venue.get(e["venue"], []) if abs((date.fromisoformat(r["date"]) - d).days) <= slack
                  and r not in used]
         if not cands:
@@ -449,13 +449,13 @@ def build_media(b: Builder):
 
 
 def assert_taste_targets(conn: sqlite3.Connection, spec: dict):
-    """AGENTS.md §7.3: after Sam's 6 photo shows are added and reviewed with defaults (the provisional
-    review POST /attendance/confirm creates), Sam–Maya ∈ [80, 88] and Sam–Jordan ∈ [66, 76].
+    """AGENTS.md §7.3: after the demo user marks d01–d06 as "went" (POST /attendance gives each a provisional
+    review), Sam–Maya ∈ [80, 88] and Sam–Jordan ∈ [66, 76].
     Checked inside a rolled-back savepoint."""
     conn.execute("SAVEPOINT taste_check")
     b = Builder(conn)
-    for eid in PHOTO_SHOWS:
-        b.attend("sam", eid, evidence="photo", confidence=0.95)
+    for eid in DEMO_SHOWS:
+        b.attend("sam", eid)
         add_provisional_review(conn, "sam", eid)
     maya, jordan = taste.match("sam", "maya", conn), taste.match("sam", "jordan", conn)
     assert taste.match("maya", "sam", conn) == maya, "taste.match must be symmetric"

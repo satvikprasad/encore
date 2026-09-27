@@ -29,7 +29,7 @@ make seed         # only to rebuild data/encore.db + demo photos (committed; byt
 
 ```
  Browser (Next.js 14, phone frame)
- ├─ exifr reads GPS + time from photos locally ── only {lat,lng,captured_at} leave the device
+ ├─ Log a show: search the calendars, or add a show (Deezer artist lookup, OSM geocoding)
  └─ fetch ─────────────────────────────┐
                                        ▼
  FastAPI  (api/app)
