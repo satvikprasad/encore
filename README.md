@@ -27,7 +27,7 @@ make demo-reset   # demo user back to the start of the run-through
 make seed         # rebuild data/encore.db + data/media from the committed caches — byte-identical every run
 ```
 
-- **Demo user:** the app opens as Artem Kim; switch to **Jasmine Liu** at the bottom of the You tab to demo (her friends' moments and matches are set up for it).
+- **Demo user:** Can select demo user at the bottom
 - **Frontend data:** the web app talks to the real API. To demo on canned `fixtures/`, put `NEXT_PUBLIC_USE_FIXTURES=true` in `web/.env.local`.
 - **Optional keys** (`.env`): `TICKETMASTER_API_KEY` adds face-value prices for Ticketmaster-sold shows, `SEATGEEK_CLIENT_ID` adds SeatGeek resale prices, `SETLISTFM_API_KEY` backfills real past shows at all seven venues on the next seed, `GROK_API_KEY` turns on AI-written match explanations and crew plans (there are deterministic templates without it). `MEDIA_STORAGE=supabase` + `SUPABASE_*` moves photo/video storage to a hosted bucket.
 
