@@ -68,6 +68,20 @@ def test_new_show_first_and_no_repeats():
     assert len(seen) == 45
 
 
+def test_focus_show_stays_in_every_pair():
+    rng = np.random.default_rng(7)
+    shows = [f"s{i}" for i in range(6)]
+    state = ranker.UserState(shows=shows, theta=rng.uniform(1, 5, (6, 7)), var=np.ones(6))
+    asked = []
+    while (pair := ranker.next_pair(state, focus="s3")) is not None and len(asked) < 5:
+        assert pair[0] == "s3" and pair[1] != "s3" and frozenset(pair) not in map(frozenset, asked)
+        asked.append(pair)
+        ranker.apply(state, *pair, winner=pair[0])
+    assert len(asked) == 5  # one question per other show, then the search widens
+    widened = ranker.next_pair(state, focus="s3")
+    assert widened is not None and "s3" not in widened
+
+
 def test_tiers():
     assert "".join(ranker.tier(r, 10) for r in range(1, 11)) == "SAAABBBCCC"
 

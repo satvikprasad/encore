@@ -240,7 +240,7 @@ Every endpoint below has `fixtures/<name>.json` with a realistic response for **
 |---|---|---|---|
 | `users.json` | `GET /users` | — | `User[]` |
 | `review_post.json` | `POST /reviews?user=` | `Review` (without user_id) | `{ok:true, next_compare:{event_a:Event,event_b:Event}}` |
-| `compare_next.json` | `GET /compare/next?user=` | — | `{event_a:Event, event_b:Event, question:string}` or `null` if <2 reviewed |
+| `compare_next.json` | `GET /compare/next?user=&focus=<event_id>` | — | `{event_a:Event, event_b:Event, question:string}` or `null` if <2 reviewed; `focus` (the show just reviewed) is always `event_a` until every pair with it has been asked |
 | `compare_post.json` | `POST /compare?user=` | `{event_a,event_b,winner}` | `Ranking` |
 | `rank.json` | `GET /rank?user=` | — | `Ranking` |
 | `events_upcoming.json` | `GET /events?upcoming=true&user=` | — | `(Event & {friends_interested:User[]})[]` |

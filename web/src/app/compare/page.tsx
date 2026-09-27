@@ -1,8 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
 
 import { PreferenceBars } from "@/components/charts";
 import { IconCheck } from "@/components/icons";
@@ -16,8 +16,17 @@ const QUESTIONS = 3;
 const UNIFORM: Vec7 = [0.1429, 0.1429, 0.1429, 0.1429, 0.1429, 0.1429, 0.1426];
 
 export default function ComparePage() {
+  return (
+    <Suspense fallback={<Spinner />}>
+      <Compare />
+    </Suspense>
+  );
+}
+
+function Compare() {
   const { userId, user } = useUser();
   const router = useRouter();
+  const focus = useSearchParams().get("event"); // the show just rated: it stays in every pair
   const [pair, setPair] = useState<CompareNext | null>(null);
   const [asked, setAsked] = useState(0);
   const [weights, setWeights] = useState<Vec7>(UNIFORM);
@@ -29,8 +38,8 @@ export default function ComparePage() {
   }, [user]);
 
   useEffect(() => {
-    api.compareNext(userId).then((p) => (p ? setPair(p) : router.replace("/rank")), setError);
-  }, [userId, router]);
+    api.compareNext(userId, focus).then((p) => (p ? setPair(p) : router.replace("/rank")), setError);
+  }, [userId, router, focus]);
 
   async function choose(winner: Event) {
     if (!pair || picked) return;
@@ -44,7 +53,7 @@ export default function ComparePage() {
         setTimeout(() => router.push("/rank"), 1100);
         return;
       }
-      const next = await api.compareNext(userId);
+      const next = await api.compareNext(userId, focus);
       await new Promise((r) => setTimeout(r, 500)); // let the bars move before the next question
       if (!next) return router.push("/rank");
       setPair(next);
@@ -81,8 +90,9 @@ export default function ComparePage() {
               {!finished ? <p className="mt-2 text-xs text-muted">Tap the better night</p> : null}
             </div>
             <div className={clsx("relative grid grid-cols-2 gap-3 transition", finished && "opacity-40")}>
-              {[pair.event_a, pair.event_b].map((e) => {
+              {[pair.event_a, pair.event_b].map((e, idx) => {
                 const on = picked === e.id;
+                const isFocus = idx === 0 && (focus ? e.id === focus : true);
                 return (
                   <button
                     key={`${asked}-${e.id}`}
@@ -94,6 +104,7 @@ export default function ComparePage() {
                     )}
                   >
                     <ArtistArt name={e.artist.name} image={e.image_url} className="aspect-[4/5] w-full rounded-2xl text-5xl" big />
+                    {isFocus ? <span className="absolute left-4 top-4 rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-semibold text-fg backdrop-blur">Just rated</span> : null}
                     <div className="px-1 pb-1">
                       <div className="truncate text-[15px] font-semibold tracking-tight">{e.artist.name}</div>
                       <div className="truncate text-xs text-muted">{e.venue.name}</div>

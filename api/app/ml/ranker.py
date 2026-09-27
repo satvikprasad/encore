@@ -81,9 +81,11 @@ def ranking(state: UserState) -> tuple[np.ndarray, list[dict]]:
                for r, i in enumerate(order, 1)]
 
 
-def next_pair(state: UserState) -> Optional[tuple[str, str]]:
+def next_pair(state: UserState, focus: Optional[str] = None) -> Optional[tuple[str, str]]:
     """Most informative unasked pair: IG(w; outcome) / (rank_i + rank_j).
-    A new (never compared) show is always in the pair, listed first."""
+    The show being ranked (`focus`, else a never-compared new show) is in every pair, listed first — like
+    Beli, you always compare *this* show against another one. Only once every pair with it has been asked
+    does the search widen to all shows."""
     n = len(state.shows)
     if n < 2:
         return None
@@ -93,11 +95,17 @@ def next_pair(state: UserState) -> Optional[tuple[str, str]]:
     rank[np.argsort(-s, kind="stable")] = np.arange(1, n + 1)
 
     iu, ju = np.triu_indices(n, 1)
-    forced = state.shows.index(state.new_show) if state.new_show in state.shows else None
     asked = state.asked
-    keep = np.array([(forced is None or forced in (i, j))
-                     and frozenset((state.shows[i], state.shows[j])) not in asked
-                     for i, j in zip(iu, ju)], dtype=bool)
+    unasked = np.array([frozenset((state.shows[i], state.shows[j])) not in asked for i, j in zip(iu, ju)], dtype=bool)
+    anchor = focus if focus in state.shows else state.new_show
+    forced = state.shows.index(anchor) if anchor in state.shows else None
+    keep = unasked
+    if forced is not None:
+        with_anchor = unasked & ((iu == forced) | (ju == forced))
+        if with_anchor.any():
+            keep = with_anchor
+        else:
+            forced = None
     if not keep.any():
         return None
     iu, ju = iu[keep], ju[keep]

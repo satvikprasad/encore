@@ -46,6 +46,6 @@ def post_review(body: schemas.ReviewIn, user: str, conn=Depends(get_db)):
     conn.execute("INSERT INTO attendance (user_id, event_id, status) VALUES (?, ?, 'attended') "
                  "ON CONFLICT(user_id, event_id) DO UPDATE SET status = 'attended'", (user, body.event_id))
     conn.commit()
-    pair = ranker.next_pair(load_state(conn, user))
+    pair = ranker.next_pair(load_state(conn, user), focus=body.event_id)
     next_compare = {"event_a": load_event(conn, pair[0]), "event_b": load_event(conn, pair[1])} if pair else None
     return {"ok": True, "next_compare": next_compare}

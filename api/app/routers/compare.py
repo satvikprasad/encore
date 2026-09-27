@@ -14,8 +14,9 @@ router = APIRouter(tags=["compare"])
 
 
 @router.get("/compare/next", response_model=Optional[schemas.CompareNext])
-def compare_next(user: str, conn=Depends(get_db)):
-    pair = ranker.next_pair(load_state(conn, user))
+def compare_next(user: str, focus: Optional[str] = None, conn=Depends(get_db)):
+    """The next "better or worse than…?" pair. `focus` (the show just reviewed) is always event_a."""
+    pair = ranker.next_pair(load_state(conn, user), focus)
     return pair_response(conn, pair) if pair else None
 
 

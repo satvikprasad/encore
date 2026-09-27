@@ -257,9 +257,10 @@ export const api = {
     return request("POST", "/reviews", user, review);
   },
 
-  compareNext(user: string): Promise<CompareNext | null> {
+  /** Next "better or worse than…?" pair; `focus` (the show just rated) is always event_a. */
+  compareNext(user: string, focus?: string | null): Promise<CompareNext | null> {
     if (usesFixture("compareNext")) return fixture(compareNextFx);
-    return request("GET", "/compare/next", user);
+    return request("GET", focus ? `/compare/next?focus=${encodeURIComponent(focus)}` : "/compare/next", user);
   },
 
   async postCompare(user: string, body: CompareRequest): Promise<Ranking> {
