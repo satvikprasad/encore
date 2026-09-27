@@ -2,7 +2,7 @@
 
 **Beli for concerts.** Log the shows you've been to, rank them with a few "better or worse than…?" taps, find verified fans with your taste who are going to the next one, compare ticket prices, and plan the night together. Built at HackGT 13.
 
-> **Verification is mocked.** The identity check is a served mock page that auto-approves after 3 seconds. In production this would be Stripe Identity or Persona behind the same `VerificationProvider` interface (`api/app/verify/provider.py`).
+> **Verification is mocked.** The identity check is a served mock page that auto-approves after 3 seconds. In production this would be Stripe Identity or Persona behind the same `VerificationProvider` interface (`api/app/verify/provider.py`). But costs money :(
 
 ## Setup
 
